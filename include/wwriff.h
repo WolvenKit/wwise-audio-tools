@@ -23,8 +23,7 @@ enum ForcePacketFormat {
 };
 
 class Wwise_RIFF_Vorbis {
-  string _codebooks_name;
-  // ifstream _infile;
+  string _codebooks_data;
   stringstream _indata;
   long _file_size;
 
@@ -67,7 +66,7 @@ class Wwise_RIFF_Vorbis {
 
 public:
   Wwise_RIFF_Vorbis(const string &name, const string &indata,
-                    const string &_codebooks_name, bool inline_codebooks,
+                    const string &_codebooks_data, bool inline_codebooks,
                     bool full_setup, ForcePacketFormat force_packet_format);
 
   void print_info(void);

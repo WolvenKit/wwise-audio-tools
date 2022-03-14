@@ -94,10 +94,10 @@ public:
 const char Vorbis_packet_header::vorbis_str[6] = {'v', 'o', 'r', 'b', 'i', 's'};
 
 Wwise_RIFF_Vorbis::Wwise_RIFF_Vorbis(const string &name, const string &indata,
-                                     const string &codebooks_name,
+                                     const string &codebooks_data,
                                      bool inline_codebooks, bool full_setup,
                                      ForcePacketFormat force_packet_format)
-    : _codebooks_name(codebooks_name),
+    : _codebooks_data(codebooks_data),
       _indata(/*name.c_str(), ios::binary*/ indata), _file_size(-1),
       _little_endian(true), _riff_size(-1), _fmt_offset(-1), _cue_offset(-1),
       _LIST_offset(-1), _smpl_offset(-1), _vorb_offset(-1), _data_offset(-1),
@@ -431,7 +431,7 @@ void Wwise_RIFF_Vorbis::print_info(void) {
   if (_inline_codebooks || _header_triad_present) {
     cout << "- inline codebooks" << endl;
   } else {
-    cout << "- external codebooks (" << _codebooks_name << ")" << endl;
+    //cout << "- external codebooks (" << _codebooks_name << ")" << endl;
   }
 
   if (_mod_packets) {
@@ -581,7 +581,7 @@ void Wwise_RIFF_Vorbis::generate_ogg_header(Bit_oggstream &os,
     } else {
       /* external codebooks */
 
-      codebook_library cbl(_codebooks_name);
+      codebook_library cbl(_codebooks_data);
 
       for (unsigned int i = 0; i < codebook_count; i++) {
         Bit_uint<10> codebook_id;

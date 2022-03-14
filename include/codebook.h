@@ -60,7 +60,7 @@ class codebook_library {
   codebook_library(const codebook_library &rhs);
 
 public:
-  codebook_library(const string &filename);
+  codebook_library(std::string indata);
   codebook_library(void);
 
   ~codebook_library() {

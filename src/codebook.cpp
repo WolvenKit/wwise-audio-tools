@@ -1,15 +1,13 @@
 #define __STDC_CONSTANT_MACROS
+#include <sstream>
 #include "codebook.h"
 
 codebook_library::codebook_library(void)
     : codebook_data(NULL), codebook_offsets(NULL), codebook_count(0) {}
 
-codebook_library::codebook_library(const string &filename)
+codebook_library::codebook_library(std::string indata)
     : codebook_data(NULL), codebook_offsets(NULL), codebook_count(0) {
-  ifstream is(filename.c_str(), ios::binary);
-
-  if (!is)
-    throw File_open_error(filename);
+  std::stringstream is(indata);
 
   is.seekg(0, ios::end);
   long file_size = is.tellg();

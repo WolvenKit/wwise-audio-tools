@@ -37,10 +37,10 @@ public:
 };
 
 std::string wem_to_ogg(std::string infile, std::string indata,
-                       std::string codebooks_file, bool inline_codebooks = false,
+                       std::string codebooks_data, bool inline_codebooks = false,
                        bool full_setup = false, ForcePacketFormat force_packet_format = kForceNoModPackets) {
   try {
-    Wwise_RIFF_Vorbis ww(infile, indata, codebooks_file, inline_codebooks,
+    Wwise_RIFF_Vorbis ww(infile, indata, codebooks_data, inline_codebooks,
                          full_setup, force_packet_format);
 
     ww.print_info();
