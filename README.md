@@ -20,4 +20,7 @@ This will create the command-line tool in the `bin/` directory and the libraries
 The command-line tool can be run with `./wwise-audio-converter [NAME].wem` which will generate an easily usable `[NAME].ogg` in the same directory. No need to use `revorb`, no need to have a `packed_codebooks.bin`. The library usage will have further documentation soon.
 
 ## Credits
-Credit for the `ww2ogg` code goes to [`@hcs64`](https://github.com/hcs64), and [`Jiri Hruska`](https://hydrogenaud.io/index.php/topic,64328.0.html)
+Credit for the `ww2ogg` code goes to [`@hcs64`](https://github.com/hcs64), and to [`Jiri Hruska`](https://hydrogenaud.io/index.php/topic,64328.0.html) for the creation of the original `revorb`.
+
+## Licensing
+Many files here are licensed individually and are taken from other projects, such as [ww2ogg](https://github.com/hcs64/ww2ogg) and [revorb](https://hydrogenaud.io/index.php/topic,64328.0.html). Other than the `ww2ogg` license, everything else is licensed under MIT.
