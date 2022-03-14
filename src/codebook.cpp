@@ -1,6 +1,6 @@
 #define __STDC_CONSTANT_MACROS
-#include <sstream>
 #include "codebook.h"
+#include <sstream>
 
 codebook_library::codebook_library(void)
     : codebook_data(NULL), codebook_offsets(NULL), codebook_count(0) {}

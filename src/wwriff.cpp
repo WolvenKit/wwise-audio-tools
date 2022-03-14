@@ -431,7 +431,7 @@ void Wwise_RIFF_Vorbis::print_info(void) {
   if (_inline_codebooks || _header_triad_present) {
     cout << "- inline codebooks" << endl;
   } else {
-    //cout << "- external codebooks (" << _codebooks_name << ")" << endl;
+    // cout << "- external codebooks (" << _codebooks_name << ")" << endl;
   }
 
   if (_mod_packets) {

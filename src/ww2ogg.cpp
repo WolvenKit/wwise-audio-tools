@@ -36,9 +36,10 @@ public:
   }
 };
 
-std::string wem_to_ogg(std::string infile, std::string indata,
-                       std::string codebooks_data, bool inline_codebooks = false,
-                       bool full_setup = false, ForcePacketFormat force_packet_format = kForceNoModPackets) {
+std::string
+wem_to_ogg(std::string infile, std::string indata, std::string codebooks_data,
+           bool inline_codebooks = false, bool full_setup = false,
+           ForcePacketFormat force_packet_format = kForceNoModPackets) {
   try {
     Wwise_RIFF_Vorbis ww(infile, indata, codebooks_data, inline_codebooks,
                          full_setup, force_packet_format);
@@ -49,10 +50,10 @@ std::string wem_to_ogg(std::string infile, std::string indata,
     ww.generate_ogg(ss);
     revorb(ss);
 
-    //stringstream revorbed_ss;
-    //std::cout << revorbed_ss.str();
+    // stringstream revorbed_ss;
+    // std::cout << revorbed_ss.str();
 
-    //return revorbed_ss.str();
+    // return revorbed_ss.str();
     return ss.str();
   } catch (const File_open_error &fe) {
     return "";
