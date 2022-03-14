@@ -36,28 +36,30 @@ public:
   }
 };
 
-std::string wem_to_ogg(std::string infile, std::string codebooks_file,
-                       bool inline_codebooks, bool full_setup,
-                       ForcePacketFormat force_packet_format) {
+std::string wem_to_ogg(std::string infile, std::string indata,
+                       std::string codebooks_file, bool inline_codebooks = false,
+                       bool full_setup = false, ForcePacketFormat force_packet_format = kForceNoModPackets) {
   try {
-    Wwise_RIFF_Vorbis ww(infile, codebooks_file, inline_codebooks, full_setup,
-                         force_packet_format);
+    Wwise_RIFF_Vorbis ww(infile, indata, codebooks_file, inline_codebooks,
+                         full_setup, force_packet_format);
 
     ww.print_info();
 
     stringstream ss;
-
     ww.generate_ogg(ss);
-    stringstream revorbed_ss;
+    revorb(ss);
 
-    return revorbed_ss.str();
+    //stringstream revorbed_ss;
+    //std::cout << revorbed_ss.str();
+
+    //return revorbed_ss.str();
+    return ss.str();
   } catch (const File_open_error &fe) {
     return "";
   } catch (const Parse_error &pe) {
     return "";
   }
-
-  return 0;
+  return "";
 }
 
 void ww2ogg_options::parse_args(int argc, char **argv) {

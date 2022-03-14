@@ -2,4 +2,4 @@
 #include <istream>
 #include <string>
 
-std::string revorb(std::istream& indata);
+std::string revorb(std::istream &indata);
