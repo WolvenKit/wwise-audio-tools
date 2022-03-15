@@ -48,13 +48,12 @@ wem_to_ogg(std::string infile, std::string indata, std::string codebooks_data,
 
     stringstream ss;
     ww.generate_ogg(ss);
-    revorb(ss);
 
     // stringstream revorbed_ss;
     // std::cout << revorbed_ss.str();
 
     // return revorbed_ss.str();
-    return ss.str();
+    return revorb(ss);
   } catch (const File_open_error &fe) {
     return "";
   } catch (const Parse_error &pe) {

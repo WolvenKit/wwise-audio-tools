@@ -132,7 +132,7 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
           return false;
         }*/
     fo.write(reinterpret_cast<char *>(page.header), page.header_len);
-    fo.write(reinterpret_cast<char *>(page.body), page.header_len);
+    fo.write(reinterpret_cast<char *>(page.body), page.body_len);
   }
 
   return true;
