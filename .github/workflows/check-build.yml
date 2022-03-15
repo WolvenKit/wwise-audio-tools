@@ -19,6 +19,6 @@ jobs:
         run: cmake -B ${{github.workspace}}/build
 
       - name: Build
-        run: cmake --build ${{github.workspace}}/build
+        run: cd build/ && make
 
       # TODO: Add CTest for testing
