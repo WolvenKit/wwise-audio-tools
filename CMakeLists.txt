@@ -24,3 +24,7 @@ set(SOURCE
 add_library(wwise-audio SHARED ${SOURCE})
 add_library(wwise-audio_static STATIC ${SOURCE})
 add_executable(wwise-audio-converter ${SOURCE} src/main.cpp)
+
+target_link_libraries(wwise-audio -logg -lvorbis)
+target_link_libraries(wwise-audio_static -logg -lvorbis)
+target_link_libraries(wwise-audio-converter -logg -lvorbis)
