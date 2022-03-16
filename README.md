@@ -14,7 +14,7 @@ cmake -S . -B build
 cd build
 make
 ```  
-> Note: This project *does* require `libogg` and `libvorbis` to build, which can be downloaded [here](https://xiph.org/downloads/) or installed under names something like `libogg-dev` and `libvorbis-dev` or `libogg-devel` and `libvorbis-devel`.  
+> Note: This project *does* require `libogg` and `libvorbis` to build, which can be downloaded [here](https://xiph.org/downloads/) or installed from Linux package managers under names something like `libogg-dev` and `libvorbis-dev` or `libogg-devel` and `libvorbis-devel`.  
 
 This will create the command-line tool in the `bin/` directory and the libraries in `lib/`.
 
