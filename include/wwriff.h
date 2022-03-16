@@ -6,7 +6,7 @@
 #endif
 #include "Bit_stream.h"
 #include "errors.h"
-#include "stdint.h"
+#include "cstdint"
 #include <fstream>
 #include <iostream>
 #include <sstream>

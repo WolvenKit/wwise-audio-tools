@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <sstream>
-#include <stdint.h>
+#include <cstdint>
 #include <string>
 
 using namespace std;

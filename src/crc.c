@@ -1,5 +1,6 @@
-#include "crc.h"
 #include <stdint.h>
+
+#include "crc.h"
 
 /* from Tremor (lowmem) */
 static uint32_t crc_lookup[256] = {

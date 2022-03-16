@@ -1,14 +1,13 @@
 #define __STDC_CONSTANT_MACROS
-#include "wwriff.h"
-#include "Bit_stream.h"
-#include "codebook.h"
-#include "errors.h"
-#include "stdint.h"
+#include "cstdint"
 #include <cstring>
 #include <iostream>
 #include <istream>
 
-using namespace std;
+#include "wwriff.h"
+#include "Bit_stream.h"
+#include "codebook.h"
+#include "errors.h"
 
 /* Modern 2 or 6 byte header */
 class Packet {
