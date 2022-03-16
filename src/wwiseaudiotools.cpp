@@ -4,7 +4,7 @@
 #include "ww2ogg.h"
 #include "revorb.h"
 
-std::string wem_to_ogg(std::string indata) {
+extern "C" std::string wem_to_ogg(std::string indata) {
     std::stringstream indata_ss(indata);
     std::stringstream wem_out;
     std::stringstream revorb_out;

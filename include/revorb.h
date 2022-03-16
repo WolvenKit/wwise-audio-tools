@@ -3,4 +3,4 @@
 #include <string>
 #include <sstream>
 
-bool revorb(std::istream &indata, std::stringstream &outdata);
+extern "C" bool revorb(std::istream &indata, std::stringstream &outdata);

@@ -128,7 +128,7 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
 }
 
 // Returns true if successful and false if not successful
-bool revorb(std::istream &indata, std::stringstream &outdata) {
+extern "C" bool revorb(std::istream &indata, std::stringstream &outdata) {
   std::stringstream indata_ss;
   indata_ss << indata.rdbuf();
 

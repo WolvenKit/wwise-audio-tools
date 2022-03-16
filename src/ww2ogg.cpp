@@ -10,7 +10,7 @@
 #include "wwriff.h"
 #include "packed_codebooks.h"
 
-bool 
+extern "C" __attribute__((visibility("default"))) bool 
 ww2ogg(std::string indata, std::ostream &outdata, unsigned char codebooks_data[],
            bool inline_codebooks, bool full_setup,
            ForcePacketFormat force_packet_format) {
