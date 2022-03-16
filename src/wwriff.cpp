@@ -93,7 +93,7 @@ public:
 
 const char Vorbis_packet_header::vorbis_str[6] = {'v', 'o', 'r', 'b', 'i', 's'};
 
-Wwise_RIFF_Vorbis::Wwise_RIFF_Vorbis(const string &name, const string &indata,
+Wwise_RIFF_Vorbis::Wwise_RIFF_Vorbis(const string &indata,
                                      const string &codebooks_data,
                                      bool inline_codebooks, bool full_setup,
                                      ForcePacketFormat force_packet_format)
@@ -110,8 +110,6 @@ Wwise_RIFF_Vorbis::Wwise_RIFF_Vorbis(const string &name, const string &indata,
       _inline_codebooks(inline_codebooks), _full_setup(full_setup),
       _header_triad_present(false), _old_packet_headers(false),
       _no_granule(false), _mod_packets(false), _read_16(NULL), _read_32(NULL) {
-  if (!_indata)
-    throw File_open_error(name);
 
   _indata.seekg(0, ios::end);
   _file_size = _indata.tellg();
