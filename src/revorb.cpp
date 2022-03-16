@@ -147,7 +147,7 @@ extern "C" bool revorb(std::istream &indata, std::stringstream &outdata) {
     ogg_int64_t granpos = 0, packetnum = 0;
     int lastbs = 0;
 
-    while (1) {
+    while (true) {
       int eos = 0;
       while (!eos) {
         int res = ogg_sync_pageout(&sync_in, &page);
@@ -169,7 +169,7 @@ extern "C" bool revorb(std::istream &indata, std::stringstream &outdata) {
             eos = 1;
           ogg_stream_pagein(&stream_in, &page);
 
-          while (1) {
+          while (true) {
             res = ogg_stream_packetout(&stream_in, &packet);
             if (res == 0)
               break;
