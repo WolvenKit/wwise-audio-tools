@@ -5,8 +5,8 @@
 
 #include "revorb.h"
 #include "ww2ogg.h"
-#include "wwriff.h"
 #include "wwiseaudiotools.h"
+#include "wwriff.h"
 
 int main(int argc, char *argv[]) {
   if (argc < 2) {

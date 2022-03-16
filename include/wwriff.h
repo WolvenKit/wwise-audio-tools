@@ -65,9 +65,9 @@ class Wwise_RIFF_Vorbis {
   uint32_t (*_read_32)(std::istream &is);
 
 public:
-  Wwise_RIFF_Vorbis(const string &indata,
-                    const string &_codebooks_data, bool inline_codebooks,
-                    bool full_setup, ForcePacketFormat force_packet_format);
+  Wwise_RIFF_Vorbis(const string &indata, const string &_codebooks_data,
+                    bool inline_codebooks, bool full_setup,
+                    ForcePacketFormat force_packet_format);
 
   void print_info(void);
 

@@ -22,16 +22,16 @@
 /*# CFLAGS=/D_UNICODE #*/
 /*# LFLAGS=/NODEFAULTLIB:MSVCRT /LTCG /OPT:REF /MANIFEST:NO #*/
 
+#include <cstdio>
+#include <cstring>
+#include <cwchar>
 #include <fcntl.h>
 #include <fstream>
 #include <iostream>
 #include <ogg/ogg.h>
 #include <sstream>
-#include <cstdio>
-#include <cstring>
 #include <string>
 #include <unistd.h>
-#include <cwchar>
 
 #include <ogg/ogg.h>
 #include <vorbis/codec.h>
@@ -143,8 +143,8 @@ extern "C" bool revorb(std::istream &indata, std::stringstream &outdata) {
   ogg_packet packet;
   ogg_page page;
 
-  if (copy_headers(indata_ss, &sync_in, &stream_in, outdata, &sync_out, &stream_out,
-                   &vi)) {
+  if (copy_headers(indata_ss, &sync_in, &stream_in, outdata, &sync_out,
+                   &stream_out, &vi)) {
     ogg_int64_t granpos = 0, packetnum = 0;
     int lastbs = 0;
 
@@ -229,8 +229,8 @@ extern "C" bool revorb(std::istream &indata, std::stringstream &outdata) {
   ogg_sync_clear(&sync_out);
 
   if (g_failed) {
-      return false;
+    return false;
   } else {
-      return true;
+    return true;
   }
 }
