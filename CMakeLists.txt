@@ -19,6 +19,8 @@ set(SOURCE
     src/revorb.cpp
     src/ww2ogg.cpp
     src/wwriff.cpp
+    src/wwiseaudiotools.cpp
+    src/packed_codebooks.cpp
   )
 
 add_library(wwise-audio SHARED ${SOURCE})
