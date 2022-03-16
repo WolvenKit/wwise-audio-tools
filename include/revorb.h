@@ -1,5 +1,6 @@
 #include <iostream>
 #include <istream>
 #include <string>
+#include <sstream>
 
-std::string revorb(std::istream &indata);
+bool revorb(std::istream &indata, std::stringstream &outdata);

@@ -27,17 +27,19 @@
 #include <iostream>
 #include <ogg/ogg.h>
 #include <sstream>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include <string>
 #include <unistd.h>
+#include <cwchar>
+
+#include <ogg/ogg.h>
 #include <vorbis/codec.h>
-#include <wchar.h>
 
 bool g_failed;
 
 bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
-                  ogg_stream_state *is, std::stringstream &fo,
+                  ogg_stream_state *is, std::stringstream &outdata,
                   ogg_sync_state *so, ogg_stream_state *os, vorbis_info *vi) {
   char *buffer = ogg_sync_buffer(si, 4096);
 
@@ -49,7 +51,6 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
   ogg_page page;
   int result = ogg_sync_pageout(si, &page);
   if (result != 1) {
-    fprintf(stderr, "Input is not an Ogg.\n");
     return false;
   }
 
@@ -57,7 +58,6 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
   ogg_stream_init(os, ogg_page_serialno(&page));
 
   if (ogg_stream_pagein(is, &page) < 0) {
-    fprintf(stderr, "Error in the first page.\n");
     ogg_stream_clear(is);
     ogg_stream_clear(os);
     return false;
@@ -65,7 +65,6 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
 
   ogg_packet packet;
   if (ogg_stream_packetout(is, &packet) != 1) {
-    fprintf(stderr, "Error in the first packet.\n");
     ogg_stream_clear(is);
     ogg_stream_clear(os);
     return false;
@@ -74,7 +73,6 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
   vorbis_comment vc;
   vorbis_comment_init(&vc);
   if (vorbis_synthesis_headerin(vi, &vc, &packet) < 0) {
-    fprintf(stderr, "Error in header, probably not a Vorbis file.\n");
     vorbis_comment_clear(&vc);
     ogg_stream_clear(is);
     ogg_stream_clear(os);
@@ -92,7 +90,6 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
       fi.read(buffer, 4096);
       auto numread = fi.gcount();
       if (numread == 0 && i < 2) {
-        fprintf(stderr, "Headers are damaged, file is probably truncated.\n");
         ogg_stream_clear(is);
         ogg_stream_clear(os);
         return false;
@@ -108,7 +105,6 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
         if (res == 0)
           break;
         if (res < 0) {
-          fprintf(stderr, "Secondary header is corrupted.\n");
           vorbis_comment_clear(&vc);
           ogg_stream_clear(is);
           ogg_stream_clear(os);
@@ -124,25 +120,17 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
   vorbis_comment_clear(&vc);
 
   while (ogg_stream_flush(os, &page)) {
-    /*  if (fwrite(page.header, 1, page.header_len, fo) != page.header_len ||
-          fwrite(page.body, 1, page.body_len, fo) != page.body_len) {
-          fprintf(stderr, "Cannot write headers to output.\n");
-          ogg_stream_clear(is);
-          ogg_stream_clear(os);
-          return false;
-        }*/
-    fo.write(reinterpret_cast<char *>(page.header), page.header_len);
-    fo.write(reinterpret_cast<char *>(page.body), page.body_len);
+    outdata.write(reinterpret_cast<char *>(page.header), page.header_len);
+    outdata.write(reinterpret_cast<char *>(page.body), page.body_len);
   }
 
   return true;
 }
 
-std::string revorb(std::istream &indata) {
-  std::stringstream fi;
-  fi << indata.rdbuf();
-
-  std::stringstream fo;
+// Returns true if successful and false if not successful
+bool revorb(std::istream &indata, std::stringstream &outdata) {
+  std::stringstream indata_ss;
+  indata_ss << indata.rdbuf();
 
   ogg_sync_state sync_in, sync_out;
   ogg_sync_init(&sync_in);
@@ -155,7 +143,8 @@ std::string revorb(std::istream &indata) {
   ogg_packet packet;
   ogg_page page;
 
-  if (copy_headers(fi, &sync_in, &stream_in, fo, &sync_out, &stream_out, &vi)) {
+  if (copy_headers(indata_ss, &sync_in, &stream_in, outdata, &sync_out, &stream_out,
+                   &vi)) {
     ogg_int64_t granpos = 0, packetnum = 0;
     int lastbs = 0;
 
@@ -165,8 +154,8 @@ std::string revorb(std::istream &indata) {
         int res = ogg_sync_pageout(&sync_in, &page);
         if (res == 0) {
           char *buffer = ogg_sync_buffer(&sync_in, 4096);
-          fi.read(buffer, 4096);
-          auto numread = fi.gcount();
+          indata_ss.read(buffer, 4096);
+          auto numread = indata_ss.gcount();
           if (numread > 0)
             ogg_sync_wrote(&sync_in, numread);
           else
@@ -175,7 +164,6 @@ std::string revorb(std::istream &indata) {
         }
 
         if (res < 0) {
-          fprintf(stderr, "Warning: Corrupted or missing data in bitstream.\n");
           g_failed = true;
         } else {
           if (ogg_page_eos(&page))
@@ -187,7 +175,6 @@ std::string revorb(std::istream &indata) {
             if (res == 0)
               break;
             if (res < 0) {
-              fprintf(stderr, "Warning: Bitstream error.\n");
               g_failed = true;
               continue;
             }
@@ -204,9 +191,10 @@ std::string revorb(std::istream &indata) {
 
               ogg_page opage;
               while (ogg_stream_pageout(&stream_out, &opage)) {
-                fo.write(reinterpret_cast<char *>(opage.header),
-                         opage.header_len);
-                fo.write(reinterpret_cast<char *>(opage.body), opage.body_len);
+                outdata.write(reinterpret_cast<char *>(opage.header),
+                              opage.header_len);
+                outdata.write(reinterpret_cast<char *>(opage.body),
+                              opage.body_len);
               }
             }
           }
@@ -221,8 +209,9 @@ std::string revorb(std::istream &indata) {
         ogg_stream_packetin(&stream_out, &packet);
         ogg_page opage;
         while (ogg_stream_flush(&stream_out, &opage)) {
-          fo.write(reinterpret_cast<char *>(opage.header), opage.header_len);
-          fo.write(reinterpret_cast<char *>(opage.body), opage.body_len);
+          outdata.write(reinterpret_cast<char *>(opage.header),
+                        opage.header_len);
+          outdata.write(reinterpret_cast<char *>(opage.body), opage.body_len);
         }
         ogg_stream_clear(&stream_in);
         break;
@@ -239,5 +228,9 @@ std::string revorb(std::istream &indata) {
   ogg_sync_clear(&sync_in);
   ogg_sync_clear(&sync_out);
 
-  return fo.str();
+  if (g_failed) {
+      return false;
+  } else {
+      return true;
+  }
 }
