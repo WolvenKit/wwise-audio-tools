@@ -6,8 +6,7 @@
 #include "revorb.h"
 #include "ww2ogg.h"
 #include "wwriff.h"
-
-#include "packed_codebooks.h"
+#include "wwiseaudiotools.h"
 
 int main(int argc, char *argv[]) {
   if (argc < 2) {
@@ -21,10 +20,8 @@ int main(int argc, char *argv[]) {
 
   std::stringstream indata;
   indata << filein.rdbuf();
-  std::string codebooks(reinterpret_cast<char *>(packed_codebooks_bin),
-                        packed_codebooks_bin_len);
 
-  std::string outdata = wem_to_ogg(infile, indata.str(), codebooks);
+  std::string outdata = wem_to_ogg(indata.str());
   if (outdata == "") {
     std::cerr << "An error occurred." << std::endl;
     return 1;
