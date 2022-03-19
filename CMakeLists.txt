@@ -22,6 +22,11 @@ set(SOURCE
     src/packed_codebooks.cpp
   )
 
+find_package(Catch2 3 REQUIRED)
+
+add_executable(tests ${SOURCE} tests/test.cpp)
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+
 add_library(wwise-audio SHARED ${SOURCE})
 add_library(wwise-audio_static STATIC ${SOURCE})
 add_executable(wwise-audio-converter ${SOURCE} src/main.cpp)
