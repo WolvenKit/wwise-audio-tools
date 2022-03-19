@@ -45,7 +45,7 @@ class Parse_error_str : public Parse_error {
   string str;
 
 public:
-  virtual void print_self(ostream &os) const { os << str; }
+  virtual void print_self(ostream &os) const override { os << str; }
 
   explicit Parse_error_str(string s) : str(s) {}
 };
@@ -54,7 +54,7 @@ class Size_mismatch : public Parse_error {
   const unsigned long real_size, read_size;
 
 public:
-  virtual void print_self(ostream &os) const {
+  virtual void print_self(ostream &os) const override {
     os << "expected " << real_size << " bits, read " << read_size;
   }
 
@@ -66,7 +66,7 @@ class Invalid_id : public Parse_error {
   const int id;
 
 public:
-  virtual void print_self(ostream &os) const {
+  virtual void print_self(ostream &os) const override {
     os << "invalid codebook id " << id << ", try --inline-codebooks";
   }
 
