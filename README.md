@@ -10,9 +10,8 @@ This is meant to be build with CMake, which generates both a static and dynamic 
 Example build workflow:
 ```
 git clone https://github.com/WolvenKit/wwise-audio-tools
-cmake -S . -B build
-cd build
-make
+cmake -B build
+cmake --build build
 ```  
 > Note: This project *does* require `libogg` and `libvorbis` to build, which can be downloaded [here](https://xiph.org/downloads/) or installed from Linux package managers under names something like `libogg-dev` and `libvorbis-dev` or `libogg-devel` and `libvorbis-devel`.  
 
