@@ -1,0 +1,112 @@
+[
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++ -Dwwise_audio_EXPORTS -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -fPIC -std=gnu++17 -o CMakeFiles/wwise-audio.dir/src/codebook.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/codebook.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/codebook.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/cc -Dwwise_audio_EXPORTS -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -fPIC -o CMakeFiles/wwise-audio.dir/src/crc.c.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/crc.c",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/crc.c"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++ -Dwwise_audio_EXPORTS -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -fPIC -std=gnu++17 -o CMakeFiles/wwise-audio.dir/src/revorb.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/revorb.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/revorb.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++ -Dwwise_audio_EXPORTS -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -fPIC -std=gnu++17 -o CMakeFiles/wwise-audio.dir/src/ww2ogg.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/ww2ogg.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/ww2ogg.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++ -Dwwise_audio_EXPORTS -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -fPIC -std=gnu++17 -o CMakeFiles/wwise-audio.dir/src/wwriff.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/wwriff.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/wwriff.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++ -Dwwise_audio_EXPORTS -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -fPIC -std=gnu++17 -o CMakeFiles/wwise-audio.dir/src/wwiseaudiotools.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/wwiseaudiotools.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/wwiseaudiotools.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++ -Dwwise_audio_EXPORTS -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -fPIC -std=gnu++17 -o CMakeFiles/wwise-audio.dir/src/packed_codebooks.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/packed_codebooks.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/packed_codebooks.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio_static.dir/src/codebook.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/codebook.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/codebook.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/cc  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include  -o CMakeFiles/wwise-audio_static.dir/src/crc.c.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/crc.c",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/crc.c"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio_static.dir/src/revorb.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/revorb.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/revorb.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio_static.dir/src/ww2ogg.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/ww2ogg.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/ww2ogg.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio_static.dir/src/wwriff.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/wwriff.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/wwriff.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio_static.dir/src/wwiseaudiotools.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/wwiseaudiotools.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/wwiseaudiotools.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio_static.dir/src/packed_codebooks.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/packed_codebooks.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/packed_codebooks.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio-converter.dir/src/codebook.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/codebook.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/codebook.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/cc  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include  -o CMakeFiles/wwise-audio-converter.dir/src/crc.c.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/crc.c",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/crc.c"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio-converter.dir/src/revorb.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/revorb.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/revorb.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio-converter.dir/src/ww2ogg.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/ww2ogg.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/ww2ogg.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio-converter.dir/src/wwriff.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/wwriff.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/wwriff.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio-converter.dir/src/wwiseaudiotools.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/wwiseaudiotools.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/wwiseaudiotools.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio-converter.dir/src/packed_codebooks.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/packed_codebooks.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/packed_codebooks.cpp"
+},
+{
+  "directory": "/home/abheekd/Desktop/Development/wwise-audio-tools/build",
+  "command": "/sbin/c++  -I/home/abheekd/Desktop/Development/wwise-audio-tools/include -logg -lvorbis -pedantic -fno-permissive -pedantic-errors -Wall -Wextra -Wshadow -Wstrict-aliasing -Wno-misleading-indentation -std=gnu++17 -o CMakeFiles/wwise-audio-converter.dir/src/main.cpp.o -c /home/abheekd/Desktop/Development/wwise-audio-tools/src/main.cpp",
+  "file": "/home/abheekd/Desktop/Development/wwise-audio-tools/src/main.cpp"
+}
+]
