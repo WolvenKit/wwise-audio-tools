@@ -13,7 +13,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install required libraries
-        run: sudo apt-get install -y libogg-dev libvorbis-dev
+        run: sudo apt-get install -y libogg-dev libvorbis-dev catch2
+
+      - name: Configure build directory structure
+        run: mkdir -p build/bin
 
       - name: Configure CMake
         run: cmake -B ${{github.workspace}}/build
@@ -21,4 +24,5 @@ jobs:
       - name: Build
         run: cmake --build ${{github.workspace}}/build
 
-      # TODO: Add CTest for testing
+      - name: Test with Catch2
+        run: cd build/bin && ./tests
