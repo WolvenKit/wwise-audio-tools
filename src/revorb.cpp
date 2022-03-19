@@ -87,7 +87,7 @@ bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
     if (res == 0) {
       buffer = ogg_sync_buffer(si, 4096);
       fi.read(buffer, 4096);
-      auto numread = fi.gcount();
+      numread = fi.gcount();
       if (numread == 0 && i < 2) {
         ogg_stream_clear(is);
         ogg_stream_clear(os);
