@@ -16,8 +16,6 @@ ww2ogg(const std::string& indata, std::ostream &outdata,
     Wwise_RIFF_Vorbis ww(indata, codebooks_data_s, inline_codebooks, full_setup,
                          force_packet_format);
 
-    ww.print_info();
-
     ww.generate_ogg(outdata);
   } catch (const File_open_error &fe) {
     return false;
