@@ -25,7 +25,7 @@ set(SOURCE
 find_package(Catch2 3 REQUIRED)
 
 add_executable(tests ${SOURCE} tests/test.cpp)
-target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain -logg -lvorbis)
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/tests/test1.ogg  ${CMAKE_RUNTIME_OUTPUT_DIRECTORY} COPYONLY)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/tests/test1.wem  ${CMAKE_RUNTIME_OUTPUT_DIRECTORY} COPYONLY)
