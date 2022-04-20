@@ -12,6 +12,8 @@ set(CMAKE_CXX_FLAGS "-logg -lvorbis -pedantic -fno-permissive -pedantic-errors -
 
 include_directories(include)
 
+add_definitions(-DKS_STR_ENCODING_NONE)
+
 set(SOURCE
     src/codebook.cpp
     src/crc.c
@@ -20,6 +22,8 @@ set(SOURCE
     src/wwriff.cpp
     src/wwiseaudiotools.cpp
     src/packed_codebooks.cpp
+		src/kaitaistream.cpp
+		src/bnk.cpp
   )
 
 find_package(Catch2 3 REQUIRED)
