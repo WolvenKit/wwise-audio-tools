@@ -30,7 +30,6 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <unistd.h>
 
 #include <ogg/ogg.h>
 #include <vorbis/codec.h>
