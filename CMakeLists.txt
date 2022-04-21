@@ -46,6 +46,6 @@ target_link_libraries(wwise-audio-tools ogg vorbis stdc++fs)
 
 if(Catch2_FOUND)
   add_executable(tests ${SOURCE} tests/test.cpp)
-  target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+  target_link_libraries(tests PRIVATE Catch2::Catch2WithMain ogg vorbis)
   file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 endif()
