@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(wwise-audio)
+project(wwise-audio-tools)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
@@ -34,10 +34,13 @@ target_link_libraries(tests PRIVATE Catch2::Catch2WithMain -logg -lvorbis)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/tests/test1.ogg  ${CMAKE_RUNTIME_OUTPUT_DIRECTORY} COPYONLY)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/tests/test1.wem  ${CMAKE_RUNTIME_OUTPUT_DIRECTORY} COPYONLY)
 
+add_subdirectory(libogg EXCLUDE_FROM_ALL)
+add_subdirectory(libvorbis EXCLUDE_FROM_ALL)
+
 add_library(wwise-audio SHARED ${SOURCE})
 add_library(wwise-audio_static STATIC ${SOURCE})
-add_executable(wwise-audio-converter ${SOURCE} src/main.cpp)
+add_executable(wwise-audio-tools ${SOURCE} src/main.cpp)
 
-target_link_libraries(wwise-audio -logg -lvorbis)
-target_link_libraries(wwise-audio_static -logg -lvorbis)
-target_link_libraries(wwise-audio-converter -logg -lvorbis)
+target_link_libraries(wwise-audio ogg vorbis)
+target_link_libraries(wwise-audio_static ogg vorbis)
+target_link_libraries(wwise-audio-tools ogg vorbis)
