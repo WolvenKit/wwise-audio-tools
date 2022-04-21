@@ -1,0 +1,6 @@
+[submodule "libogg"]
+	path = libogg
+	url = https://gitlab.xiph.org/xiph/ogg
+[submodule "libvorbis"]
+	path = libvorbis
+	url = https://gitlab.xiph.org/xiph/vorbis
