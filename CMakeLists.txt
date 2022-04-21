@@ -10,7 +10,11 @@ file(REMOVE_RECURSE "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-include_directories(include)
+include_directories(
+    include
+    libogg/include
+    libvorbis/include
+  )
 
 add_definitions(-DKS_STR_ENCODING_NONE)
 
