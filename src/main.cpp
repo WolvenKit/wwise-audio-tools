@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
 			if (file.path().extension() == ".wem") {
 				std::cout << "Coverting " << file.path() << "..." << std::endl;
 				std::string outpath = file.path().string().substr(0, file.path().string().find_last_of(".")) + ".ogg";
-				auto success = convert(file.path(), outpath);
+				auto success = convert(file.path().string(), outpath);
 				if (!success) {
 					std::cerr << "Failed to convert " << file.path() << std::endl;
 					return 1;
