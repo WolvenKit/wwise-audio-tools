@@ -42,7 +42,7 @@ add_executable(wwise-audio-tools ${SOURCE} src/main.cpp)
 
 target_link_libraries(wwise-audio ogg vorbis)
 target_link_libraries(wwise-audio_static ogg vorbis)
-target_link_libraries(wwise-audio-tools ogg vorbis)
+target_link_libraries(wwise-audio-tools ogg vorbis stdc++fs)
 
 if(Catch2_FOUND)
   add_executable(tests ${SOURCE} tests/test.cpp)
