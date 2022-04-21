@@ -14,9 +14,6 @@ jobs:
         with:
           submodules: true
 
-      - name: Install required libraries
-        run: sudo apt-get install -y libogg-dev libvorbis-dev
-
       - name: Install Catch2 for testing
         run : |
           git clone https://github.com/catchorg/Catch2.git
