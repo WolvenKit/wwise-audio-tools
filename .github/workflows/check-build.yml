@@ -29,3 +29,28 @@ jobs:
 
       #- name: Test with Catch2
       #  run: cd build/bin && ./tests
+
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      #- name: Install Catch2 for testing
+      #  run : |
+      #    git clone https://github.com/catchorg/Catch2.git
+      #    cd Catch2
+      #    cmake -Bbuild -H. -DBUILD_TESTING=OFF
+      #    sudo cmake --build build/ --target install
+
+      - name: Configure CMake
+        run: cmake -Bbuild
+
+      - name: Build
+        run: cmake --build build
+
+      #- name: Test with Catch2
+      #  run: cd build/bin && ./tests
