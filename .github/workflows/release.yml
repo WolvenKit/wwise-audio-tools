@@ -1,0 +1,71 @@
+name: "release"
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Configure CMake
+        run: cmake -Bbuild
+
+      - name: Build
+        run: cmake --build build
+        
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Linux Release
+          path: |
+            build/bin/wwise-audio-tools
+            build/lib/libwwise-audio.so
+            build/lib/libwwise-audio_static.so   
+
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Configure CMake
+        run: cmake -G "Visual Studio 17 2022" -B build
+
+      - name: Build
+        run: cmake --build build
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Windows Release
+          # For some reason the dynamic lib is in the bin directory
+          path: |
+            build/bin/Debug/wwise-audio-tools.exe
+            build/bin/Debug/wwise-audio.dll 
+            build/lib/Debug/wwise-audio_static.lib
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [linux, windows]
+
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          draft: true
+          generateReleaseNotes: true
+          artifacts: "*Release/*"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+     
