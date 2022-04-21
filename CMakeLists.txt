@@ -14,6 +14,7 @@ include_directories(
     include
     libogg/include
     libvorbis/include
+    ${CMAKE_CURRENT_BINARY_DIR}/libogg/include
   )
 
 add_definitions(-DKS_STR_ENCODING_NONE)
