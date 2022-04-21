@@ -6,7 +6,7 @@
 #include "revorb.h"
 #include "wwriff.h"
 
-extern "C" __attribute__((visibility("default"))) bool
+extern "C" bool
 ww2ogg(const std::string& indata, std::ostream &outdata,
        unsigned char codebooks_data[], bool inline_codebooks, bool full_setup,
        ForcePacketFormat force_packet_format) {

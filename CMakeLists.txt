@@ -7,7 +7,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 file(REMOVE_RECURSE "${CMAKE_BINARY_DIR}/lib")
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17 REQUIRED)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 include_directories(
@@ -42,7 +42,24 @@ add_executable(wwise-audio-tools ${SOURCE} src/main.cpp)
 
 target_link_libraries(wwise-audio ogg vorbis)
 target_link_libraries(wwise-audio_static ogg vorbis)
-target_link_libraries(wwise-audio-tools ogg vorbis stdc++fs)
+
+# Standard filesystem library needs additional linking options on older compilers
+# https://en.cppreference.com/w/cpp/filesystem#Notes
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.1")
+    target_link_libraries(wwise-audio-tools ogg vorbis stdc++fs)
+  else()
+    target_link_libraries(wwise-audio-tools ogg vorbis)
+  endif()
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.0")
+    target_link_libraries(wwise-audio-tools ogg vorbis c++fs)
+  else()
+    target_link_libraries(wwise-audio-tools ogg vorbis)
+  endif()
+else()
+  target_link_libraries(wwise-audio-tools ogg vorbis)
+endif()
 
 if(Catch2_FOUND)
   add_executable(tests ${SOURCE} tests/test.cpp)

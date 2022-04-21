@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
 			if (file.path().extension() == ".wem") {
 				std::cout << "Coverting " << file.path() << "..." << std::endl;
 				std::string outpath = file.path().string().substr(0, file.path().string().find_last_of(".")) + ".ogg";
-				auto success = convert(file.path(), outpath);
+				auto success = convert(file.path().string(), outpath);
 				if (!success) {
 					std::cerr << "Failed to convert " << file.path() << std::endl;
 					return 1;
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 			if (strcmp(argv[1], "wem") == 0) {
 				auto path = std::string(argv[2]);
 				
-				std::ifstream filein(path);
+				std::ifstream filein(path, std::ios::binary);
 				std::stringstream indata;
 				indata << filein.rdbuf();
 				std::string outpath = path.substr(0, path.find_last_of(".")) + ".ogg";
@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
 			} else if (strcmp(argv[1], "bnk") == 0) {
 				auto path = std::string(argv[2]);
 
-				std::ifstream ifs(path, std::ifstream::binary);
+				std::ifstream ifs(path, std::ios::binary);
 				if (!ifs) {
 					std::cout << "File does not exist!" << std::endl;
 					return 1;
