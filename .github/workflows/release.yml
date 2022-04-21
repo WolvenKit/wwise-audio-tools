@@ -27,7 +27,7 @@ jobs:
           path: |
             build/bin/wwise-audio-tools
             build/lib/libwwise-audio.so
-            build/lib/libwwise-audio_static.so   
+            build/lib/libwwise-audio_static.a   
 
   windows:
     runs-on: windows-latest
@@ -60,12 +60,14 @@ jobs:
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v2
+      - name: List stuff
+        run: ls -R
       - name: Release
         uses: ncipollo/release-action@v1
         with:
           draft: true
           generateReleaseNotes: true
-          artifacts: "*Release/*"
+          artifacts: "*Release/**/*"
           token: ${{ secrets.GITHUB_TOKEN }}
 
      
