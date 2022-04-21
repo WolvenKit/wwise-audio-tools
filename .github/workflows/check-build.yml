@@ -14,21 +14,18 @@ jobs:
         with:
           submodules: true
 
-      - name: Install Catch2 for testing
-        run : |
-          git clone https://github.com/catchorg/Catch2.git
-          cd Catch2
-          cmake -Bbuild -H. -DBUILD_TESTING=OFF
-          sudo cmake --build build/ --target install
-
-      - name: Configure build directory structure
-        run: mkdir -p build/bin
+      #- name: Install Catch2 for testing
+      #  run : |
+      #    git clone https://github.com/catchorg/Catch2.git
+      #    cd Catch2
+      #    cmake -Bbuild -H. -DBUILD_TESTING=OFF
+      #    sudo cmake --build build/ --target install
 
       - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build
+        run: cmake -Bbuild
 
       - name: Build
-        run: cmake --build ${{github.workspace}}/build
+        run: cmake --build build
 
-      - name: Test with Catch2
-        run: cd build/bin && ./tests
+      #- name: Test with Catch2
+      #  run: cd build/bin && ./tests
