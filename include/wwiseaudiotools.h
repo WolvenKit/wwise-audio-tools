@@ -1,3 +1,3 @@
 #include <string>
 
-extern "C" std::string wem_to_ogg(std::string indata);
+extern "C" std::string wem_to_ogg(const std::string& indata);
