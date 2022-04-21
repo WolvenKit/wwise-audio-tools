@@ -7,17 +7,25 @@
 #include "wwiseaudiotools.h"
 
 std::string convert(std::string path) {
-		std::ifstream filein(path);
+		std::ifstream filein(path, std::ios::binary);
 
-		std::stringstream indata;
-		indata << filein.rdbuf();
+		// reserve memory upfront
+		std::string indata;
+		filein.seekg(0, std::ios::end);
+		indata.reserve(filein.tellg());
+		filein.seekg(0, std::ios::beg);
 
-		std::string outdata = wem_to_ogg(indata.str());
+		indata.assign(
+			(std::istreambuf_iterator<char>(filein)),
+        	std::istreambuf_iterator<char>()
+		);
+
+		std::string outdata = wem_to_ogg(indata);
 		return outdata;
 }
 
 TEST_CASE( "Compare WEM converted with the Wwise Audio Tools to those converted with the individual standalone tools ", "[wwise-audio-tools]") {
-	std::ifstream ogg_in("testdata/test1.ogg");
+	std::ifstream ogg_in("testdata/test1.ogg", std::ios::binary);
 	std::stringstream ogg_in_s;
 	ogg_in_s << ogg_in.rdbuf();
 
