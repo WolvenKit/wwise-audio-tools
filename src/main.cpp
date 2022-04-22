@@ -35,17 +35,26 @@ void print_help(std::string filename = "wwise-audio-tools") {
             << std::endl;
 }
 
-std::vector<std::string> get_flags(int argc, char *argv[]) {
+std::pair<std::vector<std::string>, bool> get_flags(int argc, char *argv[]) {
   std::vector<std::string> flags;
   flags.reserve(argc);
+  bool flag_found = false;
   for (int i = 0; i < argc; i++) {
     std::string arg(argv[i]);
     // TODO: Change to starts_with with C++20
     if (arg.rfind("--", 0) == 0 && arg.length() > 2) {
+      flag_found = true;
       flags.push_back(arg.substr(2, arg.npos));
+    } else {
+      // If current arg is not a flag but comes after a flag...
+      if (flag_found) {
+        std::cerr << "Please place all flags after other args!" << std::endl;
+        print_help(argv[0]);
+        return {{}, true};
+      }
     }
   }
-  return flags;
+  return {flags, false};
 }
 
 bool has_flag(std::vector<std::string> flags, std::string wanted_flag) {
@@ -58,7 +67,11 @@ bool has_flag(std::vector<std::string> flags, std::string wanted_flag) {
 }
 
 int main(int argc, char *argv[]) {
-  std::vector<std::string> flags = get_flags(argc, argv);
+  pair<std::vector<std::string>, bool> flags_raw = get_flags(argc, argv);
+  if (flags_raw.second) { // If there's an error...
+    return 1;
+  }
+  std::vector<std::string> flags = flags_raw.first;
   if (has_flag(flags, "help")) {
     print_help();
     return 0;
