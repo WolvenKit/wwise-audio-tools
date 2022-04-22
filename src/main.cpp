@@ -26,7 +26,8 @@ bool convert(std::string indata, std::string outpath) {
   return true;
 }
 
-void print_help(std::string filename = "wwise-audio-tools") {
+void print_help(std::string extra_message = "", std::string filename = "wwise-audio-tools") {
+  std::cout << extra_message << std::endl << std::endl;
   std::cout << "Please use the command in one of the following ways:\n"
             << "  " << filename << " wem [input.wem]\n"
             << "  " << filename << " bnk [input.bnk]\n"
@@ -48,8 +49,7 @@ std::pair<std::vector<std::string>, bool> get_flags(int argc, char *argv[]) {
     } else {
       // If current arg is not a flag but comes after a flag...
       if (flag_found) {
-        std::cerr << "Please place all flags after other args!" << std::endl;
-        print_help(argv[0]);
+        print_help("Please place all flags after other args!", argv[0]);
         return {{}, true};
       }
     }
@@ -94,13 +94,11 @@ int main(int argc, char *argv[]) {
       }
     }
     if (!wemExists) {
-      std::cout << "No WEM files found in the current directory!" << std::endl;
-      print_help(argv[0]);
+      print_help("No WEM files found in the current directory!", argv[0]);
     }
   } else {
     if (argc < 3) {
-      std::cout << "Missing arguments!" << std::endl;
-      print_help(argv[0]);
+      print_help("Missing arguments!", argv[0]);
       return 1;
     } else {
       if (strcmp(argv[1], "wem") == 0) {
