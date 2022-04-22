@@ -29,6 +29,7 @@ set(SOURCE
     src/packed_codebooks.cpp
 		src/kaitaistream.cpp
 		src/bnk.cpp
+    src/wwt_bnk.cpp
   )
 
 find_package(Catch2 3)

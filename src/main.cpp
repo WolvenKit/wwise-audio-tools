@@ -12,6 +12,7 @@
 #include "ww2ogg.h"
 #include "wwiseaudiotools.h"
 #include "wwriff.h"
+#include "wwt_bnk.hpp"
 
 namespace fs = std::filesystem;
 bool convert(std::string indata, std::string outpath) {
@@ -109,13 +110,15 @@ int main(int argc, char *argv[]) {
       } else if (strcmp(argv[1], "bnk") == 0) {
         auto path = std::string(argv[2]);
 
-        std::ifstream ifs(path, std::ios::binary);
-        if (!ifs) {
-          std::cout << "File does not exist!" << std::endl;
-          return 1;
+        std::ifstream filein(path, std::ios::binary);
+        std::stringstream indata;
+        indata << filein.rdbuf();
+        if (has_flag(flags, "info")) {
+          std::cout << get_bnk_info(indata.str());
+          return 0;
         }
 
-        kaitai::kstream ks(&ifs);
+        kaitai::kstream ks(indata.str());
 
         bnk_t bnk(&ks);
         const auto data = bnk.data();
