@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
 
 #include "bnk.h"
 #include "kaitai/kaitaistream.h"
@@ -13,7 +14,6 @@
 #include "wwriff.h"
 
 namespace fs = std::filesystem;
-
 bool convert(std::string indata, std::string outpath) {
   std::string outdata = wem_to_ogg(indata);
   if (outdata == "") {
@@ -34,7 +34,34 @@ void print_help(std::string filename = "wwise-audio-tools") {
             << std::endl;
 }
 
+std::vector<std::string> get_flags(int argc, char *argv[]) {
+  std::vector<std::string> flags;
+  flags.reserve(argc);
+  for (int i = 0; i < argc; i++) {
+    std::string arg(argv[i]);
+    // TODO: Change to starts_with with C++20
+    if (arg.rfind("--", 0) == 0 && arg.length() > 2) {
+      flags.push_back(arg.substr(2, arg.npos));
+    }
+  }
+  return flags;
+}
+
+bool has_flag(std::vector<std::string> flags, std::string wanted_flag) {
+  for (auto flag : flags) {
+    if (flag == wanted_flag) {
+      return true;
+    }
+  }
+  return false;
+}
+
 int main(int argc, char *argv[]) {
+  std::vector<std::string> flags = get_flags(argc, argv);
+  if (has_flag(flags, "help")) {
+    print_help();
+    return 0;
+  }
   if (argc < 2) {
     // If there is no input file, convert all WEM files in the current directory
     bool wemExists = false;
@@ -62,13 +89,16 @@ int main(int argc, char *argv[]) {
       print_help(argv[0]);
       return 1;
     } else {
-      std::cout << argv[0] << std::endl;
-      if (strcmp(argv[0], "wem") == 0) {
+      if (strcmp(argv[1], "wem") == 0) {
         auto path = std::string(argv[2]);
 
         std::ifstream filein(path, std::ios::binary);
         std::stringstream indata;
         indata << filein.rdbuf();
+        if (has_flag(flags, "info")) {
+          std::cout << wem_info(indata.str());
+          return 0;
+        }
         std::string outpath = path.substr(0, path.find_last_of(".")) + ".ogg";
 
         auto success = convert(indata.str(), outpath);
@@ -76,7 +106,7 @@ int main(int argc, char *argv[]) {
           std::cerr << "Failed to convert " << path << std::endl;
           return 1;
         }
-      } else if (strcmp(argv[0], "bnk") == 0) {
+      } else if (strcmp(argv[1], "bnk") == 0) {
         auto path = std::string(argv[2]);
 
         std::ifstream ifs(path, std::ios::binary);
