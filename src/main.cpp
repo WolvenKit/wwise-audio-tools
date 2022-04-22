@@ -30,8 +30,8 @@ bool convert(std::string indata, std::string outpath) {
 void print_help(std::string extra_message = "", std::string filename = "wwise-audio-tools") {
   std::cout << rang::fg::red << extra_message << rang::fg::reset << std::endl << std::endl;
   std::cout << "Please use the command in one of the following ways:\n"
-            << "  " << filename << " wem [input.wem]\n"
-            << "  " << filename << " bnk [input.bnk]\n"
+            << "  " << filename << " wem [input.wem] (--info)\n"
+            << "  " << filename << " bnk [input.bnk] (--info) (--no-convert)\n"
             << "Or run it without arguments to find and convert all WEMs in "
                "the current directory."
             << std::endl;
