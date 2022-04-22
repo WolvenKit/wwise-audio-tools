@@ -123,17 +123,19 @@ int main(int argc, char *argv[]) {
         bnk_t bnk(&ks);
         const auto data = bnk.data();
 
+        std::vector<std::string> wems;
+        // Populate WEMs vector with data
+        bnk_extract(indata.str(), wems);
         // Create directory with name of bnk file, no extension
         fs::create_directory(path.substr(0, path.find_last_of(".")));
         int idx = 0;
-        for (auto audio_section : *data->data()->audio_sections()) {
-          std::string indata = audio_section->data();
+        for (auto wem : wems) {
           fs::path outdir(path.substr(0, path.find_last_of(".")));
           std::stringstream ss;
           ss << bnk.data_index()->data()->indices()->at(idx)->id();
           fs::path filename(ss.str() + ".ogg");
           fs::path outpath = outdir / filename;
-          auto success = convert(indata, outpath.string());
+          auto success = convert(wem, outpath.string());
           if (!success) {
             std::cerr << "Failed to convert " << outpath.string() << std::endl;
             // Don't return error because the rest may succeed

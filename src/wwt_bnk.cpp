@@ -1,4 +1,3 @@
-#include <sstream>
 #include <string>
 #include <vector>
 
@@ -19,9 +18,7 @@ extern "C" void bnk_extract(const std::string &indata, std::vector<std::string> 
   int idx = 0;
   // Loop through the audio sections and save the data to outdata
   for (auto audio_section : *data->data()->audio_sections()) {
-    std::stringstream ss;
-    ss << bnk.data_index()->data()->indices()->at(idx)->id();
-    outdata.push_back(ss.str());
+    outdata.push_back(audio_section->data());
     idx++;
   }
 }
