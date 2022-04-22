@@ -8,6 +8,7 @@
 
 #include "bnk.h"
 #include "kaitai/kaitaistream.h"
+#include "rang.hpp"
 #include "revorb.h"
 #include "ww2ogg.h"
 #include "wwiseaudiotools.h"
@@ -27,7 +28,7 @@ bool convert(std::string indata, std::string outpath) {
 }
 
 void print_help(std::string extra_message = "", std::string filename = "wwise-audio-tools") {
-  std::cout << extra_message << std::endl << std::endl;
+  std::cout << rang::fg::red << extra_message << rang::fg::reset << std::endl << std::endl;
   std::cout << "Please use the command in one of the following ways:\n"
             << "  " << filename << " wem [input.wem]\n"
             << "  " << filename << " bnk [input.bnk]\n"
