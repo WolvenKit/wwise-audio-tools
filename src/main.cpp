@@ -149,6 +149,7 @@ int main(int argc, char *argv[]) {
           fs::path filename(ss.str());
           fs::path outpath = outdir / filename;
           std::string file_extension = noconvert ? ".wem" : ".ogg";
+          std::cout << file_extension << std::endl;
           if (noconvert) {
             std::ofstream of(outpath.string() + file_extension);
             of << wem;
@@ -156,9 +157,9 @@ int main(int argc, char *argv[]) {
             idx++;
             continue;
           }
-          auto success = convert(wem, outpath.string());
+          auto success = convert(wem, outpath.string() + file_extension);
           if (!success) {
-            std::cerr << "Failed to convert " << outpath.string() << std::endl;
+            std::cerr << "Failed to convert " << outpath.string() + file_extension << std::endl;
             // Don't return error because the rest may succeed
           }
           idx++;
