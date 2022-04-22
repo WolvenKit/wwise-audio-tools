@@ -1,15 +1,15 @@
 #define __STDC_CONSTANT_MACROS
 #include <iostream>
+#include <string>
 
 #include "errors.h"
 #include "packed_codebooks.h"
 #include "revorb.h"
 #include "wwriff.h"
 
-extern "C" bool
-ww2ogg(const std::string& indata, std::ostream &outdata,
-       unsigned char codebooks_data[], bool inline_codebooks, bool full_setup,
-       ForcePacketFormat force_packet_format) {
+extern "C" bool ww2ogg(const std::string &indata, std::ostream &outdata,
+                       unsigned char codebooks_data[], bool inline_codebooks,
+                       bool full_setup, ForcePacketFormat force_packet_format) {
   try {
     std::string codebooks_data_s = string(
         reinterpret_cast<char *>(codebooks_data), packed_codebooks_bin_len);
@@ -23,4 +23,16 @@ ww2ogg(const std::string& indata, std::ostream &outdata,
     return false;
   }
   return true;
+}
+
+extern "C" std::string wem_info(const std::string &indata,
+                                unsigned char codebooks_data[],
+                                bool inline_codebooks, bool full_setup,
+                                ForcePacketFormat force_packet_format) {
+
+  std::string codebooks_data_s = string(
+      reinterpret_cast<char *>(codebooks_data), packed_codebooks_bin_len);
+  Wwise_RIFF_Vorbis ww(indata, codebooks_data_s, inline_codebooks, full_setup,
+                       force_packet_format);
+  return ww.get_info();
 }

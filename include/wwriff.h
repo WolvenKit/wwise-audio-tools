@@ -5,8 +5,8 @@
 #define __STDC_CONSTANT_MACROS
 #endif
 #include "Bit_stream.h"
-#include "errors.h"
 #include "cstdint"
+#include "errors.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -69,7 +69,7 @@ public:
                     bool inline_codebooks, bool full_setup,
                     ForcePacketFormat force_packet_format);
 
-  void print_info(void);
+  std::string get_info(void);
 
   void generate_ogg(ostream &os);
   void generate_ogg_header(Bit_oggstream &os, bool *&mode_blockflag,

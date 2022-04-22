@@ -4,10 +4,10 @@
 #include <iostream>
 #include <istream>
 
-#include "wwriff.h"
 #include "Bit_stream.h"
 #include "codebook.h"
 #include "errors.h"
+#include "wwriff.h"
 
 /* Modern 2 or 6 byte header */
 class Packet {
@@ -390,61 +390,63 @@ Wwise_RIFF_Vorbis::Wwise_RIFF_Vorbis(const string &indata,
   }
 }
 
-void Wwise_RIFF_Vorbis::print_info(void) {
+std::string Wwise_RIFF_Vorbis::get_info(void) {
+  std::stringstream info_ss;
   if (_little_endian) {
-    cout << "RIFF WAVE";
+    info_ss << "RIFF WAVE";
   } else {
-    cout << "RIFX WAVE";
+    info_ss << "RIFX WAVE";
   }
-  cout << " " << _channels << " channel";
+  info_ss << " " << _channels << " channel";
   if (_channels != 1)
-    cout << "s";
-  cout << " " << _sample_rate << " Hz " << _avg_bytes_per_second * 8 << " bps"
-       << endl;
-  cout << _sample_count << " samples" << endl;
+    info_ss << "s";
+  info_ss << " " << _sample_rate << " Hz " << _avg_bytes_per_second * 8
+          << " bps" << endl;
+  info_ss << _sample_count << " samples" << endl;
 
   if (0 != _loop_count) {
-    cout << "loop from " << _loop_start << " to " << _loop_end << endl;
+    info_ss << "loop from " << _loop_start << " to " << _loop_end << endl;
   }
 
   if (_old_packet_headers) {
-    cout << "- 8 byte (old) packet headers" << endl;
+    info_ss << "- 8 byte (old) packet headers" << endl;
   } else if (_no_granule) {
-    cout << "- 2 byte packet headers, no granule" << endl;
+    info_ss << "- 2 byte packet headers, no granule" << endl;
   } else {
-    cout << "- 6 byte packet headers" << endl;
+    info_ss << "- 6 byte packet headers" << endl;
   }
 
   if (_header_triad_present) {
-    cout << "- Vorbis header triad present" << endl;
+    info_ss << "- Vorbis header triad present" << endl;
   }
 
   if (_full_setup || _header_triad_present) {
-    cout << "- full setup header" << endl;
+    info_ss << "- full setup header" << endl;
   } else {
-    cout << "- stripped setup header" << endl;
+    info_ss << "- stripped setup header" << endl;
   }
 
   if (_inline_codebooks || _header_triad_present) {
-    cout << "- inline codebooks" << endl;
+    info_ss << "- inline codebooks" << endl;
   } else {
-    // cout << "- external codebooks (" << _codebooks_name << ")" << endl;
+    // info_ss << "- external codebooks (" << _codebooks_name << ")" << endl;
   }
 
   if (_mod_packets) {
-    cout << "- modified Vorbis packets" << endl;
+    info_ss << "- modified Vorbis packets" << endl;
   } else {
-    cout << "- standard Vorbis packets" << endl;
+    info_ss << "- standard Vorbis packets" << endl;
   }
 
 #if 0
     if (0 != _cue_count)
     {
-        cout << _cue_count << " cue point";
-        if (_cue_count != 1) cout << "s";
-        cout << endl;
+        info_ss << _cue_count << " cue point";
+        if (_cue_count != 1) info_ss << "s";
+        info_ss << endl;
     }
 #endif
+  return info_ss.str();
 }
 
 void Wwise_RIFF_Vorbis::generate_ogg_header(Bit_oggstream &os,
