@@ -133,8 +133,17 @@ int main(int argc, char *argv[]) {
           fs::path outdir(path.substr(0, path.find_last_of(".")));
           std::stringstream ss;
           ss << bnk.data_index()->data()->indices()->at(idx)->id();
-          fs::path filename(ss.str() + ".ogg");
+          bool noconvert = has_flag(flags, "no-convert");
+          fs::path filename(ss.str());
           fs::path outpath = outdir / filename;
+          std::string file_extension = noconvert ? ".wem" : ".ogg";
+          if (noconvert) {
+            std::ofstream of(outpath.string() + file_extension);
+            of << wem;
+            of.close();
+            idx++;
+            continue;
+          }
           auto success = convert(wem, outpath.string());
           if (!success) {
             std::cerr << "Failed to convert " << outpath.string() << std::endl;
