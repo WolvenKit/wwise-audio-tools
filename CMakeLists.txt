@@ -69,3 +69,7 @@ if(Catch2_FOUND)
   target_link_libraries(tests PRIVATE Catch2::Catch2WithMain ogg vorbis)
   file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 endif()
+
+# To install to the default location, destination directive is unnecessary
+# https://cmake.org/cmake/help/latest/command/install.html#installing-targets
+install(TARGETS wwtools)
