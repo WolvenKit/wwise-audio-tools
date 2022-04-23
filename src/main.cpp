@@ -34,6 +34,7 @@ void print_help(std::string extra_message = "", std::string filename = "wwise-au
   std::cout << "Please use the command in one of the following ways:\n"
             << "  " << filename << " wem [input.wem] (--info)\n"
             << "  " << filename << " bnk [input.bnk] (--info) (--no-convert)\n"
+            << "  " << filename << " cache [input.cache] (--info) (--no-convert-wem) (--no-convert-bnk)\n"
             << "Or run it without arguments to find and convert all WEMs in "
                "the current directory."
             << std::endl;
