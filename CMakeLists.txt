@@ -30,6 +30,8 @@ set(SOURCE
 		src/kaitaistream.cpp
 		src/bnk.cpp
     src/wwt_bnk.cpp
+    src/w3sc.cpp
+    src/wwt_w3sc.cpp
   )
 
 find_package(Catch2 3)
