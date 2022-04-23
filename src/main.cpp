@@ -119,7 +119,7 @@ int main(int argc, char *argv[]) {
         }
         std::string outpath = path.substr(0, path.find_last_of(".")) + ".ogg";
 
-        std::cout << "Extracting " << outpath + file_extension << "..." << std::endl;
+        std::cout << "Extracting " << outpath << "..." << std::endl;
         auto success = convert(indata.str(), outpath);
         if (!success) {
           std::cerr << "Failed to convert " << path << std::endl;
