@@ -12,13 +12,29 @@ seq:
   # The size of this changes based on the version declared previously
   # See the witcher3.bms QuickBMS script for more info
   - id: info_offset
-    type: u4
+    type:
+      switch-on: version
+      cases:
+        1: u4
+        _: u8
   - id: files
-    type: u4
+    type:
+      switch-on: version
+      cases:
+        1: u4
+        _: u8
   - id: names_offset
-    type: u4
+    type:
+      switch-on: version
+      cases:
+        1: u4
+        _: u8
   - id: names_size
-    type: u4
+    type:
+      switch-on: version
+      cases:
+        1: u4
+        _: u8
 instances:
   file_infos:
     pos: info_offset
@@ -29,11 +45,23 @@ types:
   file_info:
     seq:
       - id: name_offset
-        type: u4
+        type:
+          switch-on: _parent.version
+          cases:
+            1: u4
+            _: u8
       - id: offset
-        type: u4
+        type:
+          switch-on: _parent.version
+          cases:
+            1: u4
+            _: u8
       - id: size
-        type: u4
+        type:
+          switch-on: _parent.version
+          cases:
+            1: u4
+            _: u8
     instances:
       data:
         pos: offset

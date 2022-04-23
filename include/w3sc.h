@@ -53,16 +53,16 @@ public:
         std::string name();
 
     private:
-        uint32_t m_name_offset;
-        uint32_t m_offset;
-        uint32_t m_size;
+        uint64_t m_name_offset;
+        uint64_t m_offset;
+        uint64_t m_size;
         w3sc_t* m__root;
         w3sc_t* m__parent;
 
     public:
-        uint32_t name_offset() const { return m_name_offset; }
-        uint32_t offset() const { return m_offset; }
-        uint32_t size() const { return m_size; }
+        uint64_t name_offset() const { return m_name_offset; }
+        uint64_t offset() const { return m_offset; }
+        uint64_t size() const { return m_size; }
         w3sc_t* _root() const { return m__root; }
         w3sc_t* _parent() const { return m__parent; }
     };
@@ -78,10 +78,10 @@ private:
     std::string m_magic;
     uint32_t m_version;
     uint64_t m_dummy;
-    uint32_t m_info_offset;
-    uint32_t m_files;
-    uint32_t m_names_offset;
-    uint32_t m_names_size;
+    uint64_t m_info_offset;
+    uint64_t m_files;
+    uint64_t m_names_offset;
+    uint64_t m_names_size;
     w3sc_t* m__root;
     kaitai::kstruct* m__parent;
 
@@ -89,10 +89,10 @@ public:
     std::string magic() const { return m_magic; }
     uint32_t version() const { return m_version; }
     uint64_t dummy() const { return m_dummy; }
-    uint32_t info_offset() const { return m_info_offset; }
-    uint32_t files() const { return m_files; }
-    uint32_t names_offset() const { return m_names_offset; }
-    uint32_t names_size() const { return m_names_size; }
+    uint64_t info_offset() const { return m_info_offset; }
+    uint64_t files() const { return m_files; }
+    uint64_t names_offset() const { return m_names_offset; }
+    uint64_t names_size() const { return m_names_size; }
     w3sc_t* _root() const { return m__root; }
     kaitai::kstruct* _parent() const { return m__parent; }
 };

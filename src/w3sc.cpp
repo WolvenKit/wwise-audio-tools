@@ -24,10 +24,46 @@ void w3sc_t::_read() {
     }
     m_version = m__io->read_u4le();
     m_dummy = m__io->read_u8le();
-    m_info_offset = m__io->read_u4le();
-    m_files = m__io->read_u4le();
-    m_names_offset = m__io->read_u4le();
-    m_names_size = m__io->read_u4le();
+    switch (version()) {
+    case 1: {
+        m_info_offset = m__io->read_u4le();
+        break;
+    }
+    default: {
+        m_info_offset = m__io->read_u8le();
+        break;
+    }
+    }
+    switch (version()) {
+    case 1: {
+        m_files = m__io->read_u4le();
+        break;
+    }
+    default: {
+        m_files = m__io->read_u8le();
+        break;
+    }
+    }
+    switch (version()) {
+    case 1: {
+        m_names_offset = m__io->read_u4le();
+        break;
+    }
+    default: {
+        m_names_offset = m__io->read_u8le();
+        break;
+    }
+    }
+    switch (version()) {
+    case 1: {
+        m_names_size = m__io->read_u4le();
+        break;
+    }
+    default: {
+        m_names_size = m__io->read_u8le();
+        break;
+    }
+    }
 }
 
 w3sc_t::~w3sc_t() {
@@ -60,9 +96,36 @@ w3sc_t::file_info_t::file_info_t(kaitai::kstream* p__io, w3sc_t* p__parent, w3sc
 }
 
 void w3sc_t::file_info_t::_read() {
-    m_name_offset = m__io->read_u4le();
-    m_offset = m__io->read_u4le();
-    m_size = m__io->read_u4le();
+    switch (_parent()->version()) {
+    case 1: {
+        m_name_offset = m__io->read_u4le();
+        break;
+    }
+    default: {
+        m_name_offset = m__io->read_u8le();
+        break;
+    }
+    }
+    switch (_parent()->version()) {
+    case 1: {
+        m_offset = m__io->read_u4le();
+        break;
+    }
+    default: {
+        m_offset = m__io->read_u8le();
+        break;
+    }
+    }
+    switch (_parent()->version()) {
+    case 1: {
+        m_size = m__io->read_u4le();
+        break;
+    }
+    default: {
+        m_size = m__io->read_u8le();
+        break;
+    }
+    }
 }
 
 w3sc_t::file_info_t::~file_info_t() {
