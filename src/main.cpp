@@ -203,7 +203,7 @@ int main(int argc, char *argv[]) {
             if (file->name().find("music_") != std::string::npos ||
                 file->name().find("vo_") != std::string::npos ||
                 file->name().find("qu_") != std::string::npos ||
-								file->name().find("mutations_") != std::string::npos) {
+                file->name().find("mutations_") != std::string::npos) {
               continue;
             }
 
