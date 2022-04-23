@@ -7,7 +7,7 @@
 #include "revorb.h"
 #include "wwriff.h"
 
-extern "C" bool ww2ogg(const std::string &indata, std::ostream &outdata,
+bool ww2ogg(const std::string &indata, std::ostream &outdata,
                        unsigned char codebooks_data[], bool inline_codebooks,
                        bool full_setup, ForcePacketFormat force_packet_format) {
   try {
@@ -25,7 +25,7 @@ extern "C" bool ww2ogg(const std::string &indata, std::ostream &outdata,
   return true;
 }
 
-extern "C" std::string wem_info(const std::string &indata,
+std::string wem_info(const std::string &indata,
                                 unsigned char codebooks_data[],
                                 bool inline_codebooks, bool full_setup,
                                 ForcePacketFormat force_packet_format) {
