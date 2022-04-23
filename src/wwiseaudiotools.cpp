@@ -4,7 +4,7 @@
 #include "ww2ogg.h"
 #include "wwt_bnk.hpp"
 
-extern "C" std::string wem_to_ogg(const std::string& indata) {
+std::string wem_to_ogg(const std::string& indata) {
   std::stringstream wem_out;
   std::stringstream revorb_out;
 

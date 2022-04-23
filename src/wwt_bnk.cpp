@@ -5,7 +5,7 @@
 #include "kaitai/kaitaistream.h"
 #include "wwt_bnk.hpp"
 
-extern "C" void bnk_extract(const std::string &indata, std::vector<std::string> &outdata) {
+void bnk_extract(const std::string &indata, std::vector<std::string> &outdata) {
   // Create a Kaitai stream with the input data
   kaitai::kstream ks(indata);
 
@@ -23,7 +23,7 @@ extern "C" void bnk_extract(const std::string &indata, std::vector<std::string> 
   }
 }
 
-extern "C" std::string get_bnk_info(const std::string &indata) {
+std::string get_bnk_info(const std::string &indata) {
   // Create a Kaitai stream with the input data
   kaitai::kstream ks(indata);
 
