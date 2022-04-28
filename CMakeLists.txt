@@ -7,7 +7,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 file(REMOVE_RECURSE "${CMAKE_BINARY_DIR}/lib")
 
-set(CMAKE_CXX_STANDARD 17 REQUIRED)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 include_directories(
@@ -33,8 +33,6 @@ set(SOURCE
     src/w3sc.cpp
     src/wwt_w3sc.cpp
   )
-
-find_package(Catch2 3)
 
 add_subdirectory(libogg EXCLUDE_FROM_ALL)
 add_subdirectory(libvorbis EXCLUDE_FROM_ALL)
@@ -64,12 +62,36 @@ else()
   target_link_libraries(wwtools ogg vorbis)
 endif()
 
+# To install to the default location, destination directive is unnecessary
+# https://cmake.org/cmake/help/latest/command/install.html#installing-targets
+install(TARGETS wwtools)
+
+
+
+option(DOWNLOAD_CATCH2 "Download Catch2 framework if it won't be found locally" ON)
+
+find_package(Catch2 3)
+
+if(NOT Catch2_FOUND AND DOWNLOAD_CATCH2)
+  include(FetchContent)
+
+  FetchContent_Declare(
+    catch2
+    GIT_REPOSITORY https://github.com/catchorg/Catch2
+    GIT_TAG v3.0.0-preview5
+  )
+  
+  message("Catch2 v3 not found locally. Fetching it from the git repository...")
+  FetchContent_MakeAvailable(catch2)
+  set(FETCHCONTENT_UPDATES_DISCONNECTED_CATCH2 ON) # don't update
+
+  set(Catch2_FOUND TRUE)
+endif()
+
 if(Catch2_FOUND)
   add_executable(tests ${SOURCE} tests/test.cpp)
   target_link_libraries(tests PRIVATE Catch2::Catch2WithMain ogg vorbis)
   file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+else()
+  message("Catch2 v3 was not found and not dowloaded. Testing target won't be available.")
 endif()
-
-# To install to the default location, destination directive is unnecessary
-# https://cmake.org/cmake/help/latest/command/install.html#installing-targets
-install(TARGETS wwtools)
