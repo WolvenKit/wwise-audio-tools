@@ -31,8 +31,10 @@ bool convert(std::string indata, std::string outpath) {
 
 void print_help(std::string extra_message = "",
                 std::string filename = "wwtools") {
-  std::cout << rang::fg::red << extra_message << rang::fg::reset << std::endl
-            << std::endl;
+  if (!extra_message.empty()) {
+    std::cout << rang::fg::red << extra_message << rang::fg::reset << std::endl
+              << std::endl;
+  }
   std::cout
       << "Please use the command in one of the following ways:\n"
       << "  " << filename << " wem [input.wem] (--info)\n"
