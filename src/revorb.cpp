@@ -226,9 +226,5 @@ bool revorb(std::istream &indata, std::stringstream &outdata) {
   ogg_sync_clear(&sync_in);
   ogg_sync_clear(&sync_out);
 
-  if (g_failed) {
-    return false;
-  } else {
-    return true;
-  }
+  return !g_failed;
 }
