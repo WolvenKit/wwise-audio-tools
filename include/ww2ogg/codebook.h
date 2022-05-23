@@ -1,7 +1,7 @@
 #ifndef _CODEBOOK_H
 #define _CODEBOOK_H
 
-#include "Bit_stream.h"
+#include "bitstream.h"
 #include "errors.h"
 #include <cstdlib>
 #include <fstream>
@@ -50,6 +50,7 @@ unsigned int _book_maptype1_quantvals(unsigned int entries,
 
 } // namespace
 
+namespace ww2ogg {
 class codebook_library {
   char *codebook_data;
   long *codebook_offsets;
@@ -70,7 +71,7 @@ public:
 
   const char *get_codebook(int i) const {
     if (!codebook_data || !codebook_offsets) {
-      throw Parse_error_str("codebook library not loaded");
+      throw parse_error_str("codebook library not loaded");
     }
     if (i >= codebook_count - 1 || i < 0)
       return NULL;
@@ -79,17 +80,19 @@ public:
 
   long get_codebook_size(int i) const {
     if (!codebook_data || !codebook_offsets) {
-      throw Parse_error_str("codebook library not loaded");
+      throw parse_error_str("codebook library not loaded");
     }
     if (i >= codebook_count - 1 || i < 0)
       return -1;
     return codebook_offsets[i + 1] - codebook_offsets[i];
   }
 
-  void rebuild(int i, Bit_oggstream &bos);
+  void rebuild(int i, bitoggstream &bos);
 
-  void rebuild(Bit_stream &bis, unsigned long cb_size, Bit_oggstream &bos);
+  void rebuild(bitstream &bis, unsigned long cb_size, bitoggstream &bos);
 
-  void copy(Bit_stream &bis, Bit_oggstream &bos);
+  void copy(bitstream &bis, bitoggstream &bos);
 };
+} // namespace ww2ogg
+
 #endif

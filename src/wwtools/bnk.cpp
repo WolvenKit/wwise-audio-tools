@@ -1,10 +1,12 @@
 #include <string>
 #include <vector>
 
-#include "w3sc.h"
+#include "kaitai/structs/bnk.h"
 #include "kaitai/kaitaistream.h"
+#include "wwtools/bnk.hpp"
 
-/*extern "C" void bnk_extract(const std::string &indata, std::vector<std::string> &outdata) {
+namespace wwtools::bnk {
+void extract(const std::string &indata, std::vector<std::string> &outdata) {
   // Create a Kaitai stream with the input data
   kaitai::kstream ks(indata);
 
@@ -20,24 +22,26 @@
     outdata.push_back(audio_section->data());
     idx++;
   }
-}*/
+}
 
-std::string get_w3sc_info(const std::string &indata) {
+std::string get_info(const std::string &indata) {
   // Create a Kaitai stream with the input data
   kaitai::kstream ks(indata);
 
   // Create a BNK object from the stream
-	w3sc_t cache(&ks);
+  bnk_t bnk(&ks);
 
   // Add data from header
   std::stringstream data_ss;
-  data_ss << "Cache Version: " << cache.version() << std::endl;
+  data_ss << "Version: " << bnk.bank_header()->version() << std::endl;
+  data_ss << "Soundbank ID: " << bnk.bank_header()->id() << std::endl;
 
   // Add WEM indexes and count
-  data_ss << cache.files() << " embedded files:" << std::endl;
-  for (auto file_info : *cache.file_infos()) {
-    data_ss << "  " << file_info->name() << std::endl; 
+  data_ss << bnk.data_index()->data()->indices()->size() << " embedded WEM files:" << std::endl;
+  for (auto index : *bnk.data_index()->data()->indices()) {
+    data_ss << "  " << index->id() << std::endl; 
   }
 
   return data_ss.str();
+}
 }
