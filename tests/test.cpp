@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 
-#include "wwtools/wwtools.h"
+#include "wwtools/wwtools.hpp"
 
 std::string convert(std::string path) {
 		std::ifstream filein(path, std::ios::binary);

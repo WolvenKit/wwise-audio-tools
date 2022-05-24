@@ -1,8 +1,9 @@
 #include <string>
 
-#include "revorb/revorb.h"
+#include "revorb/revorb.hpp"
 #include "ww2ogg/ww2ogg.h"
 #include "wwtools/bnk.hpp"
+#include "wwtools/wwtools.hpp"
 
 namespace wwtools {
 std::string wem_to_ogg(const std::string& indata) {

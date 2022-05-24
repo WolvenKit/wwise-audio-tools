@@ -1,5 +1,5 @@
-#ifndef _WWRIFF_H
-#define _WWRIFF_H
+#ifndef WW2OGG_WWRIFF_H
+#define WW2OGG_WWRIFF_H
 
 #ifndef __STDC_CONSTANT_MACROS
 #define __STDC_CONSTANT_MACROS
@@ -77,4 +77,4 @@ public:
 };
 } // namespace ww2ogg
 
-#endif
+#endif // WW2OGG_WWRIFF_H

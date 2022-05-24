@@ -11,10 +11,10 @@
 #include "kaitai/structs/bnk.h"
 #include "kaitai/structs/w3sc.h"
 #include "kaitai/kaitaistream.h"
-#include "revorb/revorb.h"
+#include "revorb/revorb.hpp"
 #include "ww2ogg/ww2ogg.h"
 #include "ww2ogg/wwriff.h"
-#include "wwtools/wwtools.h"
+#include "wwtools/wwtools.hpp"
 #include "wwtools/bnk.hpp"
 #include "wwtools/w3sc.hpp"
 

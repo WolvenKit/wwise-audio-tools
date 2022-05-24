@@ -5,7 +5,6 @@
 #include "ww2ogg/errors.h"
 #include "ww2ogg/packed_codebooks.h"
 #include "ww2ogg/wwriff.h"
-#include "revorb/revorb.h"
 
 namespace ww2ogg {
 bool ww2ogg(const std::string &indata, std::ostream &outdata,

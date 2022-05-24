@@ -1,16 +1,16 @@
-#ifndef _CRC_H
-#define _CRC_H
+#ifndef WW2OGG_CRC_H
+#define WW2OGG_CRC_H
 
 #include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif // __cplusplus
 
 uint32_t checksum(unsigned char *data, int bytes);
 
 #ifdef __cplusplus
 }
-#endif
+#endif // __cplusplus
 
-#endif
+#endif // WW2OGG_CRC_H

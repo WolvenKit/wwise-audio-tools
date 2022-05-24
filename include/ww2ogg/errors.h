@@ -1,5 +1,5 @@
-#ifndef _ERRORS_H
-#define _ERRORS_H
+#ifndef WW2OGG_ERRORS_H
+#define WW2OGG_ERRORS_H
 
 #include <iostream>
 #include <string>
@@ -74,4 +74,4 @@ public:
 };
 } // namespace ww2ogg
 
-#endif
+#endif // WW2OGG_ERRORS_H

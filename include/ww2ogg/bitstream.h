@@ -1,5 +1,5 @@
-#ifndef _BIT_STREAM_H
-#define _BIT_STREAM_H
+#ifndef WW2OGG_BIT_STREAM_H
+#define WW2OGG_BIT_STREAM_H
 
 #ifndef __STDC_CONSTANT_MACROS
 #define __STDC_CONSTANT_MACROS
@@ -413,4 +413,4 @@ public:
 };
 } // namespace ww2ogg
 
-#endif // _BIT_STREAM_H
+#endif // WW2OGG_BIT_STREAM_H

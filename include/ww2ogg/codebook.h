@@ -1,5 +1,5 @@
-#ifndef _CODEBOOK_H
-#define _CODEBOOK_H
+#ifndef WW2OGG_CODEBOOK_H
+#define WW2OGG_CODEBOOK_H
 
 #include "bitstream.h"
 #include "errors.h"
@@ -95,4 +95,4 @@ public:
 };
 } // namespace ww2ogg
 
-#endif
+#endif // WW2OGG_CODEBOOH_H
