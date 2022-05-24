@@ -226,20 +226,18 @@ public:
      * since C++11) in older C++ implementations.
      */
     template<typename I>
-// check for C++11 support - https://stackoverflow.com/a/40512515
-#if __cplusplus >= 201103L || (defined(_MSC_VER) && _MSC_VER >= 1900)
-    // https://stackoverflow.com/a/27913885
-    typename std::enable_if<
-            std::is_integral<I>::value &&
-            // check if we don't have something too large like GCC's `__int128_t`
-            std::numeric_limits<I>::max() >= 0 &&
+    static std::string to_string(I val) {
+        // check for c++11 support
+        // https://stackoverflow.com/a/27913885
+        #if __cplusplus >= 201103L || (defined(_MSC_VER) && _MSC_VER >= 1900)
+        // check if we don't have something too large like GCC's `__int128_t`
+        static_assert(
+            std::is_integral<I>::value && 
+            std::numeric_limits<I>::max() >= 0 && 
             std::numeric_limits<I>::max() <= std::numeric_limits<uint64_t>::max(),
-            std::string
-    >::type
-#else
-    std::string
-#endif
-    static to_string(I val) {
+            "to_string() only works at best with unsigned 64-bit integers"
+        );
+        #endif
         // in theory, `digits10 + 3` would be enough (minus sign + leading digit
         // + null terminator), but let's add a little more to be safe
         char buf[std::numeric_limits<I>::digits10 + 5];
