@@ -4,7 +4,7 @@
 #ifndef __STDC_CONSTANT_MACROS
 #define __STDC_CONSTANT_MACROS
 #endif
-#include "Bit_stream.h"
+#include "bitstream.h"
 #include "cstdint"
 #include "errors.h"
 #include <fstream>
@@ -14,8 +14,7 @@
 
 #define VERSION "0.24"
 
-using namespace std;
-
+namespace ww2ogg {
 enum ForcePacketFormat {
   kNoForcePacketFormat,
   kForceModPackets,
@@ -23,8 +22,8 @@ enum ForcePacketFormat {
 };
 
 class Wwise_RIFF_Vorbis {
-  string _codebooks_data;
-  stringstream _indata;
+  std::string _codebooks_data;
+  std::stringstream _indata;
   long _file_size;
 
   bool _little_endian;
@@ -65,16 +64,17 @@ class Wwise_RIFF_Vorbis {
   uint32_t (*_read_32)(std::istream &is);
 
 public:
-  Wwise_RIFF_Vorbis(const string &indata, const string &_codebooks_data,
+  Wwise_RIFF_Vorbis(const std::string &indata, const std::string &_codebooks_data,
                     bool inline_codebooks, bool full_setup,
                     ForcePacketFormat force_packet_format);
 
   std::string get_info(void);
 
-  void generate_ogg(ostream &os);
-  void generate_ogg_header(Bit_oggstream &os, bool *&mode_blockflag,
+  void generate_ogg(std::ostream &os);
+  void generate_ogg_header(bitoggstream &os, bool *&mode_blockflag,
                            int &mode_bits);
-  void generate_ogg_header_with_triad(Bit_oggstream &os);
+  void generate_ogg_header_with_triad(bitoggstream &os);
 };
+} // namespace ww2ogg
 
 #endif

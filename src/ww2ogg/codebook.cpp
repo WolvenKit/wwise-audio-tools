@@ -1,8 +1,9 @@
 #define __STDC_CONSTANT_MACROS
 #include <sstream>
 
-#include "codebook.h"
+#include "ww2ogg/codebook.h"
 
+namespace ww2ogg {
 codebook_library::codebook_library(void)
     : codebook_data(NULL), codebook_offsets(NULL), codebook_count(0) {}
 
@@ -30,7 +31,7 @@ codebook_library::codebook_library(std::string indata)
   }
 }
 
-void codebook_library::rebuild(int i, Bit_oggstream &bos) {
+void codebook_library::rebuild(int i, bitoggstream &bos) {
   const char *cb = get_codebook(i);
   unsigned long cb_size;
 
@@ -38,20 +39,20 @@ void codebook_library::rebuild(int i, Bit_oggstream &bos) {
     long signed_cb_size = get_codebook_size(i);
 
     if (!cb || -1 == signed_cb_size)
-      throw Invalid_id(i);
+      throw invalid_id(i);
 
     cb_size = signed_cb_size;
   }
 
   array_streambuf asb(cb, cb_size);
   istream is(&asb);
-  Bit_stream bis(is);
+  bitstream bis(is);
 
   rebuild(bis, cb_size, bos);
 }
 
 /* cb_size == 0 to not check size (for an inline bitstream) */
-void codebook_library::copy(Bit_stream &bis, Bit_oggstream &bos) {
+void codebook_library::copy(bitstream &bis, bitoggstream &bos) {
   /* IN: 24 bit identifier, 16 bit dimensions, 24 bit entry count */
 
   Bit_uint<24> id;
@@ -61,7 +62,7 @@ void codebook_library::copy(Bit_stream &bis, Bit_oggstream &bos) {
   bis >> id >> dimensions >> entries;
 
   if (0x564342 != id) {
-    throw Parse_error_str("invalid codebook identifier");
+    throw parse_error_str("invalid codebook identifier");
   }
 
   // cout << "Codebook with " << dimensions << " dimensions, " << entries << "
@@ -93,7 +94,7 @@ void codebook_library::copy(Bit_stream &bis, Bit_oggstream &bos) {
       current_entry += number;
     }
     if (current_entry > entries)
-      throw Parse_error_str("current_entry out of range");
+      throw parse_error_str("current_entry out of range");
   } else {
     /* IN/OUT: 1 bit sparse flag */
     Bit_uint<1> sparse;
@@ -160,17 +161,17 @@ void codebook_library::copy(Bit_stream &bis, Bit_oggstream &bos) {
       bos << val;
     }
   } else if (2 == lookup_type) {
-    throw Parse_error_str("didn't expect lookup type 2");
+    throw parse_error_str("didn't expect lookup type 2");
   } else {
-    throw Parse_error_str("invalid lookup type");
+    throw parse_error_str("invalid lookup type");
   }
 
   // cout << "total bits read = " << bis.get_total_bits_read() << endl;
 }
 
 /* cb_size == 0 to not check size (for an inline bitstream) */
-void codebook_library::rebuild(Bit_stream &bis, unsigned long cb_size,
-                               Bit_oggstream &bos) {
+void codebook_library::rebuild(bitstream &bis, unsigned long cb_size,
+                               bitoggstream &bos) {
   /* IN: 4 bit dimensions, 14 bit entry count */
 
   Bit_uint<4> dimensions;
@@ -209,7 +210,7 @@ void codebook_library::rebuild(Bit_stream &bis, unsigned long cb_size,
       current_entry += number;
     }
     if (current_entry > entries)
-      throw Parse_error_str("current_entry out of range");
+      throw parse_error_str("current_entry out of range");
   } else {
     /* IN: 3 bit codeword length length, 1 bit sparse flag */
     Bit_uint<3> codeword_length_length;
@@ -219,7 +220,7 @@ void codebook_library::rebuild(Bit_stream &bis, unsigned long cb_size,
     // cout << "Unordered, " << codeword_length_length << " bit lengths, ";
 
     if (0 == codeword_length_length || 5 < codeword_length_length) {
-      throw Parse_error_str("nonsense codeword length");
+      throw parse_error_str("nonsense codeword length");
     }
 
     /* OUT: 1 bit sparse flag */
@@ -285,9 +286,9 @@ void codebook_library::rebuild(Bit_stream &bis, unsigned long cb_size,
       bos << val;
     }
   } else if (2 == lookup_type) {
-    throw Parse_error_str("didn't expect lookup type 2");
+    throw parse_error_str("didn't expect lookup type 2");
   } else {
-    throw Parse_error_str("invalid lookup type");
+    throw parse_error_str("invalid lookup type");
   }
 
   // cout << "total bits read = " << bis.get_total_bits_read() << endl;
@@ -296,6 +297,7 @@ void codebook_library::rebuild(Bit_stream &bis, unsigned long cb_size,
   /* note: if all bits are used in the last byte there will be one extra 0 byte
    */
   if (0 != cb_size && bis.get_total_bits_read() / 8 + 1 != cb_size) {
-    throw Size_mismatch(cb_size, bis.get_total_bits_read() / 8 + 1);
+    throw size_mismatch(cb_size, bis.get_total_bits_read() / 8 + 1);
   }
+}
 }

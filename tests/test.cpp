@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 
-#include "wwiseaudiotools.h"
+#include "wwtools/wwtools.h"
 
 std::string convert(std::string path) {
 		std::ifstream filein(path, std::ios::binary);
@@ -20,7 +20,7 @@ std::string convert(std::string path) {
         	std::istreambuf_iterator<char>()
 		);
 
-		std::string outdata = wem_to_ogg(indata);
+		std::string outdata = wwtools::wem_to_ogg(indata);
 		return outdata;
 }
 

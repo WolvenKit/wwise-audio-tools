@@ -143,8 +143,9 @@ void write_16_be(std::ostream &os, uint16_t v) {
 
 } // namespace
 
+namespace ww2ogg {
 // using an istream, pull off individual bits with get_bit (LSB first)
-class Bit_stream {
+class bitstream {
   std::istream &is;
 
   unsigned char bit_buffer;
@@ -155,7 +156,7 @@ public:
   class Weird_char_size {};
   class Out_of_bits {};
 
-  Bit_stream(std::istream &_is)
+  bitstream(std::istream &_is)
       : is(_is), bit_buffer(0), bits_left(0), total_bits_read(0) {
     if (std::numeric_limits<unsigned char>::digits != 8)
       throw Weird_char_size();
@@ -177,7 +178,7 @@ public:
   unsigned long get_total_bits_read(void) const { return total_bits_read; }
 };
 
-class Bit_oggstream {
+class bitoggstream {
   std::ostream &os;
 
   unsigned char bit_buffer;
@@ -195,7 +196,7 @@ class Bit_oggstream {
 public:
   class Weird_char_size {};
 
-  Bit_oggstream(std::ostream &_os)
+  bitoggstream(std::ostream &_os)
       : os(_os), bit_buffer(0), bits_stored(0), payload_bytes(0), first(true),
         continued(false), granule(0), seqno(0) {
     if (std::numeric_limits<unsigned char>::digits != 8)
@@ -217,7 +218,7 @@ public:
   void flush_bits(void) {
     if (bits_stored != 0) {
       if (payload_bytes == segment_size * max_segments) {
-        throw Parse_error_str("ran out of space in an Ogg packet");
+        throw parse_error_str("ran out of space in an Ogg packet");
         flush_page(true);
       }
 
@@ -290,11 +291,11 @@ public:
     }
   }
 
-  ~Bit_oggstream() { flush_page(); }
+  ~bitoggstream() { flush_page(); }
 };
 
 // integer of a certain number of bits, to allow reading just that many
-// bits from the Bit_stream
+// bits from the bitstream
 template <unsigned int BIT_SIZE> class Bit_uint {
   unsigned int total;
 
@@ -325,7 +326,7 @@ public:
 
   operator unsigned int() const { return total; }
 
-  friend Bit_stream &operator>>(Bit_stream &bstream, Bit_uint &bui) {
+  friend bitstream &operator>>(bitstream &bstream, Bit_uint &bui) {
     bui.total = 0;
     for (unsigned int i = 0; i < BIT_SIZE; i++) {
       if (bstream.get_bit())
@@ -334,7 +335,7 @@ public:
     return bstream;
   }
 
-  friend Bit_oggstream &operator<<(Bit_oggstream &bstream,
+  friend bitoggstream &operator<<(bitoggstream &bstream,
                                    const Bit_uint &bui) {
     for (unsigned int i = 0; i < BIT_SIZE; i++) {
       bstream.put_bit((bui.total & (1U << i)) != 0);
@@ -344,7 +345,7 @@ public:
 };
 
 // integer of a run-time specified number of bits
-// bits from the Bit_stream
+// bits from the bitstream
 class Bit_uintv {
   unsigned int size;
   unsigned int total;
@@ -376,7 +377,7 @@ public:
 
   operator unsigned int() const { return total; }
 
-  friend Bit_stream &operator>>(Bit_stream &bstream, Bit_uintv &bui) {
+  friend bitstream &operator>>(bitstream &bstream, Bit_uintv &bui) {
     bui.total = 0;
     for (unsigned int i = 0; i < bui.size; i++) {
       if (bstream.get_bit())
@@ -385,7 +386,7 @@ public:
     return bstream;
   }
 
-  friend Bit_oggstream &operator<<(Bit_oggstream &bstream,
+  friend bitoggstream &operator<<(bitoggstream &bstream,
                                    const Bit_uintv &bui) {
     for (unsigned int i = 0; i < bui.size; i++) {
       bstream.put_bit((bui.total & (1U << i)) != 0);
@@ -410,5 +411,6 @@ public:
   }
   ~array_streambuf() { delete[] arr; }
 };
+} // namespace ww2ogg
 
 #endif // _BIT_STREAM_H

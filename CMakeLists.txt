@@ -20,18 +20,18 @@ include_directories(
 add_definitions(-DKS_STR_ENCODING_NONE)
 
 set(SOURCE
-    src/codebook.cpp
-    src/crc.c
-    src/revorb.cpp
-    src/ww2ogg.cpp
-    src/wwriff.cpp
-    src/wwiseaudiotools.cpp
-    src/packed_codebooks.cpp
-		src/kaitaistream.cpp
-		src/bnk.cpp
-    src/wwt_bnk.cpp
-    src/w3sc.cpp
-    src/wwt_w3sc.cpp
+    src/ww2ogg/codebook.cpp
+    src/ww2ogg/crc.c
+    src/ww2ogg/packed_codebooks.cpp
+    src/ww2ogg/ww2ogg.cpp
+    src/ww2ogg/wwriff.cpp
+    src/revorb/revorb.cpp
+    src/wwtools/wwtools.cpp
+    src/wwtools/w3sc.cpp
+    src/wwtools/bnk.cpp
+		src/kaitai/kaitaistream.cpp
+		src/kaitai/bnk.cpp
+    src/kaitai/w3sc.cpp
   )
 
 add_subdirectory(libogg EXCLUDE_FROM_ALL)

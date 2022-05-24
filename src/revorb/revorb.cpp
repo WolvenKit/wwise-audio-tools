@@ -36,6 +36,7 @@
 
 bool g_failed;
 
+namespace revorb {
 bool copy_headers(std::stringstream &fi, ogg_sync_state *si,
                   ogg_stream_state *is, std::stringstream &outdata,
                   ogg_sync_state *so, ogg_stream_state *os, vorbis_info *vi) {
@@ -228,3 +229,4 @@ bool revorb(std::istream &indata, std::stringstream &outdata) {
 
   return !g_failed;
 }
+} // namespace revorb

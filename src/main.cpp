@@ -4,22 +4,23 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <utility>
 #include <vector>
 
-#include "bnk.h"
+#include "util/rang.hpp"
+#include "kaitai/structs/bnk.h"
+#include "kaitai/structs/w3sc.h"
 #include "kaitai/kaitaistream.h"
-#include "rang.hpp"
-#include "revorb.h"
-#include "w3sc.h"
-#include "ww2ogg.h"
-#include "wwiseaudiotools.h"
-#include "wwriff.h"
-#include "wwt_bnk.hpp"
-#include "wwt_w3sc.hpp"
+#include "revorb/revorb.h"
+#include "ww2ogg/ww2ogg.h"
+#include "ww2ogg/wwriff.h"
+#include "wwtools/wwtools.h"
+#include "wwtools/bnk.hpp"
+#include "wwtools/w3sc.hpp"
 
 namespace fs = std::filesystem;
 bool convert(std::string indata, std::string outpath) {
-  std::string outdata = wem_to_ogg(indata);
+  std::string outdata = wwtools::wem_to_ogg(indata);
   if (outdata == "") {
     return false;
   }
@@ -78,7 +79,7 @@ bool has_flag(std::vector<std::string> flags, std::string wanted_flag) {
 
 int main(int argc, char *argv[]) {
   // TODO: Add more descriptive comments regarding as much as possible
-  pair<std::vector<std::string>, bool> flags_raw = get_flags(argc, argv);
+  std::pair<std::vector<std::string>, bool> flags_raw = get_flags(argc, argv);
   if (flags_raw.second) { // If there's an error...
     return 1;
   }
@@ -120,7 +121,7 @@ int main(int argc, char *argv[]) {
         std::stringstream indata;
         indata << filein.rdbuf();
         if (has_flag(flags, "info")) {
-          std::cout << wem_info(indata.str());
+          std::cout << ww2ogg::wem_info(indata.str());
           return 0;
         }
         std::string outpath = path.substr(0, path.find_last_of(".")) + ".ogg";
@@ -138,7 +139,7 @@ int main(int argc, char *argv[]) {
         std::stringstream indata;
         indata << filein.rdbuf();
         if (has_flag(flags, "info")) {
-          std::cout << get_bnk_info(indata.str());
+          std::cout << wwtools::bnk::get_info(indata.str());
           return 0;
         }
 
@@ -148,7 +149,7 @@ int main(int argc, char *argv[]) {
 
         std::vector<std::string> wems;
         // Populate WEMs vector with data
-        bnk_extract(indata.str(), wems);
+        wwtools::bnk::extract(indata.str(), wems);
         // Create directory with name of bnk file, no extension
         fs::create_directory(path.substr(0, path.find_last_of(".")));
         int idx = 0;
@@ -185,7 +186,7 @@ int main(int argc, char *argv[]) {
         std::stringstream indata;
         indata << filein.rdbuf();
         if (has_flag(flags, "info")) {
-          std::cout << get_w3sc_info(indata.str());
+          std::cout << wwtools::w3sc::get_info(indata.str());
           return 0;
         }
 
@@ -213,7 +214,7 @@ int main(int argc, char *argv[]) {
             bnk_t bnk(&bnk_ks);
             std::vector<std::string> wems;
             // Populate WEMs vector with data
-            bnk_extract(file->data(), wems);
+            wwtools::bnk::extract(file->data(), wems);
             // Create directory with name of bnk file, no extension
             fs::create_directory(
                 file->name().substr(0, file->name().find_last_of(".")));
