@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <ostream>
 #include <sstream>
 #include <string>
@@ -52,26 +53,26 @@ std::string get_footer_infos(const std::vector<std::pair<std::string, std::strin
     name_offsets[i] = name_offsets[i - 1] + files[i].first.size() + 1;
   }
   for (size_t i = 0; i < files.size(); i++) {
-    ss << data_offsets[i] << name_offsets[i] << files[i].second.size();
+    wwtools::util::write::little_endian<uint32_t>(name_offsets[i], ss);
+    wwtools::util::write::little_endian<uint32_t>(data_offsets[i], ss);
+    wwtools::util::write::little_endian<uint32_t>(files[i].second.size(), ss);
   }
 
   return ss.str();
 }
 
 // https://github.com/ADawesomeguy/witcher-3-sound-editing-tools/blob/82365dc8c7721ce6cc47cd57fabf065d805a5f74/create_sounds_cache.py#L19-L26
-std::string calculate_checksum(std::string data) {
-  const auto FNV_64_PRIME = 0x100000001b3;
-  const auto FNV1_64_INIT = 0xcbf29ce484222325;
+uint64_t calculate_checksum(std::string data) {
+  const uint64_t FNV_64_PRIME = 0x100000001b3;
+  const uint64_t FNV1_64_INIT = 0xcbf29ce484222325;
 
-  auto ret = FNV1_64_INIT;
-  for (const char &c : data) {
-    ret ^= c;
+  uint64_t ret = FNV1_64_INIT;
+  for (const uint8_t &byte : data) {
+    ret ^= byte;
     ret *= FNV_64_PRIME;
   }
   
-  std::stringstream ss;
-  ss << ret;
-  return ss.str();
+  return ret;
 }
 
 namespace wwtools::w3sc {
@@ -141,7 +142,6 @@ void create(const std::vector<std::pair<std::string, std::string>>& files, std::
 
   // checksum and stuff
   os.seekp(40);
-  std::string ck_calc_str = calculate_checksum(get_footer_names(files) + get_footer_infos(files));
-  wwtools::util::write::little_endian<uint64_t>(static_cast<uint64_t>(std::stoull(ck_calc_str)), os);
+  wwtools::util::write::little_endian<uint64_t>(calculate_checksum(get_footer_names(files) + get_footer_infos(files)), os);
 }
 }
