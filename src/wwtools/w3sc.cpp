@@ -142,9 +142,8 @@ void create(const std::vector<std::pair<std::string, std::string>>& files, std::
   }
 
   // checksum and stuff
-  //os.seekp(40);
-  //wwtools::util::write::little_endian<uint64_t>(std::stoull(calculate_checksum(get_footer_names(files) + get_footer_infos(files)).substr(0, 4)), os);
-  //wwtools::util::write::little_endian<uint64_t>(std::stoull(calculate_checksum(get_footer_names(files) + get_footer_infos(files)).substr(3, 4)), os);
-  //wwtools::util::write::raw_data(calculate_checksum(get_footer_names(files) + get_footer_infos(files)).c_str(), 8, os);
+  os.seekp(40);
+  std::string ck_calc_str = calculate_checksum(get_footer_names(files) + get_footer_infos(files));
+  wwtools::util::write::little_endian<uint64_t>(static_cast<uint64_t>(std::stoull(test)), os);
 }
 }
