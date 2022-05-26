@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <stdint.h>
 #include <string>
 #include <utility>
 #include <vector>
@@ -17,6 +18,7 @@
 #include "wwtools/wwtools.hpp"
 #include "wwtools/bnk.hpp"
 #include "wwtools/w3sc.hpp"
+#include "wwtools/util/write.hpp"
 
 namespace fs = std::filesystem;
 bool convert(std::string indata, std::string outpath) {
@@ -77,7 +79,23 @@ bool has_flag(std::vector<std::string> flags, std::string wanted_flag) {
   return false;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char **argv) {
+  if (argc < 2) return 1;
+  std::ofstream out("C:\\Users\\abheekd\\Desktop\\Development\\wwise-audio-tools\\build\\bin\\soundspc.cache", std::ios::binary);
+  std::vector<std::pair<std::string, std::string>> v;
+  for (const auto &file : fs::directory_iterator(argv[1])) {
+    std::ifstream ifs(file.path().string(), std::ios::binary);
+    std::stringstream ss;
+    ss << ifs.rdbuf();
+    v.push_back({file.path().filename().string(), ss.str()});
+  }
+
+  //wwtools::w3sc::create({{"01010101.wem", "weirddatastuffwowsocool"}}, out);
+  //wwtools::w3sc::create({{"01010101.wem", "weirddatastuffwowsocool"}}, std::cout);
+  // wwtools::w3sc::create({{"test01.wem", "data1"}, {"test012.wem", "data2"}}, out);
+  wwtools::w3sc::create(v, out);
+}
+/*int main(int argc, char *argv[]) {
   // TODO: Add more descriptive comments regarding as much as possible
   std::pair<std::vector<std::string>, bool> flags_raw = get_flags(argc, argv);
   if (flags_raw.second) { // If there's an error...
@@ -280,4 +298,4 @@ int main(int argc, char *argv[]) {
       }
     }
   }
-}
+}*/
