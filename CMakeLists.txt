@@ -37,36 +37,38 @@ set(SOURCE
 add_subdirectory(libogg EXCLUDE_FROM_ALL)
 add_subdirectory(libvorbis EXCLUDE_FROM_ALL)
 
-add_library(wwise-audio SHARED ${SOURCE})
-add_library(wwise-audio_static STATIC ${SOURCE})
-add_executable(wwtools ${SOURCE} src/main.cpp)
+add_library(wwtools-shared-lib SHARED ${SOURCE})
+add_library(wwtools-static-lib STATIC ${SOURCE})
+add_executable(wwtools-bin ${SOURCE} src/main.cpp)
 
-target_link_libraries(wwise-audio ogg vorbis)
-target_link_libraries(wwise-audio_static ogg vorbis)
+target_link_libraries(wwtools-shared-lib ogg vorbis)
+target_link_libraries(wwtools-static-lib ogg vorbis)
+
+set_target_properties(wwtools-bin PROPERTIES OUTPUT_NAME wwtools)
+set_target_properties(wwtools-shared-lib PROPERTIES OUTPUT_NAME wwtools)
+set_target_properties(wwtools-static-lib PROPERTIES OUTPUT_NAME wwtools)
 
 # Standard filesystem library needs additional linking options on older compilers
 # https://en.cppreference.com/w/cpp/filesystem#Notes
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.1")
-    target_link_libraries(wwtools ogg vorbis stdc++fs)
+    target_link_libraries(wwtools-bin ogg vorbis stdc++fs)
   else()
-    target_link_libraries(wwtools ogg vorbis)
+    target_link_libraries(wwtools-bin ogg vorbis)
   endif()
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.0")
-    target_link_libraries(wwtools ogg vorbis c++fs)
+    target_link_libraries(wwtools-bin ogg vorbis c++fs)
   else()
-    target_link_libraries(wwtools ogg vorbis)
+    target_link_libraries(wwtools-bin ogg vorbis)
   endif()
 else()
-  target_link_libraries(wwtools ogg vorbis)
+  target_link_libraries(wwtools-bin ogg vorbis)
 endif()
 
 # To install to the default location, destination directive is unnecessary
 # https://cmake.org/cmake/help/latest/command/install.html#installing-targets
-install(TARGETS wwtools)
-
-
+install(TARGETS wwtools-bin)
 
 option(DOWNLOAD_CATCH2 "Download Catch2 framework if it won't be found locally" ON)
 
