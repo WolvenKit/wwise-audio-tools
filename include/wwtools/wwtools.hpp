@@ -1,3 +1,13 @@
+/**
+ * @file wwtools.hpp
+ * @author Abheek Dhawan (abheekd at protonmail dot com)
+ * @brief helper functions for other Wwise file actions
+ * @date 2022-05-26
+ * 
+ * @copyright Copyright (c) 2022 RED Modding Tools
+ * 
+ */
+
 #ifndef WWTOOLS_WWTOOLS_HPP
 #define WWTOOLS_WWTOOLS_HPP
 

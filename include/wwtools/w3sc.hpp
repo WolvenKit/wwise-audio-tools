@@ -1,3 +1,13 @@
+/**
+ * @file w3sc.hpp
+ * @author Abheek Dhawan (abheekd at protonmail dot com)
+ * @brief works with sound cache files from The Witcher 3
+ * @date 2022-05-26
+ * 
+ * @copyright Copyright (c) 2022 RED Modding Tools
+ * 
+ */
+
 #ifndef WWTOOLS_W3SC_HPP
 #define WWTOOLS_W3SC_HPP
 

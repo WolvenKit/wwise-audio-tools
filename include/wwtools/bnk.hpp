@@ -1,3 +1,13 @@
+/**
+ * @file bnk.hpp
+ * @author Abheek Dhawan (abheekd at protonmail dot com)
+ * @brief works with Wwise Soundbank files
+ * @date 2022-05-26
+ * 
+ * @copyright Copyright (c) 2022 RED Modding Tools
+ * 
+ */
+
 #ifndef WWTOOLS_BNK_HPP
 #define WWTOOLS_BNK_HPP
 
