@@ -8,6 +8,12 @@
 #include "kaitai/kaitaistream.h"
 
 namespace wwtools::w3sc {
+/**
+ * @brief get the info string
+ * 
+ * @param indata std::string with the file data
+ * @return a printable info string
+ */
 std::string get_info(const std::string &indata);
 } // namespace wwtools::w3sc
 
