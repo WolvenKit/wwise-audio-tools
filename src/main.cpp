@@ -43,7 +43,7 @@ void print_help(std::string extra_message = "",
       << "  " << filename << " wem [input.wem] (--info)\n"
       << "  " << filename << " bnk [input.bnk] (--info) (--no-convert)\n"
       << "  " << filename
-      << " cache [input.cache] (--info) (--no-convert-wem) (--no-convert-bnk)\n"
+      << " cache [read|write] [input.cache] (--info) (--no-convert-wem) (--no-convert-bnk)\n"
       << "Or run it without arguments to find and convert all WEMs in "
          "the current directory."
       << std::endl;
@@ -79,23 +79,7 @@ bool has_flag(std::vector<std::string> flags, std::string wanted_flag) {
   return false;
 }
 
-int main(int argc, char **argv) {
-  if (argc < 2) return 1;
-  std::ofstream out("C:\\Users\\abheekd\\Desktop\\Development\\wwise-audio-tools\\build\\bin\\soundspc.cache", std::ios::binary);
-  std::vector<std::pair<std::string, std::string>> v;
-  for (const auto &file : fs::directory_iterator(argv[1])) {
-    std::ifstream ifs(file.path().string(), std::ios::binary);
-    std::stringstream ss;
-    ss << ifs.rdbuf();
-    v.push_back({file.path().filename().string(), ss.str()});
-  }
-
-  //wwtools::w3sc::create({{"01010101.wem", "weirddatastuffwowsocool"}}, out);
-  //wwtools::w3sc::create({{"01010101.wem", "weirddatastuffwowsocool"}}, std::cout);
-  // wwtools::w3sc::create({{"test01.wem", "data1"}, {"test012.wem", "data2"}}, out);
-  wwtools::w3sc::create(v, out);
-}
-/*int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
   // TODO: Add more descriptive comments regarding as much as possible
   std::pair<std::vector<std::string>, bool> flags_raw = get_flags(argc, argv);
   if (flags_raw.second) { // If there's an error...
@@ -198,99 +182,121 @@ int main(int argc, char **argv) {
           idx++;
         }
       } else if (strcmp(argv[1], "cache") == 0) {
-        auto path = std::string(argv[2]);
-
-        std::ifstream filein(path, std::ios::binary);
-        std::stringstream indata;
-        indata << filein.rdbuf();
-        if (has_flag(flags, "info")) {
-          std::cout << wwtools::w3sc::get_info(indata.str());
-          return 0;
+        if (argc < 4) {
+          print_help("You must specify whether to read or write as well as the input!", argv[0]);
+          return EXIT_FAILURE;
         }
 
-        kaitai::kstream ks(indata.str());
+        if (strcmp(argv[2], "read") != 0 && strcmp(argv[2], "write") != 0) {
+          print_help("Incorrect value for read or write!", argv[0]);
+          return EXIT_FAILURE;
+        }
 
-        w3sc_t cache(&ks);
+        auto path = std::string(argv[3]);
 
-        int file_index = 0;
-        int file_count = cache.file_infos()->size();
-        for (auto file : *cache.file_infos()) {
-          file_index++;
-          if (file->name().substr(file->name().find_last_of(".")) == ".bnk") {
-            std::cout << rang::fg::cyan << "[" << file_index << "/"
-                      << file_count << "] " << rang::fg::reset << "Extracting "
-                      << file->name() << "..." << std::endl;
-            // Currently unable to read music files
-            if (file->name().find("music_") != std::string::npos ||
-                file->name().find("vo_") != std::string::npos ||
-                file->name().find("qu_") != std::string::npos ||
-                file->name().find("mutations_") != std::string::npos) {
-              continue;
-            }
+        if (strcmp(argv[2], "read") == 0) {
+          std::ifstream filein(path, std::ios::binary);
+          std::stringstream indata;
+          indata << filein.rdbuf();
+          if (has_flag(flags, "info")) {
+            std::cout << wwtools::w3sc::get_info(indata.str());
+            return 0;
+          }
 
-            kaitai::kstream bnk_ks(file->data());
-            bnk_t bnk(&bnk_ks);
-            std::vector<std::string> wems;
-            // Populate WEMs vector with data
-            wwtools::bnk::extract(file->data(), wems);
-            // Create directory with name of bnk file, no extension
-            fs::create_directory(
-                file->name().substr(0, file->name().find_last_of(".")));
-            int idx = 0;
-            for (auto wem : wems) {
-              fs::path outdir(
-                  file->name().substr(0, file->name().find_last_of(".")));
-              std::stringstream ss;
-              ss << bnk.data_index()->data()->indices()->at(idx)->id();
-              bool noconvert = has_flag(flags, "no-convert-bnk");
-              fs::path filename(ss.str());
-              fs::path outpath = outdir / filename;
-              std::string file_extension = noconvert ? ".wem" : ".ogg";
-              if (noconvert) {
-                std::ofstream of(outpath.string() + file_extension);
-                of << wem;
-                of.close();
-                idx++;
+          kaitai::kstream ks(indata.str());
+
+          w3sc_t cache(&ks);
+
+          int file_index = 0;
+          int file_count = cache.file_infos()->size();
+          for (auto file : *cache.file_infos()) {
+            file_index++;
+            if (file->name().substr(file->name().find_last_of(".")) == ".bnk") {
+              std::cout << rang::fg::cyan << "[" << file_index << "/"
+                        << file_count << "] " << rang::fg::reset << "Extracting "
+                        << file->name() << "..." << std::endl;
+              // Currently unable to read music files
+              if (file->name().find("music_") != std::string::npos ||
+                  file->name().find("vo_") != std::string::npos ||
+                  file->name().find("qu_") != std::string::npos ||
+                  file->name().find("mutations_") != std::string::npos) {
                 continue;
               }
-              auto success = convert(wem, outpath.string() + file_extension);
-              if (!success) {
-                std::cout
-                    << rang::fg::yellow << "Failed to convert "
-                    << outpath.string() + file_extension
-                    << " (Likely a metadata-only file. This WEM will likely be "
-                       "found in the cache itself and not the soundbank.)"
-                    << rang::fg::reset << std::endl;
-                // Don't return error because the rest may succeed
-              }
-              idx++;
-            }
-          } else if (file->name().substr(file->name().find_last_of(".")) ==
-                     ".wem") {
-            bool noconvert = has_flag(flags, "no-convert-wem");
-            if (noconvert) {
-              std::cout << rang::fg::cyan << "[" << file_index << "/"
-                        << file_count << "] " << rang::fg::reset
-                        << "Extracting " << file->name() << "..."
-                        << rang::fg::reset << std::endl;
-              std::ofstream fout(file->name());
-              fout << file->data();
-              continue;
-            }
-            std::string outpath =
-                file->name().substr(0, file->name().find_last_of(".")) + ".ogg";
-            std::cout << rang::fg::cyan << "[" << file_index << "/"
-                      << file_count << "] " << rang::fg::reset << "Extracting "
-                      << file->name().substr(0,
-                                             file->name().find_last_of(".")) +
-                             ".ogg"
+
+              kaitai::kstream bnk_ks(file->data());
+              bnk_t bnk(&bnk_ks);
+              std::vector<std::string> wems;
+              // Populate WEMs vector with data
+              wwtools::bnk::extract(file->data(), wems);
+              // Create directory with name of bnk file, no extension
+              fs::create_directory(
+                  file->name().substr(0, file->name().find_last_of(".")));
+              int idx = 0;
+              for (auto wem : wems) {
+                fs::path outdir(
+                    file->name().substr(0, file->name().find_last_of(".")));
+                std::stringstream ss;
+                ss << bnk.data_index()->data()->indices()->at(idx)->id();
+                bool noconvert = has_flag(flags, "no-convert-bnk");
+                fs::path filename(ss.str());
+                fs::path outpath = outdir / filename;
+                std::string file_extension = noconvert ? ".wem" : ".ogg";
+                if (noconvert) {
+                  std::ofstream of(outpath.string() + file_extension);
+                  of << wem;
+                  of.close();
+                  idx++;
+                  continue;
+                }
+                auto success = convert(wem, outpath.string() + file_extension);
+                if (!success) {
+                  std::cout
+                      << rang::fg::yellow << "Failed to convert "
+                      << outpath.string() + file_extension
+                      << " (Likely a metadata-only file. This WEM will likely be "
+                        "found in the cache itself and not the soundbank.)"
                       << rang::fg::reset << std::endl;
-            auto success = convert(file->data(), outpath);
-            if (!success) {
-              // TODO: Add more rang usage
-              std::cout << "Failed to convert " << path << std::endl;
+                  // Don't return error because the rest may succeed
+                }
+                idx++;
+              }
+            } else if (file->name().substr(file->name().find_last_of(".")) ==
+                      ".wem") {
+              bool noconvert = has_flag(flags, "no-convert-wem");
+              if (noconvert) {
+                std::cout << rang::fg::cyan << "[" << file_index << "/"
+                          << file_count << "] " << rang::fg::reset
+                          << "Extracting " << file->name() << "..."
+                          << rang::fg::reset << std::endl;
+                std::ofstream fout(file->name());
+                fout << file->data();
+                continue;
+              }
+              std::string outpath =
+                  file->name().substr(0, file->name().find_last_of(".")) + ".ogg";
+              std::cout << rang::fg::cyan << "[" << file_index << "/"
+                        << file_count << "] " << rang::fg::reset << "Extracting "
+                        << file->name().substr(0,
+                                              file->name().find_last_of(".")) +
+                              ".ogg"
+                        << rang::fg::reset << std::endl;
+              auto success = convert(file->data(), outpath);
+              if (!success) {
+                // TODO: Add more rang usage
+                std::cout << "Failed to convert " << path << std::endl;
+              }
             }
           }
+        } else { // write cache file
+          std::ofstream of("soundspc.cache", std::ios::binary);
+          std::vector<std::pair<std::string, std::string>> v;
+          for (const auto &file : fs::directory_iterator(path)) {
+            std::ifstream ifs(file.path().string(), std::ios::binary);
+            std::stringstream ss;
+            ss << ifs.rdbuf();
+            v.push_back({file.path().filename().string(), ss.str()});
+          }
+          wwtools::w3sc::create(v, of);
         }
       } else {
         print_help(argv[0]);
@@ -298,4 +304,4 @@ int main(int argc, char **argv) {
       }
     }
   }
-}*/
+}
