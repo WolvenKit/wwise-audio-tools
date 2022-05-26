@@ -13,6 +13,11 @@
 
 #include <string>
 
+/**
+ * @namespace wwtools
+ * @brief parent namespace for specific file type helper functions
+ * 
+ */
 namespace wwtools {
 /**
  * @brief get OGG file data from WEM file data

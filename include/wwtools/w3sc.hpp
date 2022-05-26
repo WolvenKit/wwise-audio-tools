@@ -17,6 +17,11 @@
 #include "kaitai/structs/w3sc.h"
 #include "kaitai/kaitaistream.h"
 
+/**
+ * @namespace wwtools::w3sc
+ * @brief contains helper functions for The Witcher 3 sound cache files
+ * 
+ */
 namespace wwtools::w3sc {
 /**
  * @brief get the info string

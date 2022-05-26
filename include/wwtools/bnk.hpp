@@ -17,6 +17,11 @@
 #include "kaitai/structs/bnk.h"
 #include "kaitai/kaitaistream.h"
 
+/**
+ * @namespace wwtools::bnk
+ * @brief contains helper functions for Wwise Soundbank files
+ * 
+ */
 namespace wwtools::bnk {
 /**
  * @brief Extract BNK to array of WEMS
