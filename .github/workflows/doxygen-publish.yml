@@ -1,0 +1,26 @@
+name: doxygen-publish
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+        
+    - name: Build documentation
+      uses: mattnotmitt/doxygen-action@v1.9.1
+      with:
+        working-directory: "."
+        doxyfile-path: "./docs/Doxyfile"
+    
+    - name: Publish to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/html
