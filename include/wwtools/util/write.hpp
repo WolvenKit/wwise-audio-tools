@@ -7,7 +7,7 @@ namespace wwtools::util::write {
     template<typename T>
     inline void big_endian(const char *data, std::ostream& os) {
         char arr_data[sizeof(T)];
-        memcpy(arr_data, data, sizeof(T));
+        std::memcpy(arr_data, data, sizeof(T));
         for (int i = sizeof(T) - 1; i >= 0; i--)
             os.put(arr_data[i]);
     }
@@ -20,7 +20,7 @@ namespace wwtools::util::write {
     template<typename T>
     inline void little_endian(const char *data, std::ostream& os) {
         char arr_data[sizeof(T)];
-        memcpy(arr_data, data, sizeof(T));
+        std::memcpy(arr_data, data, sizeof(T));
         for (int i = 0; i < sizeof(T); i++)
             os.put(arr_data[i]);
     }
