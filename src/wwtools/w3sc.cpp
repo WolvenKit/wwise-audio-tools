@@ -10,6 +10,7 @@
 #include "wwtools/util/write.hpp"
 
 const uint8_t HEADER_LENGTH = 48;
+const uint16_t CACHE_BUFFER_SIZE = 4096;
 int get_names_offset(const std::vector<std::pair<std::string, std::string>>& files) {
   uint32_t ret = 0;
   for (const auto &file : files) {
@@ -72,6 +73,18 @@ uint64_t calculate_checksum(std::string data) {
     ret *= FNV_64_PRIME;
   }
   
+  return ret;
+}
+
+uint64_t calculate_buffer_size(const std::vector<std::pair<std::string, std::string>>& files) {
+  uint64_t ret = 0;
+  for (int i = 0; i < files.size(); i++) {
+    uint64_t file_size = files.at(i).second.size();
+    ret = std::max(ret, file_size);
+  }
+
+  // round up to nearest multiple of cache buffer size
+  ret += CACHE_BUFFER_SIZE - (ret % CACHE_BUFFER_SIZE);
   return ret;
 }
 
@@ -140,6 +153,9 @@ void create(const std::vector<std::pair<std::string, std::string>>& files, std::
     wwtools::util::write::little_endian<uint32_t>(files[i].second.size(), os);
   }
 
+  // buffer size
+  os.seekp(32);
+  wwtools::util::write::little_endian<uint64_t>(calculate_buffer_size(files), os);
   // checksum and stuff
   os.seekp(40);
   wwtools::util::write::little_endian<uint64_t>(calculate_checksum(get_footer_names(files) + get_footer_infos(files)), os);
