@@ -1,6 +1,7 @@
 #ifndef WWTOOLS_UTIL_WRITE_HPP
 #define WWTOOLS_UTIL_WRITE_HPP
 
+#include <cstring>
 #include <ostream>
 
 namespace wwtools::util::write {

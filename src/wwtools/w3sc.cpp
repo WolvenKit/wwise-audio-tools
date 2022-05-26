@@ -1,7 +1,5 @@
-#include <iostream>
 #include <ostream>
 #include <sstream>
-#include <stdint.h>
 #include <string>
 #include <vector>
 
@@ -144,6 +142,6 @@ void create(const std::vector<std::pair<std::string, std::string>>& files, std::
   // checksum and stuff
   os.seekp(40);
   std::string ck_calc_str = calculate_checksum(get_footer_names(files) + get_footer_infos(files));
-  wwtools::util::write::little_endian<uint64_t>(static_cast<uint64_t>(std::stoull(test)), os);
+  wwtools::util::write::little_endian<uint64_t>(static_cast<uint64_t>(std::stoull(ck_calc_str)), os);
 }
 }
