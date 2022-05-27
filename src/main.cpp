@@ -43,7 +43,7 @@ void print_help(std::string extra_message = "",
       << "  " << filename << " wem [input.wem] (--info)\n"
       << "  " << filename << " bnk [input.bnk] (--info) (--no-convert)\n"
       << "  " << filename
-      << " cache [read|write] [input.cache] (--info) (--no-convert-wem) (--no-convert-bnk)\n"
+      << " cache [read|write] [file/directory name] (--info) (--no-convert-wem) (--no-convert-bnk)\n"
       << "Or run it without arguments to find and convert all WEMs in "
          "the current directory."
       << std::endl;
