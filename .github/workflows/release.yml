@@ -26,8 +26,8 @@ jobs:
           name: Linux Release
           path: |
             build/bin/wwtools
-            build/lib/libwwise-audio.so
-            build/lib/libwwise-audio_static.a   
+            build/lib/libwwtools.so
+            build/lib/libwwtools.a   
 
   windows:
     runs-on: windows-latest
@@ -50,8 +50,8 @@ jobs:
           # For some reason the dynamic lib is in the bin directory
           path: |
             build/bin/Debug/wwtools.exe
-            build/bin/Debug/wwise-audio.dll 
-            build/lib/Debug/wwise-audio_static.lib
+            build/bin/Debug/wwtools.dll 
+            build/lib/Debug/wwtools.lib
 
   release:
     runs-on: ubuntu-latest
