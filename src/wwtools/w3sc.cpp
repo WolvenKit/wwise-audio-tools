@@ -4,14 +4,15 @@
 #include <string>
 #include <vector>
 
-#include "kaitai/structs/w3sc.h"
 #include "kaitai/kaitaistream.h"
-#include "wwtools/w3sc.hpp"
+#include "kaitai/structs/w3sc.h"
 #include "wwtools/util/write.hpp"
+#include "wwtools/w3sc.hpp"
 
 const uint8_t HEADER_LENGTH = 48;
 const uint16_t CACHE_BUFFER_SIZE = 4096;
-int get_names_offset(const std::vector<std::pair<std::string, std::string>>& files) {
+int get_names_offset(
+    const std::vector<std::pair<std::string, std::string>> &files) {
   uint32_t ret = 0;
   for (const auto &file : files) {
     const std::string file_contents = file.second;
@@ -21,7 +22,8 @@ int get_names_offset(const std::vector<std::pair<std::string, std::string>>& fil
   return ret;
 }
 
-int get_info_offset(const std::vector<std::pair<std::string, std::string>>& files) {
+int get_info_offset(
+    const std::vector<std::pair<std::string, std::string>> &files) {
   uint32_t ret = get_names_offset(files);
   for (const auto &file : files) {
     const std::string file_name = file.first;
@@ -30,19 +32,23 @@ int get_info_offset(const std::vector<std::pair<std::string, std::string>>& file
   return ret;
 }
 
-std::string get_footer_names(const std::vector<std::pair<std::string, std::string>>& files) {
+std::string get_footer_names(
+    const std::vector<std::pair<std::string, std::string>> &files) {
   std::string ret;
   for (const auto &file : files)
     ret += file.first + '\0';
   return ret;
 }
 
-std::string get_footer_infos(const std::vector<std::pair<std::string, std::string>>& files) {
+std::string get_footer_infos(
+    const std::vector<std::pair<std::string, std::string>> &files) {
   std::stringstream ss;
   std::vector<uint32_t> data_offsets;
-  data_offsets.resize(files.size(), HEADER_LENGTH); // offset starts after header
+  data_offsets.resize(files.size(),
+                      HEADER_LENGTH); // offset starts after header
   for (size_t i = 0; i < files.size(); i++) {
-    if (i == 0) continue;
+    if (i == 0)
+      continue;
     data_offsets[i] = data_offsets[i - 1] + files[i].second.size();
   }
   // names
@@ -50,7 +56,8 @@ std::string get_footer_infos(const std::vector<std::pair<std::string, std::strin
   name_offsets.resize(files.size(), 0);
   // uint32_t name_offsets[static_cast<int>(files.size())];
   for (size_t i = 0; i < files.size(); i++) {
-    if (i == 0) continue; // only populate name_offsets starting at index 1
+    if (i == 0)
+      continue; // only populate name_offsets starting at index 1
     name_offsets[i] = name_offsets[i - 1] + files[i].first.size() + 1;
   }
   for (size_t i = 0; i < files.size(); i++) {
@@ -72,11 +79,12 @@ uint64_t calculate_checksum(std::string data) {
     ret ^= byte;
     ret *= FNV_64_PRIME;
   }
-  
+
   return ret;
 }
 
-uint64_t calculate_buffer_size(const std::vector<std::pair<std::string, std::string>>& files) {
+uint64_t calculate_buffer_size(
+    const std::vector<std::pair<std::string, std::string>> &files) {
   uint64_t ret = 0;
   for (int i = 0; i < files.size(); i++) {
     uint64_t file_size = files.at(i).second.size();
@@ -99,7 +107,7 @@ std::string get_info(const std::string &indata) {
   kaitai::kstream ks(indata);
 
   // Create a BNK object from the stream
-	w3sc_t cache(&ks);
+  w3sc_t cache(&ks);
 
   // Add data from header
   std::stringstream data_ss;
@@ -108,7 +116,7 @@ std::string get_info(const std::string &indata) {
   // Add WEM indexes and count
   data_ss << cache.files() << " embedded files:" << std::endl;
   for (auto file_info : *cache.file_infos()) {
-    data_ss << "  " << file_info->name() << std::endl; 
+    data_ss << "  " << file_info->name() << std::endl;
   }
 
   return data_ss.str();
@@ -116,15 +124,20 @@ std::string get_info(const std::string &indata) {
 
 // TODO: change vector string pair weird stuff to a class
 // also i think i have little endian/big endian mixed up and stuff
-void create(const std::vector<std::pair<std::string, std::string>>& files, std::ostream& os) {
+void create(const std::vector<std::pair<std::string, std::string>> &files,
+            std::ostream &os) {
   wwtools::util::write::big_endian<uint32_t>(MAGIC, os);
   wwtools::util::write::little_endian<uint32_t>(VERSION, os);
   wwtools::util::write::little_endian<uint64_t>(DUMMY, os);
-  wwtools::util::write::little_endian<uint32_t>(static_cast<uint32_t>(get_info_offset(files)), os);
-  wwtools::util::write::little_endian<uint32_t>(static_cast<uint32_t>(files.size()), os);
-  wwtools::util::write::little_endian<uint32_t>(static_cast<uint32_t>(get_names_offset(files)), os);
-  wwtools::util::write::little_endian<uint32_t>((get_info_offset(files) - get_names_offset(files)), os); // names size
-  
+  wwtools::util::write::little_endian<uint32_t>(
+      static_cast<uint32_t>(get_info_offset(files)), os);
+  wwtools::util::write::little_endian<uint32_t>(
+      static_cast<uint32_t>(files.size()), os);
+  wwtools::util::write::little_endian<uint32_t>(
+      static_cast<uint32_t>(get_names_offset(files)), os);
+  wwtools::util::write::little_endian<uint32_t>(
+      (get_info_offset(files) - get_names_offset(files)), os); // names size
+
   // weird 8 bytes (buffer size?)
   wwtools::util::write::little_endian<uint64_t>(DUMMY, os);
   // next weird 8 bytes (checksum?)
@@ -134,7 +147,8 @@ void create(const std::vector<std::pair<std::string, std::string>>& files, std::
   data_offsets.resize(files.size(), 48);
   for (size_t i = 0; i < files.size(); i++) {
     os.write(files[i].second.c_str(), files[i].second.size());
-    if (i == 0) continue;
+    if (i == 0)
+      continue;
     data_offsets[i] = data_offsets[i - 1] + files[i].second.size();
   }
   // names
@@ -142,8 +156,10 @@ void create(const std::vector<std::pair<std::string, std::string>>& files, std::
   name_offsets.resize(files.size(), 0);
   // uint32_t name_offsets[static_cast<int>(files.size())];
   for (size_t i = 0; i < files.size(); i++) {
-    os.write(files[i].first.c_str(), files[i].first.size() + 1 /* include \0 */);
-    if (i == 0) continue; // only populate name_offsets starting at index 1
+    os.write(files[i].first.c_str(),
+             files[i].first.size() + 1 /* include \0 */);
+    if (i == 0)
+      continue; // only populate name_offsets starting at index 1
     name_offsets[i] = name_offsets[i - 1] + files[i].first.size();
   }
   // info
@@ -155,9 +171,12 @@ void create(const std::vector<std::pair<std::string, std::string>>& files, std::
 
   // buffer size
   os.seekp(32);
-  wwtools::util::write::little_endian<uint64_t>(calculate_buffer_size(files), os);
+  wwtools::util::write::little_endian<uint64_t>(calculate_buffer_size(files),
+                                                os);
   // checksum and stuff
   os.seekp(40);
-  wwtools::util::write::little_endian<uint64_t>(calculate_checksum(get_footer_names(files) + get_footer_infos(files)), os);
+  wwtools::util::write::little_endian<uint64_t>(
+      calculate_checksum(get_footer_names(files) + get_footer_infos(files)),
+      os);
 }
-}
+} // namespace wwtools::w3sc

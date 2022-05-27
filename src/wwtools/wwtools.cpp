@@ -6,7 +6,7 @@
 #include "wwtools/wwtools.hpp"
 
 namespace wwtools {
-std::string wem_to_ogg(const std::string& indata) {
+std::string wem_to_ogg(const std::string &indata) {
   std::stringstream wem_out;
   std::stringstream revorb_out;
 
@@ -19,4 +19,4 @@ std::string wem_to_ogg(const std::string& indata) {
 
   return revorb_out.str();
 }
-}
+} // namespace wwtools

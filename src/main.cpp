@@ -8,17 +8,17 @@
 #include <utility>
 #include <vector>
 
-#include "util/rang.hpp"
+#include "kaitai/kaitaistream.h"
 #include "kaitai/structs/bnk.h"
 #include "kaitai/structs/w3sc.h"
-#include "kaitai/kaitaistream.h"
 #include "revorb/revorb.hpp"
+#include "util/rang.hpp"
 #include "ww2ogg/ww2ogg.h"
 #include "ww2ogg/wwriff.h"
-#include "wwtools/wwtools.hpp"
 #include "wwtools/bnk.hpp"
-#include "wwtools/w3sc.hpp"
 #include "wwtools/util/write.hpp"
+#include "wwtools/w3sc.hpp"
+#include "wwtools/wwtools.hpp"
 
 namespace fs = std::filesystem;
 bool convert(std::string indata, std::string outpath) {
@@ -38,15 +38,15 @@ void print_help(std::string extra_message = "",
     std::cout << rang::fg::red << extra_message << rang::fg::reset << std::endl
               << std::endl;
   }
-  std::cout
-      << "Please use the command in one of the following ways:\n"
-      << "  " << filename << " wem [input.wem] (--info)\n"
-      << "  " << filename << " bnk [input.bnk] (--info) (--no-convert)\n"
-      << "  " << filename
-      << " cache [read|write] [file/directory name] (--info) (--no-convert-wem) (--no-convert-bnk)\n"
-      << "Or run it without arguments to find and convert all WEMs in "
-         "the current directory."
-      << std::endl;
+  std::cout << "Please use the command in one of the following ways:\n"
+            << "  " << filename << " wem [input.wem] (--info)\n"
+            << "  " << filename << " bnk [input.bnk] (--info) (--no-convert)\n"
+            << "  " << filename
+            << " cache [read|write] [file/directory name] (--info) "
+               "(--no-convert-wem) (--no-convert-bnk)\n"
+            << "Or run it without arguments to find and convert all WEMs in "
+               "the current directory."
+            << std::endl;
 }
 
 std::pair<std::vector<std::string>, bool> get_flags(int argc, char *argv[]) {
@@ -183,7 +183,9 @@ int main(int argc, char *argv[]) {
         }
       } else if (strcmp(argv[1], "cache") == 0) {
         if (argc < 4) {
-          print_help("You must specify whether to read or write as well as the input!", argv[0]);
+          print_help(
+              "You must specify whether to read or write as well as the input!",
+              argv[0]);
           return EXIT_FAILURE;
         }
 
@@ -213,8 +215,8 @@ int main(int argc, char *argv[]) {
             file_index++;
             if (file->name().substr(file->name().find_last_of(".")) == ".bnk") {
               std::cout << rang::fg::cyan << "[" << file_index << "/"
-                        << file_count << "] " << rang::fg::reset << "Extracting "
-                        << file->name() << "..." << std::endl;
+                        << file_count << "] " << rang::fg::reset
+                        << "Extracting " << file->name() << "..." << std::endl;
               // Currently unable to read music files
               if (file->name().find("music_") != std::string::npos ||
                   file->name().find("vo_") != std::string::npos ||
@@ -253,15 +255,15 @@ int main(int argc, char *argv[]) {
                   std::cout
                       << rang::fg::yellow << "Failed to convert "
                       << outpath.string() + file_extension
-                      << " (Likely a metadata-only file. This WEM will likely be "
-                        "found in the cache itself and not the soundbank.)"
+                      << " (Likely a metadata-only file. This WEM will likely "
+                         "be found in the cache itself and not the soundbank.)"
                       << rang::fg::reset << std::endl;
                   // Don't return error because the rest may succeed
                 }
                 idx++;
               }
             } else if (file->name().substr(file->name().find_last_of(".")) ==
-                      ".wem") {
+                       ".wem") {
               bool noconvert = has_flag(flags, "no-convert-wem");
               if (noconvert) {
                 std::cout << rang::fg::cyan << "[" << file_index << "/"
@@ -273,12 +275,14 @@ int main(int argc, char *argv[]) {
                 continue;
               }
               std::string outpath =
-                  file->name().substr(0, file->name().find_last_of(".")) + ".ogg";
+                  file->name().substr(0, file->name().find_last_of(".")) +
+                  ".ogg";
               std::cout << rang::fg::cyan << "[" << file_index << "/"
-                        << file_count << "] " << rang::fg::reset << "Extracting "
+                        << file_count << "] " << rang::fg::reset
+                        << "Extracting "
                         << file->name().substr(0,
-                                              file->name().find_last_of(".")) +
-                              ".ogg"
+                                               file->name().find_last_of(".")) +
+                               ".ogg"
                         << rang::fg::reset << std::endl;
               auto success = convert(file->data(), outpath);
               if (!success) {

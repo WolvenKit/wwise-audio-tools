@@ -1,8 +1,8 @@
 #include <string>
 #include <vector>
 
-#include "kaitai/structs/bnk.h"
 #include "kaitai/kaitaistream.h"
+#include "kaitai/structs/bnk.h"
 #include "wwtools/bnk.hpp"
 
 namespace wwtools::bnk {
@@ -37,11 +37,12 @@ std::string get_info(const std::string &indata) {
   data_ss << "Soundbank ID: " << bnk.bank_header()->id() << std::endl;
 
   // Add WEM indexes and count
-  data_ss << bnk.data_index()->data()->indices()->size() << " embedded WEM files:" << std::endl;
+  data_ss << bnk.data_index()->data()->indices()->size()
+          << " embedded WEM files:" << std::endl;
   for (auto index : *bnk.data_index()->data()->indices()) {
-    data_ss << "  " << index->id() << std::endl; 
+    data_ss << "  " << index->id() << std::endl;
   }
 
   return data_ss.str();
 }
-}
+} // namespace wwtools::bnk
