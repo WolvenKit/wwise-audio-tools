@@ -61,8 +61,24 @@ types:
       - id: size
         type: u4
     seq:
-      - id: list
-        size: size
+      - id: adtl
+        contents: 'adtl'
+      - id: labl
+        type: list_labl_subchunk
+      #- id: data
+      #  size: size - 4
+  list_labl_subchunk:
+    seq:
+      - id: magic
+        contents: 'labl'
+      - id: size
+        type: u4
+      - id: cue_point_id
+        type: u4
+      - id: data
+        type: str
+        size: size - 4 # size without cue point ID
+        encoding: utf-8
   junk_chunk:
     seq:
       - id: junk
