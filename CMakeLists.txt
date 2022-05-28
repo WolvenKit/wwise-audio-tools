@@ -29,8 +29,8 @@ set(SOURCE
     src/wwtools/wwtools.cpp
     src/wwtools/w3sc.cpp
     src/wwtools/bnk.cpp
-		src/kaitai/kaitaistream.cpp
-		src/kaitai/bnk.cpp
+    src/kaitai/kaitaistream.cpp
+    src/kaitai/bnk.cpp
     src/kaitai/w3sc.cpp
   )
 
@@ -91,7 +91,7 @@ if(NOT Catch2_FOUND AND DOWNLOAD_CATCH2)
 endif()
 
 if(Catch2_FOUND)
-  add_executable(tests ${SOURCE} tests/test.cpp)
+  add_executable(tests ${SOURCE} tests/wem.cpp)
   target_link_libraries(tests PRIVATE Catch2::Catch2WithMain ogg vorbis)
   file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 else()
