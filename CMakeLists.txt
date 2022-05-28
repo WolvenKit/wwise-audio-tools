@@ -32,6 +32,7 @@ set(SOURCE
     src/kaitai/kaitaistream.cpp
     src/kaitai/bnk.cpp
     src/kaitai/w3sc.cpp
+    src/kaitai/wem.cpp
   )
 
 add_subdirectory(libogg EXCLUDE_FROM_ALL)
