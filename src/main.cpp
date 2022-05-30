@@ -2,6 +2,7 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <map>
 #include <sstream>
 #include <stdint.h>
 #include <string>
@@ -40,7 +41,7 @@ void print_help(std::string extra_message = "",
   }
   std::cout << "Please use the command in one of the following ways:\n"
             << "  " << filename << " wem [input.wem] (--info)\n"
-            << "  " << filename << " bnk [input.bnk] (--info) (--no-convert)\n"
+            << "  " << filename << " bnk [event|extract] [input.bnk] (event ID) (--info) (--no-convert)\n"
             << "  " << filename
             << " cache [read|write] [file/directory name] (--info) "
                "(--no-convert-wem) (--no-convert-bnk)\n"
@@ -116,6 +117,7 @@ int main(int argc, char *argv[]) {
       print_help("Missing arguments!", argv[0]);
       return 1;
     } else {
+#pragma region WEM
       if (strcmp(argv[1], "wem") == 0) {
         auto path = std::string(argv[2]);
 
@@ -134,7 +136,92 @@ int main(int argc, char *argv[]) {
           std::cerr << "Failed to convert " << path << std::endl;
           return 1;
         }
+#pragma endregion WEM
+#pragma region BNK
       } else if (strcmp(argv[1], "bnk") == 0) {
+        if (argc < 4) {
+          print_help(
+              "You must specify whether to extract or find an event as well as the input!",
+              argv[0]);
+          return EXIT_FAILURE;
+        }
+
+        if (strcmp(argv[2], "event") != 0 && strcmp(argv[2], "extract") != 0) {
+          print_help("Incorrect value for read or write!", argv[0]);
+          return EXIT_FAILURE;
+        }
+
+        auto bnk_path = std::string(argv[3]);
+
+        if (strcmp(argv[2], "event") == 0) {
+          if (argc < 6) {
+            print_help("Not enough arguments for finding an event!");
+            return EXIT_FAILURE;
+          }
+
+          // get paths for all sound cache files
+          // std::vector<std::string> cache_paths;
+          // cache_paths.resize(argc - 4);
+          // for (int i = 4; i < argc; i++)
+          //  cache_paths.push_back(argv[i]);
+
+          std::cout << bnk_path << std::endl;
+          std::ifstream bnk_in(bnk_path, std::ios::binary);
+          kaitai::kstream ks(&bnk_in);
+          bnk_t bnk(&ks);
+
+          // loop through each section to get to HIRC and find event ID
+          // std::cout << (*bnk.data()).size() << std::endl;
+          for (const auto &section : *bnk.data()) {
+            // std::cout << section->type() << std::endl;
+            if (section->type() == "HIRC") {
+              bnk_t::hirc_data_t *hirc_data = (bnk_t::hirc_data_t *)(section->section_data());
+              // std::vector<std::pair<uint32_t /*event*/, uint32_t /*game object id*/>> game_object_ids;
+              std::map<uint32_t /* game object id */, uint32_t /*correlating event*/> game_object_ids;
+              for (const auto &obj : *hirc_data->objs()) {
+                if (obj->type() == bnk_t::OBJECT_TYPE_EVENT) {
+                  bnk_t::event_t *event = (bnk_t::event_t *)(obj->object_data());
+                  if (std::to_string(obj->id()) == argv[4]) {
+                    for (const auto& event_action : *event->event_actions()) {
+                      for (const auto &obj2 : *hirc_data->objs()) {
+                        if (obj2->type() == bnk_t::OBJECT_TYPE_EVENT_ACTION) {
+                          bnk_t::event_action_t *event_action = (bnk_t::event_action_t *)(obj2->object_data());
+                          // std::cout << obj->id() << ' ' << event_action->game_object_id() << std::endl;
+                          if (event_action->scope() == bnk_t::ACTION_SCOPE_GAME_OBJECT)  
+                            game_object_ids[event_action->game_object_id()] = obj->id();
+                          //game_object_ids.push_back({obj->id(), event_action->game_object_id()});
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              for (const auto& obj : *hirc_data->objs()) {
+                if (obj->type() == bnk_t::OBJECT_TYPE_SOUND_EFFECT_OR_VOICE) {
+                  bnk_t::sound_effect_or_voice_t *sound_effect_or_voice = (bnk_t::sound_effect_or_voice_t *)(obj->object_data());
+                  uint32_t parent_id_offset = 6;
+                  uint8_t num_effects = sound_effect_or_voice->sound_structure().at(1);
+                  if (num_effects > 0) {
+                    parent_id_offset++; // bit mask for bypassed effects
+                    parent_id_offset += num_effects * 7; // 7 bytes for each effect
+                  }
+                  uint32_t parent_id = 0;
+                  std::stringstream ss;
+                  ss.write(sound_effect_or_voice->sound_structure().c_str(), sound_effect_or_voice->sound_structure().size());
+                  ss.seekg(parent_id_offset);
+                  ss.read(reinterpret_cast<char *>(&parent_id), 4);
+                  for (const auto &[game_object_id, event_id] : game_object_ids) {
+                    if (game_object_id == obj->id() || game_object_id == parent_id) {
+                      std::cout << event_id << ':' << ' ' << sound_effect_or_voice->audio_file_id() << std::endl;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+/*      } else if (strcmp(argv[1], "bnk") == 0) {
         auto path = std::string(argv[2]);
 
         std::ifstream filein(path, std::ios::binary);
@@ -180,7 +267,9 @@ int main(int argc, char *argv[]) {
             // Don't return error because the rest may succeed
           }
           idx++;
-        }
+        }*/
+#pragma endregion BNK
+#pragma region CACHE      
       } else if (strcmp(argv[1], "cache") == 0) {
         if (argc < 4) {
           print_help(
@@ -238,7 +327,7 @@ int main(int argc, char *argv[]) {
                 fs::path outdir(
                     file->name().substr(0, file->name().find_last_of(".")));
                 std::stringstream ss;
-                ss << bnk.data_index()->data()->indices()->at(idx)->id();
+                // ss << bnk.data_index()->data()->indices()->at(idx)->id();
                 bool noconvert = has_flag(flags, "no-convert-bnk");
                 fs::path filename(ss.str());
                 fs::path outpath = outdir / filename;
@@ -302,6 +391,7 @@ int main(int argc, char *argv[]) {
           }
           wwtools::w3sc::create(v, of);
         }
+#pragma endregion CACHE      
       } else {
         print_help(argv[0]);
         return 1;
