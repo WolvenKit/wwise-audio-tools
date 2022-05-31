@@ -178,7 +178,7 @@ int main(int argc, char *argv[]) {
           std::stringstream indata;
           indata << bnk_in.rdbuf();
 
-          std::cout << wwtools::bnk::get_event_id_info(indata.str());
+          std::cout << wwtools::bnk::get_event_id_info(indata.str(), in_event_id);
         }
 /*      } else if (strcmp(argv[1], "bnk") == 0) {
         auto path = std::string(argv[2]);
