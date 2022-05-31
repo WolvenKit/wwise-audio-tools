@@ -1,10 +1,6 @@
 #include <cstring>
 #include <filesystem>
-#include <fstream>
 #include <iostream>
-#include <map>
-#include <sstream>
-#include <stdint.h>
 #include <string>
 #include <utility>
 #include <vector>
@@ -22,7 +18,7 @@
 #include "wwtools/wwtools.hpp"
 
 namespace fs = std::filesystem;
-bool convert(std::string indata, std::string outpath) {
+bool convert(const std::string &indata, const std::string &outpath) {
   std::string outdata = wwtools::wem_to_ogg(indata);
   if (outdata.empty()) {
     return false;
@@ -59,7 +55,7 @@ std::pair<std::vector<std::string>, bool> get_flags(int argc, char *argv[]) {
     // TODO: Change to starts_with with C++20
     if (arg.rfind("--", 0) == 0 && arg.length() > 2) {
       flag_found = true;
-      flags.push_back(arg.substr(2, arg.npos));
+      flags.push_back(arg.substr(2, std::string::npos));
     } else {
       // If current arg is not a flag but comes after a flag...
       if (flag_found) {
@@ -71,7 +67,7 @@ std::pair<std::vector<std::string>, bool> get_flags(int argc, char *argv[]) {
   return {flags, false};
 }
 
-bool has_flag(std::vector<std::string> flags, std::string wanted_flag) {
+bool has_flag(const std::vector<std::string> &flags, const std::string &wanted_flag) {
   for (auto flag : flags) {
     if (flag == wanted_flag) {
       return true;
