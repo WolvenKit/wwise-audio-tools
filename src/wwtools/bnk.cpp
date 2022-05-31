@@ -83,6 +83,7 @@ std::string get_event_id_info(const std::string &indata,
   std::stringstream data_ss;
   // loop through each section to get to HIRC and find event ID
   for (const auto &section : *bnk.data()) {
+    int num_events = 0;
     // read HIRC
     if (section->type() == "HIRC") {
       // cast section to HIRC data
@@ -96,6 +97,7 @@ std::string get_event_id_info(const std::string &indata,
       // loop through all HIRC objects
       for (const auto &obj_i : *hirc_data->objs()) {
         if (obj_i->type() == bnk_t::OBJECT_TYPE_EVENT) { // get event
+          num_events++; // increment the number of events
           bnk_t::event_t *event =
               (bnk_t::event_t *)(obj_i->object_data()); // cast to event
           bool all_event_ids = false;
@@ -115,8 +117,7 @@ std::string get_event_id_info(const std::string &indata,
                       (bnk_t::event_action_t *)(obj_j->object_data());
                   if (obj_j->id() == event_action_id) {
                     // if it points to a game object (sound or container)
-                    if (event_action->scope() ==
-                        bnk_t::ACTION_SCOPE_GAME_OBJECT) {
+                    if (event_action->game_object_id() != 0) {
                       // add it to the vector in the map corresponding to the
                       // event ID
                       event_to_event_actions[obj_i->id()].push_back(
@@ -139,11 +140,10 @@ std::string get_event_id_info(const std::string &indata,
                       (bnk_t::event_action_t *)(obj_j->object_data());
                   if (obj_j->id() == event_action_id) {
                     // if it points to a game object (sound or container)
-                    if (event_action->scope() ==
-                        bnk_t::ACTION_SCOPE_GAME_OBJECT) {
+                    if (event_action->game_object_id() != 0) {
                       // add it to the vector in the map corresponding to the
                       // event ID
-                      event_to_event_actions[obj_j->id()].push_back(
+                      event_to_event_actions[obj_i->id()].push_back(
                           event_action);
                     }
                   }
@@ -195,7 +195,8 @@ std::string get_event_id_info(const std::string &indata,
           }
         }
       }
-      data_ss << "Found " << event_to_event_sfxs.size() << " event(s)\n\n";
+      data_ss << "Found " << num_events << " event(s)\n";
+      data_ss << event_to_event_sfxs.size() << " of them point to files in this BNK\n\n";
       for (const auto &[event_id, event_sfxs] : event_to_event_sfxs) {
         data_ss << event_id << '\n';
         for (const auto &event_sfx : event_sfxs) {
