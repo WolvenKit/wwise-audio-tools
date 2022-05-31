@@ -335,8 +335,7 @@ public:
     return bstream;
   }
 
-  friend bitoggstream &operator<<(bitoggstream &bstream,
-                                   const Bit_uint &bui) {
+  friend bitoggstream &operator<<(bitoggstream &bstream, const Bit_uint &bui) {
     for (unsigned int i = 0; i < BIT_SIZE; i++) {
       bstream.put_bit((bui.total & (1U << i)) != 0);
     }
@@ -386,8 +385,7 @@ public:
     return bstream;
   }
 
-  friend bitoggstream &operator<<(bitoggstream &bstream,
-                                   const Bit_uintv &bui) {
+  friend bitoggstream &operator<<(bitoggstream &bstream, const Bit_uintv &bui) {
     for (unsigned int i = 0; i < bui.size; i++) {
       bstream.put_bit((bui.total & (1U << i)) != 0);
     }

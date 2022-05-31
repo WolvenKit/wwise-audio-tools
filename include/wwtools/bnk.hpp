@@ -39,7 +39,8 @@ void extract(const std::string &indata, std::vector<std::string> &outdata);
  */
 std::string get_info(const std::string &indata);
 
-std::string get_event_id_info(const std::string &indata, const std::string& in_event_id);
+std::string get_event_id_info(const std::string &indata,
+                              const std::string &in_event_id);
 
 std::string get_wem_id_at_index(const std::string &indata, const int &index);
 

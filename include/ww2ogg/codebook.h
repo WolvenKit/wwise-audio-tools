@@ -3,10 +3,10 @@
 
 #include "bitstream.h"
 #include "errors.h"
+#include <cstdint>
 #include <cstdlib>
 #include <fstream>
 #include <sstream>
-#include <cstdint>
 #include <string>
 
 using namespace std;
