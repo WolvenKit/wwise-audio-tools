@@ -24,7 +24,7 @@
 namespace fs = std::filesystem;
 bool convert(std::string indata, std::string outpath) {
   std::string outdata = wwtools::wem_to_ogg(indata);
-  if (outdata == "") {
+  if (outdata.empty()) {
     return false;
   }
 
@@ -41,7 +41,7 @@ void print_help(const std::string &extra_message = "",
   }
   std::cout << "Please use the command in one of the following ways:\n"
             << "  " << filename << " wem [input.wem] (--info)\n"
-            << "  " << filename << " bnk [event|extract] [input.bnk] (event ID) (--info) (--no-convert)\n"
+            << "  " << filename << " bnk [event|extract] (input.bnk) (event ID) (--info) (--no-convert)\n"
             << "  " << filename
             << " cache [read|write] [file/directory name] (--info) "
                "(--no-convert-wem) (--no-convert-bnk)\n"
@@ -79,6 +79,12 @@ bool has_flag(std::vector<std::string> flags, std::string wanted_flag) {
   }
   return false;
 }
+
+struct EventSFX {
+    bnk_t::action_type_t action_type;
+    bnk_t::sound_effect_or_voice_t *sfx;
+    bool is_child;
+};
 
 int main(int argc, char *argv[]) {
   // TODO: Add more descriptive comments regarding as much as possible
@@ -154,16 +160,14 @@ int main(int argc, char *argv[]) {
         auto bnk_path = std::string(argv[3]);
 
         if (strcmp(argv[2], "event") == 0) {
-          if (argc < 5) {
+          if (argc < 4) {
             print_help("Not enough arguments for finding an event!");
             return EXIT_FAILURE;
           }
 
-          // get paths for all sound cache files
-          // std::vector<std::string> cache_paths;
-          // cache_paths.resize(argc - 4);
-          // for (int i = 4; i < argc; i++)
-          //  cache_paths.push_back(argv[i]);
+          std::string in_event_id;
+          if (argc >= 5)
+              in_event_id = argv[4];
 
           std::cout << bnk_path << std::endl;
           std::ifstream bnk_in(bnk_path, std::ios::binary);
@@ -182,8 +186,11 @@ int main(int argc, char *argv[]) {
               for (const auto &obj_i : *hirc_data->objs()) {
                 if (obj_i->type() == bnk_t::OBJECT_TYPE_EVENT) { // get event
                   bnk_t::event_t *event = (bnk_t::event_t *)(obj_i->object_data()); // cast to event
+                  bool all_event_ids = false;
+                  if (in_event_id.empty())
+                      all_event_ids = true;
                   // compare ID to command line input ID
-                  if (std::to_string(obj_i->id()) == argv[4]) {
+                  if (std::to_string(obj_i->id()) == in_event_id) {
                       // get all event action IDs for this event
                     for (const auto& event_action_id : *event->event_actions()) {
                         // loop to get corresponding event actions from IDs
@@ -196,18 +203,36 @@ int main(int argc, char *argv[]) {
                               // if it points to a game object (sound or container)
                               if (event_action->scope() == bnk_t::ACTION_SCOPE_GAME_OBJECT) {
                                   // add it to the vector in the map corresponding to the event ID
-                                  event_to_event_actions[obj_j->id()].push_back(event_action);
+                                  event_to_event_actions[obj_i->id()].push_back(event_action);
                               }
                           }
                         }
                       }
                     }
+                  } else if (all_event_ids) {
+                      // get all event action IDs for this event
+                      for (const auto& event_action_id : *event->event_actions()) {
+                          // loop to get corresponding event actions from IDs
+                          for (const auto &obj_j : *hirc_data->objs()) {
+                              // check if it's an event actions, and if it is, check if it matches up with
+                              // an event_action_id corresponding to the inputted event
+                              if (obj_j->type() == bnk_t::OBJECT_TYPE_EVENT_ACTION) {
+                                  bnk_t::event_action_t *event_action = (bnk_t::event_action_t *)(obj_j->object_data());
+                                  if (obj_j->id() == event_action_id) {
+                                      // if it points to a game object (sound or container)
+                                      if (event_action->scope() == bnk_t::ACTION_SCOPE_GAME_OBJECT) {
+                                          // add it to the vector in the map corresponding to the event ID
+                                          event_to_event_actions[obj_j->id()].push_back(event_action);
+                                      }
+                                  }
+                              }
+                          }
+                      }
                   }
                 }
               }
 
-              // used for later making sure the event ID isn't printed multiple times
-              bool printed_event_id = false;
+                std::map<uint32_t /* event ID */, std::vector<EventSFX>> event_to_event_sfxs;
               // loop through all objects again, this time looking for SFX
               for (const auto& obj : *hirc_data->objs()) {
                 if (obj->type() == bnk_t::OBJECT_TYPE_SOUND_EFFECT_OR_VOICE) {
@@ -227,29 +252,37 @@ int main(int argc, char *argv[]) {
                   ss.seekg(parent_id_offset);
                   ss.read(reinterpret_cast<char *>(&parent_id), 4);
 
+
                   // loop through each event ID and its corresponding event actions
                   for (const auto &[event, event_actions] : event_to_event_actions) {
-                      // only print event ID if it hasn't been printed already
-                      if (!printed_event_id)
-                        std::cout << event << '\n';
-                      printed_event_id = true;
-                      // loop through each event action for the corresponding event ID
                       for (const auto &event_action : event_actions) {
-                          // if it corresponds to the SFX or its parent...
                           if (event_action->game_object_id() == obj->id() || event_action->game_object_id() == parent_id) {
-                              // print the type (e.g. plays, stops) and the ID of the WEM file
-                              std::cout << '\t' << wwtools::bnk::get_event_action_type(event_action->type()) << ' ' << sound_effect_or_voice->audio_file_id();
-                              // note that it's a child if it matches the parent ID and not the object itself
+                              EventSFX current_event_sfx{};
+                              current_event_sfx.action_type = event_action->type();
+                              current_event_sfx.sfx = sound_effect_or_voice;
                               if (event_action->game_object_id() == parent_id)
-                                  std::cout << " (child)\n";
+                                  current_event_sfx.is_child = true;
                               else
-                                  std::cout << '\n';
+                                  current_event_sfx.is_child = false;
+                              event_to_event_sfxs[event].push_back(current_event_sfx);
                           }
                       }
-                      std::cout << std::flush;
                   }
                 }
               }
+                std::cout << "Found " << event_to_event_sfxs.size() << " event(s)\n\n";
+                for (const auto &[event_id, event_sfxs] : event_to_event_sfxs) {
+                    std::cout << event_id << '\n';
+                    for (const auto &event_sfx : event_sfxs) {
+                        std::cout <<
+                        '\t' << wwtools::bnk::get_event_action_type(event_sfx.action_type) << ' ' << event_sfx.sfx->audio_file_id();
+                         if (event_sfx.is_child)
+                             std::cout << " (child)\n";
+                         else
+                             std::cout << '\n';
+                    }
+                    std::cout << std::endl; // newline + flush
+                }
             }
           }
         }
