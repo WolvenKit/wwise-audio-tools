@@ -76,10 +76,6 @@ types:
         type: u4
       - id: length
         type: u4
-    instances:
-      embedded_file_data:
-        pos: offset
-        size: length
 # DIDX END
 
 # DATA BEGIN

@@ -40,6 +40,123 @@ void bnk_t::_clean_up() {
     }
 }
 
+bnk_t::data_obj_t::data_obj_t(uint32_t p_offset, uint32_t p_length, kaitai::kstream* p__io, bnk_t::data_obj_section_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+    m__parent = p__parent;
+    m__root = p__root;
+    m_offset = p_offset;
+    m_length = p_length;
+    f_file = false;
+
+    try {
+        _read();
+    } catch(...) {
+        _clean_up();
+        throw;
+    }
+}
+
+void bnk_t::data_obj_t::_read() {
+}
+
+bnk_t::data_obj_t::~data_obj_t() {
+    _clean_up();
+}
+
+void bnk_t::data_obj_t::_clean_up() {
+    if (f_file) {
+    }
+}
+
+std::string bnk_t::data_obj_t::file() {
+    if (f_file)
+        return m_file;
+    std::streampos _pos = m__io->pos();
+    m__io->seek(offset());
+    m_file = m__io->read_bytes(length());
+    m__io->seek(_pos);
+    f_file = true;
+    return m_file;
+}
+
+bnk_t::data_data_t::data_data_t(uint32_t p_length, kaitai::kstream* p__io, bnk_t::section_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+    m__parent = p__parent;
+    m__root = p__root;
+    m_length = p_length;
+    m_data_obj_section = 0;
+    m__io__raw_data_obj_section = 0;
+    f_didx_data = false;
+
+    try {
+        _read();
+    } catch(...) {
+        _clean_up();
+        throw;
+    }
+}
+
+void bnk_t::data_data_t::_read() {
+    m__raw_data_obj_section = m__io->read_bytes(length());
+    m__io__raw_data_obj_section = new kaitai::kstream(m__raw_data_obj_section);
+    m_data_obj_section = new data_obj_section_t(length(), m__io__raw_data_obj_section, this, m__root);
+}
+
+bnk_t::data_data_t::~data_data_t() {
+    _clean_up();
+}
+
+void bnk_t::data_data_t::_clean_up() {
+    if (m__io__raw_data_obj_section) {
+        delete m__io__raw_data_obj_section; m__io__raw_data_obj_section = 0;
+    }
+    if (m_data_obj_section) {
+        delete m_data_obj_section; m_data_obj_section = 0;
+    }
+}
+
+bnk_t::didx_data_t* bnk_t::data_data_t::didx_data() {
+    if (f_didx_data)
+        return m_didx_data;
+    m_didx_data = static_cast<bnk_t::didx_data_t*>(_parent()->_parent()->data()->at(1)->section_data());
+    f_didx_data = true;
+    return m_didx_data;
+}
+
+bnk_t::data_obj_section_t::data_obj_section_t(uint32_t p_length, kaitai::kstream* p__io, bnk_t::data_data_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+    m__parent = p__parent;
+    m__root = p__root;
+    m_length = p_length;
+    m_data = 0;
+
+    try {
+        _read();
+    } catch(...) {
+        _clean_up();
+        throw;
+    }
+}
+
+void bnk_t::data_obj_section_t::_read() {
+    int l_data = _parent()->didx_data()->num_files();
+    m_data = new std::vector<data_obj_t*>();
+    m_data->reserve(l_data);
+    for (int i = 0; i < l_data; i++) {
+        m_data->push_back(new data_obj_t(_parent()->didx_data()->objs()->at(i)->offset(), _parent()->didx_data()->objs()->at(i)->length(), m__io, this, m__root));
+    }
+}
+
+bnk_t::data_obj_section_t::~data_obj_section_t() {
+    _clean_up();
+}
+
+void bnk_t::data_obj_section_t::_clean_up() {
+    if (m_data) {
+        for (std::vector<data_obj_t*>::iterator it = m_data->begin(); it != m_data->end(); ++it) {
+            delete *it;
+        }
+        delete m_data; m_data = 0;
+    }
+}
+
 bnk_t::didx_obj_t::didx_obj_t(kaitai::kstream* p__io, bnk_t::didx_data_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
@@ -136,6 +253,8 @@ bnk_t::bkhd_data_t::~bkhd_data_t() {
 void bnk_t::bkhd_data_t::_clean_up() {
 }
 
+uint32_t bnk_t::bkhd_data_t::version() const { return m_version; }
+
 bnk_t::event_t::event_t(kaitai::kstream* p__io, bnk_t::hirc_obj_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
@@ -169,7 +288,7 @@ void bnk_t::event_t::_clean_up() {
     }
 }
 
-bnk_t::ss_state_group_t::ss_state_group_t(kaitai::kstream* p__io, bnk_t::sound_structure_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+bnk_t::ss_state_group_t::ss_state_group_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
     m_state_obj = 0;
@@ -207,7 +326,7 @@ void bnk_t::ss_state_group_t::_clean_up() {
     }
 }
 
-bnk_t::sound_structure_t::sound_structure_t(kaitai::kstream* p__io, bnk_t::music_segment_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+bnk_t::sound_structure_t::sound_structure_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
     m_effect = 0;
@@ -262,14 +381,14 @@ void bnk_t::sound_structure_t::_read() {
     m_parameter_value->reserve(l_parameter_value);
     for (int i = 0; i < l_parameter_value; i++) {
         switch (parameter_type()->at(i)) {
-        case 7: {
-            m_parameter_value->push_back(m__io->read_u4le());
-            break;
-        }
-        default: {
-            m_parameter_value->push_back(m__io->read_f4le());
-            break;
-        }
+            case 7: {
+                m_parameter_value->push_back(m__io->read_u4le());
+                break;
+            }
+            default: {
+                m_parameter_value->push_back(m__io->read_f4le());
+                break;
+            }
         }
     }
     m_blank1 = m__io->read_bytes(1);
@@ -418,6 +537,7 @@ bnk_t::didx_data_t::didx_data_t(uint32_t p_length, kaitai::kstream* p__io, bnk_t
     m__root = p__root;
     m_length = p_length;
     m_objs = 0;
+    f_num_files = false;
 
     try {
         _read();
@@ -428,7 +548,7 @@ bnk_t::didx_data_t::didx_data_t(uint32_t p_length, kaitai::kstream* p__io, bnk_t
 }
 
 void bnk_t::didx_data_t::_read() {
-    int l_objs = (length() / 12);
+    int l_objs = num_files();
     m_objs = new std::vector<didx_obj_t*>();
     m_objs->reserve(l_objs);
     for (int i = 0; i < l_objs; i++) {
@@ -447,6 +567,14 @@ void bnk_t::didx_data_t::_clean_up() {
         }
         delete m_objs; m_objs = 0;
     }
+}
+
+int32_t bnk_t::didx_data_t::num_files() {
+    if (f_num_files)
+        return m_num_files;
+    m_num_files = (length() / 12);
+    f_num_files = true;
+    return m_num_files;
 }
 
 bnk_t::ss_rtpc_t::ss_rtpc_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
@@ -493,6 +621,7 @@ void bnk_t::ss_rtpc_t::_clean_up() {
 bnk_t::sound_effect_or_voice_t::sound_effect_or_voice_t(kaitai::kstream* p__io, bnk_t::hirc_obj_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
+    f_wem_data = false;
 
     try {
         _read();
@@ -530,6 +659,23 @@ void bnk_t::sound_effect_or_voice_t::_clean_up() {
     }
     if (!n_wem_length) {
     }
+    if (f_wem_data && !n_wem_data) {
+    }
+}
+
+std::string bnk_t::sound_effect_or_voice_t::wem_data() {
+    if (f_wem_data)
+        return m_wem_data;
+    n_wem_data = true;
+    if (included_or_streamed() == 0) {
+        n_wem_data = false;
+        std::streampos _pos = m__io->pos();
+        m__io->seek(wem_offset());
+        m_wem_data = m__io->read_bytes(wem_length());
+        m__io->seek(_pos);
+        f_wem_data = true;
+    }
+    return m_wem_data;
 }
 
 bnk_t::hirc_obj_t::hirc_obj_t(kaitai::kstream* p__io, bnk_t::hirc_data_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
@@ -549,30 +695,26 @@ void bnk_t::hirc_obj_t::_read() {
     m_length = m__io->read_u4le();
     m_id = m__io->read_u4le();
     switch (type()) {
-    case bnk_t::OBJECT_TYPE_SOUND_EFFECT_OR_VOICE: {
-        m_object_data = new sound_effect_or_voice_t(m__io, this, m__root);
-        break;
-    }
-    case bnk_t::OBJECT_TYPE_EVENT_ACTION: {
-        m_object_data = new event_action_t(m__io, this, m__root);
-        break;
-    }
-    case bnk_t::OBJECT_TYPE_EVENT: {
-        m_object_data = new event_t(m__io, this, m__root);
-        break;
-    }
-    case bnk_t::OBJECT_TYPE_SETTINGS: {
-        m_object_data = new settings_t(m__io, this, m__root);
-        break;
-    }
-    case bnk_t::OBJECT_TYPE_MUSIC_SEGMENT: {
-        m_object_data = new music_segment_t(m__io, this, m__root);
-        break;
-    }
-    default: {
-        m_object_data = new random_bytes_t((length() - 4), m__io, this, m__root);
-        break;
-    }
+        case bnk_t::OBJECT_TYPE_SOUND_EFFECT_OR_VOICE: {
+            m_object_data = new sound_effect_or_voice_t(m__io, this, m__root);
+            break;
+        }
+        case bnk_t::OBJECT_TYPE_EVENT_ACTION: {
+            m_object_data = new event_action_t(m__io, this, m__root);
+            break;
+        }
+        case bnk_t::OBJECT_TYPE_EVENT: {
+            m_object_data = new event_t(m__io, this, m__root);
+            break;
+        }
+        case bnk_t::OBJECT_TYPE_SETTINGS: {
+            m_object_data = new settings_t(m__io, this, m__root);
+            break;
+        }
+        default: {
+            m_object_data = new random_bytes_t((length() - 4), m__io, this, m__root);
+            break;
+        }
     }
 }
 
@@ -605,6 +747,9 @@ void bnk_t::section_t::_read() {
         std::string on = type();
         if (on == std::string("HIRC")) {
             m_section_data = new hirc_data_t(length(), m__io, this, m__root);
+        }
+        else if (on == std::string("DATA")) {
+            m_section_data = new data_data_t(length(), m__io, this, m__root);
         }
         else if (on == std::string("STID")) {
             m_section_data = new stid_data_t(m__io, this, m__root);
@@ -724,7 +869,7 @@ void bnk_t::stid_data_t::_clean_up() {
     }
 }
 
-bnk_t::ss_effect_t::ss_effect_t(kaitai::kstream* p__io, bnk_t::sound_structure_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+bnk_t::ss_effect_t::ss_effect_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
 
@@ -773,7 +918,7 @@ bnk_t::rand_t::~rand_t() {
 void bnk_t::rand_t::_clean_up() {
 }
 
-bnk_t::music_segment_t::music_segment_t(kaitai::kstream* p__io, bnk_t::hirc_obj_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+bnk_t::music_segment_t::music_segment_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
     m_sound_structure = 0;
@@ -812,7 +957,7 @@ void bnk_t::music_segment_t::_clean_up() {
     }
 }
 
-bnk_t::ss_pos_inc_3d_t::ss_pos_inc_3d_t(kaitai::kstream* p__io, bnk_t::sound_structure_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+bnk_t::ss_pos_inc_3d_t::ss_pos_inc_3d_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
 
@@ -996,7 +1141,7 @@ bnk_t::random_bytes_t::~random_bytes_t() {
 void bnk_t::random_bytes_t::_clean_up() {
 }
 
-bnk_t::ss_pos_inc_2d_t::ss_pos_inc_2d_t(kaitai::kstream* p__io, bnk_t::sound_structure_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+bnk_t::ss_pos_inc_2d_t::ss_pos_inc_2d_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
 
@@ -1087,7 +1232,7 @@ void bnk_t::settings_t::_clean_up() {
     }
 }
 
-bnk_t::ss_state_obj_t::ss_state_obj_t(kaitai::kstream* p__io, bnk_t::ss_state_group_t* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
+bnk_t::ss_state_obj_t::ss_state_obj_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, bnk_t* p__root) : kaitai::kstruct(p__io) {
     m__parent = p__parent;
     m__root = p__root;
 

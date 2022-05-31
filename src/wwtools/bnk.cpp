@@ -7,60 +7,79 @@
 
 namespace wwtools::bnk {
 void extract(const std::string &indata, std::vector<std::string> &outdata) {
-  // Create a Kaitai stream with the input data
+  // create a Kaitai stream with the input data
   kaitai::kstream ks(indata);
 
-  // Create a BNK object from the stream
+  // create a BNK object from the stream
   bnk_t bnk(&ks);
-  const auto data = bnk.data();
 
-  // Reserve the length of the audio sections
-  //outdata.reserve(data->data()->audio_sections()->size());
-  int idx = 0;
-  // Loop through the audio sections and save the data to outdata
-  //for (auto audio_section : *data->data()->audio_sections()) {
-  //  outdata.push_back(audio_section->data());
-  //  idx++;
-  //}
+  // loop through each section to find the DATA section
+  for (const auto &section : *bnk.data()) {
+      if (section->type() == "DATA") {
+          // cast the section to a DATA section
+          auto *data_section = (bnk_t::data_data_t *)(section->section_data());
+          // reserve the necessary amount
+          outdata.reserve(data_section->didx_data()->num_files());
+          // loop through each data object in the section
+          for (const auto &file_data : *data_section->data_obj_section()->data()) {
+              // append the file vector with the file data
+              outdata.push_back(file_data->file());
+          }
+      }
+  }
 }
 
 std::string get_info(const std::string &indata) {
-  // Create a Kaitai stream with the input data
-  kaitai::kstream ks(indata);
+    // create a Kaitai stream with the input data
+    kaitai::kstream ks(indata);
 
-  // Create a BNK object from the stream
-  bnk_t bnk(&ks);
+    // create a BNK object from the stream
+    bnk_t bnk(&ks);
 
-  // Add data from header
-  std::stringstream data_ss;
-  //data_ss << "Version: " << bnk.bank_header()->version() << std::endl;
-  //data_ss << "Soundbank ID: " << bnk.bank_header()->id() << std::endl;
+    // add data from header
+    std::stringstream data_ss;
 
-  // Add WEM indexes and count
-  //data_ss << bnk.data_index()->data()->indices()->size()
-  //        << " embedded WEM files:" << std::endl;
-  //for (auto index : *bnk.data_index()->data()->indices()) {
-  //  data_ss << "  " << index->id() << std::endl;
-  //}
+    // loop through each section to find the BKHD (Bank Header) section
+    for (const auto &section : *bnk.data()) {
+      if (section->type() == "BKHD") {
+          bnk_t::bkhd_data_t *bkhd_section = (bnk_t::bkhd_data_t *)(section->section_data());
+          auto version = bkhd_section->version();
+          auto id = bkhd_section->id();
+          data_ss << "Version: " << version << '\n';
+          data_ss << "Soundbank ID: " << id << '\n';
+      }
+    }
 
-  //return data_ss.str();
-  return "";
+    // loop through each section to find the DIDX (Data Index) section
+    for (const auto &section : *bnk.data()) {
+        if (section->type() == "DIDX") {
+            auto *didx_section = (bnk_t::didx_data_t *)(section->section_data());
+            data_ss << didx_section->num_files() << " embedded WEM files:\n";
+            for (auto index : *didx_section->objs()) {
+                data_ss << '\t' << index->id() << '\n';
+            }
+        }
+    }
+
+    return data_ss.str();
 }
 
 std::string get_event_action_type(bnk_t::action_type_t action_type) {
+    std::string ret;
     switch(action_type) {
         case bnk_t::ACTION_TYPE_PLAY:
-            return "play";
+            ret = "play";
             break;
         case bnk_t::ACTION_TYPE_PAUSE:
-            return "pause";
+            ret = "pause";
             break;
         case bnk_t::ACTION_TYPE_STOP:
-            return "stop";
+            ret = "stop";
             break;
         default:
-            return std::to_string(action_type);
+            ret = std::to_string(action_type);
             break;
     }
+    return ret;
 }
 } // namespace wwtools::bnk

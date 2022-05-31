@@ -14,6 +14,9 @@
 class bnk_t : public kaitai::kstruct {
 
 public:
+    class data_obj_t;
+    class data_data_t;
+    class data_obj_section_t;
     class didx_obj_t;
     class hirc_data_t;
     class bkhd_data_t;
@@ -123,6 +126,102 @@ private:
 public:
     ~bnk_t();
 
+    class data_obj_t : public kaitai::kstruct {
+
+    public:
+
+        data_obj_t(uint32_t p_offset, uint32_t p_length, kaitai::kstream* p__io, bnk_t::data_obj_section_t* p__parent = 0, bnk_t* p__root = 0);
+
+    private:
+        void _read();
+        void _clean_up();
+
+    public:
+        ~data_obj_t();
+
+    private:
+        bool f_file;
+        std::string m_file;
+
+    public:
+        std::string file();
+
+    private:
+        uint32_t m_offset;
+        uint32_t m_length;
+        bnk_t* m__root;
+        bnk_t::data_obj_section_t* m__parent;
+
+    public:
+        uint32_t offset() const { return m_offset; }
+        uint32_t length() const { return m_length; }
+        bnk_t* _root() const { return m__root; }
+        bnk_t::data_obj_section_t* _parent() const { return m__parent; }
+    };
+
+    class data_data_t : public kaitai::kstruct {
+
+    public:
+
+        data_data_t(uint32_t p_length, kaitai::kstream* p__io, bnk_t::section_t* p__parent = 0, bnk_t* p__root = 0);
+
+    private:
+        void _read();
+        void _clean_up();
+
+    public:
+        ~data_data_t();
+
+    private:
+        bool f_didx_data;
+        bnk_t::didx_data_t* m_didx_data;
+
+    public:
+        bnk_t::didx_data_t* didx_data();
+
+    private:
+        data_obj_section_t* m_data_obj_section;
+        uint32_t m_length;
+        bnk_t* m__root;
+        bnk_t::section_t* m__parent;
+        std::string m__raw_data_obj_section;
+        kaitai::kstream* m__io__raw_data_obj_section;
+
+    public:
+        data_obj_section_t* data_obj_section() const { return m_data_obj_section; }
+        uint32_t length() const { return m_length; }
+        bnk_t* _root() const { return m__root; }
+        bnk_t::section_t* _parent() const { return m__parent; }
+        std::string _raw_data_obj_section() const { return m__raw_data_obj_section; }
+        kaitai::kstream* _io__raw_data_obj_section() const { return m__io__raw_data_obj_section; }
+    };
+
+    class data_obj_section_t : public kaitai::kstruct {
+
+    public:
+
+        data_obj_section_t(uint32_t p_length, kaitai::kstream* p__io, bnk_t::data_data_t* p__parent = 0, bnk_t* p__root = 0);
+
+    private:
+        void _read();
+        void _clean_up();
+
+    public:
+        ~data_obj_section_t();
+
+    private:
+        std::vector<data_obj_t*>* m_data;
+        uint32_t m_length;
+        bnk_t* m__root;
+        bnk_t::data_data_t* m__parent;
+
+    public:
+        std::vector<data_obj_t*>* data() const { return m_data; }
+        uint32_t length() const { return m_length; }
+        bnk_t* _root() const { return m__root; }
+        bnk_t::data_data_t* _parent() const { return m__parent; }
+    };
+
     class didx_obj_t : public kaitai::kstruct {
 
     public:
@@ -203,7 +302,7 @@ public:
         bnk_t::section_t* m__parent;
 
     public:
-        uint32_t version() const { return m_version; }
+        [[nodiscard]] uint32_t version() const;
         uint32_t id() const { return m_id; }
         std::string blank1() const { return m_blank1; }
         std::string blank2() const { return m_blank2; }
@@ -243,7 +342,7 @@ public:
 
     public:
 
-        ss_state_group_t(kaitai::kstream* p__io, bnk_t::sound_structure_t* p__parent = 0, bnk_t* p__root = 0);
+        ss_state_group_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent = 0, bnk_t* p__root = 0);
 
     private:
         void _read();
@@ -258,7 +357,7 @@ public:
         uint16_t m_settings_vary_from_default;
         std::vector<ss_state_obj_t*>* m_state_obj;
         bnk_t* m__root;
-        bnk_t::sound_structure_t* m__parent;
+        kaitai::kstruct* m__parent;
 
     public:
         uint32_t id() const { return m_id; }
@@ -266,14 +365,14 @@ public:
         uint16_t settings_vary_from_default() const { return m_settings_vary_from_default; }
         std::vector<ss_state_obj_t*>* state_obj() const { return m_state_obj; }
         bnk_t* _root() const { return m__root; }
-        bnk_t::sound_structure_t* _parent() const { return m__parent; }
+        kaitai::kstruct* _parent() const { return m__parent; }
     };
 
     class sound_structure_t : public kaitai::kstruct {
 
     public:
 
-        sound_structure_t(kaitai::kstream* p__io, bnk_t::music_segment_t* p__parent = 0, bnk_t* p__root = 0);
+        sound_structure_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent = 0, bnk_t* p__root = 0);
 
     private:
         void _read();
@@ -369,7 +468,7 @@ public:
         std::vector<ss_state_group_t*>* m_state_group;
         uint16_t m_rtpc_count;
         bnk_t* m__root;
-        bnk_t::music_segment_t* m__parent;
+        kaitai::kstruct* m__parent;
 
     public:
         bool override_parent_settings_for_effects() const { return m_override_parent_settings_for_effects; }
@@ -404,7 +503,7 @@ public:
         std::vector<ss_state_group_t*>* state_group() const { return m_state_group; }
         uint16_t rtpc_count() const { return m_rtpc_count; }
         bnk_t* _root() const { return m__root; }
-        bnk_t::music_segment_t* _parent() const { return m__parent; }
+        kaitai::kstruct* _parent() const { return m__parent; }
     };
 
     class stid_obj_t : public kaitai::kstruct {
@@ -447,6 +546,13 @@ public:
 
     public:
         ~didx_data_t();
+
+    private:
+        bool f_num_files;
+        int32_t m_num_files;
+
+    public:
+        int32_t num_files();
 
     private:
         std::vector<didx_obj_t*>* m_objs;
@@ -509,6 +615,19 @@ public:
 
     public:
         ~sound_effect_or_voice_t();
+
+    private:
+        bool f_wem_data;
+        std::string m_wem_data;
+        bool n_wem_data;
+
+    public:
+        bool _is_null_wem_data() { wem_data(); return n_wem_data; };
+
+    private:
+
+    public:
+        std::string wem_data();
 
     private:
         std::string m_unknown;
@@ -683,7 +802,7 @@ public:
 
     public:
 
-        ss_effect_t(kaitai::kstream* p__io, bnk_t::sound_structure_t* p__parent = 0, bnk_t* p__root = 0);
+        ss_effect_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent = 0, bnk_t* p__root = 0);
 
     private:
         void _read();
@@ -697,14 +816,14 @@ public:
         uint32_t m_id;
         std::string m_blank;
         bnk_t* m__root;
-        bnk_t::sound_structure_t* m__parent;
+        kaitai::kstruct* m__parent;
 
     public:
         int8_t index() const { return m_index; }
         uint32_t id() const { return m_id; }
         std::string blank() const { return m_blank; }
         bnk_t* _root() const { return m__root; }
-        bnk_t::sound_structure_t* _parent() const { return m__parent; }
+        kaitai::kstruct* _parent() const { return m__parent; }
     };
 
     class rand_t : public kaitai::kstruct {
@@ -737,7 +856,7 @@ public:
 
     public:
 
-        music_segment_t(kaitai::kstream* p__io, bnk_t::hirc_obj_t* p__parent = 0, bnk_t* p__root = 0);
+        music_segment_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent = 0, bnk_t* p__root = 0);
 
     private:
         void _read();
@@ -752,7 +871,7 @@ public:
         std::vector<uint32_t>* m_child_obj;
         std::string m_unk;
         bnk_t* m__root;
-        bnk_t::hirc_obj_t* m__parent;
+        kaitai::kstruct* m__parent;
 
     public:
         sound_structure_t* sound_structure() const { return m_sound_structure; }
@@ -760,14 +879,14 @@ public:
         std::vector<uint32_t>* child_obj() const { return m_child_obj; }
         std::string unk() const { return m_unk; }
         bnk_t* _root() const { return m__root; }
-        bnk_t::hirc_obj_t* _parent() const { return m__parent; }
+        kaitai::kstruct* _parent() const { return m__parent; }
     };
 
     class ss_pos_inc_3d_t : public kaitai::kstruct {
 
     public:
 
-        ss_pos_inc_3d_t(kaitai::kstream* p__io, bnk_t::sound_structure_t* p__parent = 0, bnk_t* p__root = 0);
+        ss_pos_inc_3d_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent = 0, bnk_t* p__root = 0);
 
     private:
         void _read();
@@ -816,7 +935,7 @@ public:
 
     private:
         bnk_t* m__root;
-        bnk_t::sound_structure_t* m__parent;
+        kaitai::kstruct* m__parent;
 
     public:
         uint32_t source_type() const { return m_source_type; }
@@ -828,7 +947,7 @@ public:
         bool follow_listener_orientation() const { return m_follow_listener_orientation; }
         bool update_at_each_frame() const { return m_update_at_each_frame; }
         bnk_t* _root() const { return m__root; }
-        bnk_t::sound_structure_t* _parent() const { return m__parent; }
+        kaitai::kstruct* _parent() const { return m__parent; }
     };
 
     class event_action_t : public kaitai::kstruct {
@@ -933,7 +1052,7 @@ public:
 
     public:
 
-        ss_pos_inc_2d_t(kaitai::kstream* p__io, bnk_t::sound_structure_t* p__parent = 0, bnk_t* p__root = 0);
+        ss_pos_inc_2d_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent = 0, bnk_t* p__root = 0);
 
     private:
         void _read();
@@ -945,12 +1064,12 @@ public:
     private:
         bool m_panner_enabled;
         bnk_t* m__root;
-        bnk_t::sound_structure_t* m__parent;
+        kaitai::kstruct* m__parent;
 
     public:
         bool panner_enabled() const { return m_panner_enabled; }
         bnk_t* _root() const { return m__root; }
-        bnk_t::sound_structure_t* _parent() const { return m__parent; }
+        kaitai::kstruct* _parent() const { return m__parent; }
     };
 
     class ss_rtpc_point_t : public kaitai::kstruct {
@@ -1013,7 +1132,7 @@ public:
 
     public:
 
-        ss_state_obj_t(kaitai::kstream* p__io, bnk_t::ss_state_group_t* p__parent = 0, bnk_t* p__root = 0);
+        ss_state_obj_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent = 0, bnk_t* p__root = 0);
 
     private:
         void _read();
@@ -1026,13 +1145,13 @@ public:
         uint32_t m_id;
         uint32_t m_settings_obj_id;
         bnk_t* m__root;
-        bnk_t::ss_state_group_t* m__parent;
+        kaitai::kstruct* m__parent;
 
     public:
         uint32_t id() const { return m_id; }
         uint32_t settings_obj_id() const { return m_settings_obj_id; }
         bnk_t* _root() const { return m__root; }
-        bnk_t::ss_state_group_t* _parent() const { return m__parent; }
+        kaitai::kstruct* _parent() const { return m__parent; }
     };
 
 private:

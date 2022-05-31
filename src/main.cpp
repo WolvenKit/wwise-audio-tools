@@ -145,6 +145,17 @@ int main(int argc, char *argv[]) {
 #pragma endregion WEM
 #pragma region BNK
       } else if (strcmp(argv[1], "bnk") == 0) {
+          auto path = std::string(argv[3]);
+
+          std::ifstream filein(path, std::ios::binary);
+          std::stringstream indata;
+          indata << filein.rdbuf();
+
+          if (has_flag(flags, "info")) {
+              std::cout << wwtools::bnk::get_info(indata.str());
+              return EXIT_SUCCESS;
+          }
+
         if (argc < 4) {
           print_help(
               "You must specify whether to extract or find an event as well as the input!",
