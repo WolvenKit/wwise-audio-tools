@@ -248,6 +248,9 @@ std::string get_event_action_type(bnk_t::action_type_t action_type) {
   case bnk_t::ACTION_TYPE_STOP:
     ret = "stop";
     break;
+  case bnk_t::ACTION_TYPE_RESUME:
+      ret = "resume";
+      break;
   default:
     ret = std::to_string(action_type);
     break;
