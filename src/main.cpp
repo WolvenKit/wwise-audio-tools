@@ -80,12 +80,6 @@ bool has_flag(std::vector<std::string> flags, std::string wanted_flag) {
   return false;
 }
 
-struct EventSFX {
-    bnk_t::action_type_t action_type;
-    bnk_t::sound_effect_or_voice_t *sfx;
-    bool is_child;
-};
-
 int main(int argc, char *argv[]) {
   // TODO: Add more descriptive comments regarding as much as possible
   std::pair<std::vector<std::string>, bool> flags_raw = get_flags(argc, argv);
@@ -180,122 +174,11 @@ int main(int argc, char *argv[]) {
           if (argc >= 5)
               in_event_id = argv[4];
 
-          std::cout << bnk_path << std::endl;
           std::ifstream bnk_in(bnk_path, std::ios::binary);
-          kaitai::kstream ks(&bnk_in);
-          bnk_t bnk(&ks);
+          std::stringstream indata;
+          indata << bnk_in.rdbuf();
 
-          // loop through each section to get to HIRC and find event ID
-          for (const auto &section : *bnk.data()) {
-              // read HIRC
-            if (section->type() == "HIRC") {
-                // cast section to HIRC data
-              bnk_t::hirc_data_t *hirc_data = (bnk_t::hirc_data_t *)(section->section_data());
-              // create a map between events and the corresponding event actions
-              std::map<uint32_t /* event */, std::vector<bnk_t::event_action_t *> /* event action (with gobj id) */> event_to_event_actions;
-              // loop through all HIRC objects
-              for (const auto &obj_i : *hirc_data->objs()) {
-                if (obj_i->type() == bnk_t::OBJECT_TYPE_EVENT) { // get event
-                  bnk_t::event_t *event = (bnk_t::event_t *)(obj_i->object_data()); // cast to event
-                  bool all_event_ids = false;
-                  if (in_event_id.empty())
-                      all_event_ids = true;
-                  // compare ID to command line input ID
-                  if (std::to_string(obj_i->id()) == in_event_id) {
-                      // get all event action IDs for this event
-                    for (const auto& event_action_id : *event->event_actions()) {
-                        // loop to get corresponding event actions from IDs
-                      for (const auto &obj_j : *hirc_data->objs()) {
-                          // check if it's an event actions, and if it is, check if it matches up with
-                          // an event_action_id corresponding to the inputted event
-                        if (obj_j->type() == bnk_t::OBJECT_TYPE_EVENT_ACTION) {
-                          bnk_t::event_action_t *event_action = (bnk_t::event_action_t *)(obj_j->object_data());
-                          if (obj_j->id() == event_action_id) {
-                              // if it points to a game object (sound or container)
-                              if (event_action->scope() == bnk_t::ACTION_SCOPE_GAME_OBJECT) {
-                                  // add it to the vector in the map corresponding to the event ID
-                                  event_to_event_actions[obj_i->id()].push_back(event_action);
-                              }
-                          }
-                        }
-                      }
-                    }
-                  } else if (all_event_ids) {
-                      // get all event action IDs for this event
-                      for (const auto& event_action_id : *event->event_actions()) {
-                          // loop to get corresponding event actions from IDs
-                          for (const auto &obj_j : *hirc_data->objs()) {
-                              // check if it's an event actions, and if it is, check if it matches up with
-                              // an event_action_id corresponding to the inputted event
-                              if (obj_j->type() == bnk_t::OBJECT_TYPE_EVENT_ACTION) {
-                                  bnk_t::event_action_t *event_action = (bnk_t::event_action_t *)(obj_j->object_data());
-                                  if (obj_j->id() == event_action_id) {
-                                      // if it points to a game object (sound or container)
-                                      if (event_action->scope() == bnk_t::ACTION_SCOPE_GAME_OBJECT) {
-                                          // add it to the vector in the map corresponding to the event ID
-                                          event_to_event_actions[obj_j->id()].push_back(event_action);
-                                      }
-                                  }
-                              }
-                          }
-                      }
-                  }
-                }
-              }
-
-                std::map<uint32_t /* event ID */, std::vector<EventSFX>> event_to_event_sfxs;
-              // loop through all objects again, this time looking for SFX
-              for (const auto& obj : *hirc_data->objs()) {
-                if (obj->type() == bnk_t::OBJECT_TYPE_SOUND_EFFECT_OR_VOICE) {
-                  bnk_t::sound_effect_or_voice_t *sound_effect_or_voice = (bnk_t::sound_effect_or_voice_t *)(obj->object_data());
-
-                  // get parent ID since it can also be used to check if this is a child
-                  // of an object that is manipulated by the event
-                  uint32_t parent_id_offset = 6;
-                  uint8_t num_effects = sound_effect_or_voice->sound_structure().at(1);
-                  if (num_effects > 0) {
-                    parent_id_offset++; // bit mask for bypassed effects
-                    parent_id_offset += num_effects * 7; // 7 bytes for each effect
-                  }
-                  uint32_t parent_id = 0;
-                  std::stringstream ss;
-                  ss.write(sound_effect_or_voice->sound_structure().c_str(), sound_effect_or_voice->sound_structure().size());
-                  ss.seekg(parent_id_offset);
-                  ss.read(reinterpret_cast<char *>(&parent_id), 4);
-
-
-                  // loop through each event ID and its corresponding event actions
-                  for (const auto &[event, event_actions] : event_to_event_actions) {
-                      for (const auto &event_action : event_actions) {
-                          if (event_action->game_object_id() == obj->id() || event_action->game_object_id() == parent_id) {
-                              EventSFX current_event_sfx{};
-                              current_event_sfx.action_type = event_action->type();
-                              current_event_sfx.sfx = sound_effect_or_voice;
-                              if (event_action->game_object_id() == parent_id)
-                                  current_event_sfx.is_child = true;
-                              else
-                                  current_event_sfx.is_child = false;
-                              event_to_event_sfxs[event].push_back(current_event_sfx);
-                          }
-                      }
-                  }
-                }
-              }
-                std::cout << "Found " << event_to_event_sfxs.size() << " event(s)\n\n";
-                for (const auto &[event_id, event_sfxs] : event_to_event_sfxs) {
-                    std::cout << event_id << '\n';
-                    for (const auto &event_sfx : event_sfxs) {
-                        std::cout <<
-                        '\t' << wwtools::bnk::get_event_action_type(event_sfx.action_type) << ' ' << event_sfx.sfx->audio_file_id();
-                         if (event_sfx.is_child)
-                             std::cout << " (child)\n";
-                         else
-                             std::cout << '\n';
-                    }
-                    std::cout << std::endl; // newline + flush
-                }
-            }
-          }
+          std::cout << wwtools::bnk::get_event_id_info(indata.str());
         }
 /*      } else if (strcmp(argv[1], "bnk") == 0) {
         auto path = std::string(argv[2]);

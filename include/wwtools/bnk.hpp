@@ -39,6 +39,8 @@ void extract(const std::string &indata, std::vector<std::string> &outdata);
  */
 std::string get_info(const std::string &indata);
 
+std::string get_event_id_info(const std::string &indata);
+
 std::string get_event_action_type(bnk_t::action_type_t action_type);
 } // namespace wwtools::bnk
 
