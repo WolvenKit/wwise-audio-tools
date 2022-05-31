@@ -33,8 +33,8 @@ bool convert(std::string indata, std::string outpath) {
   return true;
 }
 
-void print_help(std::string extra_message = "",
-                std::string filename = "wwtools") {
+void print_help(const std::string &extra_message = "",
+                const std::string &filename = "wwtools") {
   if (!extra_message.empty()) {
     std::cout << rang::fg::red << extra_message << rang::fg::reset << std::endl
               << std::endl;
@@ -172,20 +172,31 @@ int main(int argc, char *argv[]) {
 
           // loop through each section to get to HIRC and find event ID
           for (const auto &section : *bnk.data()) {
+              // read HIRC
             if (section->type() == "HIRC") {
+                // cast section to HIRC data
               bnk_t::hirc_data_t *hirc_data = (bnk_t::hirc_data_t *)(section->section_data());
+              // create a map between events and the corresponding event actions
               std::map<uint32_t /* event */, std::vector<bnk_t::event_action_t *> /* event action (with gobj id) */> event_to_event_actions;
-              for (const auto &obj : *hirc_data->objs()) {
-                if (obj->type() == bnk_t::OBJECT_TYPE_EVENT) {
-                  bnk_t::event_t *event = (bnk_t::event_t *)(obj->object_data());
-                  if (std::to_string(obj->id()) == argv[4]) {
+              // loop through all HIRC objects
+              for (const auto &obj_i : *hirc_data->objs()) {
+                if (obj_i->type() == bnk_t::OBJECT_TYPE_EVENT) { // get event
+                  bnk_t::event_t *event = (bnk_t::event_t *)(obj_i->object_data()); // cast to event
+                  // compare ID to command line input ID
+                  if (std::to_string(obj_i->id()) == argv[4]) {
+                      // get all event action IDs for this event
                     for (const auto& event_action_id : *event->event_actions()) {
-                      for (const auto &obj2 : *hirc_data->objs()) {
-                        if (obj2->type() == bnk_t::OBJECT_TYPE_EVENT_ACTION) {
-                          bnk_t::event_action_t *event_action = (bnk_t::event_action_t *)(obj2->object_data());
-                          if (obj2->id() == event_action_id) {
+                        // loop to get corresponding event actions from IDs
+                      for (const auto &obj_j : *hirc_data->objs()) {
+                          // check if it's an event actions, and if it is, check if it matches up with
+                          // an event_action_id corresponding to the inputted event
+                        if (obj_j->type() == bnk_t::OBJECT_TYPE_EVENT_ACTION) {
+                          bnk_t::event_action_t *event_action = (bnk_t::event_action_t *)(obj_j->object_data());
+                          if (obj_j->id() == event_action_id) {
+                              // if it points to a game object (sound or container)
                               if (event_action->scope() == bnk_t::ACTION_SCOPE_GAME_OBJECT) {
-                                  event_to_event_actions[obj->id()].push_back(event_action);
+                                  // add it to the vector in the map corresponding to the event ID
+                                  event_to_event_actions[obj_j->id()].push_back(event_action);
                               }
                           }
                         }
@@ -195,17 +206,15 @@ int main(int argc, char *argv[]) {
                 }
               }
 
-              /* std::cout << event_to_event_actions.size() << std::endl;
-              for (const auto &[thing1, thing2] : event_to_event_actions) {
-                  std::cout << thing1 << std::endl;
-                  for (const auto &thing3 : thing2)
-                      std::cout << '\t' << thing3->game_object_id() << std::endl;
-              } */
-
-                bool printed_event_id = false;
+              // used for later making sure the event ID isn't printed multiple times
+              bool printed_event_id = false;
+              // loop through all objects again, this time looking for SFX
               for (const auto& obj : *hirc_data->objs()) {
                 if (obj->type() == bnk_t::OBJECT_TYPE_SOUND_EFFECT_OR_VOICE) {
                   bnk_t::sound_effect_or_voice_t *sound_effect_or_voice = (bnk_t::sound_effect_or_voice_t *)(obj->object_data());
+
+                  // get parent ID since it can also be used to check if this is a child
+                  // of an object that is manipulated by the event
                   uint32_t parent_id_offset = 6;
                   uint8_t num_effects = sound_effect_or_voice->sound_structure().at(1);
                   if (num_effects > 0) {
@@ -218,15 +227,23 @@ int main(int argc, char *argv[]) {
                   ss.seekg(parent_id_offset);
                   ss.read(reinterpret_cast<char *>(&parent_id), 4);
 
+                  // loop through each event ID and its corresponding event actions
                   for (const auto &[event, event_actions] : event_to_event_actions) {
+                      // only print event ID if it hasn't been printed already
                       if (!printed_event_id)
-                        std::cout << event;
+                        std::cout << event << '\n';
                       printed_event_id = true;
+                      // loop through each event action for the corresponding event ID
                       for (const auto &event_action : event_actions) {
+                          // if it corresponds to the SFX or its parent...
                           if (event_action->game_object_id() == obj->id() || event_action->game_object_id() == parent_id) {
-                              std::cout << '\n' << '\t' << wwtools::bnk::get_event_action_type(event_action->type()) << ' ' << sound_effect_or_voice->audio_file_id();
+                              // print the type (e.g. plays, stops) and the ID of the WEM file
+                              std::cout << '\t' << wwtools::bnk::get_event_action_type(event_action->type()) << ' ' << sound_effect_or_voice->audio_file_id();
+                              // note that it's a child if it matches the parent ID and not the object itself
                               if (event_action->game_object_id() == parent_id)
-                                  std::cout << " (child)";
+                                  std::cout << " (child)\n";
+                              else
+                                  std::cout << '\n';
                           }
                       }
                       std::cout << std::flush;
