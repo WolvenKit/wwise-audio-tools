@@ -154,7 +154,7 @@ int main(int argc, char *argv[]) {
         auto bnk_path = std::string(argv[3]);
 
         if (strcmp(argv[2], "event") == 0) {
-          if (argc < 6) {
+          if (argc < 5) {
             print_help("Not enough arguments for finding an event!");
             return EXIT_FAILURE;
           }
@@ -171,25 +171,23 @@ int main(int argc, char *argv[]) {
           bnk_t bnk(&ks);
 
           // loop through each section to get to HIRC and find event ID
-          // std::cout << (*bnk.data()).size() << std::endl;
           for (const auto &section : *bnk.data()) {
-            // std::cout << section->type() << std::endl;
             if (section->type() == "HIRC") {
               bnk_t::hirc_data_t *hirc_data = (bnk_t::hirc_data_t *)(section->section_data());
-              // std::vector<std::pair<uint32_t /*event*/, uint32_t /*game object id*/>> game_object_ids;
-              std::map<uint32_t /* game object id */, uint32_t /*correlating event*/> game_object_ids;
+              std::map<uint32_t /* event */, std::vector<bnk_t::event_action_t *> /* event action (with gobj id) */> event_to_event_actions;
               for (const auto &obj : *hirc_data->objs()) {
                 if (obj->type() == bnk_t::OBJECT_TYPE_EVENT) {
                   bnk_t::event_t *event = (bnk_t::event_t *)(obj->object_data());
                   if (std::to_string(obj->id()) == argv[4]) {
-                    for (const auto& event_action : *event->event_actions()) {
+                    for (const auto& event_action_id : *event->event_actions()) {
                       for (const auto &obj2 : *hirc_data->objs()) {
                         if (obj2->type() == bnk_t::OBJECT_TYPE_EVENT_ACTION) {
                           bnk_t::event_action_t *event_action = (bnk_t::event_action_t *)(obj2->object_data());
-                          // std::cout << obj->id() << ' ' << event_action->game_object_id() << std::endl;
-                          if (event_action->scope() == bnk_t::ACTION_SCOPE_GAME_OBJECT)  
-                            game_object_ids[event_action->game_object_id()] = obj->id();
-                          //game_object_ids.push_back({obj->id(), event_action->game_object_id()});
+                          if (obj2->id() == event_action_id) {
+                              if (event_action->scope() == bnk_t::ACTION_SCOPE_GAME_OBJECT) {
+                                  event_to_event_actions[obj->id()].push_back(event_action);
+                              }
+                          }
                         }
                       }
                     }
@@ -197,6 +195,14 @@ int main(int argc, char *argv[]) {
                 }
               }
 
+              /* std::cout << event_to_event_actions.size() << std::endl;
+              for (const auto &[thing1, thing2] : event_to_event_actions) {
+                  std::cout << thing1 << std::endl;
+                  for (const auto &thing3 : thing2)
+                      std::cout << '\t' << thing3->game_object_id() << std::endl;
+              } */
+
+                bool printed_event_id = false;
               for (const auto& obj : *hirc_data->objs()) {
                 if (obj->type() == bnk_t::OBJECT_TYPE_SOUND_EFFECT_OR_VOICE) {
                   bnk_t::sound_effect_or_voice_t *sound_effect_or_voice = (bnk_t::sound_effect_or_voice_t *)(obj->object_data());
@@ -211,10 +217,19 @@ int main(int argc, char *argv[]) {
                   ss.write(sound_effect_or_voice->sound_structure().c_str(), sound_effect_or_voice->sound_structure().size());
                   ss.seekg(parent_id_offset);
                   ss.read(reinterpret_cast<char *>(&parent_id), 4);
-                  for (const auto &[game_object_id, event_id] : game_object_ids) {
-                    if (game_object_id == obj->id() || game_object_id == parent_id) {
-                      std::cout << event_id << ':' << ' ' << sound_effect_or_voice->audio_file_id() << std::endl;
-                    }
+
+                  for (const auto &[event, event_actions] : event_to_event_actions) {
+                      if (!printed_event_id)
+                        std::cout << event;
+                      printed_event_id = true;
+                      for (const auto &event_action : event_actions) {
+                          if (event_action->game_object_id() == obj->id() || event_action->game_object_id() == parent_id) {
+                              std::cout << '\n' << '\t' << wwtools::bnk::get_event_action_type(event_action->type()) << ' ' << sound_effect_or_voice->audio_file_id();
+                              if (event_action->game_object_id() == parent_id)
+                                  std::cout << " (child)";
+                          }
+                      }
+                      std::cout << std::flush;
                   }
                 }
               }

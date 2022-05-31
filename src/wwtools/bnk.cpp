@@ -46,4 +46,21 @@ std::string get_info(const std::string &indata) {
   //return data_ss.str();
   return "";
 }
+
+std::string get_event_action_type(bnk_t::action_type_t action_type) {
+    switch(action_type) {
+        case bnk_t::ACTION_TYPE_PLAY:
+            return "play";
+            break;
+        case bnk_t::ACTION_TYPE_PAUSE:
+            return "pause";
+            break;
+        case bnk_t::ACTION_TYPE_STOP:
+            return "stop";
+            break;
+        default:
+            return std::to_string(action_type);
+            break;
+    }
+}
 } // namespace wwtools::bnk
