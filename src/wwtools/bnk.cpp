@@ -194,6 +194,27 @@ std::string get_event_id_info(const std::string &indata, const std::string& in_e
     return data_ss.str();
 }
 
+std::string get_wem_id_at_index(const std::string &indata, const int &index) {
+    // create a Kaitai stream with the input data
+    kaitai::kstream ks(indata);
+
+    // create a BNK object from the stream
+    bnk_t bnk(&ks);
+
+    // add data from header
+    std::stringstream data_ss;
+
+    // loop through each section to find the DIDX (Data Index) section
+    for (const auto &section : *bnk.data()) {
+        if (section->type() == "DIDX") {
+            auto *didx_section = (bnk_t::didx_data_t *)(section->section_data());
+            return std::to_string(didx_section->objs()->at(index)->id());
+        }
+    }
+
+    return "";
+}
+
 std::string get_event_action_type(bnk_t::action_type_t action_type) {
     std::string ret;
     switch(action_type) {

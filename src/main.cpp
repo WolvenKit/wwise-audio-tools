@@ -179,54 +179,45 @@ int main(int argc, char *argv[]) {
           indata << bnk_in.rdbuf();
 
           std::cout << wwtools::bnk::get_event_id_info(indata.str(), in_event_id);
+        } else if (strcmp(argv[2], "extract") == 0) {
+            std::vector<std::string> wems;
+            // populate WEMs vector with data
+            wwtools::bnk::extract(indata.str(), wems);
+            kaitai::kstream ks(indata.str());
+            bnk_t bnk(&ks);
+            // create directory with name of bnk file, no extension
+            fs::create_directory(path.substr(0, path.find_last_of(".")));
+            int idx = 0;
+            for (auto wem : wems) {
+                fs::path outdir(path.substr(0, path.find_last_of(".")));
+                std::ifstream bnk_in(bnk_path, std::ios::binary);
+                std::stringstream indata;
+                indata << bnk_in.rdbuf();
+                bool noconvert = has_flag(flags, "no-convert");
+                // TODO: maybe make a function to return an array of IDs at index instead
+                // of parsing the file every loop
+                fs::path filename(wwtools::bnk::get_wem_id_at_index(indata.str(), idx));
+                fs::path outpath = outdir / filename;
+                std::string file_extension = noconvert ? ".wem" : ".ogg";
+                std::cout << rang::fg::cyan << "[" << idx + 1 << "/" << wems.size()
+                          << "] " << rang::fg::reset << "Extracting "
+                          << outpath.string() + file_extension << "..." << std::endl;
+                if (noconvert) {
+                    std::ofstream of(outpath.string() + file_extension);
+                    of << wem;
+                    of.close();
+                    idx++;
+                    continue;
+                }
+                auto success = convert(wem, outpath.string() + file_extension);
+                if (!success) {
+                    std::cout << "Failed to convert "
+                              << outpath.string() + file_extension << std::endl;
+                    // Don't return error because others may succeed
+                }
+                idx++;
+            }
         }
-/*      } else if (strcmp(argv[1], "bnk") == 0) {
-        auto path = std::string(argv[2]);
-
-        std::ifstream filein(path, std::ios::binary);
-        std::stringstream indata;
-        indata << filein.rdbuf();
-        if (has_flag(flags, "info")) {
-          std::cout << wwtools::bnk::get_info(indata.str());
-          return 0;
-        }
-
-        kaitai::kstream ks(indata.str());
-
-        bnk_t bnk(&ks);
-
-        std::vector<std::string> wems;
-        // Populate WEMs vector with data
-        wwtools::bnk::extract(indata.str(), wems);
-        // Create directory with name of bnk file, no extension
-        fs::create_directory(path.substr(0, path.find_last_of(".")));
-        int idx = 0;
-        for (auto wem : wems) {
-          fs::path outdir(path.substr(0, path.find_last_of(".")));
-          std::stringstream ss;
-          ss << bnk.data_index()->data()->indices()->at(idx)->id();
-          bool noconvert = has_flag(flags, "no-convert");
-          fs::path filename(ss.str());
-          fs::path outpath = outdir / filename;
-          std::string file_extension = noconvert ? ".wem" : ".ogg";
-          std::cout << rang::fg::cyan << "[" << idx + 1 << "/" << wems.size()
-                    << "] " << rang::fg::reset << "Extracting "
-                    << outpath.string() + file_extension << "..." << std::endl;
-          if (noconvert) {
-            std::ofstream of(outpath.string() + file_extension);
-            of << wem;
-            of.close();
-            idx++;
-            continue;
-          }
-          auto success = convert(wem, outpath.string() + file_extension);
-          if (!success) {
-            std::cout << "Failed to convert "
-                      << outpath.string() + file_extension << std::endl;
-            // Don't return error because the rest may succeed
-          }
-          idx++;
-        }*/
 #pragma endregion BNK
 #pragma region CACHE      
       } else if (strcmp(argv[1], "cache") == 0) {
