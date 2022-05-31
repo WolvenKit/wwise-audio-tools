@@ -39,9 +39,23 @@ void extract(const std::string &indata, std::vector<std::string> &outdata);
  */
 std::string get_info(const std::string &indata);
 
+/**
+ * @brief get WEMs correlating to a BNK and an optional event ID
+ *
+ * @param indata std::string with the file data
+ * @param in_event_id the input event ID
+ * @return a printable info string
+ */
 std::string get_event_id_info(const std::string &indata,
                               const std::string &in_event_id);
 
+/**
+ * @brief get the ID of a WEM at an index
+ *
+ * @param indata std::string with the file data
+ * @param index the index to get the ID from
+ * @return the ID as a string
+ */
 std::string get_wem_id_at_index(const std::string &indata, const int &index);
 
 std::string get_event_action_type(bnk_t::action_type_t action_type);
