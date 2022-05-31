@@ -78,7 +78,7 @@ public:
   explicit Vorbis_packet_header(uint8_t t) : type(t) {}
 
   friend bitoggstream &operator<<(bitoggstream &bstream,
-                                   const Vorbis_packet_header &vph) {
+                                  const Vorbis_packet_header &vph) {
     Bit_uint<8> t(vph.type);
     bstream << t;
 
@@ -1187,4 +1187,4 @@ void Wwise_RIFF_Vorbis::generate_ogg_header_with_triad(bitoggstream &os) {
       throw parse_error_str("first audio packet doesn't follow setup packet");
   }
 }
-}
+} // namespace ww2ogg

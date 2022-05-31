@@ -300,4 +300,4 @@ void codebook_library::rebuild(bitstream &bis, unsigned long cb_size,
     throw size_mismatch(cb_size, bis.get_total_bits_read() / 8 + 1);
   }
 }
-}
+} // namespace ww2ogg

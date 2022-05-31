@@ -142,8 +142,8 @@ bool revorb(std::istream &indata, std::stringstream &outdata) {
   ogg_packet packet;
   ogg_page page;
 
-  if (copy_headers(indata_ss, &sync_in, &stream_in, outdata,
-                   &stream_out, &vi)) {
+  if (copy_headers(indata_ss, &sync_in, &stream_in, outdata, &stream_out,
+                   &vi)) {
     ogg_int64_t granpos = 0, packetnum = 0;
     int lastbs = 0;
 
@@ -183,7 +183,8 @@ bool revorb(std::istream &indata, std::stringstream &outdata) {
               granpos += (lastbs + bs) / 4;
             lastbs = bs;
 
-            packet.granulepos = granpos; packet.packetno = packetnum++;
+            packet.granulepos = granpos;
+            packet.packetno = packetnum++;
             if (!packet.e_o_s) {
               ogg_stream_packetin(&stream_out, &packet);
 

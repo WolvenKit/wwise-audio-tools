@@ -35,15 +35,17 @@ void print_help(const std::string &extra_message = "",
     std::cout << rang::fg::red << extra_message << rang::fg::reset << std::endl
               << std::endl;
   }
-  std::cout << "Please use the command in one of the following ways:\n"
-            << "  " << filename << " wem [input.wem] (--info)\n"
-            << "  " << filename << " bnk [event|extract] (input.bnk) (event ID) (--info) (--no-convert)\n"
-            << "  " << filename
-            << " cache [read|write] [file/directory name] (--info) "
-               "(--no-convert-wem) (--no-convert-bnk)\n"
-            << "Or run it without arguments to find and convert all WEMs in "
-               "the current directory."
-            << std::endl;
+  std::cout
+      << "Please use the command in one of the following ways:\n"
+      << "  " << filename << " wem [input.wem] (--info)\n"
+      << "  " << filename
+      << " bnk [event|extract] (input.bnk) (event ID) (--info) (--no-convert)\n"
+      << "  " << filename
+      << " cache [read|write] [file/directory name] (--info) "
+         "(--no-convert-wem) (--no-convert-bnk)\n"
+      << "Or run it without arguments to find and convert all WEMs in "
+         "the current directory."
+      << std::endl;
 }
 
 std::pair<std::vector<std::string>, bool> get_flags(int argc, char *argv[]) {
@@ -67,7 +69,8 @@ std::pair<std::vector<std::string>, bool> get_flags(int argc, char *argv[]) {
   return {flags, false};
 }
 
-bool has_flag(const std::vector<std::string> &flags, const std::string &wanted_flag) {
+bool has_flag(const std::vector<std::string> &flags,
+              const std::string &wanted_flag) {
   for (auto flag : flags) {
     if (flag == wanted_flag) {
       return true;
@@ -135,21 +138,21 @@ int main(int argc, char *argv[]) {
 #pragma endregion WEM
 #pragma region BNK
       } else if (strcmp(argv[1], "bnk") == 0) {
-          auto path = std::string(argv[3]);
+        auto path = std::string(argv[3]);
 
-          std::ifstream filein(path, std::ios::binary);
-          std::stringstream indata;
-          indata << filein.rdbuf();
+        std::ifstream filein(path, std::ios::binary);
+        std::stringstream indata;
+        indata << filein.rdbuf();
 
-          if (has_flag(flags, "info")) {
-              std::cout << wwtools::bnk::get_info(indata.str());
-              return EXIT_SUCCESS;
-          }
+        if (has_flag(flags, "info")) {
+          std::cout << wwtools::bnk::get_info(indata.str());
+          return EXIT_SUCCESS;
+        }
 
         if (argc < 4) {
-          print_help(
-              "You must specify whether to extract or find an event as well as the input!",
-              argv[0]);
+          print_help("You must specify whether to extract or find an event as "
+                     "well as the input!",
+                     argv[0]);
           return EXIT_FAILURE;
         }
 
@@ -168,54 +171,57 @@ int main(int argc, char *argv[]) {
 
           std::string in_event_id;
           if (argc >= 5)
-              in_event_id = argv[4];
+            in_event_id = argv[4];
 
           std::ifstream bnk_in(bnk_path, std::ios::binary);
           std::stringstream indata;
           indata << bnk_in.rdbuf();
 
-          std::cout << wwtools::bnk::get_event_id_info(indata.str(), in_event_id);
+          std::cout << wwtools::bnk::get_event_id_info(indata.str(),
+                                                       in_event_id);
         } else if (strcmp(argv[2], "extract") == 0) {
-            std::vector<std::string> wems;
-            // populate WEMs vector with data
-            wwtools::bnk::extract(indata.str(), wems);
-            kaitai::kstream ks(indata.str());
-            bnk_t bnk(&ks);
-            // create directory with name of bnk file, no extension
-            fs::create_directory(path.substr(0, path.find_last_of(".")));
-            int idx = 0;
-            for (auto wem : wems) {
-                fs::path outdir(path.substr(0, path.find_last_of(".")));
-                std::ifstream bnk_in(bnk_path, std::ios::binary);
-                std::stringstream indata;
-                indata << bnk_in.rdbuf();
-                bool noconvert = has_flag(flags, "no-convert");
-                // TODO: maybe make a function to return an array of IDs at index instead
-                // of parsing the file every loop
-                fs::path filename(wwtools::bnk::get_wem_id_at_index(indata.str(), idx));
-                fs::path outpath = outdir / filename;
-                std::string file_extension = noconvert ? ".wem" : ".ogg";
-                std::cout << rang::fg::cyan << "[" << idx + 1 << "/" << wems.size()
-                          << "] " << rang::fg::reset << "Extracting "
-                          << outpath.string() + file_extension << "..." << std::endl;
-                if (noconvert) {
-                    std::ofstream of(outpath.string() + file_extension);
-                    of << wem;
-                    of.close();
-                    idx++;
-                    continue;
-                }
-                auto success = convert(wem, outpath.string() + file_extension);
-                if (!success) {
-                    std::cout << "Failed to convert "
-                              << outpath.string() + file_extension << std::endl;
-                    // Don't return error because others may succeed
-                }
-                idx++;
+          std::vector<std::string> wems;
+          // populate WEMs vector with data
+          wwtools::bnk::extract(indata.str(), wems);
+          kaitai::kstream ks(indata.str());
+          bnk_t bnk(&ks);
+          // create directory with name of bnk file, no extension
+          fs::create_directory(path.substr(0, path.find_last_of(".")));
+          int idx = 0;
+          for (auto wem : wems) {
+            fs::path outdir(path.substr(0, path.find_last_of(".")));
+            std::ifstream bnk_in(bnk_path, std::ios::binary);
+            std::stringstream indata;
+            indata << bnk_in.rdbuf();
+            bool noconvert = has_flag(flags, "no-convert");
+            // TODO: maybe make a function to return an array of IDs at index
+            // instead of parsing the file every loop
+            fs::path filename(
+                wwtools::bnk::get_wem_id_at_index(indata.str(), idx));
+            fs::path outpath = outdir / filename;
+            std::string file_extension = noconvert ? ".wem" : ".ogg";
+            std::cout << rang::fg::cyan << "[" << idx + 1 << "/" << wems.size()
+                      << "] " << rang::fg::reset << "Extracting "
+                      << outpath.string() + file_extension << "..."
+                      << std::endl;
+            if (noconvert) {
+              std::ofstream of(outpath.string() + file_extension);
+              of << wem;
+              of.close();
+              idx++;
+              continue;
             }
+            auto success = convert(wem, outpath.string() + file_extension);
+            if (!success) {
+              std::cout << "Failed to convert "
+                        << outpath.string() + file_extension << std::endl;
+              // Don't return error because others may succeed
+            }
+            idx++;
+          }
         }
 #pragma endregion BNK
-#pragma region CACHE      
+#pragma region CACHE
       } else if (strcmp(argv[1], "cache") == 0) {
         if (argc < 4) {
           print_help(
@@ -337,7 +343,7 @@ int main(int argc, char *argv[]) {
           }
           wwtools::w3sc::create(v, of);
         }
-#pragma endregion CACHE      
+#pragma endregion CACHE
       } else {
         print_help(argv[0]);
         return 1;
