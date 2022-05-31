@@ -102,11 +102,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ab2ef85216c7c71210d5214fde14f01e2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewwtools_1_1bnk.html#ab2ef85216c7c71210d5214fde14f01e2">get_info</a> (const std::string &amp;indata)</td></tr>
 <tr class="memdesc:ab2ef85216c7c71210d5214fde14f01e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the info string  <a href="namespacewwtools_1_1bnk.html#ab2ef85216c7c71210d5214fde14f01e2">More...</a><br /></td></tr>
 <tr class="separator:ab2ef85216c7c71210d5214fde14f01e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17f13b7f291cc67f898bafe4e6a03204"><td class="memItemLeft" align="right" valign="top"><a id="a17f13b7f291cc67f898bafe4e6a03204"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_event_id_info</b> (const std::string &amp;indata, const std::string &amp;in_event_id)</td></tr>
+<tr class="memitem:a17f13b7f291cc67f898bafe4e6a03204"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewwtools_1_1bnk.html#a17f13b7f291cc67f898bafe4e6a03204">get_event_id_info</a> (const std::string &amp;indata, const std::string &amp;in_event_id)</td></tr>
+<tr class="memdesc:a17f13b7f291cc67f898bafe4e6a03204"><td class="mdescLeft">&#160;</td><td class="mdescRight">get WEMs correlating to a BNK and an optional event ID  <a href="namespacewwtools_1_1bnk.html#a17f13b7f291cc67f898bafe4e6a03204">More...</a><br /></td></tr>
 <tr class="separator:a17f13b7f291cc67f898bafe4e6a03204"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a609fc4a4935f587a26cbb1360e7b6f44"><td class="memItemLeft" align="right" valign="top"><a id="a609fc4a4935f587a26cbb1360e7b6f44"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_wem_id_at_index</b> (const std::string &amp;indata, const int &amp;index)</td></tr>
+<tr class="memitem:a609fc4a4935f587a26cbb1360e7b6f44"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacewwtools_1_1bnk.html#a609fc4a4935f587a26cbb1360e7b6f44">get_wem_id_at_index</a> (const std::string &amp;indata, const int &amp;index)</td></tr>
+<tr class="memdesc:a609fc4a4935f587a26cbb1360e7b6f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the ID of a WEM at an index  <a href="namespacewwtools_1_1bnk.html#a609fc4a4935f587a26cbb1360e7b6f44">More...</a><br /></td></tr>
 <tr class="separator:a609fc4a4935f587a26cbb1360e7b6f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a763943db245fdcd3571f24a8f54fdffa"><td class="memItemLeft" align="right" valign="top"><a id="a763943db245fdcd3571f24a8f54fdffa"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_event_action_type</b> (bnk_t::action_type_t action_type)</td></tr>
@@ -152,6 +152,44 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_event_acti
 
 </div>
 </div>
+<a id="a17f13b7f291cc67f898bafe4e6a03204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17f13b7f291cc67f898bafe4e6a03204">&#9670;&nbsp;</a></span>get_event_id_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string wwtools::bnk::get_event_id_info </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>indata</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>in_event_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get WEMs correlating to a BNK and an optional event ID </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indata</td><td>std::string with the file data </td></tr>
+    <tr><td class="paramname">in_event_id</td><td>the input event ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a printable info string </dd></dl>
+
+</div>
+</div>
 <a id="ab2ef85216c7c71210d5214fde14f01e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2ef85216c7c71210d5214fde14f01e2">&#9670;&nbsp;</a></span>get_info()</h2>
 
@@ -176,6 +214,44 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_event_acti
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a printable info string </dd></dl>
+
+</div>
+</div>
+<a id="a609fc4a4935f587a26cbb1360e7b6f44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a609fc4a4935f587a26cbb1360e7b6f44">&#9670;&nbsp;</a></span>get_wem_id_at_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string wwtools::bnk::get_wem_id_at_index </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>indata</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the ID of a WEM at an index </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indata</td><td>std::string with the file data </td></tr>
+    <tr><td class="paramname">index</td><td>the index to get the ID from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the ID as a string </dd></dl>
 
 </div>
 </div>
