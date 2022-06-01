@@ -158,6 +158,7 @@ std::string get_event_id_info(const std::string &indata,
           event_to_event_sfxs;
       // loop through all objects again, this time looking for SFX
       for (const auto &obj : *hirc_data->objs()) {
+        // TODO: figure out music tracks
         if (obj->type() == bnk_t::OBJECT_TYPE_SOUND_EFFECT_OR_VOICE) {
           bnk_t::sound_effect_or_voice_t *sound_effect_or_voice =
               (bnk_t::sound_effect_or_voice_t *)(obj->object_data());
