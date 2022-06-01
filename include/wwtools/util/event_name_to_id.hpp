@@ -1,0 +1,28929 @@
+// TODO: convert to map
+
+#ifndef WWTOOLS_UTIL_EVENT_NAME_TO_ID_HPP
+#define WWTOOLS_UTIL_EVENT_NAME_TO_ID_HPP
+
+#include <cstdint>
+#include <string>
+#include <vector>
+
+struct Event {
+    std::string name;
+    std::uint32_t id;
+    std::string bnk_name;
+};
+
+const std::vector<Event> events{{
+{
+	"amb_qu_EXT_EM_crowd_medium_arena_1_fight_30m",
+	1469944703,
+	"amb_qu_crowd_arena_ext"
+},
+{
+	"focus_clue_cockatrice_start",
+	4076436309,
+	"monster_cockatrice"
+},
+{
+	"focus_clue_cockatrice_stop",
+	1222533175,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice__breathing",
+	3044208832,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice__breathing_RND",
+	2634125469,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_burning",
+	751206840,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_burning_long",
+	3235956849,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_burning_short",
+	1438858855,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_burning_stop",
+	2887137271,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_death_burning",
+	530532891,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_death_cry",
+	4117531174,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_death_cry_exhale",
+	204660718,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_dialog_attack_screech",
+	2590143400,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_dialog_cockatrice_landing",
+	939416306,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_dialog_wing_flaps",
+	171815730,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_eating",
+	266105089,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_footsteps",
+	2474447656,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_footsteps_shuffle",
+	3180826138,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_hurt",
+	1077856480,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_hurt_always",
+	2725323172,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_hurt_loud",
+	2126852023,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_hurt_rnd",
+	3606409725,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_idle_vo",
+	4287905617,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_idle_vo_RND",
+	2585482896,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_landing",
+	1619066700,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_movement",
+	4039339696,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_parry_ADD",
+	3603331879,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_pre_attack_growl",
+	4099376675,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_pre_attack_growl_always",
+	71511221,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_punch_ground",
+	1105613493,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_screech",
+	394216354,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_screech_always",
+	2746674750,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_screech_short",
+	1748455641,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_screech_short_always",
+	1839105971,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_slide_fly",
+	2028414064,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_taunt_long",
+	2851511822,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_taunt_short",
+	3458876434,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_wing_attack",
+	1707792165,
+	"monster_cockatrice"
+},
+{
+	"monster_cockatrice_wing_flap",
+	3278824964,
+	"monster_cockatrice"
+},
+{
+	"set_monster_cockatrice_armour_type_generic",
+	606820259,
+	"monster_cockatrice"
+},
+{
+	"grunt_vo_agony",
+	3604533624,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_agony_end",
+	2269873918,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_attack_long",
+	3644397417,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_attack_long_ALWAYS",
+	561525283,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_attack_medium",
+	1039281658,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_attack_medium_ALWAYS",
+	519880790,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_attack_short",
+	4055069695,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_attack_short_ALWAYS",
+	3430882369,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_attack_short_RND",
+	3242351522,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_block",
+	1993327423,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_burn_dmg",
+	3180714690,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_burn_dmg_end",
+	1860819992,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_burn_recovery",
+	1522559591,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_death",
+	209757778,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_death_last_breath",
+	568971658,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_death_stop",
+	2458096881,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_dodge",
+	1035580193,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_grunt",
+	1456643074,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_impact_heavy",
+	1625123410,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_impact_heavy_ALWAYS",
+	2761801550,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_impact_light",
+	1777262823,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_impact_light_ALWAYS",
+	1105490537,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_impact_light_RND",
+	127149386,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_shock",
+	3985992122,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_throat_cut",
+	1902649411,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_throat_gurgling",
+	1658875032,
+	"grunt_vo_ciri"
+},
+{
+	"grunt_vo_throat_gurgling_sparse",
+	1433536311,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_attack_long_ALWAYS",
+	3623814830,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_attack_medium_ALWAYS",
+	3791880103,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_attack_short_ALWAYS",
+	1868473450,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_burn_dmg_RND",
+	3479660250,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_death_RND",
+	909264800,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_start",
+	3275716446,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_stop",
+	1756125182,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_m_burn_dmg_end",
+	2077504813,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_m_impact_heavy",
+	4109997507,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_m_impact_light",
+	1900386010,
+	"grunt_vo_ciri"
+},
+{
+	"scene_grunt_vo_m_throat_cut",
+	3188734954,
+	"grunt_vo_ciri"
+},
+{
+	"cs_e3_dialog_catch_coin_purse",
+	3144941207,
+	"vs_cutscenes"
+},
+{
+	"cs_e3_dialog_coin_purse_bounce_in_hand",
+	837076288,
+	"vs_cutscenes"
+},
+{
+	"cs_e3_dialog_door_open_and_close",
+	1975698056,
+	"vs_cutscenes"
+},
+{
+	"cs_e3_dialog_put_away_coin_purse",
+	3787944948,
+	"vs_cutscenes"
+},
+{
+	"cs_e3_dialog_qu_drop_bundle_of_bones",
+	737867603,
+	"vs_cutscenes"
+},
+{
+	"cs_e3_dialog_signs_quen_loop_small",
+	831847043,
+	"vs_cutscenes"
+},
+{
+	"cs_e3_dialog_signs_quen_release_small",
+	2846029708,
+	"vs_cutscenes"
+},
+{
+	"cs_vs_intro_part_3",
+	4150334358,
+	"vs_cutscenes"
+},
+{
+	"cs403_vesemir_and_balista",
+	74577457,
+	"cs403_vesemir_and_balista"
+},
+{
+	"cs105_ciri_escapes_swamps",
+	81404734,
+	"cs105_ciri_escapes_swamps"
+},
+{
+	"magic_sorceress_vfx_arcane_explode",
+	1309729666,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_arcane_explode_copy",
+	2425565558,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_arcane_fire_fx_loop_start",
+	2625214780,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_arcane_fire_fx_loop_stop",
+	1278662800,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_fire_fx1_loop_start",
+	4270502696,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_fire_fx1_loop_stop",
+	1471092980,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_fireball_fire_fx_loop_start",
+	3003127687,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_fireball_fire_fx_loop_stop",
+	1551835693,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_hit_electric",
+	3436918685,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_lightning_bolt",
+	901970446,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_lightning_fx_loop_start",
+	3897460099,
+	"magic_sorceress"
+},
+{
+	"magic_sorceress_vfx_lightning_fx_loop_stop",
+	1319420417,
+	"magic_sorceress"
+},
+{
+	"monster_drowner_breath_long_q503",
+	3166249385,
+	"monster_drowner"
+},
+{
+	"monster_drowner_dialog_breath_long",
+	2604837880,
+	"monster_drowner"
+},
+{
+	"monster_drowner_dialog_digout",
+	3429510777,
+	"monster_drowner"
+},
+{
+	"monster_drowner_dialog_growl",
+	1256695628,
+	"monster_drowner"
+},
+{
+	"monster_drowner_dialog_idle",
+	455707259,
+	"monster_drowner"
+},
+{
+	"monster_drowner_dialog_taunt",
+	958687331,
+	"monster_drowner"
+},
+{
+	"monster_drowner_eat",
+	1564533804,
+	"monster_drowner"
+},
+{
+	"monster_drowner_growl_q503",
+	3424497829,
+	"monster_drowner"
+},
+{
+	"monster_drowner_mv_bodyfall",
+	1697083741,
+	"monster_drowner"
+},
+{
+	"monster_drowner_mv_dighum",
+	2889889568,
+	"monster_drowner"
+},
+{
+	"monster_drowner_mv_digin",
+	4269666579,
+	"monster_drowner"
+},
+{
+	"monster_drowner_mv_digout",
+	2889154094,
+	"monster_drowner"
+},
+{
+	"monster_drowner_mv_flesh",
+	401041184,
+	"monster_drowner"
+},
+{
+	"monster_drowner_mv_footstep",
+	3317817636,
+	"monster_drowner"
+},
+{
+	"monster_drowner_swoosh",
+	1021742415,
+	"monster_drowner"
+},
+{
+	"monster_drowner_taunt_q503",
+	1301464996,
+	"monster_drowner"
+},
+{
+	"monster_drowner_uw_dive_long",
+	1274155936,
+	"monster_drowner"
+},
+{
+	"monster_drowner_uw_dive_short",
+	1704366656,
+	"monster_drowner"
+},
+{
+	"monster_drowner_uw_hit",
+	2862664848,
+	"monster_drowner"
+},
+{
+	"monster_drowner_uw_movement_heavy",
+	957943442,
+	"monster_drowner"
+},
+{
+	"monster_drowner_uw_pain",
+	1592589273,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_attack",
+	1527819846,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_attack_RND",
+	2700262823,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_breath_long",
+	1908016497,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_breath_long_RND",
+	1407630064,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_breath_short",
+	3149808999,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_breath_short_RND",
+	3323285962,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_burning",
+	2746145347,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_cough",
+	2933370752,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_death",
+	3263597564,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_growl",
+	3529373525,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_growl_RND",
+	4263329788,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_idle",
+	3222079664,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_idle_RND",
+	2962513165,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_pain",
+	2966008254,
+	"monster_drowner"
+},
+{
+	"monster_drowner_vo_taunt",
+	3362301854,
+	"monster_drowner"
+},
+{
+	"mosnter_drowner_focus_100m_start",
+	949824756,
+	"monster_drowner"
+},
+{
+	"mosnter_drowner_focus_100m_stop",
+	2801530216,
+	"monster_drowner"
+},
+{
+	"set_monster_drowner_armour_type_flesh",
+	1988623051,
+	"monster_drowner"
+},
+{
+	"cs501_ciri_escapes",
+	95057278,
+	"cs501_ciri_escapes"
+},
+{
+	"cs101_arrives_in_nml",
+	96148806,
+	"cs101_arrives_in_nml"
+},
+{
+	"cs202_geralt_helps_folan_out",
+	108930336,
+	"cs202_geralt_helps_folan_out"
+},
+{
+	"cmb_imlerith_shield_break_ADD",
+	3224768720,
+	"magic_imlerith"
+},
+{
+	"cmb_imlerith_shield_drop",
+	1821017792,
+	"magic_imlerith"
+},
+{
+	"cmb_imlerith_shield_impact",
+	995080617,
+	"magic_imlerith"
+},
+{
+	"cmb_imlerith_shield_taunt",
+	158740645,
+	"magic_imlerith"
+},
+{
+	"magic_imlerith_appear_disappear",
+	4221689817,
+	"magic_imlerith"
+},
+{
+	"qu_km_403_imlerith_hitting_gate",
+	3835235293,
+	"magic_imlerith"
+},
+{
+	"th1010_dirt_trickle",
+	3988592614,
+	"qu_ep1_th1010"
+},
+{
+	"cs201_sex_with_yennefer",
+	147010611,
+	"cs201_sex_with_yennefer"
+},
+{
+	"cs401_uma_changes_into_avallach",
+	155077290,
+	"cs401_uma_changes_into_avallach"
+},
+{
+	"amb_dyn_mills_EM_watermill_1_loop",
+	2385925163,
+	"amb_dyn_mills"
+},
+{
+	"amb_dyn_mills_EM_watermill_1_water_loop",
+	1684983487,
+	"amb_dyn_mills"
+},
+{
+	"amb_dyn_mills_EM_windmill_big_squeaking_loop",
+	1531517596,
+	"amb_dyn_mills"
+},
+{
+	"amb_dyn_mills_EM_windmill_creaks_1",
+	2727741457,
+	"amb_dyn_mills"
+},
+{
+	"amb_dyn_EXT_crowd_city_neutral_1_25m",
+	2444114792,
+	"amb_dyn_crowd_city_ext"
+},
+{
+	"cs602_sex_with_shani_puke",
+	168994187,
+	"cs602_sex_with_shani_puke"
+},
+{
+	"cs_sq301_triss_departure",
+	175321089,
+	"cs_sq301_triss_departure"
+},
+{
+	"test_env_crows",
+	38162272,
+	"focus_testing"
+},
+{
+	"test_env_sheep",
+	2816229889,
+	"focus_testing"
+},
+{
+	"test_env_vo_2d",
+	3929995686,
+	"focus_testing"
+},
+{
+	"test_env_vo_3d",
+	3946773297,
+	"focus_testing"
+},
+{
+	"test_sinus",
+	942045258,
+	"focus_testing"
+},
+{
+	"vital_hit01",
+	81028130,
+	"focus_testing"
+},
+{
+	"vital_hit01_stop",
+	1017766369,
+	"focus_testing"
+},
+{
+	"vital_hit02",
+	81028129,
+	"focus_testing"
+},
+{
+	"vital_hit02_stop",
+	4040452900,
+	"focus_testing"
+},
+{
+	"vital_hit03",
+	81028128,
+	"focus_testing"
+},
+{
+	"vital_hit03_stop",
+	2899721999,
+	"focus_testing"
+},
+{
+	"vital_hit04",
+	81028135,
+	"focus_testing"
+},
+{
+	"vital_hit04_stop",
+	1447809506,
+	"focus_testing"
+},
+{
+	"cs103_baron_digs_grave",
+	183632204,
+	"cs103_baron_digs_grave"
+},
+{
+	"amb_qu_INT_EM_crowd_large_arena_1_ambient_25m",
+	1768466005,
+	"amb_qu_crowd_arena_int"
+},
+{
+	"amb_qu_INT_EM_crowd_large_arena_1_fight_15m",
+	400189300,
+	"amb_qu_crowd_arena_int"
+},
+{
+	"amb_qu_INT_EM_crowd_large_arena_1_fight_muted_custom_25m",
+	445273137,
+	"amb_qu_crowd_arena_int"
+},
+{
+	"amb_qu_INT_EM_crowd_large_arena_1_reaction_boo",
+	335866528,
+	"amb_qu_crowd_arena_int"
+},
+{
+	"amb_qu_INT_EM_crowd_large_arena_1_reaction_cheer",
+	379018851,
+	"amb_qu_crowd_arena_int"
+},
+{
+	"amb_qu_INT_EM_crowd_large_arena_1_reaction_stomp_loop",
+	141711312,
+	"amb_qu_crowd_arena_int"
+},
+{
+	"amb_qu_INT_EM_crowd_large_arena_1_reaction_stomp_loop_end",
+	2976251318,
+	"amb_qu_crowd_arena_int"
+},
+{
+	"amb_qu_INT_EM_crowd_medium_room_1_fight_30m",
+	17432169,
+	"amb_qu_crowd_arena_int"
+},
+{
+	"cs401_sex_with_yennefer",
+	193009353,
+	"cs401_sex_with_yennefer"
+},
+{
+	"magic_djinn_deep_background_rnd",
+	1527309821,
+	"magic_djinn"
+},
+{
+	"magic_djinn_default_fx_loop",
+	2492062712,
+	"magic_djinn"
+},
+{
+	"magic_djinn_default_fx_loop_end",
+	2141370750,
+	"magic_djinn"
+},
+{
+	"magic_djinn_fx_push",
+	3809022676,
+	"magic_djinn"
+},
+{
+	"magic_djinn_sq202_01_first_appear",
+	2613914830,
+	"magic_djinn"
+},
+{
+	"magic_djinn_sq202_01_yen_merging_artifact",
+	3611735697,
+	"magic_djinn"
+},
+{
+	"magic_djinn_sq202_02_djinn_appears",
+	2571923799,
+	"magic_djinn"
+},
+{
+	"magic_djinn_sq202_02_yen_catches_djinn",
+	2795191069,
+	"magic_djinn"
+},
+{
+	"magic_djinn_sq202_03_yen_last_spell_release",
+	2620744000,
+	"magic_djinn"
+},
+{
+	"magic_djinn_teleport",
+	1214407966,
+	"magic_djinn"
+},
+{
+	"magic_djinn_vfx_before_explode",
+	3187540039,
+	"magic_djinn"
+},
+{
+	"magic_djinn_vfx_explode",
+	2436803123,
+	"magic_djinn"
+},
+{
+	"magic_djinn_vfx_glow_loop_start",
+	3310022097,
+	"magic_djinn"
+},
+{
+	"magic_djinn_vfx_glow_loop_stop",
+	1460255179,
+	"magic_djinn"
+},
+{
+	"magic_djinn_vfx_impact",
+	2250869378,
+	"magic_djinn"
+},
+{
+	"magic_djinn_vfx_lightning",
+	2449211082,
+	"magic_djinn"
+},
+{
+	"magic_djinn_vfx_prepare_attack",
+	1682983476,
+	"magic_djinn"
+},
+{
+	"magic_djinn_vfx_sq202_cast_fx",
+	2471543163,
+	"magic_djinn"
+},
+{
+	"cs403_wild_hunt_approaches_p3_no_letho",
+	195852233,
+	"cs403_wild_hunt_approaches_p3_no_letho"
+},
+{
+	"animals_sheep_baa",
+	1242928233,
+	"animals_sheep"
+},
+{
+	"animals_sheep_call",
+	2568363623,
+	"animals_sheep"
+},
+{
+	"animals_sheep_call_always",
+	49790697,
+	"animals_sheep"
+},
+{
+	"animals_sheep_call_far",
+	1713382121,
+	"animals_sheep"
+},
+{
+	"animals_sheep_death",
+	3761822787,
+	"animals_sheep"
+},
+{
+	"cs105_witches_final_standoff_sfx",
+	3805078916,
+	"cs105_witches_final_standoff"
+},
+{
+	"cs107_witch_village_burns",
+	227316969,
+	"cs107_witch_village_burns"
+},
+{
+	"cs502_tower_ciri_walks_in_p1",
+	240555651,
+	"cs502_tower_ciri_walks_in_p1"
+},
+{
+	"mq2052_cave_rock_hit",
+	1642731118,
+	"dlc_mq2052"
+},
+{
+	"mq2052_crew_entrance_fs",
+	4265702857,
+	"dlc_mq2052"
+},
+{
+	"mq2052_falling_rock_hit",
+	1175504574,
+	"dlc_mq2052"
+},
+{
+	"mq2052_falling_rock_start",
+	2312324853,
+	"dlc_mq2052"
+},
+{
+	"mq2052_werewolf_fs",
+	1615302482,
+	"dlc_mq2052"
+},
+{
+	"mq2052_werewolf_jump",
+	1857209991,
+	"dlc_mq2052"
+},
+{
+	"mq2052_werewolf_taunt",
+	831899193,
+	"dlc_mq2052"
+},
+{
+	"monster_cyclop_anchor_drag",
+	831129749,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_anchor_hit_ground",
+	1044299852,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_attack_foot_smash",
+	2980057651,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_attack_hand_smash",
+	1476691224,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_bodyfall",
+	2349574800,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_chain_move_heavy",
+	419683406,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_chain_move_light",
+	3272930475,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_chain_move_lighter",
+	1854410574,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_focus_100m_start",
+	2583594555,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_focus_100m_stop",
+	32259481,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_footstep_run",
+	623407339,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_footstep_shuffle_hard",
+	1810615437,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_footstep_walk",
+	541824135,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_handling",
+	3306571932,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_mv_chest_hit",
+	2555796874,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_aggro_medium",
+	364866473,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_aggro_short",
+	2830578314,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_attack_long",
+	1005729738,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_attack_short",
+	3794782790,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_attack_special",
+	1782514169,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_block",
+	2691326008,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_breath_out_heavy",
+	1925751082,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_breath_out_light",
+	3300949199,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_damage_heavy",
+	854466274,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_damage_light",
+	161798551,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_death",
+	4029155129,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_idle_grunt",
+	2163987736,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_idle_grunt_RND",
+	843984853,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_shock",
+	3024845797,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_snort_in",
+	127603411,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_snort_out",
+	3306130670,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_vo_yawn",
+	828690556,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_whoosh_heavy",
+	1432887513,
+	"monster_cyclop"
+},
+{
+	"monster_cyclop_whoosh_medium",
+	3727439529,
+	"monster_cyclop"
+},
+{
+	"set_monster_cyclop_armour_type_generic",
+	1302465023,
+	"monster_cyclop"
+},
+{
+	"cs103_ciri_meets_baron_p1",
+	262586077,
+	"cs103_ciri_meets_baron_p1"
+},
+{
+	"cs103_ciri_meets_baron_p2",
+	262586078,
+	"cs103_ciri_meets_baron_p2"
+},
+{
+	"cs103_ciri_meets_baron_p3",
+	262586079,
+	"cs103_ciri_meets_baron_p3"
+},
+{
+	"cs208_ragagr_wins",
+	266145484,
+	"cs208_ragagr_wins"
+},
+{
+	"amb_dyn_garden_party_main",
+	2421172684,
+	"amb_dyn_garden_party"
+},
+{
+	"amb_dyn_garden_party_small",
+	1572815048,
+	"amb_dyn_garden_party"
+},
+{
+	"amb_dyn_garden_party_small_sukkubs_ctrl_0",
+	790400508,
+	"amb_dyn_garden_party"
+},
+{
+	"amb_dyn_garden_party_small_sukkubs_ctrl_1",
+	790400509,
+	"amb_dyn_garden_party"
+},
+{
+	"amb_dyn_garden_party_small_sukkubs_loop_55m",
+	3759909514,
+	"amb_dyn_garden_party"
+},
+{
+	"cs001_tavern_robbery_sfx",
+	2315896569,
+	"cs001_tavern_robbery"
+},
+{
+	"magic_avallach_cloth_appear",
+	2856251318,
+	"magic_avallach"
+},
+{
+	"magic_avallach_q403_cast_start",
+	287285269,
+	"magic_avallach"
+},
+{
+	"magic_avallach_q403_cast_stop",
+	2665213687,
+	"magic_avallach"
+},
+{
+	"cs103_guslar_prophecy",
+	325917247,
+	"cs103_guslar_prophecy"
+},
+{
+	"cs309_triss_leaves",
+	332041294,
+	"cs309_triss_leaves"
+},
+{
+	"animals_dialog_scene_animal_scratching",
+	2383253814,
+	"animals_generic"
+},
+{
+	"animals_g_bite_grass",
+	3363127280,
+	"animals_generic"
+},
+{
+	"animals_g_bite_grass_soft",
+	1939960207,
+	"animals_generic"
+},
+{
+	"animals_g_bite_grass_soft_up",
+	2525523993,
+	"animals_generic"
+},
+{
+	"animals_g_chewing_med",
+	3964909147,
+	"animals_generic"
+},
+{
+	"animals_g_chewing_med_soft",
+	1596756202,
+	"animals_generic"
+},
+{
+	"animals_g_fall_big",
+	2233910933,
+	"animals_generic"
+},
+{
+	"animals_g_fall_big_soft",
+	4195912888,
+	"animals_generic"
+},
+{
+	"animals_g_fall_small",
+	1910861122,
+	"animals_generic"
+},
+{
+	"animals_g_fall_small_soft",
+	1186748669,
+	"animals_generic"
+},
+{
+	"animals_g_scratching",
+	1433517675,
+	"animals_generic"
+},
+{
+	"animals_g_step2_med",
+	4263479124,
+	"animals_generic"
+},
+{
+	"animals_g_step_med",
+	3595340012,
+	"animals_generic"
+},
+{
+	"animals_g_step_small",
+	3453926091,
+	"animals_generic"
+},
+{
+	"animals_g_step_small_soft",
+	3025852506,
+	"animals_generic"
+},
+{
+	"cs001_tavern_intro",
+	357835758,
+	"cs001_tavern_intro"
+},
+{
+	"cs310_dijkstras_other_leg",
+	371498015,
+	"cs310_dijkstras_other_leg"
+},
+{
+	"dialog_fx_expl_statue_break",
+	3715397353,
+	"fx_explosions"
+},
+{
+	"fx_expl_arachas_egg",
+	370215161,
+	"fx_explosions"
+},
+{
+	"fx_expl_bies_hit_wall",
+	970592028,
+	"fx_explosions"
+},
+{
+	"fx_expl_ice_medium_falling",
+	2247984945,
+	"fx_explosions"
+},
+{
+	"fx_expl_nest_destroy",
+	1535668889,
+	"fx_explosions"
+},
+{
+	"fx_expl_oil_barrel",
+	204313135,
+	"fx_explosions"
+},
+{
+	"fx_expl_rock_debris_delayed_1",
+	1495643320,
+	"fx_explosions"
+},
+{
+	"fx_expl_rock_med_debris",
+	201734302,
+	"fx_explosions"
+},
+{
+	"fx_expl_rock_med_falling",
+	1380633752,
+	"fx_explosions"
+},
+{
+	"fx_expl_stalactite_falling",
+	1099822194,
+	"fx_explosions"
+},
+{
+	"fx_expl_toxic_gas_explo",
+	2151261444,
+	"fx_explosions"
+},
+{
+	"fx_monster_nest_explo_debris",
+	901455240,
+	"fx_explosions"
+},
+{
+	"fx_monster_nest_explosion",
+	1648183725,
+	"fx_explosions"
+},
+{
+	"amb_dyn_ep1_leshen_forest_spooky_1",
+	1184006144,
+	"amb_dyn_ep1_leshen_forest"
+},
+{
+	"mq6004_box_drop",
+	1876057581,
+	"qu_ep1_mq6004"
+},
+{
+	"mq6004_leaves_cut",
+	3653789597,
+	"qu_ep1_mq6004"
+},
+{
+	"mq6004_vader_enter",
+	2606764835,
+	"qu_ep1_mq6004"
+},
+{
+	"mq6004_vader_whistle",
+	3323991303,
+	"qu_ep1_mq6004"
+},
+{
+	"mq6004_write_long",
+	2066063002,
+	"qu_ep1_mq6004"
+},
+{
+	"mq6004_write_short",
+	2420658198,
+	"qu_ep1_mq6004"
+},
+{
+	"mq6001_roach_snort",
+	273424755,
+	"qu_ep1_mq6001"
+},
+{
+	"mq6003_book_close",
+	668530139,
+	"qu_ep1_mq6003"
+},
+{
+	"mq6003_book_open",
+	420699773,
+	"qu_ep1_mq6003"
+},
+{
+	"mq6002_vegies_slice",
+	3617467894,
+	"qu_ep1_mq6002"
+},
+{
+	"mq6002_yawn",
+	1458162955,
+	"qu_ep1_mq6002"
+},
+{
+	"animals_pigeon_call",
+	3425787544,
+	"animals_pigeon"
+},
+{
+	"animals_pigeon_call_idle",
+	3495159633,
+	"animals_pigeon"
+},
+{
+	"animals_pigeon_die",
+	265253714,
+	"animals_pigeon"
+},
+{
+	"animals_pigeon_swarm",
+	2383927260,
+	"animals_pigeon"
+},
+{
+	"animals_pigeon_swarm_end",
+	3211999570,
+	"animals_pigeon"
+},
+{
+	"cs301_dandelion_zoltan_intro_free_sfx",
+	3056800917,
+	"cs301_dandelion_zoltan_intro_free"
+},
+{
+	"amb_dyn_earth_rumble_EXT_250m",
+	2676869583,
+	"amb_dyn_earth_rumble"
+},
+{
+	"amb_dyn_earth_rumble_INT_30m",
+	3887401051,
+	"amb_dyn_earth_rumble"
+},
+{
+	"monster_caretaker_cmb_whoosh_heavy",
+	803116108,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_cmb_whoosh_heavy2",
+	2808312726,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_dialog_breath_in",
+	212209478,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_dialog_breath_out",
+	1249460297,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_dialog_mv_footstep_walk",
+	2544386096,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_dialog_shovel_dig_in",
+	1229027088,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_dialog_shovel_dig_in_last",
+	2938632731,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_dialog_shovel_dig_out",
+	1226069879,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_dialog_shovel_drag",
+	2309274592,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_black_exhale",
+	2853507879,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_bone_debris",
+	3249625488,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_death_end",
+	985538360,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_death_loop",
+	2451010051,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_death_loop_end",
+	4104713605,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_pre_attack",
+	3199943302,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_shade_death",
+	3411547668,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_shade_dig_out",
+	354605967,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_shade_walk_grunts",
+	1654525569,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_shovel_hit",
+	2358322291,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_shovel_remove",
+	1625138444,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_fx_summon",
+	915099549,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_mv_bodyfall",
+	731656482,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_mv_cloth_hard",
+	2785838081,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_mv_cloth_normal",
+	3537355987,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_mv_footstep",
+	4241891495,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_mv_footsteps_shuffle",
+	1994123768,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_mv_land",
+	4136862646,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_vo_attack_short",
+	3383977606,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_vo_breath_in",
+	1024860727,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_vo_breath_out",
+	1507610314,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_vo_death",
+	3444328569,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_vo_pain",
+	3963039313,
+	"monster_caretaker"
+},
+{
+	"monster_caretaker_vo_taunt_long",
+	2952558144,
+	"monster_caretaker"
+},
+{
+	"cs501_underwater_teleport",
+	452781811,
+	"cs501_underwater_teleport"
+},
+{
+	"amb_qu_battle_wild_hunt_80m",
+	2723286032,
+	"amb_qu_battle_wild_hunt"
+},
+{
+	"cs203_uldalryk_enters_house_sfx",
+	3204321234,
+	"cs203_uldalryk_enters_house"
+},
+{
+	"cs403_gameplay_keira_saves_lambert",
+	462096571,
+	"cs403_gameplay_keira_saves_lambert"
+},
+{
+	"dialog_catch_coin_purse",
+	3792485019,
+	"work_activities"
+},
+{
+	"dialog_cleaning_sword_long",
+	2459808824,
+	"work_activities"
+},
+{
+	"dialog_cleaning_sword_put_down",
+	4215555960,
+	"work_activities"
+},
+{
+	"dialog_cleaning_sword_short",
+	2902549880,
+	"work_activities"
+},
+{
+	"dialog_coin_bag_drop",
+	2604108144,
+	"work_activities"
+},
+{
+	"dialog_coin_toss",
+	1445067199,
+	"work_activities"
+},
+{
+	"dialog_door_knock",
+	2711969761,
+	"work_activities"
+},
+{
+	"dialog_eating_chewing",
+	3632888844,
+	"work_activities"
+},
+{
+	"dialog_eating_drink_slurp",
+	1927836272,
+	"work_activities"
+},
+{
+	"dialog_eating_drink_swallow",
+	900855329,
+	"work_activities"
+},
+{
+	"dialog_farmer_dig_debris_lopass",
+	1960896329,
+	"work_activities"
+},
+{
+	"dialog_farmer_dig_lopass",
+	978697711,
+	"work_activities"
+},
+{
+	"dialog_farmer_dig_soft",
+	2477895855,
+	"work_activities"
+},
+{
+	"dialog_hand_clap_louder",
+	4054071946,
+	"work_activities"
+},
+{
+	"dialog_horse_brush_grab",
+	3266825463,
+	"work_activities"
+},
+{
+	"dialog_horse_brush_hide",
+	720959533,
+	"work_activities"
+},
+{
+	"dialog_lute_pick",
+	1173955892,
+	"work_activities"
+},
+{
+	"dialog_lute_pick_14sec",
+	1791275059,
+	"work_activities"
+},
+{
+	"dialog_lute_strum",
+	1229831086,
+	"work_activities"
+},
+{
+	"dialog_sword_hide",
+	909391514,
+	"work_activities"
+},
+{
+	"dialog_sword_take",
+	3844494375,
+	"work_activities"
+},
+{
+	"dialog_woman_brushing_hair",
+	1419314380,
+	"work_activities"
+},
+{
+	"dialog_work_auction_hammer_hit",
+	2071439268,
+	"work_activities"
+},
+{
+	"dialog_work_cleaning_broom",
+	3206001681,
+	"work_activities"
+},
+{
+	"dialog_work_eating_throw_spoon_into_soup",
+	770094598,
+	"work_activities"
+},
+{
+	"dialog_work_fishing_float_splash",
+	1598774595,
+	"work_activities"
+},
+{
+	"dialog_work_fishing_rod",
+	1021343430,
+	"work_activities"
+},
+{
+	"dialog_work_kiss",
+	785569340,
+	"work_activities"
+},
+{
+	"dialog_work_painting_roll",
+	2765092200,
+	"work_activities"
+},
+{
+	"dialog_work_put_fly_into_soup",
+	1293261850,
+	"work_activities"
+},
+{
+	"dialog_zoltan_grab_book",
+	1018548475,
+	"work_activities"
+},
+{
+	"dialog_zoltan_paper_rip",
+	2871763199,
+	"work_activities"
+},
+{
+	"dialog_zoltan_paper_show",
+	3295543945,
+	"work_activities"
+},
+{
+	"scene_geralt_catch_dagger",
+	417840574,
+	"work_activities"
+},
+{
+	"scene_geralt_gets_torphy",
+	3195640910,
+	"work_activities"
+},
+{
+	"scene_geralt_remove_dagger_from_flesh",
+	3156070231,
+	"work_activities"
+},
+{
+	"scene_geralt_unsheat_dagger",
+	2420547199,
+	"work_activities"
+},
+{
+	"tune_lute",
+	3326606830,
+	"work_activities"
+},
+{
+	"tune_lute_dw_up",
+	303126934,
+	"work_activities"
+},
+{
+	"tune_lute_three",
+	1998107487,
+	"work_activities"
+},
+{
+	"work_3cup_coin",
+	2741893884,
+	"work_activities"
+},
+{
+	"work_3cup_cup",
+	253588717,
+	"work_activities"
+},
+{
+	"work_3cup_slide",
+	484433594,
+	"work_activities"
+},
+{
+	"work_armorer_cleaning",
+	2978882155,
+	"work_activities"
+},
+{
+	"work_armorer_foley",
+	1928579711,
+	"work_activities"
+},
+{
+	"work_armorer_hammer",
+	3013361260,
+	"work_activities"
+},
+{
+	"work_beard_scratch",
+	934894634,
+	"work_activities"
+},
+{
+	"work_blacksmith_hammer_hit",
+	2311467546,
+	"work_activities"
+},
+{
+	"work_blacksmith_hammer_put",
+	2248300094,
+	"work_activities"
+},
+{
+	"work_blacksmith_hammer_take",
+	3943013534,
+	"work_activities"
+},
+{
+	"work_blacksmith_sharpening_sword",
+	1926884531,
+	"work_activities"
+},
+{
+	"work_blacksmith_sword_into_fire",
+	430326793,
+	"work_activities"
+},
+{
+	"work_blacksmith_sword_movement",
+	4275003287,
+	"work_activities"
+},
+{
+	"work_blacksmith_sword_out_of_fire",
+	946303975,
+	"work_activities"
+},
+{
+	"work_box_put_on_ground",
+	3131223852,
+	"work_activities"
+},
+{
+	"work_box_take_from_ground",
+	1258453289,
+	"work_activities"
+},
+{
+	"work_bread_punch",
+	28022532,
+	"work_activities"
+},
+{
+	"work_brickbaking_bricks_heavy",
+	341743527,
+	"work_activities"
+},
+{
+	"work_brickbaking_bricks_light",
+	1073621574,
+	"work_activities"
+},
+{
+	"work_brickbaking_shovel_in",
+	2605567082,
+	"work_activities"
+},
+{
+	"work_brickbaking_shovel_in_with_brick",
+	4210185627,
+	"work_activities"
+},
+{
+	"work_brickbaking_shovel_out",
+	7529797,
+	"work_activities"
+},
+{
+	"work_brickbaking_shovel_out_with_brick",
+	3563370462,
+	"work_activities"
+},
+{
+	"work_bush_movement",
+	3539010885,
+	"work_activities"
+},
+{
+	"work_butcher_axe_pull",
+	684065119,
+	"work_activities"
+},
+{
+	"work_butcher_chop_meat",
+	2052667593,
+	"work_activities"
+},
+{
+	"work_butcher_tearoff_meat",
+	2765470070,
+	"work_activities"
+},
+{
+	"work_butter_churn_knock",
+	362972161,
+	"work_activities"
+},
+{
+	"work_butter_churn_splat",
+	3995220053,
+	"work_activities"
+},
+{
+	"work_butter_churn_stick_down",
+	2553830976,
+	"work_activities"
+},
+{
+	"work_butter_churn_stick_up_fast",
+	1942210536,
+	"work_activities"
+},
+{
+	"work_butter_churn_stick_up_slow",
+	1377841777,
+	"work_activities"
+},
+{
+	"work_card_to_table",
+	4122653396,
+	"work_activities"
+},
+{
+	"work_carpenter_saw_long_pull",
+	2101999084,
+	"work_activities"
+},
+{
+	"work_carpenter_saw_long_push",
+	2622105125,
+	"work_activities"
+},
+{
+	"work_carpenter_saw_short_pull",
+	3778659664,
+	"work_activities"
+},
+{
+	"work_carpenter_saw_short_push",
+	3627661177,
+	"work_activities"
+},
+{
+	"work_carpenter_strug_retrieval",
+	274407234,
+	"work_activities"
+},
+{
+	"work_carpenter_strug_stroke",
+	520703322,
+	"work_activities"
+},
+{
+	"work_carpenter_table_clean",
+	2856638556,
+	"work_activities"
+},
+{
+	"work_carpenter_tool_drop",
+	1003879020,
+	"work_activities"
+},
+{
+	"work_carpenter_tool_take",
+	3984366554,
+	"work_activities"
+},
+{
+	"work_carpenter_wood_drop",
+	3384948063,
+	"work_activities"
+},
+{
+	"work_carpenter_wood_hit",
+	3781507735,
+	"work_activities"
+},
+{
+	"work_carpenter_wood_take",
+	2070174145,
+	"work_activities"
+},
+{
+	"work_carpet_clean_hit",
+	2533514776,
+	"work_activities"
+},
+{
+	"work_carry_item_grunt",
+	243354035,
+	"work_activities"
+},
+{
+	"work_chair_creak",
+	3330094233,
+	"work_activities"
+},
+{
+	"work_chair_pull",
+	1807822386,
+	"work_activities"
+},
+{
+	"work_chair_sit",
+	965883469,
+	"work_activities"
+},
+{
+	"work_chop_vegetables_fast",
+	2720090097,
+	"work_activities"
+},
+{
+	"work_chop_vegetables_slow",
+	1150184668,
+	"work_activities"
+},
+{
+	"work_clean_cloth",
+	3074122733,
+	"work_activities"
+},
+{
+	"work_cleaning_broom",
+	1987367362,
+	"work_activities"
+},
+{
+	"work_cleaning_broom_start",
+	3595582659,
+	"work_activities"
+},
+{
+	"work_cleaning_broom_stop",
+	4214843457,
+	"work_activities"
+},
+{
+	"work_cleaning_brush_backward",
+	1809654515,
+	"work_activities"
+},
+{
+	"work_cleaning_brush_circle",
+	473357164,
+	"work_activities"
+},
+{
+	"work_cleaning_brush_forward",
+	1268263231,
+	"work_activities"
+},
+{
+	"work_cleaning_brush_start",
+	2345332276,
+	"work_activities"
+},
+{
+	"work_cleaning_brush_stop",
+	4230431656,
+	"work_activities"
+},
+{
+	"work_cleaning_washing",
+	2655557258,
+	"work_activities"
+},
+{
+	"work_cleaning_water_splash",
+	1102857526,
+	"work_activities"
+},
+{
+	"work_cleaning_water_splat",
+	2326984685,
+	"work_activities"
+},
+{
+	"work_cook_on_stick_fail",
+	3201343349,
+	"work_activities"
+},
+{
+	"work_cooking_adding_salt",
+	4007205268,
+	"work_activities"
+},
+{
+	"work_cow_milking_squish",
+	1594316932,
+	"work_activities"
+},
+{
+	"work_door_hit",
+	958896959,
+	"work_activities"
+},
+{
+	"work_door_kick",
+	2000799874,
+	"work_activities"
+},
+{
+	"work_door_knock",
+	1222805916,
+	"work_activities"
+},
+{
+	"work_eating_bite_apple",
+	430670601,
+	"work_activities"
+},
+{
+	"work_eating_bite_mushy",
+	263961561,
+	"work_activities"
+},
+{
+	"work_eating_chewing",
+	96646105,
+	"work_activities"
+},
+{
+	"work_eating_drink_move",
+	265693004,
+	"work_activities"
+},
+{
+	"work_eating_drink_open_bottle",
+	4263599174,
+	"work_activities"
+},
+{
+	"work_eating_drink_start",
+	1246545589,
+	"work_activities"
+},
+{
+	"work_eating_drink_swallow",
+	1783828840,
+	"work_activities"
+},
+{
+	"work_eating_fill_spoon",
+	1848488523,
+	"work_activities"
+},
+{
+	"work_eating_grab_spoon",
+	3901858974,
+	"work_activities"
+},
+{
+	"work_elixir_brewing_glass",
+	1860664264,
+	"work_activities"
+},
+{
+	"work_farmer_dig",
+	1950856281,
+	"work_activities"
+},
+{
+	"work_farmer_dig_debris",
+	2267396969,
+	"work_activities"
+},
+{
+	"work_farmer_pickup_tool",
+	4045384328,
+	"work_activities"
+},
+{
+	"work_fight_slap_face",
+	1929164382,
+	"work_activities"
+},
+{
+	"work_fireplace_grab_wood",
+	2927395405,
+	"work_activities"
+},
+{
+	"work_fireplace_hands_rub",
+	739483459,
+	"work_activities"
+},
+{
+	"work_fireplace_throw_wood_to_fire",
+	2091249254,
+	"work_activities"
+},
+{
+	"work_fishing_float_splash",
+	4055626924,
+	"work_activities"
+},
+{
+	"work_fishing_rod_swiss",
+	520260799,
+	"work_activities"
+},
+{
+	"work_guard_boots",
+	2703659714,
+	"work_activities"
+},
+{
+	"work_haircut_long",
+	812874016,
+	"work_activities"
+},
+{
+	"work_haircut_short",
+	2638830272,
+	"work_activities"
+},
+{
+	"work_hand_into_purse",
+	331729371,
+	"work_activities"
+},
+{
+	"work_hand_out_of_purse",
+	2341518897,
+	"work_activities"
+},
+{
+	"work_hand_pressing_purse",
+	2298109510,
+	"work_activities"
+},
+{
+	"work_hands_rub_slow",
+	2221010649,
+	"work_activities"
+},
+{
+	"work_hay_tossing_long",
+	1108124636,
+	"work_activities"
+},
+{
+	"work_hay_tossing_short",
+	683143524,
+	"work_activities"
+},
+{
+	"work_horse_brush_grab",
+	1582893274,
+	"work_activities"
+},
+{
+	"work_horse_brush_hide",
+	1794136468,
+	"work_activities"
+},
+{
+	"work_horse_brushing",
+	1006168799,
+	"work_activities"
+},
+{
+	"work_horse_slapping",
+	3140934517,
+	"work_activities"
+},
+{
+	"work_horse_stroking_long",
+	1897927079,
+	"work_activities"
+},
+{
+	"work_horse_stroking_short",
+	2860747257,
+	"work_activities"
+},
+{
+	"work_keychain_jingle",
+	1035672027,
+	"work_activities"
+},
+{
+	"work_kiss",
+	3077230359,
+	"work_activities"
+},
+{
+	"work_loot_ground",
+	3438054367,
+	"work_activities"
+},
+{
+	"work_man_catch_coin_purse",
+	3866244505,
+	"work_activities"
+},
+{
+	"work_man_coin_bag_drop",
+	887296898,
+	"work_activities"
+},
+{
+	"work_man_coin_toss",
+	2792653209,
+	"work_activities"
+},
+{
+	"work_man_count_money",
+	289746790,
+	"work_activities"
+},
+{
+	"work_man_hammering_bad_hit",
+	3660615458,
+	"work_activities"
+},
+{
+	"work_man_hammering_nail",
+	1659882587,
+	"work_activities"
+},
+{
+	"work_man_pee_loop_start",
+	297813772,
+	"work_activities"
+},
+{
+	"work_man_pee_loop_stop",
+	696717216,
+	"work_activities"
+},
+{
+	"work_man_put_away_coin_purse",
+	887215738,
+	"work_activities"
+},
+{
+	"work_map_crumple",
+	2136491482,
+	"work_activities"
+},
+{
+	"work_mud_tap",
+	3906053039,
+	"work_activities"
+},
+{
+	"work_mug_banging_mugs",
+	376762600,
+	"work_activities"
+},
+{
+	"work_mug_cleaning_long",
+	3763325077,
+	"work_activities"
+},
+{
+	"work_mug_cleaning_mid_01",
+	3440589351,
+	"work_activities"
+},
+{
+	"work_mug_cleaning_mid_02",
+	3440589348,
+	"work_activities"
+},
+{
+	"work_mug_cleaning_short",
+	2834606195,
+	"work_activities"
+},
+{
+	"work_mug_cleaning_squeak",
+	3173775841,
+	"work_activities"
+},
+{
+	"work_mug_put",
+	1118475644,
+	"work_activities"
+},
+{
+	"work_mug_squeak",
+	2095973419,
+	"work_activities"
+},
+{
+	"work_mug_take",
+	2694022420,
+	"work_activities"
+},
+{
+	"work_musician_flute_playing_loop_1_start",
+	462904466,
+	"work_activities"
+},
+{
+	"work_musician_flute_playing_loop_1_stop",
+	830106954,
+	"work_activities"
+},
+{
+	"work_musician_lute_pick",
+	3115719827,
+	"work_activities"
+},
+{
+	"work_musician_lute_strum",
+	4044665779,
+	"work_activities"
+},
+{
+	"work_open_fan",
+	1846268459,
+	"work_activities"
+},
+{
+	"work_paint",
+	458825999,
+	"work_activities"
+},
+{
+	"work_pick_card",
+	3874509851,
+	"work_activities"
+},
+{
+	"work_pickaxe_hit",
+	1738152392,
+	"work_activities"
+},
+{
+	"work_pickaxe_hit_debris",
+	696480190,
+	"work_activities"
+},
+{
+	"work_picking_herbs",
+	421322331,
+	"work_activities"
+},
+{
+	"work_pipe_blow_smoke",
+	2789917538,
+	"work_activities"
+},
+{
+	"work_pipe_sniff",
+	884837004,
+	"work_activities"
+},
+{
+	"work_play_with_knife_stab",
+	1660896871,
+	"work_activities"
+},
+{
+	"work_play_with_knife_stab_into_table",
+	2705738957,
+	"work_activities"
+},
+{
+	"work_play_with_knife_stab_out",
+	4150418374,
+	"work_activities"
+},
+{
+	"work_playing_dice_cup_hit",
+	3302857394,
+	"work_activities"
+},
+{
+	"work_playing_dice_insert",
+	2904353071,
+	"work_activities"
+},
+{
+	"work_playing_dice_roll",
+	1525861585,
+	"work_activities"
+},
+{
+	"work_playing_dice_take",
+	1420083897,
+	"work_activities"
+},
+{
+	"work_plucking_chicken",
+	2994855916,
+	"work_activities"
+},
+{
+	"work_pour_short",
+	2672451300,
+	"work_activities"
+},
+{
+	"work_pour_stop",
+	2200597270,
+	"work_activities"
+},
+{
+	"work_pushup_grunt",
+	3793676717,
+	"work_activities"
+},
+{
+	"work_reading_page_flip",
+	4111526159,
+	"work_activities"
+},
+{
+	"work_row_put_down",
+	3192617392,
+	"work_activities"
+},
+{
+	"work_row_rowing_wood",
+	3840451006,
+	"work_activities"
+},
+{
+	"work_row_wood_creak",
+	2487824572,
+	"work_activities"
+},
+{
+	"work_scythe",
+	3603650637,
+	"work_activities"
+},
+{
+	"work_sharpening_scythe",
+	1953797745,
+	"work_activities"
+},
+{
+	"work_ship_roll_stg",
+	449903930,
+	"work_activities"
+},
+{
+	"work_sleep_sit_on_bed",
+	1327416065,
+	"work_activities"
+},
+{
+	"work_spyglass_close",
+	3591446614,
+	"work_activities"
+},
+{
+	"work_theatre_hand_clap",
+	4203802083,
+	"work_activities"
+},
+{
+	"work_weapon_halberd_handling_grab",
+	135446363,
+	"work_activities"
+},
+{
+	"work_weapon_halberd_handling_hand_off",
+	3487052732,
+	"work_activities"
+},
+{
+	"work_weapon_halberd_handling_hand_slide",
+	2941337992,
+	"work_activities"
+},
+{
+	"work_weapon_halberd_put_on_floor",
+	3808361783,
+	"work_activities"
+},
+{
+	"work_woman_brushing_hair",
+	1044644291,
+	"work_activities"
+},
+{
+	"work_woman_serving_drinks",
+	636545678,
+	"work_activities"
+},
+{
+	"work_woman_water_pour",
+	3573012762,
+	"work_activities"
+},
+{
+	"work_wood_chop_hit",
+	1420127031,
+	"work_activities"
+},
+{
+	"work_wood_debris",
+	614337852,
+	"work_activities"
+},
+{
+	"work_writing_01",
+	2376191419,
+	"work_activities"
+},
+{
+	"work_writing_02",
+	2376191416,
+	"work_activities"
+},
+{
+	"work_writing_03",
+	2376191417,
+	"work_activities"
+},
+{
+	"work_writing_04",
+	2376191422,
+	"work_activities"
+},
+{
+	"work_writing_dot",
+	3681748263,
+	"work_activities"
+},
+{
+	"work_writing_start",
+	4024314426,
+	"work_activities"
+},
+{
+	"work_writing_stop",
+	709382738,
+	"work_activities"
+},
+{
+	"work_writing_tint",
+	3816297141,
+	"work_activities"
+},
+{
+	"focus_clue_gryphon_start",
+	838512042,
+	"monster_griffon"
+},
+{
+	"focus_clue_gryphon_stop",
+	3225303426,
+	"monster_griffon"
+},
+{
+	"monster_griffon__breathing",
+	1516852477,
+	"monster_griffon"
+},
+{
+	"monster_griffon__breathing_RND",
+	3387359876,
+	"monster_griffon"
+},
+{
+	"monster_griffon_body_slice",
+	390414697,
+	"monster_griffon"
+},
+{
+	"monster_griffon_burning",
+	2648945239,
+	"monster_griffon"
+},
+{
+	"monster_griffon_burning_stop",
+	2644440050,
+	"monster_griffon"
+},
+{
+	"monster_griffon_death_burning",
+	2124913392,
+	"monster_griffon"
+},
+{
+	"monster_griffon_death_cry",
+	464871161,
+	"monster_griffon"
+},
+{
+	"monster_griffon_death_cry_exhale",
+	1465568523,
+	"monster_griffon"
+},
+{
+	"monster_griffon_eating",
+	3067010488,
+	"monster_griffon"
+},
+{
+	"monster_griffon_footsteps",
+	3700295099,
+	"monster_griffon"
+},
+{
+	"monster_griffon_footsteps_shuffle",
+	145904385,
+	"monster_griffon"
+},
+{
+	"monster_griffon_hurt",
+	3292116053,
+	"monster_griffon"
+},
+{
+	"monster_griffon_hurt_always",
+	410629807,
+	"monster_griffon"
+},
+{
+	"monster_griffon_hurt_loud",
+	1810877848,
+	"monster_griffon"
+},
+{
+	"monster_griffon_hurt_rnd",
+	2637679868,
+	"monster_griffon"
+},
+{
+	"monster_griffon_idle_vo",
+	3948230162,
+	"monster_griffon"
+},
+{
+	"monster_griffon_idle_vo_RND",
+	3340608587,
+	"monster_griffon"
+},
+{
+	"monster_griffon_landing",
+	2829761607,
+	"monster_griffon"
+},
+{
+	"monster_griffon_movement",
+	160855657,
+	"monster_griffon"
+},
+{
+	"monster_griffon_parry_ADD",
+	448563728,
+	"monster_griffon"
+},
+{
+	"monster_griffon_pre_attack_growl",
+	2130892478,
+	"monster_griffon"
+},
+{
+	"monster_griffon_pre_attack_growl_always",
+	2336585530,
+	"monster_griffon"
+},
+{
+	"monster_griffon_punch_ground",
+	2884994460,
+	"monster_griffon"
+},
+{
+	"monster_griffon_screech",
+	4007381669,
+	"monster_griffon"
+},
+{
+	"monster_griffon_screech_always",
+	371931103,
+	"monster_griffon"
+},
+{
+	"monster_griffon_screech_short",
+	987643910,
+	"monster_griffon"
+},
+{
+	"monster_griffon_screech_short_always",
+	2128357026,
+	"monster_griffon"
+},
+{
+	"monster_griffon_slide_fly",
+	1118536723,
+	"monster_griffon"
+},
+{
+	"monster_griffon_taunt_long",
+	1074981831,
+	"monster_griffon"
+},
+{
+	"monster_griffon_taunt_short",
+	2887622297,
+	"monster_griffon"
+},
+{
+	"monster_griffon_wing_attack",
+	1805852962,
+	"monster_griffon"
+},
+{
+	"monster_griffon_wing_flap",
+	3188579851,
+	"monster_griffon"
+},
+{
+	"set_monster_gryphon_armour_type_generic",
+	2539321742,
+	"monster_griffon"
+},
+{
+	"mh_nv_307_door_broken_to_pieces",
+	2840224511,
+	"mh_nv_307"
+},
+{
+	"mh_nv_306_earthquake_in_house",
+	2582379510,
+	"mh_nv_306"
+},
+{
+	"mh_nv_306_magic_barrier_deactivate",
+	2695522882,
+	"mh_nv_306"
+},
+{
+	"mh_nv_306_magic_barrier_loop_start",
+	3668795339,
+	"mh_nv_306"
+},
+{
+	"mh_nv_306_magic_barrier_loop_stop",
+	1305191785,
+	"mh_nv_306"
+},
+{
+	"mh_nv_306_open_stone_door",
+	148113125,
+	"mh_nv_306"
+},
+{
+	"mh_nv_306_power_crystal_activate",
+	2261764068,
+	"mh_nv_306"
+},
+{
+	"mh_nv_306_power_crystal_explode",
+	2296306774,
+	"mh_nv_306"
+},
+{
+	"mh_nv_306_press_button",
+	1178222604,
+	"mh_nv_306"
+},
+{
+	"mh_nv_306_rock_crash",
+	1463990335,
+	"mh_nv_306"
+},
+{
+	"mh_nv_306_wood_crash",
+	758930699,
+	"mh_nv_306"
+},
+{
+	"mh_nv_305_doppler_transformation",
+	1238623741,
+	"mh_nv_305"
+},
+{
+	"mh_nv_304_katakan_sounds_on_focus",
+	3650351631,
+	"mh_nv_304"
+},
+{
+	"cs105_give_take",
+	498376135,
+	"cs105_give_take"
+},
+{
+	"cs401_km_uma_intro",
+	504237766,
+	"cs401_km_uma_intro"
+},
+{
+	"cs109_geralt_destroys_wmd",
+	515435714,
+	"cs109_geralt_destroys_wmd"
+},
+{
+	"cs501_cam_transfer_to_geralt",
+	516470437,
+	"cs501_cam_transfer_to_geralt"
+},
+{
+	"monster_wyvern_eating",
+	3174565300,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_focus_100m_start",
+	1593518258,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_focus_100m_stop",
+	495869418,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_head_swoosh",
+	2048835074,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_jaw_clap",
+	2051409193,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_bodyfall",
+	3789405701,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_foley",
+	3173827995,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_footstep",
+	3891068940,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_footsteps_LOUD",
+	588613326,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_shuffle",
+	912135701,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_stomp",
+	2813149509,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_stomp_dirt_CUSTOM",
+	995246787,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_stomp_heavy",
+	3239876981,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_wingflap_heavy",
+	350147770,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_wingflap_long",
+	2155684431,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_wingflap_long_attack",
+	2344070054,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_wingflap_long_CUSTOM",
+	1447063599,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_mv_wingflap_normal",
+	789165348,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_tail_swoosh",
+	1170458314,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_ADD",
+	1021198607,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_ADD_LOUD",
+	3435933862,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_ADD_RND",
+	467996722,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_attack_short",
+	94582541,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_attack_short_ALWAYS",
+	3311618151,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_attack_short_CUSTOM",
+	1520279201,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_burning_loop_start",
+	3749175429,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_burning_loop_stop",
+	657540391,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_calm_long",
+	1348139176,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_calm_long_RND",
+	2690388005,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_calm_short",
+	1837289320,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_calm_short_RND",
+	997237733,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_calm_short_RND_FLY",
+	1571825475,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_death",
+	1775542436,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_growl",
+	2575642381,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_growl_CUSTOM",
+	3863725729,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_growl_RND",
+	1919320468,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_growl_RND_FLY",
+	854183402,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_pain",
+	3009289158,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_pain_burn",
+	534792250,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_pain_RND",
+	1577681703,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_poison",
+	3870638858,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_poison_CUSTOM",
+	2402379008,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_taunt_long",
+	2079333739,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_taunt_long_CUSTOM",
+	3256943659,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_taunt_long_RND",
+	191295798,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_taunt_short",
+	1991612453,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_taunt_short_CUSTOM",
+	2178486169,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_taunt_short_RND",
+	857068684,
+	"monster_wyvern"
+},
+{
+	"monster_wyvern_vo_taunt_short_RND_FLY",
+	28338,
+	"monster_wyvern"
+},
+{
+	"set_monster_wyvern_armour_type_generic",
+	3992248668,
+	"monster_wyvern"
+},
+{
+	"cs_sq301_geralt_triss_kiss",
+	566377313,
+	"cs_sq301_geralt_triss_kiss"
+},
+{
+	"cs202_geralt_fixes_boat",
+	571596876,
+	"cs202_geralt_fixes_boat"
+},
+{
+	"qu_km_403_viper_trap_explosion",
+	855625781,
+	"qu_item_viper_trap"
+},
+{
+	"qu_km_403_viper_trap_fire_loop",
+	657821613,
+	"qu_item_viper_trap"
+},
+{
+	"qu_km_403_viper_trap_fire_loop_end",
+	40822255,
+	"qu_item_viper_trap"
+},
+{
+	"magic_megascope_broken",
+	452374343,
+	"magic_megascope"
+},
+{
+	"magic_megascope_end",
+	2521936119,
+	"magic_megascope"
+},
+{
+	"magic_megascope_explosion",
+	903847485,
+	"magic_megascope"
+},
+{
+	"magic_megascope_loop",
+	2031916250,
+	"magic_megascope"
+},
+{
+	"magic_megascope_loop_end",
+	444167664,
+	"magic_megascope"
+},
+{
+	"magic_megascope_start",
+	3648010980,
+	"magic_megascope"
+},
+{
+	"cs605_professor_dies_pt2",
+	620450513,
+	"cs605_professor_dies_pt2"
+},
+{
+	"cs605_professor_dies_pt1",
+	620450514,
+	"cs605_professor_dies_pt1"
+},
+{
+	"cs103_ciri_runs",
+	625328690,
+	"cs103_ciri_runs"
+},
+{
+	"cs111_arrives_at_sabath_pt2",
+	647511784,
+	"cs111_arrives_at_sabath_pt2"
+},
+{
+	"cs111_arrives_at_sabath_pt1",
+	647511787,
+	"cs111_arrives_at_sabath_pt1"
+},
+{
+	"magic_geralt_ghost_possession",
+	78951211,
+	"magic_geralt"
+},
+{
+	"magic_geralt_healing_loop",
+	4195383222,
+	"magic_geralt"
+},
+{
+	"magic_geralt_healing_loop_end",
+	2598199996,
+	"magic_geralt"
+},
+{
+	"magic_geralt_healing_oneshot",
+	687035136,
+	"magic_geralt"
+},
+{
+	"magic_geralt_ice_hit",
+	2186412448,
+	"magic_geralt"
+},
+{
+	"magic_geralt_invisible_loop",
+	3465145115,
+	"magic_geralt"
+},
+{
+	"magic_geralt_invisible_loop_end",
+	2912263933,
+	"magic_geralt"
+},
+{
+	"magic_geralt_radovid_blinding_loop_start",
+	3891658450,
+	"magic_geralt"
+},
+{
+	"magic_geralt_radovid_blinding_loop_stop",
+	1656577162,
+	"magic_geralt"
+},
+{
+	"magic_geralt_teleport",
+	2743900816,
+	"magic_geralt"
+},
+{
+	"cs603_ewald_dies",
+	652786670,
+	"cs603_ewald_dies"
+},
+{
+	"amb_dyn_g_water_ocean_beach_border",
+	1750803523,
+	"amb_dyn_global_ocean"
+},
+{
+	"amb_dyn_g_water_ocean_cliff_border",
+	1422562146,
+	"amb_dyn_global_ocean"
+},
+{
+	"amb_dyn_g_water_ocean_global",
+	4294784976,
+	"amb_dyn_global_ocean"
+},
+{
+	"amb_sk_qu_202_water_ocean_border_loop_start",
+	513931960,
+	"amb_dyn_global_ocean"
+},
+{
+	"amb_sk_qu_202_water_ocean_border_loop_stop",
+	2902530500,
+	"amb_dyn_global_ocean"
+},
+{
+	"amb_qu_cooking_bubbles_20m_loop",
+	1662082596,
+	"amb_qu_cooking"
+},
+{
+	"amb_qu_cooking_bubbles_20m_loop_end",
+	3547581754,
+	"amb_qu_cooking"
+},
+{
+	"amb_qu_cooking_soup_boiling_20m_loop",
+	1332060793,
+	"amb_qu_cooking"
+},
+{
+	"amb_qu_cooking_soup_boiling_20m_loop_end",
+	2372394939,
+	"amb_qu_cooking"
+},
+{
+	"amb_qu_cooking_soup_boiling_20m_loop_quiet",
+	2073499820,
+	"amb_qu_cooking"
+},
+{
+	"amb_qu_cooking_soup_boiling_20m_loop_quiet_end",
+	2544693314,
+	"amb_qu_cooking"
+},
+{
+	"cs103_barons_fistfight_sfx",
+	3593192536,
+	"cs103_barons_fistfight"
+},
+{
+	"cs504_piggyback_ride",
+	677785685,
+	"cs504_piggyback_ride"
+},
+{
+	"cs107_witch_gravehag",
+	682863335,
+	"cs107_witch_gravehag"
+},
+{
+	"cs202_giant_destroy_cage_no_hjalmar_sfx",
+	1086010313,
+	"cs202_giant_destroy_cage_no_hjalmar"
+},
+{
+	"cs210_geralt_gives_lara_necklace",
+	693078427,
+	"cs210_geralt_gives_lara_necklace"
+},
+{
+	"cs201_behind_tapestry",
+	705834506,
+	"cs201_behind_tapestry"
+},
+{
+	"fx_water_deep_jump_in_big",
+	3784913520,
+	"fx_water"
+},
+{
+	"fx_water_deep_jump_in_small",
+	3103821951,
+	"fx_water"
+},
+{
+	"sq_nv_106_bodyfall_down",
+	2096367413,
+	"sq_nv_106"
+},
+{
+	"sq_nv_106_sword_hit",
+	2859129922,
+	"sq_nv_106"
+},
+{
+	"cs202_enter_troll_cave_sfx",
+	2795984650,
+	"cs202_enter_troll_cave"
+},
+{
+	"monster_siren_aggro_medium_custom",
+	4115082756,
+	"monster_siren"
+},
+{
+	"monster_siren_attack_airstrike_custom",
+	3679476933,
+	"monster_siren"
+},
+{
+	"monster_siren_attack_whoosh_heavy",
+	2868837167,
+	"monster_siren"
+},
+{
+	"monster_siren_attack_whoosh_medium",
+	3249315951,
+	"monster_siren"
+},
+{
+	"monster_siren_despawn_air",
+	1795346841,
+	"monster_siren"
+},
+{
+	"monster_siren_despawn_water",
+	3368275716,
+	"monster_siren"
+},
+{
+	"monster_siren_fly_slide",
+	2373131887,
+	"monster_siren"
+},
+{
+	"monster_siren_focus_100m_start",
+	434533818,
+	"monster_siren"
+},
+{
+	"monster_siren_focus_100m_stop",
+	1398540498,
+	"monster_siren"
+},
+{
+	"monster_siren_hiss_custom",
+	3832380081,
+	"monster_siren"
+},
+{
+	"monster_siren_idle_grunt_custom",
+	2428805827,
+	"monster_siren"
+},
+{
+	"monster_siren_mv_bodyfall",
+	3437379453,
+	"monster_siren"
+},
+{
+	"monster_siren_mv_footstep_run",
+	2047052594,
+	"monster_siren"
+},
+{
+	"monster_siren_mv_footstep_walk",
+	1803415676,
+	"monster_siren"
+},
+{
+	"monster_siren_mv_handling",
+	1331657489,
+	"monster_siren"
+},
+{
+	"monster_siren_mv_wing_move_fast",
+	3877404550,
+	"monster_siren"
+},
+{
+	"monster_siren_mv_wing_move_slow",
+	738057467,
+	"monster_siren"
+},
+{
+	"monster_siren_mv_wing_whoosh_fast",
+	99256537,
+	"monster_siren"
+},
+{
+	"monster_siren_mv_wing_whoosh_slow",
+	2568882084,
+	"monster_siren"
+},
+{
+	"monster_siren_slide_custom",
+	4278962573,
+	"monster_siren"
+},
+{
+	"monster_siren_spawn_air",
+	1701564990,
+	"monster_siren"
+},
+{
+	"monster_siren_spawn_water",
+	3671759507,
+	"monster_siren"
+},
+{
+	"monster_siren_spec_boat_break",
+	216144616,
+	"monster_siren"
+},
+{
+	"monster_siren_uw_hit",
+	1257673264,
+	"monster_siren"
+},
+{
+	"monster_siren_uw_movement",
+	3183640706,
+	"monster_siren"
+},
+{
+	"monster_siren_uw_scream",
+	3553260190,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_aggro_medium",
+	4158351502,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_aggro_medium_FLY",
+	4058894300,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_aggro_short",
+	3931047747,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_aggro_short_ALWAYS",
+	634176405,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_aggro_short_FLY",
+	745945577,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_attack_airstrike",
+	2620716113,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_attack_airstrike_FLY",
+	2876273751,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_attack_short",
+	3681240805,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_attack_short_ALWAYS",
+	2074780703,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_attack_short_FLY",
+	2943482435,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_attack_special",
+	3952497106,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_block",
+	1036868913,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_breath_out_heavy",
+	1122683141,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_breath_out_light",
+	1573806988,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_damage_heavy",
+	1106331241,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_damage_light",
+	1280407912,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_death",
+	3222646044,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_dodge",
+	1619716843,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_hiss",
+	3544726637,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_hiss_ALWAYS",
+	1886668039,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_idle_grunt",
+	860830227,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_idle_grunt_ALWAYS",
+	2452721925,
+	"monster_siren"
+},
+{
+	"monster_siren_vo_shock",
+	3268754252,
+	"monster_siren"
+},
+{
+	"monster_siren_wing_whoosh_fast_custom",
+	3229924677,
+	"monster_siren"
+},
+{
+	"monster_siren_wing_whoosh_slow_custom",
+	2274119198,
+	"monster_siren"
+},
+{
+	"set_monster_siren_armour_type_flesh",
+	1737524163,
+	"monster_siren"
+},
+{
+	"dialog_phx_wooden_stick_break",
+	1122939640,
+	"physics_break"
+},
+{
+	"phx_clay_break_big",
+	2614751422,
+	"physics_break"
+},
+{
+	"phx_clay_break_medium",
+	4026402577,
+	"physics_break"
+},
+{
+	"phx_clay_break_small",
+	2552284801,
+	"physics_break"
+},
+{
+	"phx_glass_break_big",
+	89844389,
+	"physics_break"
+},
+{
+	"phx_glass_break_medium",
+	1531783320,
+	"physics_break"
+},
+{
+	"phx_glass_break_small",
+	2713155442,
+	"physics_break"
+},
+{
+	"phx_ice_break_big",
+	1333285072,
+	"physics_break"
+},
+{
+	"phx_ice_break_medium",
+	264150823,
+	"physics_break"
+},
+{
+	"phx_ice_break_small",
+	1522463711,
+	"physics_break"
+},
+{
+	"phx_stone_break_big",
+	781557078,
+	"physics_break"
+},
+{
+	"phx_stone_break_medium",
+	2199021177,
+	"physics_break"
+},
+{
+	"phx_stone_break_small",
+	4161345817,
+	"physics_break"
+},
+{
+	"phx_wood_break_big",
+	1709237618,
+	"physics_break"
+},
+{
+	"phx_wood_break_huge",
+	2196332317,
+	"physics_break"
+},
+{
+	"phx_wood_break_medium",
+	3809628781,
+	"physics_break"
+},
+{
+	"phx_wood_break_small",
+	2445009381,
+	"physics_break"
+},
+{
+	"phx_wood_break_tiny",
+	1694951506,
+	"physics_break"
+},
+{
+	"amb_dyn_mysterious_exhale_EXT_EM",
+	1758791329,
+	"amb_dyn_mysterious_exhale"
+},
+{
+	"qu_item_bookshelf_slide_1s",
+	2624859244,
+	"qu_item_bookshelf"
+},
+{
+	"cs201_burial",
+	763939558,
+	"cs201_burial"
+},
+{
+	"cs202_ragnar_wakes_giant",
+	766400293,
+	"cs202_ragnar_wakes_giant"
+},
+{
+	"monster_golem_cmb_block_ADD",
+	2356414585,
+	"monster_golem"
+},
+{
+	"monster_golem_cmb_swoosh_ground_hit_heavy",
+	680139733,
+	"monster_golem"
+},
+{
+	"monster_golem_cmb_swoosh_heavy",
+	1424232147,
+	"monster_golem"
+},
+{
+	"monster_golem_cmb_swoosh_light",
+	2036155978,
+	"monster_golem"
+},
+{
+	"monster_golem_cmb_swoosh_medium",
+	495873603,
+	"monster_golem"
+},
+{
+	"monster_golem_cmb_taunt_hands",
+	2944369913,
+	"monster_golem"
+},
+{
+	"monster_golem_focus_sfx_start",
+	3268747700,
+	"monster_golem"
+},
+{
+	"monster_golem_focus_sfx_stop",
+	3875697192,
+	"monster_golem"
+},
+{
+	"monster_golem_mv_bodyfall",
+	3245913438,
+	"monster_golem"
+},
+{
+	"monster_golem_mv_foley_heavy",
+	567379842,
+	"monster_golem"
+},
+{
+	"monster_golem_mv_foley_light",
+	4211153207,
+	"monster_golem"
+},
+{
+	"monster_golem_mv_footsteps",
+	1734206994,
+	"monster_golem"
+},
+{
+	"monster_golem_mv_footsteps_shuffle",
+	4246440900,
+	"monster_golem"
+},
+{
+	"monster_golem_mv_land",
+	1483421218,
+	"monster_golem"
+},
+{
+	"monster_golem_mv_recover",
+	817390227,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_attack",
+	3056303545,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_attack_RND",
+	3503387736,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_block",
+	2537261076,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_death_long",
+	1177814466,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_death_short",
+	1784166814,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_idle",
+	2961350179,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_idle_rnd",
+	206255758,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_pain",
+	2624061485,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_pain_RND",
+	2823335796,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_stunned",
+	1366369190,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_stunned_rnd",
+	831003079,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_taunt_long",
+	3866806572,
+	"monster_golem"
+},
+{
+	"monster_golem_vo_taunt_short",
+	4017498932,
+	"monster_golem"
+},
+{
+	"monster_golem_xtra_block_fx",
+	3439379935,
+	"monster_golem"
+},
+{
+	"monster_golem_xtra_death_vfx",
+	303698294,
+	"monster_golem"
+},
+{
+	"set_monster_golem_armour_type_monster_stone",
+	2279771738,
+	"monster_golem"
+},
+{
+	"cs605_olgierd_dies_pt2",
+	767809968,
+	"cs605_olgierd_dies_pt2"
+},
+{
+	"cs605_olgierd_dies_pt1",
+	767809971,
+	"cs605_olgierd_dies_pt1"
+},
+{
+	"cs503_witcher_on_swamps",
+	792182254,
+	"cs503_witcher_on_swamps"
+},
+{
+	"monster_miscreant_foley",
+	2109986366,
+	"monster_miscreant"
+},
+{
+	"monster_miscreant_ghost_vfx_loop_start",
+	862595985,
+	"monster_miscreant"
+},
+{
+	"monster_miscreant_ghost_vfx_loop_stop",
+	2138925707,
+	"monster_miscreant"
+},
+{
+	"monster_miscreant_vo_agressive",
+	3041863244,
+	"monster_miscreant"
+},
+{
+	"monster_miscreant_vo_agressive_RND",
+	3298903329,
+	"monster_miscreant"
+},
+{
+	"monster_miscreant_vo_calm",
+	3169357110,
+	"monster_miscreant"
+},
+{
+	"monster_miscreant_vo_calm_RND",
+	1823519191,
+	"monster_miscreant"
+},
+{
+	"set_monster_miscreant_armour_type_flesh",
+	2723524054,
+	"monster_miscreant"
+},
+{
+	"cs103_baron_taken",
+	803102698,
+	"cs103_baron_taken"
+},
+{
+	"amb_qu_EXT_EM_crowd_angry_light_30m",
+	3898509523,
+	"amb_qu_crowd_angry_light"
+},
+{
+	"cs401_interception_pt2",
+	833172704,
+	"cs401_interception_pt2"
+},
+{
+	"cs401_interception_pt1",
+	833172707,
+	"cs401_interception_pt1"
+},
+{
+	"cs202_giant_destroy_cage",
+	845700623,
+	"cs202_giant_destroy_cage"
+},
+{
+	"sign_quen_charge_loop",
+	3001381154,
+	"sign_quen"
+},
+{
+	"sign_quen_charge_loop_start",
+	2373998819,
+	"sign_quen"
+},
+{
+	"sign_quen_charge_loop_stop",
+	155306209,
+	"sign_quen"
+},
+{
+	"sign_quen_discharge_rebound",
+	81082835,
+	"sign_quen"
+},
+{
+	"sign_quen_discharge_short",
+	755731080,
+	"sign_quen"
+},
+{
+	"sign_quen_discharge_soft",
+	996595902,
+	"sign_quen"
+},
+{
+	"sign_quen_force_discharge",
+	1758686439,
+	"sign_quen"
+},
+{
+	"sign_quen_force_discharge_stop",
+	2054679458,
+	"sign_quen"
+},
+{
+	"cs105_ciri_meets_witch_sisters_sfx",
+	2722239104,
+	"cs105_ciri_meets_witch_sisters"
+},
+{
+	"cs210_ciri_destroys_lab",
+	864107406,
+	"cs210_ciri_destroys_lab"
+},
+{
+	"cs_sq301_geralt_triss_kiss_choice_kiss",
+	865695458,
+	"cs_sq301_geralt_triss_kiss_choice_kiss"
+},
+{
+	"amb_fx_anomaly_start",
+	3432253927,
+	"amb_global_w3"
+},
+{
+	"amb_fx_anomaly_stop",
+	2193681933,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_animal_insect_flies_05_loop",
+	3241997857,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_animal_insect_flies_05_loud_loop",
+	1664007644,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_animal_insect_flies_corpse_heavy_loop",
+	3572065194,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_animal_insect_flies_corpse_loop",
+	1494361722,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_chain_medium_1_hanging_loop_loud",
+	1460130443,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_chain_medium_2_hanging_loop_loud",
+	740809348,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_cordage_clatter",
+	3168464420,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_rope_creaks_1",
+	629824815,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_rope_creaks_1_no_weather",
+	1715211970,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_rope_creaks_1_quiet_15m",
+	2263463264,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_stone_debris_1",
+	2350505746,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_tree_deciduous_medium_1",
+	2177054047,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_tree_deciduous_medium_1_quiet",
+	3186046190,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_tree_deciduous_medium_2",
+	2177054044,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_tree_deciduous_medium_2_quiet",
+	989647649,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_tree_deciduous_medium_dry",
+	879467357,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_tree_deciduous_medium_dry_rattle",
+	1611776374,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_tree_deciduous_medium_dry_rattle_quiet",
+	3000509143,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_tree_frozen_light_1",
+	1913225135,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_wood_creaks_large",
+	834852050,
+	"amb_global_w3"
+},
+{
+	"amb_g_EM_wood_creaks_large_silent",
+	3260254422,
+	"amb_global_w3"
+},
+{
+	"amb_g_EMP_wind_blows_sand_1",
+	2238788958,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_animal_bird_tit_wings_1_often_RND",
+	366856334,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_animal_bird_tit_wings_and_call_1_often_RND",
+	3068651319,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_animal_bird_tit_wings_and_call_1_rare_RND",
+	2877849167,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_animal_crow_far_1",
+	131206075,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_animal_insect_fly_04",
+	96542117,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_animal_insect_fly_04_150m",
+	3466831259,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_crowd_muted_heavy",
+	1426055200,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_flag_flapping_light",
+	2548294330,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_water_fountain_small_1_loop",
+	2551107710,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_waterfall_bright_1_loop",
+	1373817921,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_EM_waterfall_bright_1_loop_no_rev",
+	3753802083,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_forest_conifer_medium_1_40m",
+	1645425792,
+	"amb_global_w3"
+},
+{
+	"amb_g_ext_forest_deciduous_medium_1_40m",
+	1693156633,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_1s_dust_debris",
+	3940954471,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_1s_dust_debris_small",
+	1917518591,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_basement_pressure_1",
+	2496107063,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_basement_wood_scary1",
+	139515729,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_big_storage_house_1",
+	290497025,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_castle_hollow_big_1",
+	1723402453,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_castle_hollow_medium_1",
+	3883718304,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_castle_room_big_1",
+	2470623905,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_dirt_roots_main",
+	1247302177,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_dirt_roots_tunnel1",
+	16676069,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_dirt_roots_water",
+	1782042743,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_1",
+	298437627,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_1_quiet_15m",
+	232745396,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_1_quiet_tremors_15m",
+	862813095,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_1_quiet_wet_15m",
+	404943821,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_2_tremors_15m",
+	1508581725,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_dust_1",
+	2383088798,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_dust_bats_1",
+	117836133,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_wet_1",
+	2195097210,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_wet_2",
+	2195097209,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_wet_2_bats",
+	2364582764,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_hollow_wet_3",
+	2195097208,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_loud_dry_bats",
+	3724588303,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_loud_wet_monsters",
+	4250415779,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_loud_wet_windy_bats",
+	2835054888,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_pressure_wet_bats",
+	1826488449,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_warm_bats_monsters",
+	2712754434,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_warm_dry_windy",
+	2818151633,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_warm_dry_windy_5m",
+	1322213214,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_warm_dry_windy_dust",
+	2558261264,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_warm_wet_windy",
+	2246777458,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_warm_wet_windy_water",
+	30208446,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_water_1_very_close",
+	692586279,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_water_1_very_close_quiet_8m",
+	1969387136,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_water_2_close",
+	4079486997,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_water_2_far",
+	400127422,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_water_2_far_15m",
+	1979173984,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_cave_water_2_far_15m_quiet",
+	3706640357,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_animal_insect_flies_05_loud_loop",
+	2846190852,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_animal_insect_flies_05_quiet_loop",
+	2288704226,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_animal_insect_fly_04",
+	4156305945,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_animal_insect_fly_04_quiet",
+	1305731084,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_chain_medium_1_hanging_loop",
+	1039969980,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_chain_medium_2_hanging_loop",
+	485089545,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_dust_debris_1",
+	2497827469,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_rain_open",
+	111886594,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_scary_debris_1",
+	3210224591,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_tree_deciduous_medium_dry_rattle_quiet",
+	1840841967,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_tree_light_25m",
+	160544509,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_water_drips_1_loop",
+	921024396,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_water_drips_a",
+	714235943,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_water_drips_b",
+	714235940,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_water_drips_c",
+	714235941,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_water_drips_c_loud",
+	520657288,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_water_drips_c_loud_lowpass",
+	1191742652,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_water_drips_c_lowpass",
+	3964687057,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_water_drips_c_together_lowpass",
+	451222510,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_water_drips_into_a_bucket",
+	242903281,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_waterfall_bright_1_loop",
+	4205677693,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_waterfall_bright_1_loop_pause",
+	3076490510,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_waterfall_bright_1_loop_resume",
+	2125410473,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_waterfall_bright_2_small_25m_loop",
+	164785471,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_wind_forest_rain_open",
+	1257333673,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_wind_forest_rain_open_light",
+	1434654432,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_wind_open",
+	2790244574,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_wind_rain_open",
+	2797037451,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_wind_rain_open_25m",
+	3281917514,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_wind_rain_open_25m_no_go",
+	3811165737,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_EM_wind_rain_open_no_go",
+	1225313728,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_stable_big_1",
+	390272562,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_big_warm_windy_house",
+	3907535224,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_hollow_broken_house",
+	762029265,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_large_house",
+	329149071,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_large_house_quiet",
+	949475294,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_rich_house",
+	2786188482,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_rich_house_quiet",
+	2081994435,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_scary_house_1",
+	2029216034,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_squeaks_room_medium",
+	1743001514,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_squeaks_room_medium_2",
+	3727224801,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_squeaks_room_raw",
+	1074279747,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_village_house",
+	118222418,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_village_house_raw",
+	934498233,
+	"amb_global_w3"
+},
+{
+	"amb_g_in_wooden_witch_house1",
+	4284924856,
+	"amb_global_w3"
+},
+{
+	"amb_g_on_horse_start",
+	891741912,
+	"amb_global_w3"
+},
+{
+	"amb_g_on_horse_stop",
+	3131271780,
+	"amb_global_w3"
+},
+{
+	"amb_g_speed_wind_start",
+	2445134019,
+	"amb_global_w3"
+},
+{
+	"amb_g_speed_wind_stop",
+	3753716801,
+	"amb_global_w3"
+},
+{
+	"amb_g_thunder_far_loop_start",
+	3704057928,
+	"amb_global_w3"
+},
+{
+	"amb_g_thunder_far_loop_stop",
+	2166420372,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_river_medium_wide_1",
+	3580174813,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_river_small_fast_1",
+	1792066838,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_stream_large_1",
+	3185698137,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_stream_medium_1",
+	769745177,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_waterfall_big_bright_80m",
+	316659945,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_waterfall_big_dark_80m",
+	1521202965,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_waterfall_into_water_1",
+	4271195374,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_waterfall_medium_1",
+	1007032397,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_waterfall_medium_1_30m",
+	626488926,
+	"amb_global_w3"
+},
+{
+	"amb_g_water_STATIC_waterfall_medium_1_30m_no_occ_EXT",
+	2375755772,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_EM_animal_insect_flies_EM_02_intense",
+	2837398743,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_EM_flag_flapping_cdp",
+	2451383709,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_EM_tree_deciduous_medium",
+	3098759987,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_EM_tree_deciduous_medium_dry",
+	2156505145,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_EM_water_fall_into_water_medium",
+	2857065927,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_fall_medium_1",
+	3471647683,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_lake_big",
+	4261848454,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_lake_big_30m",
+	3190211257,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_lake_med_25m",
+	881950811,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_lake_small_15m",
+	1145065739,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_river_medium",
+	2936090760,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_river_medium_EM",
+	2045546125,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_river_small",
+	1749071554,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_STATIC_river_small_fast_1",
+	4169022650,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_STATIC_stream_large_1",
+	339838253,
+	"amb_global_w3"
+},
+{
+	"amb_nml_g_water_STATIC_stream_medium_1",
+	2920488469,
+	"amb_global_w3"
+},
+{
+	"amb_sk_g_em_walla_muted_heavy",
+	2377657351,
+	"amb_global_w3"
+},
+{
+	"amb_sk_g_em_walla_muted_medium",
+	3628017895,
+	"amb_global_w3"
+},
+{
+	"amb_sk_ice_giant_giant_lair",
+	2208601755,
+	"amb_global_w3"
+},
+{
+	"amb_sk_ice_giant_lake_siren_cave",
+	4154464798,
+	"amb_global_w3"
+},
+{
+	"amb_sk_ice_giant_tower_cave_dry",
+	932861438,
+	"amb_global_w3"
+},
+{
+	"amb_sk_ice_giant_tower_cave_mid",
+	1017882339,
+	"amb_global_w3"
+},
+{
+	"amb_sk_ice_giant_tower_cave_wet",
+	880115585,
+	"amb_global_w3"
+},
+{
+	"amb_sk_ice_giant_wind_siren_cave",
+	43111839,
+	"amb_global_w3"
+},
+{
+	"amb_sk_kaer_trodle_flag_flapping",
+	2530404254,
+	"amb_global_w3"
+},
+{
+	"amb_sk_rnd_cordage_clatter",
+	4218648219,
+	"amb_global_w3"
+},
+{
+	"amb_sk_rnd_rope_creaks",
+	1222532872,
+	"amb_global_w3"
+},
+{
+	"amb_sk_rnd_water_drips_loop",
+	3607986301,
+	"amb_global_w3"
+},
+{
+	"amb_sk_rnd_wood_creaks_large",
+	9778389,
+	"amb_global_w3"
+},
+{
+	"amb_sk_rnd_wood_creaks_large_silent",
+	174923459,
+	"amb_global_w3"
+},
+{
+	"caranthil_weapon_hit_ground",
+	2077017438,
+	"magic_caranthil"
+},
+{
+	"magic_canaris_teleport_short",
+	3186299709,
+	"magic_caranthil"
+},
+{
+	"magic_canaris_teleport_start_part1",
+	2941289206,
+	"magic_caranthil"
+},
+{
+	"magic_canaris_teleport_start_part2",
+	2941289205,
+	"magic_caranthil"
+},
+{
+	"magic_caranthil_teleport_fx_start",
+	3610819177,
+	"magic_caranthil"
+},
+{
+	"magic_caranthil_teleport_fx_stop",
+	3178515843,
+	"magic_caranthil"
+},
+{
+	"magic_caranthil_vfx_icemeteor_attack_special",
+	4079297301,
+	"magic_caranthil"
+},
+{
+	"magic_caranthil_vfx_icemeteor_firefx_loop_start",
+	1965945453,
+	"magic_caranthil"
+},
+{
+	"magic_caranthil_vfx_icemeteor_firefx_loop_stop",
+	3579588527,
+	"magic_caranthil"
+},
+{
+	"magic_caranthil_vfx_icespear_explo",
+	215989082,
+	"magic_caranthil"
+},
+{
+	"magic_caranthil_vfx_icespear_firefx_loop_start",
+	2480804918,
+	"magic_caranthil"
+},
+{
+	"magic_caranthil_vfx_icespear_firefx_loop_stop",
+	2098183094,
+	"magic_caranthil"
+},
+{
+	"monster_ice_giant_anchor_drag",
+	4238289974,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_anchor_hit_ground",
+	672483835,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_attack_foot_smash",
+	2357598956,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_attack_hand_smash",
+	195065379,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_bodyfall",
+	1594402973,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_chain_move_heavy",
+	2599129115,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_chain_move_light",
+	532470978,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_chain_move_lighter",
+	674128843,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_focus_100m_start",
+	3175493202,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_focus_100m_stop",
+	1223171850,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_footstep_run",
+	3964658066,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_footstep_shuffle_hard",
+	1879016630,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_footstep_walk",
+	3156496988,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_handling",
+	68854321,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_mv_chest_hit",
+	3103769663,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_aggro_medium",
+	471674438,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_aggro_short",
+	1618055291,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_attack_long",
+	3667227443,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_attack_short",
+	3488717229,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_attack_special",
+	2995147930,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_block",
+	3034229241,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_breath_out_heavy",
+	3969629773,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_breath_out_light",
+	822303844,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_damage_heavy",
+	2974258897,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_damage_light",
+	1644376608,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_death",
+	2731233668,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_idle_grunt",
+	2093193307,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_idle_grunt_RND",
+	1672969318,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_shock",
+	3546094356,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_snort_in",
+	3519159884,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_snort_out",
+	2273751659,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_vo_yawn",
+	1299084143,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_whoosh_heavy",
+	3251487908,
+	"monster_ice_giant"
+},
+{
+	"monster_ice_giant_whoosh_medium",
+	1932200934,
+	"monster_ice_giant"
+},
+{
+	"set_monster_ice_giant_armour_type_generic",
+	3699404770,
+	"monster_ice_giant"
+},
+{
+	"cs204_leshy_accepts_offering",
+	901554470,
+	"cs204_leshy_accepts_offering"
+},
+{
+	"cs101_wild_hunt_burns_village_p1",
+	901613016,
+	"cs101_wild_hunt_burns_village_p1"
+},
+{
+	"cs101_wild_hunt_burns_village_p2",
+	901613019,
+	"cs101_wild_hunt_burns_village_p2"
+},
+{
+	"cs601_storm_p2",
+	903669873,
+	"cs601_storm_p2"
+},
+{
+	"cs601_storm_p1",
+	903669874,
+	"cs601_storm_p1"
+},
+{
+	"cs110_geralt_and_ciri_drink",
+	906448434,
+	"cs110_geralt_and_ciri_drink"
+},
+{
+	"cs103_poroniec_pickup_choice",
+	914085724,
+	"cs103_poroniec_pickup_choice"
+},
+{
+	"gui_alchemy_brew",
+	2148708021,
+	"gui"
+},
+{
+	"gui_bribe",
+	3703178661,
+	"gui"
+},
+{
+	"gui_character_add_skill",
+	2421212896,
+	"gui"
+},
+{
+	"gui_character_buy_skill",
+	3393221377,
+	"gui"
+},
+{
+	"gui_character_place_mutagen",
+	3525231240,
+	"gui"
+},
+{
+	"gui_character_remove_mutagen",
+	1359180639,
+	"gui"
+},
+{
+	"gui_character_remove_skill",
+	1721255719,
+	"gui"
+},
+{
+	"gui_character_synergy_effect",
+	3738123100,
+	"gui"
+},
+{
+	"gui_character_synergy_effect_lose",
+	3315678580,
+	"gui"
+},
+{
+	"gui_crafting_craft_item",
+	587077522,
+	"gui"
+},
+{
+	"gui_crafting_craft_item_complete",
+	4209905320,
+	"gui"
+},
+{
+	"gui_enchanting_runeword_add",
+	2266894635,
+	"gui"
+},
+{
+	"gui_enchanting_runeword_remove",
+	1866957786,
+	"gui"
+},
+{
+	"gui_enchanting_socket_add",
+	1169018020,
+	"gui"
+},
+{
+	"gui_global_cancel",
+	3112166805,
+	"gui"
+},
+{
+	"gui_global_change_selected_list",
+	3965704212,
+	"gui"
+},
+{
+	"gui_global_change_tab",
+	2785457955,
+	"gui"
+},
+{
+	"gui_global_clock_tick",
+	4095806373,
+	"gui"
+},
+{
+	"gui_global_clock_tick_stop",
+	221496040,
+	"gui"
+},
+{
+	"gui_global_denied",
+	3595752606,
+	"gui"
+},
+{
+	"gui_global_dropdown_close",
+	1498568533,
+	"gui"
+},
+{
+	"gui_global_dropdown_open",
+	181400703,
+	"gui"
+},
+{
+	"gui_global_error",
+	3749586231,
+	"gui"
+},
+{
+	"gui_global_game_start",
+	1694600448,
+	"gui"
+},
+{
+	"gui_global_goto_link",
+	58160313,
+	"gui"
+},
+{
+	"gui_global_highlight",
+	3470658329,
+	"gui"
+},
+{
+	"gui_global_loot",
+	2992102305,
+	"gui"
+},
+{
+	"gui_global_loot_all",
+	2386937797,
+	"gui"
+},
+{
+	"gui_global_menu_in",
+	3691083256,
+	"gui"
+},
+{
+	"gui_global_menu_out",
+	1162945567,
+	"gui"
+},
+{
+	"gui_global_next",
+	1995549108,
+	"gui"
+},
+{
+	"gui_global_ok",
+	3548085393,
+	"gui"
+},
+{
+	"gui_global_panel_change",
+	3707487898,
+	"gui"
+},
+{
+	"gui_global_panel_close",
+	1797088578,
+	"gui"
+},
+{
+	"gui_global_panel_open",
+	2445835798,
+	"gui"
+},
+{
+	"gui_global_player_death_loop",
+	3303921128,
+	"gui"
+},
+{
+	"gui_global_player_death_loop_stop",
+	2522945991,
+	"gui"
+},
+{
+	"gui_global_player_death_thump",
+	3816934764,
+	"gui"
+},
+{
+	"gui_global_popup_open",
+	589130566,
+	"gui"
+},
+{
+	"gui_global_prev",
+	3280641108,
+	"gui"
+},
+{
+	"gui_global_scroll_description",
+	2865439803,
+	"gui"
+},
+{
+	"gui_global_scroll_description_failed",
+	3047277577,
+	"gui"
+},
+{
+	"gui_global_slider_move",
+	3209046196,
+	"gui"
+},
+{
+	"gui_global_slider_move_failed",
+	539165544,
+	"gui"
+},
+{
+	"gui_global_submenu_whoosh",
+	1606522627,
+	"gui"
+},
+{
+	"gui_global_switch",
+	3022301679,
+	"gui"
+},
+{
+	"gui_global_switch_panel",
+	2675543356,
+	"gui"
+},
+{
+	"gui_gwint_agile",
+	563469851,
+	"gui"
+},
+{
+	"gui_gwint_battle_draw",
+	484221684,
+	"gui"
+},
+{
+	"gui_gwint_battle_lost",
+	2380504768,
+	"gui"
+},
+{
+	"gui_gwint_battle_won",
+	1483477182,
+	"gui"
+},
+{
+	"gui_gwint_card_redrawn",
+	2223625399,
+	"gui"
+},
+{
+	"gui_gwint_clash_defeat",
+	1547573022,
+	"gui"
+},
+{
+	"gui_gwint_clash_victory",
+	2567216419,
+	"gui"
+},
+{
+	"gui_gwint_clear_weather",
+	1610225005,
+	"gui"
+},
+{
+	"gui_gwint_close_combat",
+	893007426,
+	"gui"
+},
+{
+	"gui_gwint_coin_toss",
+	2290366884,
+	"gui"
+},
+{
+	"gui_gwint_cow_death",
+	2309174245,
+	"gui"
+},
+{
+	"gui_gwint_cursor_movement",
+	4280895025,
+	"gui"
+},
+{
+	"gui_gwint_discard_card",
+	3770498370,
+	"gui"
+},
+{
+	"gui_gwint_draw_2",
+	1649307184,
+	"gui"
+},
+{
+	"gui_gwint_draw_card",
+	899380872,
+	"gui"
+},
+{
+	"gui_gwint_dummy",
+	3986260047,
+	"gui"
+},
+{
+	"gui_gwint_fog",
+	4073830655,
+	"gui"
+},
+{
+	"gui_gwint_frost",
+	4138552541,
+	"gui"
+},
+{
+	"gui_gwint_game_start",
+	600120526,
+	"gui"
+},
+{
+	"gui_gwint_gem_destruction",
+	3083411703,
+	"gui"
+},
+{
+	"gui_gwint_gwint_start",
+	4261021639,
+	"gui"
+},
+{
+	"gui_gwint_hero",
+	3798273549,
+	"gui"
+},
+{
+	"gui_gwint_hero_card_drawn",
+	4260003287,
+	"gui"
+},
+{
+	"gui_gwint_horn",
+	3663066926,
+	"gui"
+},
+{
+	"gui_gwint_leader_change",
+	1988460469,
+	"gui"
+},
+{
+	"gui_gwint_lock_in",
+	4225189510,
+	"gui"
+},
+{
+	"gui_gwint_long_range",
+	620812825,
+	"gui"
+},
+{
+	"gui_gwint_menu_opening",
+	1773598505,
+	"gui"
+},
+{
+	"gui_gwint_monster_ability",
+	700328438,
+	"gui"
+},
+{
+	"gui_gwint_morale_boost",
+	1532101599,
+	"gui"
+},
+{
+	"gui_gwint_nilfgaardian_ability",
+	127067278,
+	"gui"
+},
+{
+	"gui_gwint_northern_realms_ability",
+	1276548273,
+	"gui"
+},
+{
+	"gui_gwint_opponents_turn",
+	3371642065,
+	"gui"
+},
+{
+	"gui_gwint_preview_card",
+	2149152204,
+	"gui"
+},
+{
+	"gui_gwint_rain",
+	3139094427,
+	"gui"
+},
+{
+	"gui_gwint_resurrect",
+	1500407618,
+	"gui"
+},
+{
+	"gui_gwint_round_draw",
+	1315149852,
+	"gui"
+},
+{
+	"gui_gwint_scoia_tael_ability",
+	48540386,
+	"gui"
+},
+{
+	"gui_gwint_scorch",
+	3808862521,
+	"gui"
+},
+{
+	"gui_gwint_siege_weapon",
+	2116641233,
+	"gui"
+},
+{
+	"gui_gwint_spy",
+	60684161,
+	"gui"
+},
+{
+	"gui_gwint_summon_clones",
+	1392379429,
+	"gui"
+},
+{
+	"gui_gwint_tight_bond",
+	1474657601,
+	"gui"
+},
+{
+	"gui_gwint_turn_passed",
+	3144660747,
+	"gui"
+},
+{
+	"gui_gwint_using_ability",
+	3264017036,
+	"gui"
+},
+{
+	"gui_gwint_whose_winning_changed",
+	702292887,
+	"gui"
+},
+{
+	"gui_gwint_your_turn",
+	3727608670,
+	"gui"
+},
+{
+	"gui_hubmap_fast_travel",
+	855123284,
+	"gui"
+},
+{
+	"gui_hubmap_mark_pin",
+	3866393148,
+	"gui"
+},
+{
+	"gui_ingame_area_change_message",
+	2684553653,
+	"gui"
+},
+{
+	"gui_ingame_item_broken",
+	4066543340,
+	"gui"
+},
+{
+	"gui_ingame_level_up",
+	1824613827,
+	"gui"
+},
+{
+	"gui_ingame_low_health_warning",
+	2000900091,
+	"gui"
+},
+{
+	"gui_ingame_low_oxygen_warning",
+	3037089921,
+	"gui"
+},
+{
+	"gui_ingame_low_stamina_warning",
+	2696456410,
+	"gui"
+},
+{
+	"gui_ingame_medalion_vibrating",
+	3825899181,
+	"gui"
+},
+{
+	"gui_ingame_medalion_vibrating_end",
+	760044783,
+	"gui"
+},
+{
+	"gui_ingame_new_journal",
+	3653805713,
+	"gui"
+},
+{
+	"gui_ingame_new_mappin",
+	408642587,
+	"gui"
+},
+{
+	"gui_ingame_new_reward_item",
+	1269921001,
+	"gui"
+},
+{
+	"gui_ingame_overweight_warning",
+	3112147990,
+	"gui"
+},
+{
+	"gui_ingame_quest_active",
+	1408191586,
+	"gui"
+},
+{
+	"gui_ingame_quest_fail",
+	18816552,
+	"gui"
+},
+{
+	"gui_ingame_quest_success",
+	1420514133,
+	"gui"
+},
+{
+	"gui_ingame_toxic_warning",
+	107591119,
+	"gui"
+},
+{
+	"gui_ingame_wheel_close",
+	324773951,
+	"gui"
+},
+{
+	"gui_ingame_wheel_highlight",
+	2429313415,
+	"gui"
+},
+{
+	"gui_ingame_wheel_open",
+	3834483033,
+	"gui"
+},
+{
+	"gui_ingame_wheel_select",
+	1915469037,
+	"gui"
+},
+{
+	"gui_inventory_armor_attach",
+	2820406993,
+	"gui"
+},
+{
+	"gui_inventory_armor_back",
+	3153235283,
+	"gui"
+},
+{
+	"gui_inventory_armorupgrade_attach",
+	3467283739,
+	"gui"
+},
+{
+	"gui_inventory_armorupgrade_back",
+	1098021853,
+	"gui"
+},
+{
+	"gui_inventory_bolt_attach",
+	2480400517,
+	"gui"
+},
+{
+	"gui_inventory_bolt_back",
+	4147483223,
+	"gui"
+},
+{
+	"gui_inventory_bombs_attach",
+	3177882671,
+	"gui"
+},
+{
+	"gui_inventory_bombs_back",
+	1542877969,
+	"gui"
+},
+{
+	"gui_inventory_boots_attach",
+	2114248031,
+	"gui"
+},
+{
+	"gui_inventory_boots_back",
+	2469962625,
+	"gui"
+},
+{
+	"gui_inventory_buy",
+	1233612302,
+	"gui"
+},
+{
+	"gui_inventory_buy_failed",
+	1033127006,
+	"gui"
+},
+{
+	"gui_inventory_dismount",
+	3038952325,
+	"gui"
+},
+{
+	"gui_inventory_drag_failed",
+	1692661952,
+	"gui"
+},
+{
+	"gui_inventory_drink",
+	525259852,
+	"gui"
+},
+{
+	"gui_inventory_drop",
+	1171839253,
+	"gui"
+},
+{
+	"gui_inventory_eat",
+	1570297696,
+	"gui"
+},
+{
+	"gui_inventory_gauntlet_attach",
+	1945005908,
+	"gui"
+},
+{
+	"gui_inventory_gauntlet_back",
+	391860350,
+	"gui"
+},
+{
+	"gui_inventory_horse_bage_attach",
+	828057553,
+	"gui"
+},
+{
+	"gui_inventory_horse_bage_back",
+	2490977875,
+	"gui"
+},
+{
+	"gui_inventory_horse_blinder_attach",
+	1886069464,
+	"gui"
+},
+{
+	"gui_inventory_horse_blinder_back",
+	4041708754,
+	"gui"
+},
+{
+	"gui_inventory_horse_saddle_attach",
+	394651131,
+	"gui"
+},
+{
+	"gui_inventory_horse_saddle_back",
+	2608488125,
+	"gui"
+},
+{
+	"gui_inventory_other_attach",
+	291502444,
+	"gui"
+},
+{
+	"gui_inventory_other_back",
+	3382624854,
+	"gui"
+},
+{
+	"gui_inventory_overweighted",
+	2642225427,
+	"gui"
+},
+{
+	"gui_inventory_pants_attach",
+	324267960,
+	"gui"
+},
+{
+	"gui_inventory_pants_back",
+	1465070514,
+	"gui"
+},
+{
+	"gui_inventory_potion_attach",
+	3700288437,
+	"gui"
+},
+{
+	"gui_inventory_potion_back",
+	2547514631,
+	"gui"
+},
+{
+	"gui_inventory_ranged_attach",
+	3611982073,
+	"gui"
+},
+{
+	"gui_inventory_ranged_back",
+	2558246971,
+	"gui"
+},
+{
+	"gui_inventory_read",
+	2785224070,
+	"gui"
+},
+{
+	"gui_inventory_repair",
+	4064681069,
+	"gui"
+},
+{
+	"gui_inventory_repair_all",
+	3594412185,
+	"gui"
+},
+{
+	"gui_inventory_rune_attach",
+	3360289214,
+	"gui"
+},
+{
+	"gui_inventory_rune_back",
+	134747032,
+	"gui"
+},
+{
+	"gui_inventory_sell",
+	367269454,
+	"gui"
+},
+{
+	"gui_inventory_silversword_attach",
+	2301156136,
+	"gui"
+},
+{
+	"gui_inventory_silversword_back",
+	151285218,
+	"gui"
+},
+{
+	"gui_inventory_steelsword_attach",
+	4079825526,
+	"gui"
+},
+{
+	"gui_inventory_steelsword_back",
+	2770982448,
+	"gui"
+},
+{
+	"gui_inventory_transfer_item",
+	1650899403,
+	"gui"
+},
+{
+	"gui_inventory_use",
+	1338073887,
+	"gui"
+},
+{
+	"gui_inventory_weapon_attach",
+	1668366526,
+	"gui"
+},
+{
+	"gui_inventory_weapon_back",
+	758450840,
+	"gui"
+},
+{
+	"gui_journal_track_quest",
+	1118565157,
+	"gui"
+},
+{
+	"gui_loot_popup_close",
+	1242548501,
+	"gui"
+},
+{
+	"gui_loot_popup_open",
+	4234327871,
+	"gui"
+},
+{
+	"gui_meditation_clock_hour_set",
+	3497894566,
+	"gui"
+},
+{
+	"gui_meditation_start",
+	2115078800,
+	"gui"
+},
+{
+	"gui_no_adrenaline",
+	1162886102,
+	"gui"
+},
+{
+	"gui_no_stamina",
+	2557284870,
+	"gui"
+},
+{
+	"gui_noticeboard_close",
+	2661256638,
+	"gui"
+},
+{
+	"gui_noticeboard_enter",
+	3126206696,
+	"gui"
+},
+{
+	"gui_noticeboard_paper",
+	684101376,
+	"gui"
+},
+{
+	"gui_pick_up_herbs",
+	520719879,
+	"gui"
+},
+{
+	"gui_potion_activation",
+	19292623,
+	"gui"
+},
+{
+	"gui_preparation_oil",
+	1598455313,
+	"gui"
+},
+{
+	"gui_preparation_potion",
+	1031617446,
+	"gui"
+},
+{
+	"gui_slowmo_end",
+	2373124724,
+	"gui"
+},
+{
+	"gui_slowmo_start",
+	240845031,
+	"gui"
+},
+{
+	"gui_stamina_recharged",
+	1968081196,
+	"gui"
+},
+{
+	"gui_tutorial_big_appear",
+	1229634888,
+	"gui"
+},
+{
+	"gui_tutorial_big_disappear",
+	900010730,
+	"gui"
+},
+{
+	"gui_tutorial_closed",
+	1243837818,
+	"gui"
+},
+{
+	"gui_tutorial_notification",
+	4029140763,
+	"gui"
+},
+{
+	"gui_tutorial_opened",
+	1046536345,
+	"gui"
+},
+{
+	"sq_sk_210_mage_hand_fx_start",
+	4059030787,
+	"sq_sk_210"
+},
+{
+	"sq_sk_210_mage_hand_fx_stop",
+	2998375553,
+	"sq_sk_210"
+},
+{
+	"sq_sk_210_mage_teleport_away",
+	110776356,
+	"sq_sk_210"
+},
+{
+	"sq_sk_210_magic_obstacle_start",
+	208567723,
+	"sq_sk_210"
+},
+{
+	"sq_sk_210_magic_obstacle_stop",
+	3040436937,
+	"sq_sk_210"
+},
+{
+	"qu_sk_205_appear_of_morkvarg",
+	875611086,
+	"sq_sk_201"
+},
+{
+	"qu_sk_205_dissappear_of_morkvarg",
+	657558269,
+	"sq_sk_201"
+},
+{
+	"qu_sk_205_ramming_gate",
+	707492126,
+	"sq_sk_201"
+},
+{
+	"sq_202_geral_hear_dinj",
+	2510240351,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_kiss",
+	3515143404,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_moving_cupboard_long",
+	912461056,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_moving_cupboard_short",
+	4005288224,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_pick_up_stone",
+	2644686421,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_repair",
+	565882773,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_screaming_through_gag",
+	2606474183,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_sonar_boat_loop",
+	3882126309,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_sonar_boat_loop_stop",
+	825924136,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_sonar_found",
+	3866191302,
+	"sq_sk_202"
+},
+{
+	"sq_sk_202_teleport_fadein",
+	3903671517,
+	"sq_sk_202"
+},
+{
+	"sq_sk_205_short_gusty",
+	4065954536,
+	"sq_sk_205"
+},
+{
+	"sq_sk_204_screaming_women",
+	2441736602,
+	"sq_sk_204"
+},
+{
+	"qu_209_lugos_death_vision_vfx",
+	3608748773,
+	"sq_sk_209"
+},
+{
+	"qu_209_magic_obstacle_end",
+	2648320801,
+	"sq_sk_209"
+},
+{
+	"qu_209_magic_obstacle_start",
+	3787268114,
+	"sq_sk_209"
+},
+{
+	"qu_209_two_sirens_sing_loop_stop",
+	1993422627,
+	"sq_sk_209"
+},
+{
+	"qu_sk_209_two_sirens_sings_loop",
+	2872513336,
+	"sq_sk_209"
+},
+{
+	"sq_209_hide_stalactit",
+	1024766218,
+	"sq_sk_209"
+},
+{
+	"sq_209_whale_call",
+	2957128248,
+	"sq_sk_209"
+},
+{
+	"sq_sk_209_end_pitch",
+	3445019961,
+	"sq_sk_209"
+},
+{
+	"sq_sk_209_hammer_move",
+	2935754999,
+	"sq_sk_209"
+},
+{
+	"sq_sk_209_last_breath",
+	1843228028,
+	"sq_sk_209"
+},
+{
+	"sq_sk_209_moving_rocks_loop_start",
+	3244843678,
+	"sq_sk_209"
+},
+{
+	"sq_sk_209_moving_rocks_loop_stop",
+	2467435838,
+	"sq_sk_209"
+},
+{
+	"sq_sk_209_pitch_hiss",
+	3092977721,
+	"sq_sk_209"
+},
+{
+	"sq_nv_302_generator_teleport_loop",
+	680268137,
+	"sq_nv_302"
+},
+{
+	"sq_nv_302_generator_teleport_loop_stop",
+	3976501340,
+	"sq_nv_302"
+},
+{
+	"sq_nv_302_inster_ceramic_plate",
+	1826071846,
+	"sq_nv_302"
+},
+{
+	"sq_nv_303",
+	939153537,
+	"sq_nv_303"
+},
+{
+	"sq_nv_301_bush_touch",
+	3327870188,
+	"sq_nv_301"
+},
+{
+	"sq_nv_301_fireworks",
+	3524852984,
+	"sq_nv_301"
+},
+{
+	"sq_nv_306",
+	939153540,
+	"sq_nv_306"
+},
+{
+	"sq_nv_304_chark",
+	1223443524,
+	"sq_nv_304"
+},
+{
+	"sq_nv_305",
+	939153543,
+	"sq_nv_305"
+},
+{
+	"q602_barrel_kick",
+	2040377114,
+	"qu_ep1_602_quest"
+},
+{
+	"q602_kick_taunt",
+	1684243166,
+	"qu_ep1_602_quest"
+},
+{
+	"q602_kick_whoosh",
+	4268924668,
+	"qu_ep1_602_quest"
+},
+{
+	"amb_dyn_EXT_EM_alarm_bell_medium_100m",
+	3892819765,
+	"amb_dyn_alarm_bell_medium"
+},
+{
+	"amb_dyn_EXT_EM_alarm_bell_medium_100m_end",
+	4058611127,
+	"amb_dyn_alarm_bell_medium"
+},
+{
+	"animals_cat_bodyfall",
+	2617001255,
+	"animals_cat"
+},
+{
+	"animals_cat_clean",
+	4268895995,
+	"animals_cat"
+},
+{
+	"animals_cat_death",
+	1120094878,
+	"animals_cat"
+},
+{
+	"animals_cat_dialog_bodyfall",
+	1357296912,
+	"animals_cat"
+},
+{
+	"animals_cat_dialog_clean",
+	783497258,
+	"animals_cat"
+},
+{
+	"animals_cat_dialog_death",
+	2363404351,
+	"animals_cat"
+},
+{
+	"animals_cat_dialog_eat",
+	4268771591,
+	"animals_cat"
+},
+{
+	"animals_cat_dialog_footsteps",
+	967851280,
+	"animals_cat"
+},
+{
+	"animals_cat_dialog_meow",
+	3993222351,
+	"animals_cat"
+},
+{
+	"animals_cat_dialog_purr",
+	2429091974,
+	"animals_cat"
+},
+{
+	"animals_cat_eat",
+	4273812326,
+	"animals_cat"
+},
+{
+	"animals_cat_footsteps",
+	2268553021,
+	"animals_cat"
+},
+{
+	"animals_cat_meow",
+	398209268,
+	"animals_cat"
+},
+{
+	"animals_cat_meow_RND",
+	3146770249,
+	"animals_cat"
+},
+{
+	"animals_cat_purr",
+	2096457133,
+	"animals_cat"
+},
+{
+	"sq_nv_315_wooden_door_slide",
+	4175124462,
+	"sq_nv_315"
+},
+{
+	"sq_nv_310",
+	955931253,
+	"sq_nv_310"
+},
+{
+	"sq_nv_310_rumbling",
+	730131130,
+	"sq_nv_310"
+},
+{
+	"cs103_poroniec_shows_up",
+	956297552,
+	"cs103_poroniec_shows_up"
+},
+{
+	"monster_wraith_agressive",
+	36389353,
+	"monster_wraith"
+},
+{
+	"monster_wraith_agressive_RND",
+	1870866056,
+	"monster_wraith"
+},
+{
+	"monster_wraith_attack",
+	925730064,
+	"monster_wraith"
+},
+{
+	"monster_wraith_attack_RND",
+	3111599789,
+	"monster_wraith"
+},
+{
+	"monster_wraith_calm",
+	2739320877,
+	"monster_wraith"
+},
+{
+	"monster_wraith_calm_ALWAYS",
+	4007014855,
+	"monster_wraith"
+},
+{
+	"monster_wraith_death_fx",
+	1864083967,
+	"monster_wraith"
+},
+{
+	"monster_wraith_death_vo",
+	1595641912,
+	"monster_wraith"
+},
+{
+	"monster_wraith_focus_100m_start",
+	2090717076,
+	"monster_wraith"
+},
+{
+	"monster_wraith_focus_100m_stop",
+	1833197448,
+	"monster_wraith"
+},
+{
+	"monster_wraith_foley_v1",
+	4030381567,
+	"monster_wraith"
+},
+{
+	"monster_wraith_foley_v2",
+	4030381564,
+	"monster_wraith"
+},
+{
+	"monster_wraith_foley_v3",
+	4030381565,
+	"monster_wraith"
+},
+{
+	"monster_wraith_foley_v3_custom",
+	1597987889,
+	"monster_wraith"
+},
+{
+	"monster_wraith_long_vo",
+	544832220,
+	"monster_wraith"
+},
+{
+	"monster_wraith_long_vo_custom",
+	2665326254,
+	"monster_wraith"
+},
+{
+	"monster_wraith_pain",
+	882947812,
+	"monster_wraith"
+},
+{
+	"monster_wraith_pain_RND",
+	1398612729,
+	"monster_wraith"
+},
+{
+	"monster_wraith_short_vo",
+	1460279312,
+	"monster_wraith"
+},
+{
+	"monster_wraith_spawn",
+	1449383161,
+	"monster_wraith"
+},
+{
+	"monster_wraith_swoosh_lamp",
+	2869590246,
+	"monster_wraith"
+},
+{
+	"monster_wraith_swoosh_normal",
+	2578309137,
+	"monster_wraith"
+},
+{
+	"monster_wraith_swoosh_sword",
+	3513402627,
+	"monster_wraith"
+},
+{
+	"monster_wraith_taunt",
+	1639036912,
+	"monster_wraith"
+},
+{
+	"monster_wraith_taunt_custom",
+	2218834562,
+	"monster_wraith"
+},
+{
+	"monster_wraith_VFX_appear",
+	1226308396,
+	"monster_wraith"
+},
+{
+	"monster_wraith_VFX_disappear",
+	3119300542,
+	"monster_wraith"
+},
+{
+	"monster_wraith_VFX_shadows_form",
+	3611027459,
+	"monster_wraith"
+},
+{
+	"set_monster_wraith_armour_type_monster_ghost",
+	1205708823,
+	"monster_wraith"
+},
+{
+	"set_monster_wraith_invisible",
+	2309254518,
+	"monster_wraith"
+},
+{
+	"set_monster_wraith_visible",
+	2455992013,
+	"monster_wraith"
+},
+{
+	"mus_set_intensity_1",
+	645210493,
+	"music_shared"
+},
+{
+	"mus_set_intensity_1_fast",
+	1754508530,
+	"music_shared"
+},
+{
+	"mus_set_intensity_2",
+	645210494,
+	"music_shared"
+},
+{
+	"mus_set_intensity_2_1delay",
+	1490098943,
+	"music_shared"
+},
+{
+	"mus_set_intensity_2_3delay",
+	280609217,
+	"music_shared"
+},
+{
+	"mus_set_intensity_2_fast",
+	3910271891,
+	"music_shared"
+},
+{
+	"mus_set_intensity_3",
+	645210495,
+	"music_shared"
+},
+{
+	"mus_set_intensity_3_2delay",
+	3635381033,
+	"music_shared"
+},
+{
+	"mus_set_intensity_3_4delay",
+	2938536083,
+	"music_shared"
+},
+{
+	"mus_set_intensity_3_fast",
+	380362468,
+	"music_shared"
+},
+{
+	"mus_set_intensity_4",
+	645210488,
+	"music_shared"
+},
+{
+	"mus_set_intensity_4_fast",
+	1525814501,
+	"music_shared"
+},
+{
+	"set_state_combat",
+	2182516516,
+	"music_shared"
+},
+{
+	"set_state_exploration",
+	210209267,
+	"music_shared"
+},
+{
+	"set_state_music_only",
+	1441270086,
+	"music_shared"
+},
+{
+	"stop_music",
+	2837384057,
+	"music_shared"
+},
+{
+	"cs002_wild_hunt_chase_p1",
+	1010274553,
+	"cs002_wild_hunt_chase_p1"
+},
+{
+	"cs002_wild_hunt_chase_p2",
+	1010274554,
+	"cs002_wild_hunt_chase_p2"
+},
+{
+	"cs002_wild_hunt_chase_p3",
+	1010274555,
+	"cs002_wild_hunt_chase_p3"
+},
+{
+	"cs002_wild_hunt_chase_p4",
+	1010274556,
+	"cs002_wild_hunt_chase_p4"
+},
+{
+	"cs501_naglfar_freezes_b",
+	1011297763,
+	"cs501_naglfar_freezes_b"
+},
+{
+	"animals_rat_death_impact",
+	2931395684,
+	"animals_rat"
+},
+{
+	"animals_rat_squeak",
+	3992652861,
+	"animals_rat"
+},
+{
+	"animals_rat_squeak_RND1",
+	1106343869,
+	"animals_rat"
+},
+{
+	"animals_rat_squeak_RND2",
+	1106343870,
+	"animals_rat"
+},
+{
+	"cs110_snowy_ciri",
+	1046713360,
+	"cs110_snowy_ciri"
+},
+{
+	"cs403_teleport",
+	1061299508,
+	"cs403_teleport"
+},
+{
+	"cs403_triss_spell_p2_letho",
+	1064269095,
+	"cs403_triss_spell_p2_letho"
+},
+{
+	"cs_e3_inspecting_gryphon_feather",
+	1066413439,
+	"cs_e3_inspecting_gryphon_feather"
+},
+{
+	"qu_nv_308_body_section_long",
+	620296384,
+	"qu_nv_308"
+},
+{
+	"qu_nv_308_dog_bark",
+	1917914612,
+	"qu_nv_308"
+},
+{
+	"qu_nv_308_fake_run",
+	2998986798,
+	"qu_nv_308"
+},
+{
+	"qu_nv_308_fx_werewolf_transform",
+	928671082,
+	"qu_nv_308"
+},
+{
+	"qu_nv_308_heating_poker",
+	916465845,
+	"qu_nv_308"
+},
+{
+	"qu_nv_308_laugh",
+	1772571142,
+	"qu_nv_308"
+},
+{
+	"qu_nv_308_open_canal",
+	3576389987,
+	"qu_nv_308"
+},
+{
+	"qu_nv_308_screaming_through_gag",
+	1323269036,
+	"qu_nv_308"
+},
+{
+	"qu_nv_308_whistle_on_dogs",
+	3147293409,
+	"qu_nv_308"
+},
+{
+	"qu_nv_309_give_necklace",
+	913160822,
+	"qu_nv_309"
+},
+{
+	"qu_nv_309_remove_necklace",
+	3315641875,
+	"qu_nv_309"
+},
+{
+	"qu_nv_309_seagulls_in_harbour",
+	1365647250,
+	"qu_nv_309"
+},
+{
+	"qu_nv_309_slide_door_close",
+	1208841343,
+	"qu_nv_309"
+},
+{
+	"qu_nv_309_slide_door_open",
+	4015189657,
+	"qu_nv_309"
+},
+{
+	"qu_nv_309_small_crowd_amb_loop",
+	2495842575,
+	"qu_nv_309"
+},
+{
+	"qu_nv_309_small_crowd_amb_loop_stop",
+	4096777530,
+	"qu_nv_309"
+},
+{
+	"qu_nv_309_take_necklace",
+	1792936156,
+	"qu_nv_309"
+},
+{
+	"qu_nv_304_audience_cheering",
+	805963029,
+	"qu_nv_304"
+},
+{
+	"qu_nv_304_audience_clapping",
+	2622916422,
+	"qu_nv_304"
+},
+{
+	"qu_nv_304_audience_ovation",
+	2060582634,
+	"qu_nv_304"
+},
+{
+	"qu_nv_304_children_leaving_school",
+	2028853326,
+	"qu_nv_304"
+},
+{
+	"qu_nv_304_dialog_concert_applause",
+	2013220342,
+	"qu_nv_304"
+},
+{
+	"qu_nv_304_dialog_concert_applause_end",
+	2673222396,
+	"qu_nv_304"
+},
+{
+	"qu_nv_304_rip_paper_book",
+	2806418745,
+	"qu_nv_304"
+},
+{
+	"qu_nv_305_catch_ball",
+	3838801651,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_ambient_loop",
+	1610176767,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_ambient_loop_stop",
+	906252362,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_applause",
+	2544624035,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_boo",
+	922120254,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_brawo_on_start",
+	1193930846,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_cought",
+	34763052,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_final_applause_loop",
+	4102423489,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_final_applause_loop_stop",
+	796561412,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_geralt_bad_joke",
+	3289076325,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_laughter",
+	3554115062,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_oouu",
+	4259967782,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_riot_loop",
+	2920083733,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_riot_loop_stop",
+	3651069688,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_shocked_prince_poisoned",
+	1388346279,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_speaking",
+	2354712304,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_crowd_surprised_prince_doppler",
+	2098494182,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_dudu_transformation",
+	2293857380,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_jump_down",
+	779768487,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_lute_put_down",
+	2204297561,
+	"qu_nv_305"
+},
+{
+	"qu_nv_305_table_creak",
+	2822878265,
+	"qu_nv_305"
+},
+{
+	"qu_nv_301_anti_rat_incense_smoke_loop",
+	706269623,
+	"qu_nv_301"
+},
+{
+	"qu_nv_301_anti_rat_incense_smoke_loop_end",
+	3817106265,
+	"qu_nv_301"
+},
+{
+	"qu_nv_301_cradle_swing",
+	2128122362,
+	"qu_nv_301"
+},
+{
+	"qu_nv_301_fake_footstep",
+	900391304,
+	"qu_nv_301"
+},
+{
+	"qu_nv_301_running_rats1",
+	3622186777,
+	"qu_nv_301"
+},
+{
+	"qu_nv_301_running_rats2",
+	3622186778,
+	"qu_nv_301"
+},
+{
+	"qu_nv_301_tortured_man_screaming_loop",
+	3047027459,
+	"qu_nv_301"
+},
+{
+	"qu_nv_301_tortured_man_screaming_loop_end",
+	2522252933,
+	"qu_nv_301"
+},
+{
+	"qu_nv_302_break_door",
+	1834087749,
+	"qu_nv_302"
+},
+{
+	"qu_nv_302_screaming_women",
+	3081346541,
+	"qu_nv_302"
+},
+{
+	"qu_nv_302_slaughter_mafia",
+	2480530139,
+	"qu_nv_302"
+},
+{
+	"qu_nv_303_alarm_bell_loop",
+	783166948,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_alarm_bell_loop_stop",
+	1989332227,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_armed_people_entering_room",
+	1415870994,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_bomb_put_under_table",
+	952584474,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_bottle_bumping",
+	1559225883,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_bottle_move",
+	928094174,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_bottle_pick_up",
+	2164806266,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_drain_water",
+	3174841388,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_knocking_on_door",
+	4203306593,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_sound_open_secret",
+	939048289,
+	"qu_nv_303"
+},
+{
+	"qu_nv_303_troll_hits_wall",
+	4043847903,
+	"qu_nv_303"
+},
+{
+	"amb_sp_dark_valley_ambience",
+	2453088711,
+	"amb_spiral"
+},
+{
+	"amb_sp_desert_wind",
+	4150852762,
+	"amb_spiral"
+},
+{
+	"amb_sp_desert_wind_trees_rattle",
+	994669489,
+	"amb_spiral"
+},
+{
+	"amb_sp_elven_city_ambient",
+	547780703,
+	"amb_spiral"
+},
+{
+	"amb_sp_elven_city_wind_in_trees",
+	604356125,
+	"amb_spiral"
+},
+{
+	"sq_nml_314",
+	1082838208,
+	"sq_nml_314"
+},
+{
+	"sq312_nml_sneaking_guards",
+	756346009,
+	"sq_nml_312"
+},
+{
+	"amb_dyn_IN_crowd_tavern_dandelion",
+	1151692281,
+	"amb_dyn_crowd_tavern_medium"
+},
+{
+	"amb_dyn_IN_crowd_tavern_kingfisher",
+	1109791,
+	"amb_dyn_crowd_tavern_medium"
+},
+{
+	"amb_dyn_IN_crowd_tavern_kingfisher_ctrl_0",
+	2458828496,
+	"amb_dyn_crowd_tavern_medium"
+},
+{
+	"amb_dyn_IN_crowd_tavern_kingfisher_ctrl_05",
+	2260099397,
+	"amb_dyn_crowd_tavern_medium"
+},
+{
+	"amb_dyn_IN_crowd_tavern_kingfisher_ctrl_05_delay",
+	873176341,
+	"amb_dyn_crowd_tavern_medium"
+},
+{
+	"amb_dyn_IN_crowd_tavern_kingfisher_ctrl_09",
+	2260099401,
+	"amb_dyn_crowd_tavern_medium"
+},
+{
+	"amb_dyn_IN_crowd_tavern_kingfisher_ctrl_1",
+	2458828497,
+	"amb_dyn_crowd_tavern_medium"
+},
+{
+	"amb_dyn_IN_crowd_tavern_wedding",
+	757363119,
+	"amb_dyn_crowd_tavern_medium"
+},
+{
+	"qu_nv_311_baby_cry",
+	1157066836,
+	"qu_nv_311"
+},
+{
+	"qu_nv_311_earthquake",
+	2519627022,
+	"qu_nv_311"
+},
+{
+	"qu_nv_311_strange_monster",
+	2822123408,
+	"qu_nv_311"
+},
+{
+	"qu_nv_310_alarm_bell_hit",
+	1362766317,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_amb_soldier",
+	3998456193,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_catch_ball",
+	3989730209,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_filippa_spell_on_men",
+	1166485191,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_fireball_explosion",
+	3438526545,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_fountain_splash01",
+	4156966057,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_fountain_splash02",
+	4156966058,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_fountain_splash03",
+	4156966059,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_muffled_explosion",
+	3090956259,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_old_man_clothes",
+	2738162577,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_old_man_fall",
+	2883677464,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_old_man_grunt_1",
+	262937219,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_old_man_grunt_2",
+	262937216,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_old_man_turn_around",
+	413083926,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_philippa_fight",
+	2912394728,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_philippa_fight_stop",
+	1579971015,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_push_rock",
+	898250046,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_sizled_door_stone",
+	2529586044,
+	"qu_nv_310"
+},
+{
+	"qu_nv_310_spawn_golem_vfx",
+	1373537019,
+	"qu_nv_310"
+},
+{
+	"animals_dog_bodyfall",
+	3510712561,
+	"animals_dog"
+},
+{
+	"animals_dog_death",
+	1076705344,
+	"animals_dog"
+},
+{
+	"animals_dog_dialog_bodyfall",
+	3713908570,
+	"animals_dog"
+},
+{
+	"animals_dog_dialog_footsteps",
+	1220600990,
+	"animals_dog"
+},
+{
+	"animals_dog_dialog_rolling",
+	105942624,
+	"animals_dog"
+},
+{
+	"animals_dog_dialog_sniff",
+	1970603143,
+	"animals_dog"
+},
+{
+	"animals_dog_dialog_vo_bark_double",
+	4046828239,
+	"animals_dog"
+},
+{
+	"animals_dog_dialog_vo_bark_single",
+	1289508084,
+	"animals_dog"
+},
+{
+	"animals_dog_dialog_vo_breath",
+	1716646257,
+	"animals_dog"
+},
+{
+	"animals_dog_dialog_vo_calm",
+	2440151606,
+	"animals_dog"
+},
+{
+	"animals_dog_dialog_vo_extra_breath",
+	827756408,
+	"animals_dog"
+},
+{
+	"animals_dog_eat",
+	1926278952,
+	"animals_dog"
+},
+{
+	"animals_dog_footsteps",
+	4077369155,
+	"animals_dog"
+},
+{
+	"animals_dog_lick",
+	3485722101,
+	"animals_dog"
+},
+{
+	"animals_dog_rolling",
+	252087249,
+	"animals_dog"
+},
+{
+	"animals_dog_sniff",
+	1187966050,
+	"animals_dog"
+},
+{
+	"animals_dog_vo_bark_double",
+	1969486712,
+	"animals_dog"
+},
+{
+	"animals_dog_vo_bark_double_RND",
+	1741249397,
+	"animals_dog"
+},
+{
+	"animals_dog_vo_bark_single",
+	1289080499,
+	"animals_dog"
+},
+{
+	"animals_dog_vo_bark_single_RND",
+	693144798,
+	"animals_dog"
+},
+{
+	"animals_dog_vo_breath",
+	898590268,
+	"animals_dog"
+},
+{
+	"animals_dog_vo_calm",
+	1910056979,
+	"animals_dog"
+},
+{
+	"animals_dog_vo_calm_RND",
+	2393316222,
+	"animals_dog"
+},
+{
+	"animals_dog_vo_extra_breath",
+	2079758837,
+	"animals_dog"
+},
+{
+	"animals_dog_vo_extra_breath_RND",
+	2004985308,
+	"animals_dog"
+},
+{
+	"animals_cow_bodyfall",
+	1778782728,
+	"animals_cow"
+},
+{
+	"animals_cow_death",
+	573382839,
+	"animals_cow"
+},
+{
+	"animals_cow_moo_calm",
+	939000728,
+	"animals_cow"
+},
+{
+	"animals_cow_moo_calm_always",
+	2407245820,
+	"animals_cow"
+},
+{
+	"br_nv_302_boat_fog_horn2",
+	2423043214,
+	"br_nv_302"
+},
+{
+	"br_nv_301_boat_fog_horn1",
+	1227166856,
+	"br_nv_301"
+},
+{
+	"cs501_ram_them",
+	1123454693,
+	"cs501_ram_them"
+},
+{
+	"animals_g_bird_footstep_1",
+	2311015509,
+	"animals_birds_generic"
+},
+{
+	"animals_g_bird_sitdown_single",
+	3853387688,
+	"animals_birds_generic"
+},
+{
+	"animals_g_bird_takeoff_group_small",
+	2392632421,
+	"animals_birds_generic"
+},
+{
+	"animals_g_bird_takeoff_single",
+	1165926096,
+	"animals_birds_generic"
+},
+{
+	"animals_g_bird_wingflaps",
+	978382466,
+	"animals_birds_generic"
+},
+{
+	"animals_g_bird_wingflaps_4_double",
+	3939905481,
+	"animals_birds_generic"
+},
+{
+	"animals_g_bird_wingflaps_4_single",
+	1752582074,
+	"animals_birds_generic"
+},
+{
+	"qu_item_painting_iris_break_connection",
+	1920309767,
+	"qu_item_painting_iris"
+},
+{
+	"cs504_ciri_goes_home_p1",
+	1152679881,
+	"cs504_ciri_goes_home_p1"
+},
+{
+	"cs504_ciri_goes_home_p2",
+	1152679882,
+	"cs504_ciri_goes_home_p2"
+},
+{
+	"cs304_departure_no_louise",
+	1159781223,
+	"cs304_departure_no_louise"
+},
+{
+	"phx_bone_totem_mv_loop",
+	193220413,
+	"physics_objects"
+},
+{
+	"phx_bone_totem_mv_loop_end",
+	1237247519,
+	"physics_objects"
+},
+{
+	"phx_chain_mv_loop",
+	1439164026,
+	"physics_objects"
+},
+{
+	"phx_chain_mv_loop_end",
+	877477456,
+	"physics_objects"
+},
+{
+	"phx_fabric_blowing_start",
+	2761932617,
+	"physics_objects"
+},
+{
+	"phx_fabric_blowing_stop",
+	934340579,
+	"physics_objects"
+},
+{
+	"phx_leszy_totem_destroy",
+	417686444,
+	"physics_objects"
+},
+{
+	"phx_leszy_totem_destroy_hit",
+	828487154,
+	"physics_objects"
+},
+{
+	"phx_leszy_totem_destroy_long",
+	1505816853,
+	"physics_objects"
+},
+{
+	"phx_metal_brazier_chain_mv_loop",
+	2895149112,
+	"physics_objects"
+},
+{
+	"phx_metal_brazier_chain_mv_loop_end",
+	2242122686,
+	"physics_objects"
+},
+{
+	"phx_wooden_box_contact",
+	107771499,
+	"physics_objects"
+},
+{
+	"qu_sk_205_gate_going_down",
+	1413025362,
+	"qu_skellige_205p"
+},
+{
+	"qu_sk_205_gate_going_up",
+	1927050833,
+	"qu_skellige_205p"
+},
+{
+	"qu_sk_205_mechanism",
+	855023920,
+	"qu_skellige_205p"
+},
+{
+	"qu_sk_205_water_down",
+	1685482301,
+	"qu_skellige_205p"
+},
+{
+	"qu_sk_205_water_move_in_jug",
+	3293071379,
+	"qu_skellige_205p"
+},
+{
+	"qu_sk_205_water_up",
+	1351208202,
+	"qu_skellige_205p"
+},
+{
+	"cs204_leshy_appears",
+	1189588976,
+	"cs204_leshy_appears"
+},
+{
+	"amb_qu_EXT_EM_crowd_party_1_mono_40m",
+	1273065028,
+	"amb_qu_crowd_party_ext"
+},
+{
+	"amb_qu_EXT_EM_crowd_party_2_mono_40m",
+	3486905153,
+	"amb_qu_crowd_party_ext"
+},
+{
+	"amb_qu_EXT_EM_crowd_party_cheering_1_40m",
+	1194967776,
+	"amb_qu_crowd_party_ext"
+},
+{
+	"mq_nml_1035_knife_draw",
+	434064060,
+	"mq_nml_1035"
+},
+{
+	"mq_nml_1035_knife_hit",
+	2275805833,
+	"mq_nml_1035"
+},
+{
+	"mq_nml_1037_bridge",
+	2508032237,
+	"mq_nml_1037"
+},
+{
+	"mq_nml_1038_angry_dog_loop",
+	3117468934,
+	"mq_nml_1038"
+},
+{
+	"mq_nml_1038_angry_dog_loop_stop",
+	2573057493,
+	"mq_nml_1038"
+},
+{
+	"mq_nml_1038_child_yell_loop",
+	1964611889,
+	"mq_nml_1038"
+},
+{
+	"mq_nml_1038_child_yell_loop_stop",
+	1547907924,
+	"mq_nml_1038"
+},
+{
+	"qu_item_drawbridge_fall",
+	2298401185,
+	"qu_item_drawbridge"
+},
+{
+	"qu_item_drawbridge_move",
+	742634273,
+	"qu_item_drawbridge"
+},
+{
+	"monster_wild_dog_attack",
+	1160334966,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_bark",
+	2820822532,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_bite",
+	3054429348,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_bodyfall",
+	2992635237,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_breath",
+	4039814888,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_calm",
+	140860991,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_calm_ADD",
+	1493423591,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_calm_RND",
+	1087656418,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_death",
+	3981511532,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_eating",
+	566821244,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_focus_100m_start",
+	429188602,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_focus_100m_stop",
+	1353232658,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_footsteps",
+	1887707255,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_growl",
+	1647146789,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_growl_aggro",
+	4135124614,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_growl_aggro_RND",
+	1963573735,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_growl_RND",
+	2850857868,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_howl",
+	4074297252,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_lick",
+	611780441,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_pain",
+	2693082574,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_rolling",
+	3120484861,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_snarl",
+	3251037808,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_sniff",
+	3722090894,
+	"monster_wild_dog"
+},
+{
+	"monster_wild_dog_wakeup",
+	973176057,
+	"monster_wild_dog"
+},
+{
+	"set_monster_wild_dog_armour_type_flesh",
+	3963595173,
+	"monster_wild_dog"
+},
+{
+	"mq_nml_1012_fix_statue",
+	3892889743,
+	"mq_nml_1012"
+},
+{
+	"mq_nml_1002_magic_barrier_deactivate",
+	1550587960,
+	"mq_nml_1002"
+},
+{
+	"mq_nml_1002_magic_barrier_loop_start",
+	3973660213,
+	"mq_nml_1002"
+},
+{
+	"mq_nml_1002_magic_barrier_loop_stop",
+	2326660247,
+	"mq_nml_1002"
+},
+{
+	"mq_nml_1005_ghoul_howl",
+	541835959,
+	"mq_nml_1005"
+},
+{
+	"qu_km_403_gate_loop",
+	1222198867,
+	"qu_km_403"
+},
+{
+	"qu_km_403_gate_loop_stop",
+	2678322206,
+	"qu_km_403"
+},
+{
+	"qu_km_403_meteorite_explosion",
+	2283030661,
+	"qu_km_403"
+},
+{
+	"qu_km_403_meteorite_ground_fire_loop",
+	2880534233,
+	"qu_km_403"
+},
+{
+	"qu_km_403_meteorite_ground_fire_loop_end",
+	204291803,
+	"qu_km_403"
+},
+{
+	"qu_km_403_meteorite_marker_loop",
+	1063610319,
+	"qu_km_403"
+},
+{
+	"qu_km_403_meteorite_marker_loop_end",
+	1109482961,
+	"qu_km_403"
+},
+{
+	"qu_km_403_meteorite_smoke_and_fire_loop",
+	3392823665,
+	"qu_km_403"
+},
+{
+	"qu_km_403_meteorite_smoke_and_fire_loop_end",
+	2100067763,
+	"qu_km_403"
+},
+{
+	"qu_km_403_vesemir_bodyroll",
+	2628934878,
+	"qu_km_403"
+},
+{
+	"qu_km_403_wheel_loop",
+	417783073,
+	"qu_km_403"
+},
+{
+	"qu_km_403_wheel_loop_stop",
+	1232442916,
+	"qu_km_403"
+},
+{
+	"qu_km_402_body_fall_down",
+	2399326011,
+	"qu_km_402"
+},
+{
+	"qu_km_402_swish_fall_down",
+	969922117,
+	"qu_km_402"
+},
+{
+	"qu_km_402_vfx_wisp_loop_start",
+	3983782194,
+	"qu_km_402"
+},
+{
+	"qu_km_402_vfx_wisp_loop_stop",
+	315294570,
+	"qu_km_402"
+},
+{
+	"q401_05_09_meeting_young_boy_disappear",
+	3853301389,
+	"qu_km_401"
+},
+{
+	"q401_05_09_meeting_young_boy_ghost_vfx_loop_start",
+	2303511478,
+	"qu_km_401"
+},
+{
+	"q401_05_09_meeting_young_boy_ghost_vfx_loop_stop",
+	3520517686,
+	"qu_km_401"
+},
+{
+	"q401_06_04_reunion_part_02_bottle_smash",
+	1890402163,
+	"qu_km_401"
+},
+{
+	"qu_km_401_bubble_valve",
+	2843873484,
+	"qu_km_401"
+},
+{
+	"qu_km_401_crying_boy_focus_start",
+	3186416770,
+	"qu_km_401"
+},
+{
+	"qu_km_401_crying_boy_focus_stop",
+	2332243706,
+	"qu_km_401"
+},
+{
+	"qu_km_401_cyclops_idle",
+	2463472149,
+	"qu_km_401"
+},
+{
+	"qu_km_401_cyclops_movement",
+	742727524,
+	"qu_km_401"
+},
+{
+	"qu_km_401_cyclops_roar",
+	2060207827,
+	"qu_km_401"
+},
+{
+	"qu_km_401_cyclops_snoring",
+	210799137,
+	"qu_km_401"
+},
+{
+	"qu_km_401_cyclops_yawn",
+	2952891490,
+	"qu_km_401"
+},
+{
+	"qu_km_401_forktail_taunt",
+	1168387274,
+	"qu_km_401"
+},
+{
+	"qu_km_401_snoring_man_focus_start",
+	3199805150,
+	"qu_km_401"
+},
+{
+	"qu_km_401_snoring_man_focus_stop",
+	1878497918,
+	"qu_km_401"
+},
+{
+	"qu_km_401_switch_valve",
+	2983861150,
+	"qu_km_401"
+},
+{
+	"qu_km_401_uma_vomit",
+	3396243672,
+	"qu_km_401"
+},
+{
+	"qu_nml_401_vacuum_detector_intensity_1",
+	2691262578,
+	"qu_km_401"
+},
+{
+	"qu_nml_401_vacuum_detector_intensity_2",
+	2691262577,
+	"qu_km_401"
+},
+{
+	"qu_nml_401_vacuum_detector_intensity_3",
+	2691262576,
+	"qu_km_401"
+},
+{
+	"qu_nml_401_vacuum_detector_intensity_4",
+	2691262583,
+	"qu_km_401"
+},
+{
+	"qu_nml_401_vacuum_detector_intensity_5",
+	2691262582,
+	"qu_km_401"
+},
+{
+	"qu_nml_401_vacuum_detector_loop_start",
+	931856492,
+	"qu_km_401"
+},
+{
+	"qu_nml_401_vacuum_detector_loop_stop",
+	2244958336,
+	"qu_km_401"
+},
+{
+	"monster_katakan_focus_100m_start",
+	574420988,
+	"monster_katakan"
+},
+{
+	"monster_katakan_focus_100m_stop",
+	3716802896,
+	"monster_katakan"
+},
+{
+	"monster_katakan_mv_bodyfall",
+	4234698191,
+	"monster_katakan"
+},
+{
+	"monster_katakan_mv_footsteps",
+	2551070069,
+	"monster_katakan"
+},
+{
+	"monster_katakan_mv_hands",
+	801034962,
+	"monster_katakan"
+},
+{
+	"monster_katakan_mv_kneel",
+	867686875,
+	"monster_katakan"
+},
+{
+	"monster_katakan_mv_shuffle",
+	4096415635,
+	"monster_katakan"
+},
+{
+	"monster_katakan_mv_swoosh",
+	3269368113,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vfx_appear",
+	868936244,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vfx_predator_mode_loop_start",
+	1944594784,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vfx_predator_mode_loop_stop",
+	4272563596,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_attack_short",
+	362056671,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_attack_short_RND",
+	3599508290,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_burn",
+	1549748619,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_burn_end",
+	1206556877,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_burn_long",
+	704936556,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_burn_short",
+	2592298356,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_death",
+	3796591474,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_death_end_growl",
+	3463076950,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_dodge",
+	285869889,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_dodge_ALWAYS",
+	3666231035,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_growl_1",
+	766545435,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_growl_1_RND",
+	2735425574,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_growl_2",
+	766545432,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_growl_2_RND",
+	4023744725,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_growl_3",
+	766545433,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_growl_3_rnd",
+	2641659000,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_pain",
+	3428256148,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_taunt1",
+	3797493617,
+	"monster_katakan"
+},
+{
+	"monster_katakan_vo_taunt2",
+	3797493618,
+	"monster_katakan"
+},
+{
+	"monster_katakan_xtra_bite",
+	4064592436,
+	"monster_katakan"
+},
+{
+	"monster_katakan_xtra_breath",
+	641983128,
+	"monster_katakan"
+},
+{
+	"monster_katakan_xtra_breath_RND",
+	963220821,
+	"monster_katakan"
+},
+{
+	"monster_katakan_xtra_ground_hit",
+	399067857,
+	"monster_katakan"
+},
+{
+	"monster_katakan_xtra_scratching",
+	2269682164,
+	"monster_katakan"
+},
+{
+	"monster_katakan_xtra_sniff",
+	1992806910,
+	"monster_katakan"
+},
+{
+	"set_katakan_invisible",
+	53259219,
+	"monster_katakan"
+},
+{
+	"set_katakan_visible",
+	4235312076,
+	"monster_katakan"
+},
+{
+	"set_monster_katakan_armour_type_generic",
+	3783261792,
+	"monster_katakan"
+},
+{
+	"mus_cs201_burial",
+	1364899578,
+	"music_skellige"
+},
+{
+	"mus_cs201_pirates_attack_p2",
+	1746797613,
+	"music_skellige"
+},
+{
+	"mus_cs201_sex_with_yennefer",
+	2017018055,
+	"music_skellige"
+},
+{
+	"mus_cs201_storm",
+	1388371732,
+	"music_skellige"
+},
+{
+	"mus_cs202_enter_the_giant",
+	3402768484,
+	"music_skellige"
+},
+{
+	"mus_cs202_geralt_wakes_giant",
+	756315131,
+	"music_skellige"
+},
+{
+	"mus_cs202_giant_death",
+	1941078176,
+	"music_skellige"
+},
+{
+	"mus_cs202_giant_destroy_cage",
+	2905167883,
+	"music_skellige"
+},
+{
+	"mus_cs202_harpies_destroy_bridge",
+	2406581909,
+	"music_skellige"
+},
+{
+	"mus_cs203_baby_in_oven",
+	284235232,
+	"music_skellige"
+},
+{
+	"mus_cs203_give_baby_uldaryk",
+	1814196190,
+	"music_skellige"
+},
+{
+	"mus_cs203_him_shows",
+	3350895576,
+	"music_skellige"
+},
+{
+	"mus_cs203_udalryk_enters_house_choice",
+	1019643936,
+	"music_skellige"
+},
+{
+	"mus_cs205_ciri_landing",
+	3089160074,
+	"music_skellige"
+},
+{
+	"mus_cs205_good_night_cirilla_p1",
+	1165917014,
+	"music_skellige"
+},
+{
+	"mus_cs205_good_night_cirilla_p2",
+	1165917013,
+	"music_skellige"
+},
+{
+	"mus_cs206_berserkers_kill_people",
+	2851499709,
+	"music_skellige"
+},
+{
+	"mus_cs206_ritual_berserkers",
+	2609015314,
+	"music_skellige"
+},
+{
+	"mus_cs208_becca_wins",
+	769946094,
+	"music_skellige"
+},
+{
+	"mus_cs208_ragnar_wins",
+	3664949779,
+	"music_skellige"
+},
+{
+	"mus_cs210_ciri_destroys_lab",
+	2795399698,
+	"music_skellige"
+},
+{
+	"mus_cs210_entering_skellige",
+	3316126796,
+	"music_skellige"
+},
+{
+	"mus_cs210_geralt_refuses_skjall",
+	1770265620,
+	"music_skellige"
+},
+{
+	"mus_cs501_cam_transfer_to_geralt",
+	2736896225,
+	"music_skellige"
+},
+{
+	"mus_cs501_ciri_escapes",
+	3149768770,
+	"music_skellige"
+},
+{
+	"mus_cs501_crach_dies",
+	4232110033,
+	"music_skellige"
+},
+{
+	"mus_cs501_eredin_dies",
+	2151616999,
+	"music_skellige"
+},
+{
+	"mus_cs501_naglfar_arrives",
+	3925713348,
+	"music_skellige"
+},
+{
+	"mus_cs501_naglfar_freezes",
+	3424158120,
+	"music_skellige"
+},
+{
+	"mus_cs501_naglfar_freezes_2",
+	103202391,
+	"music_skellige"
+},
+{
+	"mus_cs501_naglfar_freezes_b",
+	103202311,
+	"music_skellige"
+},
+{
+	"mus_cs501_underwater_teleport",
+	1241253927,
+	"music_skellige"
+},
+{
+	"mus_cs502_tower_shutdown",
+	2235704405,
+	"music_skellige"
+},
+{
+	"mus_cs_sq204_intro_demo",
+	1374307623,
+	"music_skellige"
+},
+{
+	"mus_cs_sq204_leshy_accepts_offering",
+	3049701611,
+	"music_skellige"
+},
+{
+	"mus_cs_sq204_leshy_appears",
+	206174247,
+	"music_skellige"
+},
+{
+	"mus_expl_monster_hunting_tracking",
+	884336319,
+	"music_skellige"
+},
+{
+	"mus_loc_an_skellig",
+	673164031,
+	"music_skellige"
+},
+{
+	"mus_loc_an_skellig_cs_to_gmpl",
+	191935719,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig",
+	2410336953,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_berserkers_village",
+	3261460699,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_berserkers_village_cs_to_gmpl",
+	495244811,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_cataclysm",
+	1296257601,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_cataclysm_cs_to_gmpl",
+	1201272761,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_cs_to_gmpl",
+	185830113,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_settlements",
+	1727101524,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_settlements_cs_to_gmpl",
+	2024234534,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_settlements_lift",
+	2431718792,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_settlements_lift_cs_to_gmpl",
+	3231161410,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_yennefers_room",
+	414821613,
+	"music_skellige"
+},
+{
+	"mus_loc_ard_skellig_yennefers_room_cs_to_gmpl",
+	221151453,
+	"music_skellige"
+},
+{
+	"mus_loc_bies_lair",
+	3562773890,
+	"music_skellige"
+},
+{
+	"mus_loc_bies_lair_cs_to_gmpl",
+	255641940,
+	"music_skellige"
+},
+{
+	"mus_loc_emhyrs_fleet",
+	3922347695,
+	"music_skellige"
+},
+{
+	"mus_loc_emhyrs_fleet_cs_to_gmpl",
+	589149175,
+	"music_skellige"
+},
+{
+	"mus_loc_faroe",
+	3880713167,
+	"music_skellige"
+},
+{
+	"mus_loc_faroe_cs_to_gmpl",
+	356191959,
+	"music_skellige"
+},
+{
+	"mus_loc_hindarsfjall",
+	40595706,
+	"music_skellige"
+},
+{
+	"mus_loc_hindarsfjall_burned_village_q205",
+	3798298815,
+	"music_skellige"
+},
+{
+	"mus_loc_hindarsfjall_burned_village_q205_cs_to_gmpl",
+	3103522471,
+	"music_skellige"
+},
+{
+	"mus_loc_hindarsfjall_cs_to_gmpl",
+	1342873084,
+	"music_skellige"
+},
+{
+	"mus_loc_hindarsfjall_freyas_garden",
+	709190129,
+	"music_skellige"
+},
+{
+	"mus_loc_hindarsfjall_freyas_garden_cs_to_gmpl",
+	149004233,
+	"music_skellige"
+},
+{
+	"mus_loc_ice_giant_island",
+	1523613841,
+	"music_skellige"
+},
+{
+	"mus_loc_ice_giant_island_cs_to_gmpl",
+	1858997161,
+	"music_skellige"
+},
+{
+	"mus_loc_ice_giant_q501_nilfgaard_camp",
+	2963915468,
+	"music_skellige"
+},
+{
+	"mus_loc_ice_giant_q501_nilfgaard_camp_cs_to_gmpl",
+	3527079470,
+	"music_skellige"
+},
+{
+	"mus_loc_kaer_trolde",
+	1052256106,
+	"music_skellige"
+},
+{
+	"mus_loc_kaer_trolde_cs_to_gmpl",
+	1634058444,
+	"music_skellige"
+},
+{
+	"mus_loc_leszy_lair",
+	20279334,
+	"music_skellige"
+},
+{
+	"mus_loc_leszy_lair_cs_to_gmpl",
+	333223456,
+	"music_skellige"
+},
+{
+	"mus_loc_nilfgaard_camp_q501",
+	2711804288,
+	"music_skellige"
+},
+{
+	"mus_loc_nilfgaard_camp_q501_cs_to_gmpl",
+	1291009738,
+	"music_skellige"
+},
+{
+	"mus_loc_silent",
+	3180411539,
+	"music_skellige"
+},
+{
+	"mus_loc_silent_cs_to_gmpl",
+	3356066387,
+	"music_skellige"
+},
+{
+	"mus_loc_skellige_caves",
+	2202279491,
+	"music_skellige"
+},
+{
+	"mus_loc_skellige_caves_cs_to_gmpl",
+	1371706339,
+	"music_skellige"
+},
+{
+	"mus_loc_skellige_elven_ruins",
+	2368584251,
+	"music_skellige"
+},
+{
+	"mus_loc_skellige_elven_ruins_cs_to_gmpl",
+	1538293803,
+	"music_skellige"
+},
+{
+	"mus_loc_skellige_ruins",
+	2099863300,
+	"music_skellige"
+},
+{
+	"mus_loc_skellige_ruins_cs_to_gmpl",
+	4210795254,
+	"music_skellige"
+},
+{
+	"mus_loc_skellige_tavern",
+	2297401633,
+	"music_skellige"
+},
+{
+	"mus_loc_skellige_tavern_cs_to_gmpl",
+	4141331801,
+	"music_skellige"
+},
+{
+	"mus_loc_spikeroog",
+	1447005781,
+	"music_skellige"
+},
+{
+	"mus_loc_spikeroog_cs_to_gmpl",
+	496736853,
+	"music_skellige"
+},
+{
+	"mus_loc_spikeroog_hims_house",
+	780387232,
+	"music_skellige"
+},
+{
+	"mus_loc_spikeroog_hims_house_cs_to_gmpl",
+	3331919914,
+	"music_skellige"
+},
+{
+	"mus_minigames_skl_horse_race",
+	308065204,
+	"music_skellige"
+},
+{
+	"mus_monster_hunt_skl_combat",
+	2955152679,
+	"music_skellige"
+},
+{
+	"mus_monster_hunt_skl_tracking",
+	377055840,
+	"music_skellige"
+},
+{
+	"mus_mood_music_drama02",
+	2126975386,
+	"music_skellige"
+},
+{
+	"mus_q201_feast",
+	2066861177,
+	"music_skellige"
+},
+{
+	"mus_q201_fistfight",
+	4207203808,
+	"music_skellige"
+},
+{
+	"mus_q201_hallucinations",
+	3110342182,
+	"music_skellige"
+},
+{
+	"mus_q201_pirates_combat",
+	2183250921,
+	"music_skellige"
+},
+{
+	"mus_q201_race",
+	1513494327,
+	"music_skellige"
+},
+{
+	"mus_q202_ice_giant_bossfight_stage1",
+	375305198,
+	"music_skellige"
+},
+{
+	"mus_q202_ice_giant_bossfight_stage2",
+	375305197,
+	"music_skellige"
+},
+{
+	"mus_q203_09_examine_elf_corpse_full",
+	2376414784,
+	"music_skellige"
+},
+{
+	"mus_q203_cataclysm",
+	1998678279,
+	"music_skellige"
+},
+{
+	"mus_q203_combat_him_sequence",
+	2597117971,
+	"music_skellige"
+},
+{
+	"mus_q203_drama_underscore",
+	4240125134,
+	"music_skellige"
+},
+{
+	"mus_q203_silent",
+	1056849061,
+	"music_skellige"
+},
+{
+	"mus_q205_07_necro_ritual",
+	1161483489,
+	"music_skellige"
+},
+{
+	"mus_q205_08a_1_replacer_ciri_wakes_up",
+	1511976188,
+	"music_skellige"
+},
+{
+	"mus_q205_08c_replacer_astrid_at_barn",
+	1183496458,
+	"music_skellige"
+},
+{
+	"mus_q205_replacer_combat",
+	2224395837,
+	"music_skellige"
+},
+{
+	"mus_q205_replacer_expl",
+	1206388186,
+	"music_skellige"
+},
+{
+	"mus_q205_wild_hunt_encounter",
+	2320331946,
+	"music_skellige"
+},
+{
+	"mus_q206_bears_combat",
+	3070955889,
+	"music_skellige"
+},
+{
+	"mus_q206_cerys_chase_arnvald",
+	679698877,
+	"music_skellige"
+},
+{
+	"mus_q206_cerys_wine_cellar",
+	1533504687,
+	"music_skellige"
+},
+{
+	"mus_q206_confrontation",
+	3522027475,
+	"music_skellige"
+},
+{
+	"mus_q206_feast",
+	2702389286,
+	"music_skellige"
+},
+{
+	"mus_q206_halgrim_combat_p1",
+	1820343902,
+	"music_skellige"
+},
+{
+	"mus_q206_halgrim_combat_p2",
+	1820343901,
+	"music_skellige"
+},
+{
+	"mus_q206_halgrim_transforms_into_bear",
+	526676361,
+	"music_skellige"
+},
+{
+	"mus_q206_jarls_demand_trial",
+	3435664314,
+	"music_skellige"
+},
+{
+	"mus_q206_silent",
+	3970922902,
+	"music_skellige"
+},
+{
+	"mus_q208_coronation",
+	2451495725,
+	"music_skellige"
+},
+{
+	"mus_q210_bran_negotiation",
+	340151461,
+	"music_skellige"
+},
+{
+	"mus_q210_confrontation",
+	1553508042,
+	"music_skellige"
+},
+{
+	"mus_q210_emperor_dlg",
+	882389824,
+	"music_skellige"
+},
+{
+	"mus_q210_lodge_theme",
+	3614018505,
+	"music_skellige"
+},
+{
+	"mus_q210_lugos_dlg",
+	862402734,
+	"music_skellige"
+},
+{
+	"mus_q210_skjall_funeral",
+	2208956699,
+	"music_skellige"
+},
+{
+	"mus_q501_batlle",
+	1007265507,
+	"music_skellige"
+},
+{
+	"mus_q501_ciri_replacer",
+	3974298311,
+	"music_skellige"
+},
+{
+	"mus_q501_combat_with_canaris",
+	2663095350,
+	"music_skellige"
+},
+{
+	"mus_q501_eredin_fight",
+	1229506173,
+	"music_skellige"
+},
+{
+	"mus_q501_lodge_meeting",
+	2298204928,
+	"music_skellige"
+},
+{
+	"mus_q501_love_theme",
+	3177196247,
+	"music_skellige"
+},
+{
+	"mus_q501_silent",
+	2673916030,
+	"music_skellige"
+},
+{
+	"mus_q502_ciri",
+	2837833939,
+	"music_skellige"
+},
+{
+	"mus_q502_ciri_tower",
+	3757161965,
+	"music_skellige"
+},
+{
+	"mus_q502_confrontation_avallach",
+	3420574153,
+	"music_skellige"
+},
+{
+	"mus_q502_conjunction_stage01",
+	3135949266,
+	"music_skellige"
+},
+{
+	"mus_q502_conjunction_stage02",
+	3135949265,
+	"music_skellige"
+},
+{
+	"mus_q502_wheres_ciri",
+	3003867964,
+	"music_skellige"
+},
+{
+	"mus_skl_dialog_01",
+	203384622,
+	"music_skellige"
+},
+{
+	"mus_skl_dialog_02",
+	203384621,
+	"music_skellige"
+},
+{
+	"mus_skl_dialog_03",
+	203384620,
+	"music_skellige"
+},
+{
+	"mus_skl_dialog_04",
+	203384619,
+	"music_skellige"
+},
+{
+	"mus_sq202_djinn_combat",
+	1647532964,
+	"music_skellige"
+},
+{
+	"mus_sq202_love_theme",
+	2887996152,
+	"music_skellige"
+},
+{
+	"mus_sq202_main_theme_underscore",
+	4242792354,
+	"music_skellige"
+},
+{
+	"mus_sq205_druid_weather_encounter",
+	3452734022,
+	"music_skellige"
+},
+{
+	"mus_sq302_skl_lodge_theme",
+	658452095,
+	"music_skellige"
+},
+{
+	"play_music_skellige",
+	1525594182,
+	"music_skellige"
+},
+{
+	"c_clothes_move_hard",
+	2027794445,
+	"generic_movement"
+},
+{
+	"c_clothes_move_light",
+	1954046974,
+	"generic_movement"
+},
+{
+	"c_clothes_step_hard",
+	1592170390,
+	"generic_movement"
+},
+{
+	"c_clothes_step_land",
+	3230240894,
+	"generic_movement"
+},
+{
+	"c_clothes_step_light",
+	4145285851,
+	"generic_movement"
+},
+{
+	"c_clothes_torso_tap",
+	3807752123,
+	"generic_movement"
+},
+{
+	"c_dialog_clothes_move_hard",
+	1097969038,
+	"generic_movement"
+},
+{
+	"c_dialog_clothes_move_light",
+	2990167331,
+	"generic_movement"
+},
+{
+	"c_dialog_clothes_step_hard",
+	1042808433,
+	"generic_movement"
+},
+{
+	"c_dialog_clothes_step_land",
+	3833926369,
+	"generic_movement"
+},
+{
+	"c_dialog_clothes_step_light",
+	765431162,
+	"generic_movement"
+},
+{
+	"c_dialog_clothes_torso_tap",
+	104474828,
+	"generic_movement"
+},
+{
+	"c_dialog_footstep_climb",
+	2081286242,
+	"generic_movement"
+},
+{
+	"c_dialog_footstep_jump",
+	196717467,
+	"generic_movement"
+},
+{
+	"c_dialog_footstep_ladder",
+	2159975455,
+	"generic_movement"
+},
+{
+	"c_dialog_footstep_land",
+	101091576,
+	"generic_movement"
+},
+{
+	"c_dialog_footstep_run",
+	3313865842,
+	"generic_movement"
+},
+{
+	"c_dialog_footstep_shuffle_hard",
+	548998614,
+	"generic_movement"
+},
+{
+	"c_dialog_footstep_shuffle_light",
+	1856983835,
+	"generic_movement"
+},
+{
+	"c_dialog_footstep_walk",
+	2301684924,
+	"generic_movement"
+},
+{
+	"c_footstep_climb",
+	2532780287,
+	"generic_movement"
+},
+{
+	"c_footstep_jump",
+	563325204,
+	"generic_movement"
+},
+{
+	"c_footstep_ladder",
+	1054638252,
+	"generic_movement"
+},
+{
+	"c_footstep_land",
+	4255498199,
+	"generic_movement"
+},
+{
+	"c_footstep_run",
+	1780183015,
+	"generic_movement"
+},
+{
+	"c_footstep_shuffle_hard",
+	2230796073,
+	"generic_movement"
+},
+{
+	"c_footstep_shuffle_light",
+	1707731234,
+	"generic_movement"
+},
+{
+	"c_footstep_walk",
+	179523339,
+	"generic_movement"
+},
+{
+	"climb_cloth_movement_ADD",
+	3772878811,
+	"generic_movement"
+},
+{
+	"cmb_play_hit_sign",
+	3106033640,
+	"generic_movement"
+},
+{
+	"cmb_whoosh_fast_heavy_DISABLED",
+	1360185198,
+	"generic_movement"
+},
+{
+	"cmb_whoosh_fast_light_DISABLED",
+	294186305,
+	"generic_movement"
+},
+{
+	"cmb_whoosh_medium_heavy_DISABLED",
+	4007568943,
+	"generic_movement"
+},
+{
+	"cmb_whoosh_medium_light_DISABLED",
+	2180102232,
+	"generic_movement"
+},
+{
+	"cmb_whoosh_slow_heavy_DISABLED",
+	2355687681,
+	"generic_movement"
+},
+{
+	"cmb_whoosh_slow_light_DISABLED",
+	4007709498,
+	"generic_movement"
+},
+{
+	"dialog_clothes_torso_tap_leather",
+	3032626992,
+	"generic_movement"
+},
+{
+	"dialog_face_slap",
+	2771066792,
+	"generic_movement"
+},
+{
+	"e3stage_jump_on_rock",
+	685035356,
+	"generic_movement"
+},
+{
+	"g_bodyfall",
+	532693312,
+	"generic_movement"
+},
+{
+	"g_bodyroll",
+	2782179402,
+	"generic_movement"
+},
+{
+	"g_clothes_move_hard",
+	1828644457,
+	"generic_movement"
+},
+{
+	"g_clothes_move_light",
+	3457095010,
+	"generic_movement"
+},
+{
+	"g_clothes_step_hard",
+	4019750434,
+	"generic_movement"
+},
+{
+	"g_clothes_step_land",
+	3228582602,
+	"generic_movement"
+},
+{
+	"g_clothes_step_light",
+	1175510431,
+	"generic_movement"
+},
+{
+	"g_clothes_torso_tap",
+	2438105903,
+	"generic_movement"
+},
+{
+	"g_dialog_clothes_move_hard",
+	1760416106,
+	"generic_movement"
+},
+{
+	"g_dialog_clothes_move_light",
+	868494807,
+	"generic_movement"
+},
+{
+	"g_dialog_clothes_step_hard",
+	874693933,
+	"generic_movement"
+},
+{
+	"g_dialog_clothes_step_land",
+	2605408621,
+	"generic_movement"
+},
+{
+	"g_dialog_clothes_step_light",
+	2072336798,
+	"generic_movement"
+},
+{
+	"g_dialog_clothes_torso_tap",
+	81600128,
+	"generic_movement"
+},
+{
+	"g_dialog_clothes_torso_tap_plate",
+	3430936489,
+	"generic_movement"
+},
+{
+	"g_dialog_footstep_climb",
+	818977382,
+	"generic_movement"
+},
+{
+	"g_dialog_footstep_jump",
+	2877121687,
+	"generic_movement"
+},
+{
+	"g_dialog_footstep_ladder",
+	1620775163,
+	"generic_movement"
+},
+{
+	"g_dialog_footstep_land",
+	519503436,
+	"generic_movement"
+},
+{
+	"g_dialog_footstep_run",
+	2209986406,
+	"generic_movement"
+},
+{
+	"g_dialog_footstep_shuffle_hard",
+	2142066298,
+	"generic_movement"
+},
+{
+	"g_dialog_footstep_shuffle_light",
+	667515079,
+	"generic_movement"
+},
+{
+	"g_dialog_footstep_walk",
+	3256980648,
+	"generic_movement"
+},
+{
+	"g_dialog_hand_rubs_ground_long",
+	2160791565,
+	"generic_movement"
+},
+{
+	"g_dialog_hand_rubs_ground_short",
+	2476504331,
+	"generic_movement"
+},
+{
+	"g_dialog_hand_touches_ground_hard",
+	1393957027,
+	"generic_movement"
+},
+{
+	"g_dialog_hand_touches_ground_soft",
+	1848822140,
+	"generic_movement"
+},
+{
+	"g_footstep_climb",
+	3019607187,
+	"generic_movement"
+},
+{
+	"g_footstep_jump",
+	2366830320,
+	"generic_movement"
+},
+{
+	"g_footstep_ladder",
+	534301656,
+	"generic_movement"
+},
+{
+	"g_footstep_land",
+	578371051,
+	"generic_movement"
+},
+{
+	"g_footstep_run",
+	436776475,
+	"generic_movement"
+},
+{
+	"g_footstep_shuffle_hard",
+	3540633821,
+	"generic_movement"
+},
+{
+	"g_footstep_shuffle_light",
+	2314120942,
+	"generic_movement"
+},
+{
+	"g_footstep_walk",
+	3397607415,
+	"generic_movement"
+},
+{
+	"g_hand_rubs_ground_long",
+	2971730358,
+	"generic_movement"
+},
+{
+	"g_hand_rubs_ground_short",
+	1951043226,
+	"generic_movement"
+},
+{
+	"g_hand_touches_ground_hard",
+	1929718022,
+	"generic_movement"
+},
+{
+	"g_hand_touches_ground_soft",
+	345739449,
+	"generic_movement"
+},
+{
+	"g_swim_dive",
+	1084448660,
+	"generic_movement"
+},
+{
+	"g_swim_dive_mv_long",
+	2695672767,
+	"generic_movement"
+},
+{
+	"g_swim_dive_mv_short",
+	2421614033,
+	"generic_movement"
+},
+{
+	"g_swim_emerge",
+	1071366753,
+	"generic_movement"
+},
+{
+	"g_swim_idle",
+	3537407632,
+	"generic_movement"
+},
+{
+	"g_swim_move_light",
+	975563000,
+	"generic_movement"
+},
+{
+	"g_swim_move_medium",
+	235106153,
+	"generic_movement"
+},
+{
+	"g_swim_splash_big",
+	909186144,
+	"generic_movement"
+},
+{
+	"g_swim_splash_medium",
+	2043926711,
+	"generic_movement"
+},
+{
+	"g_swim_walk_water_deep",
+	2216402298,
+	"generic_movement"
+},
+{
+	"geralt_extinguish_meditation_fire",
+	3357150735,
+	"generic_movement"
+},
+{
+	"mv_slide",
+	1109143530,
+	"generic_movement"
+},
+{
+	"mv_slide_debris",
+	3145386572,
+	"generic_movement"
+},
+{
+	"mv_slide_end",
+	1929893408,
+	"generic_movement"
+},
+{
+	"mv_slide_interrupt",
+	1157455546,
+	"generic_movement"
+},
+{
+	"mv_slide_start",
+	2383345915,
+	"generic_movement"
+},
+{
+	"scene_clothes_step_chain",
+	67780629,
+	"generic_movement"
+},
+{
+	"scene_clothes_step_leather_studded",
+	1423037293,
+	"generic_movement"
+},
+{
+	"scene_footstep_water_shallow",
+	770696885,
+	"generic_movement"
+},
+{
+	"scene_footsteps_walk_dirt_hard",
+	3120484097,
+	"generic_movement"
+},
+{
+	"scene_footsteps_walk_stone_solid",
+	3218336547,
+	"generic_movement"
+},
+{
+	"scene_g_footstep_walk_water_shallow",
+	1641957355,
+	"generic_movement"
+},
+{
+	"scene_head_bounce",
+	1197464311,
+	"generic_movement"
+},
+{
+	"scene_louder_bodyfall",
+	4177696301,
+	"generic_movement"
+},
+{
+	"scene_louder_bodyroll",
+	4036192127,
+	"generic_movement"
+},
+{
+	"test_footstep_and_cloth_jump",
+	753479072,
+	"generic_movement"
+},
+{
+	"test_footstep_and_cloth_land",
+	2222573403,
+	"generic_movement"
+},
+{
+	"test_footstep_and_cloth_run",
+	199183403,
+	"generic_movement"
+},
+{
+	"test_footstep_and_cloth_walk",
+	2410435015,
+	"generic_movement"
+},
+{
+	"w_clothes_move_hard",
+	356137849,
+	"generic_movement"
+},
+{
+	"w_clothes_move_light",
+	2961907730,
+	"generic_movement"
+},
+{
+	"w_clothes_step_hard",
+	1689426546,
+	"generic_movement"
+},
+{
+	"w_clothes_step_land",
+	319798138,
+	"generic_movement"
+},
+{
+	"w_clothes_step_light",
+	119265935,
+	"generic_movement"
+},
+{
+	"w_clothes_torso_tap",
+	3905096927,
+	"generic_movement"
+},
+{
+	"w_dialog_clothes_move_hard",
+	1942059578,
+	"generic_movement"
+},
+{
+	"w_dialog_clothes_move_light",
+	129409415,
+	"generic_movement"
+},
+{
+	"w_dialog_clothes_step_hard",
+	3778693053,
+	"generic_movement"
+},
+{
+	"w_dialog_clothes_step_land",
+	687899037,
+	"generic_movement"
+},
+{
+	"w_dialog_clothes_step_light",
+	3225839950,
+	"generic_movement"
+},
+{
+	"w_dialog_clothes_torso_tap",
+	2591663216,
+	"generic_movement"
+},
+{
+	"w_dialog_footstep_climb",
+	198665462,
+	"generic_movement"
+},
+{
+	"w_dialog_footstep_jump",
+	1440155015,
+	"generic_movement"
+},
+{
+	"w_dialog_footstep_ladder",
+	2122366091,
+	"generic_movement"
+},
+{
+	"w_dialog_footstep_land",
+	3372384316,
+	"generic_movement"
+},
+{
+	"w_dialog_footstep_run",
+	3963013686,
+	"generic_movement"
+},
+{
+	"w_dialog_footstep_shuffle_hard",
+	185491818,
+	"generic_movement"
+},
+{
+	"w_dialog_footstep_shuffle_light",
+	1829166551,
+	"generic_movement"
+},
+{
+	"w_dialog_footstep_walk",
+	3478590008,
+	"generic_movement"
+},
+{
+	"w_footstep_climb",
+	2213424483,
+	"generic_movement"
+},
+{
+	"w_footstep_jump",
+	3236851552,
+	"generic_movement"
+},
+{
+	"w_footstep_ladder",
+	1004682280,
+	"generic_movement"
+},
+{
+	"w_footstep_land",
+	369504795,
+	"generic_movement"
+},
+{
+	"w_footstep_run",
+	325139435,
+	"generic_movement"
+},
+{
+	"w_footstep_shuffle_hard",
+	1007975821,
+	"generic_movement"
+},
+{
+	"w_footstep_shuffle_light",
+	1136518270,
+	"generic_movement"
+},
+{
+	"w_footstep_walk",
+	598943111,
+	"generic_movement"
+},
+{
+	"wh_footstep_walk",
+	2301117071,
+	"generic_movement"
+},
+{
+	"qu_prl_001_autopsy",
+	3327941562,
+	"qu_prl_001"
+},
+{
+	"qu_prl_001_ghouls_lurking_around",
+	3854385692,
+	"qu_prl_001"
+},
+{
+	"qu_prl_001_griffin_scream",
+	1173922000,
+	"qu_prl_001"
+},
+{
+	"qu_prl_001_Yen_hum_loop",
+	3067818723,
+	"qu_prl_001"
+},
+{
+	"qu_prl_001_Yen_hum_loop_stop",
+	869041550,
+	"qu_prl_001"
+},
+{
+	"qu_prl_002_howling_dogs",
+	3044484914,
+	"qu_prl_002"
+},
+{
+	"qu_prl_002_howling_dogs_02",
+	2411405331,
+	"qu_prl_002"
+},
+{
+	"qu_prl_002_kiss_01",
+	3789370986,
+	"qu_prl_002"
+},
+{
+	"qu_prl_002_putting_foan",
+	3575479788,
+	"qu_prl_002"
+},
+{
+	"qu_prl_002_soldiers_go_out",
+	1951735217,
+	"qu_prl_002"
+},
+{
+	"qu_prl_002_whipped_peasant",
+	1319432266,
+	"qu_prl_002"
+},
+{
+	"qu_prl_002_yen_gloves1",
+	2562034796,
+	"qu_prl_002"
+},
+{
+	"qu_prl_002_yen_gloves2",
+	2562034799,
+	"qu_prl_002"
+},
+{
+	"cs304_priscilla_sings",
+	1339407409,
+	"cs304_priscilla_sings"
+},
+{
+	"cs305_rescue_dandelion",
+	1339698526,
+	"cs305_rescue_dandelion"
+},
+{
+	"focus_clue_werewolf_start",
+	1702941538,
+	"monster_werewolf"
+},
+{
+	"focus_clue_werewolf_stop",
+	3933846618,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_morkvarg_appear",
+	842517403,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_morkvarg_disappear",
+	2261628831,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_mv_bodyfall",
+	2582742821,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_mv_footsteps",
+	3817064503,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_mv_hands",
+	949992904,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_mv_kneel",
+	3449814769,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_mv_shuffle",
+	2322669749,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_mv_swoosh",
+	3322862127,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vfx_morph_fx",
+	2519510330,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vfx_move_fx",
+	2359551499,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vfx_transformation_block_loop",
+	3949219253,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vfx_transformation_block_loop_stop",
+	1350747480,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_attack_short",
+	3918673005,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_burn",
+	2168743165,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_death",
+	4117727044,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_dodge",
+	3325857043,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_growl_long",
+	3311903810,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_growl_short",
+	681229598,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_growl_short_rnd",
+	3986552767,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_pain",
+	2715359206,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_snarl1",
+	2255371449,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_snarl2",
+	2255371450,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_snarl3",
+	2255371451,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_taunt1",
+	3671917955,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_taunt2",
+	3671917952,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_taunt2_fadescreen",
+	53947165,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_vo_whiney",
+	37282932,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_xtra_bite",
+	3206050346,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_xtra_breath",
+	1893369730,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_xtra_breath_fast",
+	315084071,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_xtra_ground_hit",
+	1593797775,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_xtra_scratching",
+	1559290790,
+	"monster_werewolf"
+},
+{
+	"monster_werewolf_xtra_sniff",
+	3154220988,
+	"monster_werewolf"
+},
+{
+	"qu_nv_503_werewolf_howl",
+	4095671480,
+	"monster_werewolf"
+},
+{
+	"set_monster_werewolf_armour_type_flesh",
+	1997453893,
+	"monster_werewolf"
+},
+{
+	"animals_goat_call",
+	4052723969,
+	"animals_goat"
+},
+{
+	"animals_goat_call_RND",
+	3643196544,
+	"animals_goat"
+},
+{
+	"animals_goat_call_VERY_RND",
+	3133604245,
+	"animals_goat"
+},
+{
+	"animals_goat_dialog_scene",
+	1791481064,
+	"animals_goat"
+},
+{
+	"animals_goat_die",
+	1249503873,
+	"animals_goat"
+},
+{
+	"animals_goat_die_always",
+	1543511099,
+	"animals_goat"
+},
+{
+	"animals_goat_focus_sfx_100m_start",
+	1921477673,
+	"animals_goat"
+},
+{
+	"animals_goat_focus_sfx_100m_stop",
+	2356361795,
+	"animals_goat"
+},
+{
+	"animals_goat_focus_sfx_250m_start",
+	3731482357,
+	"animals_goat"
+},
+{
+	"animals_goat_focus_sfx_250m_stop",
+	16049239,
+	"animals_goat"
+},
+{
+	"cs402_entering_mist_island",
+	1367387036,
+	"cs402_entering_mist_island"
+},
+{
+	"cs107_witch_normal",
+	1376422307,
+	"cs107_witch_normal"
+},
+{
+	"monster_ghoul_agressive_snarl",
+	1770987188,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_attack",
+	1537725946,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_attack_ALWAYS",
+	1350072406,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_attack_swoosh",
+	776471608,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_bodyfall",
+	992735649,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_breath",
+	4138301068,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_breath_RND",
+	734574177,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_burn",
+	3113369641,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_calm_growl",
+	3430546225,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_calm_growl_RND",
+	3384274864,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_death",
+	643929040,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_eat",
+	116718776,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_focus_100m_start",
+	2001859230,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_focus_100m_stop",
+	2176599358,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_foley",
+	3929338791,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_footsteps",
+	446347411,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_ground_scratch",
+	740161684,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_morph_loop_start",
+	1058761460,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_morph_loop_stop",
+	3856891752,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_pain",
+	1742030586,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_pain_RND",
+	705313427,
+	"monster_ghoul"
+},
+{
+	"monster_ghoul_short_taunt",
+	2107959597,
+	"monster_ghoul"
+},
+{
+	"set_monster_ghoul_armour_type_generic",
+	1854514754,
+	"monster_ghoul"
+},
+{
+	"cs103_ciri_runs_short",
+	1397931881,
+	"cs103_ciri_runs_short"
+},
+{
+	"cs111_witch_transform",
+	1398330079,
+	"cs111_witch_transform"
+},
+{
+	"dialog_work_painting_cut",
+	1061502447,
+	"work_children"
+},
+{
+	"work_child_1_laugh",
+	2927977039,
+	"work_children"
+},
+{
+	"work_child_2_laugh",
+	3076960092,
+	"work_children"
+},
+{
+	"work_child_3_laugh",
+	140827065,
+	"work_children"
+},
+{
+	"work_child_clap",
+	116072026,
+	"work_children"
+},
+{
+	"work_child_dirt_draw",
+	4244621844,
+	"work_children"
+},
+{
+	"work_child_eating",
+	2783154578,
+	"work_children"
+},
+{
+	"work_child_fighting_game_vo",
+	3761502735,
+	"work_children"
+},
+{
+	"work_child_mumble",
+	2498933722,
+	"work_children"
+},
+{
+	"work_child_water_splash_hand",
+	3733361611,
+	"work_children"
+},
+{
+	"work_child_wooden_sword_swoosh_deep",
+	1270018531,
+	"work_children"
+},
+{
+	"work_child_wooden_sword_swoosh_soft",
+	498108825,
+	"work_children"
+},
+{
+	"work_johnny_bottle_grab",
+	2697730421,
+	"work_children"
+},
+{
+	"work_johnny_bottle_open",
+	666329347,
+	"work_children"
+},
+{
+	"work_johnny_bottle_squeak",
+	3871324029,
+	"work_children"
+},
+{
+	"work_johnny_crawl_ADD",
+	3819034229,
+	"work_children"
+},
+{
+	"work_johnny_dirt_ADD",
+	1822702779,
+	"work_children"
+},
+{
+	"work_johnny_footsteps_ADD",
+	1869902809,
+	"work_children"
+},
+{
+	"work_little_ciri_training_vo",
+	2479877862,
+	"work_children"
+},
+{
+	"work_little_ciri_training_vo_RND",
+	3513777159,
+	"work_children"
+},
+{
+	"cs403_wild_hunt_approaches_p1",
+	1420622936,
+	"cs403_wild_hunt_approaches_p1"
+},
+{
+	"cs403_wild_hunt_approaches_p3",
+	1420622938,
+	"cs403_wild_hunt_approaches_p3"
+},
+{
+	"cs403_wild_hunt_approaches_p2",
+	1420622939,
+	"cs403_wild_hunt_approaches_p2"
+},
+{
+	"cs305_convoy_in_ambush",
+	1438788857,
+	"cs305_convoy_in_ambush"
+},
+{
+	"grunt_vo_agony",
+	3604533624,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_agony_end",
+	2269873918,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_attack_long",
+	3644397417,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_attack_long_ALWAYS",
+	561525283,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_attack_medium",
+	1039281658,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_attack_medium_ALWAYS",
+	519880790,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_attack_short",
+	4055069695,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_attack_short_ALWAYS",
+	3430882369,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_attack_short_RND",
+	3242351522,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_block",
+	1993327423,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_burn_dmg",
+	3180714690,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_burn_dmg_end",
+	1860819992,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_burn_recovery",
+	1522559591,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_death",
+	209757778,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_death_last_breath",
+	568971658,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_death_stop",
+	2458096881,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_dodge",
+	1035580193,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_grunt",
+	1456643074,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_impact_heavy",
+	1625123410,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_impact_heavy_ALWAYS",
+	2761801550,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_impact_light",
+	1777262823,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_impact_light_ALWAYS",
+	1105490537,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_impact_light_RND",
+	127149386,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_shock",
+	3985992122,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_throat_cut",
+	1902649411,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_throat_gurgling",
+	1658875032,
+	"grunt_vo_sentry_male"
+},
+{
+	"grunt_vo_throat_gurgling_sparse",
+	1433536311,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_attack_long_ALWAYS",
+	3623814830,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_attack_medium_ALWAYS",
+	3791880103,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_attack_short_ALWAYS",
+	1868473450,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_burn_dmg_RND",
+	3479660250,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_death_RND",
+	909264800,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_start",
+	3275716446,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_stop",
+	1756125182,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_m_burn_dmg_end",
+	2077504813,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_m_impact_heavy",
+	4109997507,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_m_impact_light",
+	1900386010,
+	"grunt_vo_sentry_male"
+},
+{
+	"scene_grunt_vo_m_throat_cut",
+	3188734954,
+	"grunt_vo_sentry_male"
+},
+{
+	"global_machines_lift_wood1_mechanism_start",
+	1272323633,
+	"global_machines"
+},
+{
+	"global_machines_lift_wood1_mechanism_stop",
+	2277157547,
+	"global_machines"
+},
+{
+	"global_machines_lift_wood1_platform_start",
+	2866706457,
+	"global_machines"
+},
+{
+	"global_machines_lift_wood1_platform_stop",
+	1914423283,
+	"global_machines"
+},
+{
+	"qu_item_disarm_trap",
+	2818050962,
+	"global_machines"
+},
+{
+	"qu_item_spike_trap",
+	3685616678,
+	"global_machines"
+},
+{
+	"qu_item_wire_cutter",
+	4152965085,
+	"global_machines"
+},
+{
+	"monster_gravehag_bodyfall",
+	2785227331,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_bones_foley",
+	2078192705,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_breath_fast",
+	3512947927,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_breath_slow",
+	2036966766,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_breath_slow_ALWAYS",
+	2441463370,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_emerge",
+	3794378027,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_focus_100m_start",
+	2096707716,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_focus_100m_stop",
+	1111833656,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_footsteps",
+	856294409,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_ground",
+	3927864861,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_mud_grab",
+	1058257807,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_shuffle",
+	293007679,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_slime",
+	349494260,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_swoosh",
+	387915765,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_tongue_whip_fast",
+	558605166,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_tongue_whip_slow",
+	368330659,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_attack_long",
+	1390608353,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_attack_short",
+	1068748055,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_burn",
+	3421712211,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_burn_STOP",
+	2868866846,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_death_long",
+	88185023,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_gurgle_long",
+	281117789,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_gurgle_long_ALWAYS",
+	184375383,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_gurgle_short",
+	2843623515,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_mumble_high",
+	1470321769,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_mumble_high_RND",
+	3607748872,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_mumble_low",
+	3586597645,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_mumble_low_RND",
+	2647897492,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_mumble_low_RND_walk",
+	817195052,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_pain",
+	773164332,
+	"monster_gravehag"
+},
+{
+	"monster_gravehag_vo_taunt",
+	2498154584,
+	"monster_gravehag"
+},
+{
+	"set_monster_gravehag_armour_type_flesh",
+	2765303171,
+	"monster_gravehag"
+},
+{
+	"cs601_immortal_B",
+	1469373077,
+	"cs601_immortal_B"
+},
+{
+	"cs601_immortal_A",
+	1469373078,
+	"cs601_immortal_a"
+},
+{
+	"magic_keira_cloth_appear",
+	3234994408,
+	"magic_keira"
+},
+{
+	"magic_keira_hand_fx_electricity_loop_start",
+	2813766386,
+	"magic_keira"
+},
+{
+	"magic_keira_hand_fx_electricity_loop_stop",
+	3331124522,
+	"magic_keira"
+},
+{
+	"magic_keira_hand_fx_loop_start",
+	846194300,
+	"magic_keira"
+},
+{
+	"magic_keira_hand_fx_loop_stop",
+	163205328,
+	"magic_keira"
+},
+{
+	"magic_keira_hand_fx_shield_loop_start",
+	2069971868,
+	"magic_keira"
+},
+{
+	"magic_keira_hand_fx_shield_loop_stop",
+	3847071600,
+	"magic_keira"
+},
+{
+	"magic_keira_lightning",
+	95008798,
+	"magic_keira"
+},
+{
+	"magic_keira_push",
+	1504238260,
+	"magic_keira"
+},
+{
+	"magic_keira_shield_start",
+	2267717766,
+	"magic_keira"
+},
+{
+	"magic_keira_shield_stop",
+	1292348230,
+	"magic_keira"
+},
+{
+	"magic_keira_teleport",
+	3273640321,
+	"magic_keira"
+},
+{
+	"magic_keira_transformation_loop_start",
+	2832667221,
+	"magic_keira"
+},
+{
+	"magic_keira_transformation_loop_stop",
+	1176816951,
+	"magic_keira"
+},
+{
+	"magic_keira_transformation_oneshot",
+	1096387470,
+	"magic_keira"
+},
+{
+	"cs602_sex_with_shani_no_puke",
+	1489613651,
+	"cs602_sex_with_shani_no_puke"
+},
+{
+	"animals_beehive",
+	1553231187,
+	"animals_bee"
+},
+{
+	"animals_beehive_calm",
+	824678563,
+	"animals_bee"
+},
+{
+	"animals_beehive_calm_stop",
+	1957787470,
+	"animals_bee"
+},
+{
+	"animals_beehive_dialog_oneshot",
+	3644774231,
+	"animals_bee"
+},
+{
+	"animals_beehive_quest",
+	3631529828,
+	"animals_bee"
+},
+{
+	"animals_beehive_quest_stop",
+	3316523395,
+	"animals_bee"
+},
+{
+	"animals_beehive_stop",
+	239902,
+	"animals_bee"
+},
+{
+	"m_golem_ifryt_xtra_fire_loop",
+	3488163144,
+	"monster_golem_ifryt"
+},
+{
+	"m_golem_ifryt_xtra_fire_loop_stop",
+	312375655,
+	"monster_golem_ifryt"
+},
+{
+	"m_golem_ifryt_xtra_fireball_loop",
+	4284524609,
+	"monster_golem_ifryt"
+},
+{
+	"m_golem_ifryt_xtra_fireball_loop_stop",
+	1730502020,
+	"monster_golem_ifryt"
+},
+{
+	"m_golem_ifryt_xtra_line_attack",
+	1870931060,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_block_ADD",
+	1311413578,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_block_hit_ADD",
+	2430320720,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_sizzle_ADD",
+	1289546998,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_sizzle_ADD_LOUD",
+	4036275481,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_swoosh_ground_hit_heavy",
+	2302892334,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_swoosh_heavy",
+	3259977654,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_swoosh_light",
+	2887416419,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_swoosh_medium",
+	1327757296,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_taunt_hands",
+	1062365402,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_cmb_throw",
+	2634072345,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_mv_bodyfall",
+	2700906549,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_mv_foley_heavy",
+	3406765603,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_mv_foley_light",
+	1197050938,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_mv_footsteps",
+	3064585639,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_mv_footsteps_shuffle",
+	599929453,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_mv_land",
+	921858301,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_mv_recover",
+	328659446,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vfx_hit_ADD",
+	2593689744,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vfx_proj_fire_line",
+	3845074352,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vfx_proj_fire_line_loop_start",
+	1110836824,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vfx_proj_fire_line_loop_stop",
+	1495891172,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vfx_sizzle",
+	3926875032,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vfx_wave_attack",
+	1006499949,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_attack",
+	3930608974,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_attack_RND",
+	2525046767,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_block",
+	3981223049,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_death_long",
+	3117555821,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_death_short",
+	3115952619,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_idle",
+	783888648,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_idle_rnd",
+	2029392709,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_pain",
+	3495629622,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_pain_RND",
+	3997538263,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_stunned",
+	732763995,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_stunned_rnd",
+	1266281318,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_taunt_long",
+	1056808955,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_vo_taunt_short",
+	1918056949,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_xtra_death_vfx",
+	3595877899,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_xtra_death_vfx_ADD",
+	3302504555,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_xtra_death_vfx_ADD2",
+	1264635971,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_xtra_default_fx_loop_start",
+	2931631820,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_xtra_default_fx_loop_stop",
+	2901359456,
+	"monster_golem_ifryt"
+},
+{
+	"monster_golem_ifryt_xtra_fireball_explo",
+	3014636128,
+	"monster_golem_ifryt"
+},
+{
+	"monster_ifryt_focus_sfx_start",
+	4004431010,
+	"monster_golem_ifryt"
+},
+{
+	"monster_ifryt_focus_sfx_stop",
+	1048714138,
+	"monster_golem_ifryt"
+},
+{
+	"set_monster_golem_ifryt_armour_type_monster_stone",
+	1979076333,
+	"monster_golem_ifryt"
+},
+{
+	"cs501_eredin_dies",
+	1508509131,
+	"cs501_eredin_dies"
+},
+{
+	"cs605_shani_illusion",
+	1514870888,
+	"cs605_shani_illusion"
+},
+{
+	"amb_qu_EXT_EM_crowd_kids_playing_1_40m",
+	2670901982,
+	"amb_qu_crowd_kids"
+},
+{
+	"qu_nml_105_kids_playing",
+	960102213,
+	"amb_qu_crowd_kids"
+},
+{
+	"animals_owl_call_1",
+	1039937750,
+	"animals_owl"
+},
+{
+	"animals_owl_call_quest",
+	2168788109,
+	"animals_owl"
+},
+{
+	"animals_owl_call_quest_RND25",
+	1451761407,
+	"animals_owl"
+},
+{
+	"animals_owl_call_quest_RND45",
+	1351095661,
+	"animals_owl"
+},
+{
+	"animals_owl_transform_vfx",
+	1500558251,
+	"animals_owl"
+},
+{
+	"amb_qu_EXT_EM_crowd_spectators_light_1_30m_quiet",
+	2117610519,
+	"amb_qu_crowd_spectators_light_ext"
+},
+{
+	"amb_qu_INT_EXT_painted_world_light",
+	2112188368,
+	"amb_qu_painted_world"
+},
+{
+	"amb_qu_INT_EXT_painted_world_strong",
+	3537802625,
+	"amb_qu_painted_world"
+},
+{
+	"animals_horse_breath_run_double",
+	1505579927,
+	"animals_horse"
+},
+{
+	"animals_horse_breath_run_double_loud",
+	4257221070,
+	"animals_horse"
+},
+{
+	"animals_horse_breath_trot_double",
+	1960989551,
+	"animals_horse"
+},
+{
+	"animals_horse_breath_trot_double_loud",
+	1340673734,
+	"animals_horse"
+},
+{
+	"animals_horse_breath_walk_cycle",
+	2230361762,
+	"animals_horse"
+},
+{
+	"animals_horse_breath_walk_cycle_loud",
+	1257479557,
+	"animals_horse"
+},
+{
+	"animals_horse_exhale_light",
+	4216179319,
+	"animals_horse"
+},
+{
+	"animals_horse_grunt_long",
+	3672654810,
+	"animals_horse"
+},
+{
+	"animals_horse_grunt_medium",
+	2000388021,
+	"animals_horse"
+},
+{
+	"animals_horse_grunt_short",
+	1944699734,
+	"animals_horse"
+},
+{
+	"animals_horse_harness_heavy",
+	2035527447,
+	"animals_horse"
+},
+{
+	"animals_horse_harness_light",
+	4251179926,
+	"animals_horse"
+},
+{
+	"animals_horse_hoof_whoosh_medium",
+	700096448,
+	"animals_horse"
+},
+{
+	"animals_horse_hoof_whoosh_strong",
+	2153976552,
+	"animals_horse"
+},
+{
+	"animals_horse_hoofs_slide_short",
+	3926428865,
+	"animals_horse"
+},
+{
+	"animals_horse_neigh_light",
+	2619206643,
+	"animals_horse"
+},
+{
+	"animals_horse_neigh_light_kickback",
+	3441529485,
+	"animals_horse"
+},
+{
+	"animals_horse_neigh_short",
+	540099869,
+	"animals_horse"
+},
+{
+	"animals_horse_neigh_strong",
+	649832648,
+	"animals_horse"
+},
+{
+	"animals_horse_saddle_dismount_begin",
+	1664258106,
+	"animals_horse"
+},
+{
+	"animals_horse_saddle_mount_begin",
+	930311288,
+	"animals_horse"
+},
+{
+	"animals_horse_saddle_mount_begin_soft",
+	500727175,
+	"animals_horse"
+},
+{
+	"animals_horse_saddle_mount_end",
+	478926156,
+	"animals_horse"
+},
+{
+	"animals_horse_saddle_mount_end_soft",
+	291901395,
+	"animals_horse"
+},
+{
+	"animals_horse_snort_long",
+	3766482876,
+	"animals_horse"
+},
+{
+	"animals_horse_snort_medium",
+	1486437539,
+	"animals_horse"
+},
+{
+	"animals_horse_snort_only_long",
+	1461630701,
+	"animals_horse"
+},
+{
+	"animals_horse_snort_short",
+	2017786564,
+	"animals_horse"
+},
+{
+	"animals_horse_tail_double",
+	4111735677,
+	"animals_horse"
+},
+{
+	"animals_horse_tail_long",
+	1715337820,
+	"animals_horse"
+},
+{
+	"animals_horse_tail_short",
+	2724404452,
+	"animals_horse"
+},
+{
+	"animals_horse_tail_soft",
+	3294274058,
+	"animals_horse"
+},
+{
+	"animals_horse_trot_step_B",
+	934695552,
+	"animals_horse"
+},
+{
+	"animals_horse_trot_step_F",
+	934695556,
+	"animals_horse"
+},
+{
+	"animals_horse_walk_step_B",
+	1559460480,
+	"animals_horse"
+},
+{
+	"animals_horse_walk_step_F",
+	1559460484,
+	"animals_horse"
+},
+{
+	"animals_horse_whistle",
+	1678565625,
+	"animals_horse"
+},
+{
+	"dialog_animals_horse_hoofs_slide_shorter",
+	3542420835,
+	"animals_horse"
+},
+{
+	"cs301_novigrad_opening",
+	1565297669,
+	"cs301_novigrad_opening"
+},
+{
+	"cs105_ciri_escapes_witch_sisters",
+	1567679600,
+	"cs105_ciri_escapes_witch_sisters"
+},
+{
+	"cs604_barrel",
+	1583049722,
+	"cs604_barrel"
+},
+{
+	"cs105_horse_drinks_blood",
+	1598888858,
+	"cs105_horse_drinks_blood"
+},
+{
+	"animals_wolf_attack",
+	1307461162,
+	"animals_wolf"
+},
+{
+	"animals_wolf_attack_big",
+	3011869977,
+	"animals_wolf"
+},
+{
+	"animals_wolf_bite",
+	1753130232,
+	"animals_wolf"
+},
+{
+	"animals_wolf_bodyfall",
+	2058466737,
+	"animals_wolf"
+},
+{
+	"animals_wolf_breath",
+	1482211836,
+	"animals_wolf"
+},
+{
+	"animals_wolf_breath_quest",
+	625315459,
+	"animals_wolf"
+},
+{
+	"animals_wolf_burning",
+	2718675183,
+	"animals_wolf"
+},
+{
+	"animals_wolf_calm",
+	3131969235,
+	"animals_wolf"
+},
+{
+	"animals_wolf_death",
+	287633664,
+	"animals_wolf"
+},
+{
+	"animals_wolf_eating",
+	4035334000,
+	"animals_wolf"
+},
+{
+	"animals_wolf_focus_100m_start",
+	3105639598,
+	"animals_wolf"
+},
+{
+	"animals_wolf_focus_100m_stop",
+	2506389646,
+	"animals_wolf"
+},
+{
+	"animals_wolf_grunt",
+	2284598428,
+	"animals_wolf"
+},
+{
+	"animals_wolf_grunt_rnd",
+	1158506481,
+	"animals_wolf"
+},
+{
+	"animals_wolf_howl",
+	2500716320,
+	"animals_wolf"
+},
+{
+	"animals_wolf_injured",
+	2507563693,
+	"animals_wolf"
+},
+{
+	"animals_wolf_injured_heavy",
+	3541948109,
+	"animals_wolf"
+},
+{
+	"animals_wolf_lick",
+	1173753525,
+	"animals_wolf"
+},
+{
+	"animals_wolf_rolling",
+	3098343057,
+	"animals_wolf"
+},
+{
+	"animals_wolf_snarl",
+	754858284,
+	"animals_wolf"
+},
+{
+	"animals_wolf_snarl_rnd",
+	1487667137,
+	"animals_wolf"
+},
+{
+	"animals_wolf_steps",
+	3485447811,
+	"animals_wolf"
+},
+{
+	"animals_wolf_wake_up",
+	3991687766,
+	"animals_wolf"
+},
+{
+	"animals_wolf_wounded_quest",
+	899401499,
+	"animals_wolf"
+},
+{
+	"set_monster_wolf_armour_type_flesh",
+	3694414834,
+	"animals_wolf"
+},
+{
+	"amb_dyn_IN_crowd_tavern_light_1_15m",
+	362461749,
+	"amb_dyn_crowd_tavern_light"
+},
+{
+	"amb_dyn_IN_crowd_tavern_light_1i2_15m",
+	823511656,
+	"amb_dyn_crowd_tavern_light"
+},
+{
+	"amb_dyn_IN_crowd_tavern_light_1i2_15m_loud",
+	455438815,
+	"amb_dyn_crowd_tavern_light"
+},
+{
+	"amb_dyn_IN_crowd_tavern_light_2_15m",
+	3855413018,
+	"amb_dyn_crowd_tavern_light"
+},
+{
+	"qu_prl_504_przerebel_ice_crack",
+	2426416445,
+	"qu_prl_504"
+},
+{
+	"amb_qu_ice_cracking_ship_40m",
+	1753250086,
+	"amb_qu_ice_cracking"
+},
+{
+	"amb_qu_EXT_hell_surface",
+	2837878094,
+	"amb_qu_hell"
+},
+{
+	"amb_qu_EXT_hell_surface_rnd",
+	4110641135,
+	"amb_qu_hell"
+},
+{
+	"amb_qu_INT_EXT_hell",
+	1796182396,
+	"amb_qu_hell"
+},
+{
+	"amb_qu_EXT_EM_crowd_spectators_medium_1_30m_quiet",
+	546984412,
+	"amb_qu_crowd_spectators_ext"
+},
+{
+	"amb_qu_EXT_EM_crowd_spectators_medium_1i2_30m",
+	2425257012,
+	"amb_qu_crowd_spectators_ext"
+},
+{
+	"amb_qu_EXT_EM_crowd_spectators_medium_2_30m_quiet",
+	463227815,
+	"amb_qu_crowd_spectators_ext"
+},
+{
+	"cs302_castration",
+	1696292023,
+	"cs302_castration"
+},
+{
+	"grunt_vo_agony",
+	3604533624,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_agony_end",
+	2269873918,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_attack_long",
+	3644397417,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_attack_long_ALWAYS",
+	561525283,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_attack_medium",
+	1039281658,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_attack_medium_ALWAYS",
+	519880790,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_attack_short",
+	4055069695,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_attack_short_ALWAYS",
+	3430882369,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_attack_short_RND",
+	3242351522,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_block",
+	1993327423,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_burn_dmg",
+	3180714690,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_burn_dmg_end",
+	1860819992,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_burn_recovery",
+	1522559591,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_death",
+	209757778,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_death_last_breath",
+	568971658,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_death_stop",
+	2458096881,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_dodge",
+	1035580193,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_grunt",
+	1456643074,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_impact_heavy",
+	1625123410,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_impact_heavy_ALWAYS",
+	2761801550,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_impact_light",
+	1777262823,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_impact_light_ALWAYS",
+	1105490537,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_impact_light_RND",
+	127149386,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_shock",
+	3985992122,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_throat_cut",
+	1902649411,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_throat_gurgling",
+	1658875032,
+	"grunt_vo_wild_hunt"
+},
+{
+	"grunt_vo_throat_gurgling_sparse",
+	1433536311,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_attack_long_ALWAYS",
+	3623814830,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_attack_medium_ALWAYS",
+	3791880103,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_attack_short_ALWAYS",
+	1868473450,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_burn_dmg_RND",
+	3479660250,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_death_RND",
+	909264800,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_start",
+	3275716446,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_stop",
+	1756125182,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_m_burn_dmg_end",
+	2077504813,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_m_impact_heavy",
+	4109997507,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_m_impact_light",
+	1900386010,
+	"grunt_vo_wild_hunt"
+},
+{
+	"scene_grunt_vo_m_throat_cut",
+	3188734954,
+	"grunt_vo_wild_hunt"
+},
+{
+	"cs206_berserkers_kill_people",
+	1714207929,
+	"cs206_berserkers_kill_people"
+},
+{
+	"mus_em_ep1_wedding_bards",
+	3700159618,
+	"music_em_ep1_wedding_bards"
+},
+{
+	"mus_em_ep1_wedding_bards_ctrl_fadein_01s",
+	3771784447,
+	"music_em_ep1_wedding_bards"
+},
+{
+	"mus_em_ep1_wedding_bards_ctrl_fadein_2s",
+	4166694332,
+	"music_em_ep1_wedding_bards"
+},
+{
+	"mus_em_ep1_wedding_bards_ctrl_fadein_5s",
+	4116361573,
+	"music_em_ep1_wedding_bards"
+},
+{
+	"mus_em_ep1_wedding_bards_ctrl_fadeout_2s",
+	166275177,
+	"music_em_ep1_wedding_bards"
+},
+{
+	"mus_em_ep1_wedding_bards_ctrl_fadeout_5s",
+	82387016,
+	"music_em_ep1_wedding_bards"
+},
+{
+	"mus_em_ep1_wedding_bards_end",
+	1823804632,
+	"music_em_ep1_wedding_bards"
+},
+{
+	"cs201_pirates_attack_p2",
+	1732317841,
+	"cs201_pirates_attack_p2"
+},
+{
+	"cs201_pirates_attack_p1",
+	1732317842,
+	"cs201_pirates_attack_p1"
+},
+{
+	"cs206_ritual_of_berserkers",
+	1735778440,
+	"cs206_ritual_of_berserkers"
+},
+{
+	"mh_nml_102_arachas_screech",
+	756465876,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_attack",
+	1114098179,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_attack_ALWAYS",
+	3094536789,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_attack_poison_cloud",
+	1161800644,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_attack_poison_cloud_explo",
+	103684143,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_attack_spike",
+	1834072228,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_attack_swoosh",
+	806875531,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_attack_tail",
+	1903528652,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_attack_tongue",
+	2562829830,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_attack_venom",
+	3044592317,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_block",
+	906015058,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_block_ADD",
+	416052938,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_block_ALWAYS",
+	3736624206,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_block_RND",
+	284244619,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_calm",
+	1063272678,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_calm_ALWAYS",
+	2599285954,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_death_long",
+	4169373108,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_death_short",
+	2863932668,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_pain",
+	2806121555,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_pain_RND",
+	3052320190,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_preattack_growl",
+	2747873780,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_taunt_long",
+	809749058,
+	"monster_arachas"
+},
+{
+	"monster_arachas_cmb_taunt_short",
+	1630179102,
+	"monster_arachas"
+},
+{
+	"monster_arachas_despawn",
+	3620338964,
+	"monster_arachas"
+},
+{
+	"monster_arachas_exp_digging",
+	2584947739,
+	"monster_arachas"
+},
+{
+	"monster_arachas_exp_eating",
+	3658555912,
+	"monster_arachas"
+},
+{
+	"monster_arachas_focus_clue_100m_start",
+	3743160518,
+	"monster_arachas"
+},
+{
+	"monster_arachas_focus_clue_100m_stop",
+	1762274182,
+	"monster_arachas"
+},
+{
+	"monster_arachas_focus_clue_50m_start",
+	924191734,
+	"monster_arachas"
+},
+{
+	"monster_arachas_focus_clue_50m_stop",
+	413102198,
+	"monster_arachas"
+},
+{
+	"monster_arachas_idle",
+	2775283560,
+	"monster_arachas"
+},
+{
+	"monster_arachas_mv_bodyfall",
+	2275685813,
+	"monster_arachas"
+},
+{
+	"monster_arachas_mv_foley_01",
+	1424805599,
+	"monster_arachas"
+},
+{
+	"monster_arachas_mv_foley_02",
+	1424805596,
+	"monster_arachas"
+},
+{
+	"monster_arachas_mv_footsteps",
+	1351837223,
+	"monster_arachas"
+},
+{
+	"monster_arachas_mv_ground_hit",
+	906240465,
+	"monster_arachas"
+},
+{
+	"monster_arachas_mv_jaw",
+	2129230824,
+	"monster_arachas"
+},
+{
+	"monster_arachas_mv_stomp",
+	3119085013,
+	"monster_arachas"
+},
+{
+	"monster_arachas_vfx_spit",
+	3687346791,
+	"monster_arachas"
+},
+{
+	"monster_arachas_vfx_venom_hit",
+	587121054,
+	"monster_arachas"
+},
+{
+	"monster_arachas_vfx_venom_loop_start",
+	3237342144,
+	"monster_arachas"
+},
+{
+	"monster_arachas_vfx_venom_loop_stop",
+	120683628,
+	"monster_arachas"
+},
+{
+	"monster_arachas_vfx_web_loop_start",
+	1089842167,
+	"monster_arachas"
+},
+{
+	"monster_arachas_vfx_web_loop_stop",
+	1193392733,
+	"monster_arachas"
+},
+{
+	"monster_arachas_vo_burn",
+	3130218861,
+	"monster_arachas"
+},
+{
+	"set_monster_arachas_armour_type_monster_shell",
+	1175045696,
+	"monster_arachas"
+},
+{
+	"cs301_dream_ciri_and_jaskier_p1",
+	1756724633,
+	"cs301_dream_ciri_and_jaskier_p1"
+},
+{
+	"cs301_dream_ciri_and_jaskier_p2",
+	1756724634,
+	"cs301_dream_ciri_and_jaskier_p2"
+},
+{
+	"cs301_dream_ciri_and_jaskier_p3",
+	1756724635,
+	"cs301_dream_ciri_and_jaskier_p3"
+},
+{
+	"cs301_dream_ciri_and_jaskier_p4",
+	1756724636,
+	"cs301_dream_ciri_and_jaskier_p4"
+},
+{
+	"animals_pig_chrum",
+	445952751,
+	"animals_pig"
+},
+{
+	"animals_pig_chrum_RND",
+	237485906,
+	"animals_pig"
+},
+{
+	"animals_pig_die",
+	499568122,
+	"animals_pig"
+},
+{
+	"animals_pig_hit",
+	902819255,
+	"animals_pig"
+},
+{
+	"animals_pig_poof",
+	3415904192,
+	"animals_pig"
+},
+{
+	"animals_pig_squeak",
+	506613038,
+	"animals_pig"
+},
+{
+	"cs002_leaving_village_sfx",
+	1608301219,
+	"cs002_leaving_village"
+},
+{
+	"collision",
+	1792046091,
+	"physics_collisions"
+},
+{
+	"dialog_phx_wooden_stick_break",
+	1122939640,
+	"physics_collisions"
+},
+{
+	"dialog_scene_sword_drop_on_ground",
+	2430188244,
+	"physics_collisions"
+},
+{
+	"dialog_scene_water_coin_splash",
+	2105981338,
+	"physics_collisions"
+},
+{
+	"phx_clay_break_big",
+	2614751422,
+	"physics_collisions"
+},
+{
+	"phx_clay_break_medium",
+	4026402577,
+	"physics_collisions"
+},
+{
+	"phx_clay_break_small",
+	2552284801,
+	"physics_collisions"
+},
+{
+	"phx_glass_break_big",
+	89844389,
+	"physics_collisions"
+},
+{
+	"phx_glass_break_medium",
+	1531783320,
+	"physics_collisions"
+},
+{
+	"phx_glass_break_small",
+	2713155442,
+	"physics_collisions"
+},
+{
+	"phx_ice_break_big",
+	1333285072,
+	"physics_collisions"
+},
+{
+	"phx_ice_break_medium",
+	264150823,
+	"physics_collisions"
+},
+{
+	"phx_ice_break_small",
+	1522463711,
+	"physics_collisions"
+},
+{
+	"phx_stone_break_big",
+	781557078,
+	"physics_collisions"
+},
+{
+	"phx_stone_break_medium",
+	2199021177,
+	"physics_collisions"
+},
+{
+	"phx_stone_break_small",
+	4161345817,
+	"physics_collisions"
+},
+{
+	"phx_wood_break_big",
+	1709237618,
+	"physics_collisions"
+},
+{
+	"phx_wood_break_huge",
+	2196332317,
+	"physics_collisions"
+},
+{
+	"phx_wood_break_medium",
+	3809628781,
+	"physics_collisions"
+},
+{
+	"phx_wood_break_small",
+	2445009381,
+	"physics_collisions"
+},
+{
+	"phx_wood_break_tiny",
+	1694951506,
+	"physics_collisions"
+},
+{
+	"cs310_jugglers",
+	1771527117,
+	"cs310_jugglers"
+},
+{
+	"qu_item_painted_blizzard_loop_start",
+	3682272022,
+	"qu_item_painted_blizzard"
+},
+{
+	"qu_item_painted_blizzard_loop_stop",
+	3759735830,
+	"qu_item_painted_blizzard"
+},
+{
+	"magic_succubus_fx_push",
+	2642128366,
+	"magic_succubus"
+},
+{
+	"magic_succubus_hand_fx_start",
+	1870033226,
+	"magic_succubus"
+},
+{
+	"magic_succubus_hand_fx_stop",
+	3365078434,
+	"magic_succubus"
+},
+{
+	"magic_succubus_teleport_in",
+	481068882,
+	"magic_succubus"
+},
+{
+	"magic_succubus_teleport_out",
+	1620338605,
+	"magic_succubus"
+},
+{
+	"cs201_pirates_attack_part1b",
+	1782788713,
+	"cs201_pirates_attack_part1b"
+},
+{
+	"_boat_bump",
+	4290710317,
+	"boat"
+},
+{
+	"_boat_sail_slide",
+	462578004,
+	"boat"
+},
+{
+	"boat_focus_clue_100m_start",
+	3953723262,
+	"boat"
+},
+{
+	"boat_focus_clue_100m_stop",
+	4149081246,
+	"boat"
+},
+{
+	"boat_in",
+	3045507795,
+	"boat"
+},
+{
+	"boat_mast_trail_loop",
+	3159549957,
+	"boat"
+},
+{
+	"boat_mast_trail_loop_stop",
+	3323562120,
+	"boat"
+},
+{
+	"boat_mast_trail_loop_temp",
+	1422315218,
+	"boat"
+},
+{
+	"boat_mast_trail_loop_temp_stop",
+	2159013489,
+	"boat"
+},
+{
+	"boat_out",
+	2400558318,
+	"boat"
+},
+{
+	"boat_sail_fill",
+	710072907,
+	"boat"
+},
+{
+	"boat_sail_flapping_loop",
+	1632679730,
+	"boat"
+},
+{
+	"boat_sail_flapping_loop_stop",
+	2652528785,
+	"boat"
+},
+{
+	"boat_sail_water_loop",
+	2571560586,
+	"boat"
+},
+{
+	"boat_sail_water_loop_stop",
+	3248332217,
+	"boat"
+},
+{
+	"boat_sinking",
+	1586376097,
+	"boat"
+},
+{
+	"boat_steering_loop",
+	2125237140,
+	"boat"
+},
+{
+	"boat_steering_loop_stop",
+	2144129171,
+	"boat"
+},
+{
+	"boat_stress",
+	1677473510,
+	"boat"
+},
+{
+	"boat_water_splash_soft",
+	1745317114,
+	"boat"
+},
+{
+	"monster_endriaga_cmb_attack",
+	986235353,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_attack_ALWAYS",
+	2882818739,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_attack_poison_cloud",
+	1749312606,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_attack_poison_cloud_explo",
+	418888481,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_attack_spike",
+	659364758,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_attack_swoosh",
+	1139312813,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_attack_tail",
+	2612808586,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_attack_tongue",
+	3542770448,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_attack_venom",
+	522922987,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_block",
+	1269618868,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_block_ADD",
+	785894240,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_block_RND",
+	1253548809,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_calm",
+	3290689568,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_death_long",
+	447710242,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_death_short",
+	796096126,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_pain",
+	3504155469,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_pain_RND",
+	367530708,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_preattack_growl",
+	1699624710,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_taunt_long",
+	760747404,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_cmb_taunt_short",
+	3721750036,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_despawn",
+	4281991006,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_exp_digging",
+	1841124605,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_exp_eating",
+	3925672366,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_focus_clue_100m_start",
+	2796215372,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_focus_clue_100m_stop",
+	135405536,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_focus_clue_50m_start",
+	4048319712,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_focus_clue_50m_stop",
+	275897356,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_idle",
+	88195962,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_mv_bodyfall",
+	2405336375,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_mv_foley_01",
+	3967972537,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_mv_foley_02",
+	3967972538,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_mv_footsteps",
+	730251437,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_mv_ground_hit",
+	1754404019,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_mv_jaw",
+	1410014770,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_mv_stomp",
+	3956185383,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_vfx_spit",
+	3792352665,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_vfx_venom_hit",
+	659464496,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_vfx_venom_loop_start",
+	870875498,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_vfx_venom_loop_stop",
+	307896898,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_vfx_web_loop_start",
+	812422053,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_vfx_web_loop_stop",
+	2338132935,
+	"monster_endriaga"
+},
+{
+	"monster_endriaga_vo_burn",
+	3259506147,
+	"monster_endriaga"
+},
+{
+	"set_monster_endriaga_armour_type_monster_shell",
+	3981254688,
+	"monster_endriaga"
+},
+{
+	"cs602_dance",
+	1807684305,
+	"cs602_dance"
+},
+{
+	"cs001_wake_up_sfx",
+	2818180341,
+	"cs001_wake_up"
+},
+{
+	"cs605_olgierd_dies_choice",
+	1842732599,
+	"cs605_olgierd_dies_choice"
+},
+{
+	"cs210_ship_leaves_with_geralt",
+	1850178725,
+	"cs210_ship_leaves_with_geralt"
+},
+{
+	"fx_fire_burning_body_strong_loop",
+	1293506638,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_body_strong_loop_dialog",
+	1415554201,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_body_strong_loop_dialog_end",
+	90863515,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_body_strong_loop_end",
+	938486772,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_body_strong_loop_end_slow",
+	3895865484,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_body_strong_loop_end_slow_5s",
+	1312058831,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_bonfire_large_loop",
+	1245609647,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_bonfire_large_loop_15m",
+	3135192589,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_bonfire_large_loop_15m_end",
+	1229041551,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_bonfire_large_loop_25m",
+	1255658022,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_bonfire_large_loop_25m_end",
+	40599756,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_bonfire_large_loop_50m_quest",
+	1236500141,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_bonfire_large_loop_end",
+	374079985,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_far_loop",
+	2019116190,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_far_loop_end",
+	1153275364,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_loop",
+	3938690836,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_loop_15m",
+	3850147802,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_loop_15m_end",
+	1905699056,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_loop_15m_quiet",
+	3619591067,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_loop_15m_quiet_end",
+	898387837,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_loop_end",
+	2941075914,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_midrange_loop",
+	2804031328,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_big_midrange_loop_end",
+	2585757350,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_med_loop",
+	1432126708,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_brazier_med_loop_end",
+	3054262634,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fat_med_loop",
+	2495377746,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fat_med_loop_25m",
+	1229450887,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fat_med_loop_25m_end",
+	1603281545,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fat_med_loop_end",
+	1838055816,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fireplace_big_loop",
+	1448691782,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fireplace_big_loop_15m",
+	3473909320,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fireplace_big_loop_15m_end",
+	2016990126,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fireplace_big_loop_35m",
+	1527411254,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fireplace_big_loop_35m_end",
+	2652669244,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fireplace_big_loop_end",
+	2764785708,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fireplace_small_loop",
+	4215375535,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_fireplace_small_loop_end",
+	4135029233,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_hissy_loop_15m",
+	2761344026,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_hissy_loop_15m_end",
+	1008447792,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_huge_loop_50m_light",
+	1003161813,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_huge_loop_80m",
+	649353469,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_huge_loop_80m_end",
+	2730371295,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_huge_loop_80m_light",
+	4089187188,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_huge_loop_80m_light_end",
+	3665676266,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_huge_loop_80m_medium",
+	3423529389,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_huge_loop_80m_medium_dialog",
+	2276914472,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_huge_loop_80m_medium_end",
+	3926122479,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_strong_begin",
+	3194145510,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_strong_begin_dialog",
+	377167329,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_strong_begin_dialog_loud",
+	3659290724,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_strong_begin_loud",
+	3775171241,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_strong_end",
+	745791626,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_strong_end_dialog",
+	3399529669,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_test_sample_accurate",
+	1314236671,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_test_xfade_amp",
+	3808082265,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_test_xfade_power",
+	1025577428,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_torch_loop",
+	1541154034,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_torch_loop_15m",
+	2086589644,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_torch_loop_40m_dialog",
+	2116465925,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_torch_loop_40m_dialog_end",
+	3445052839,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_torch_loop_end",
+	568300648,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_tree_light_loop",
+	2341425637,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_tree_light_loop_end",
+	612988615,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_tree_light_loop_end_slow",
+	1097087533,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_tree_light_small_loop_8m",
+	1280330001,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_tree_light_small_loop_8m_end",
+	2516363539,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_tree_med_loop",
+	2018378099,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_tree_med_loop_end",
+	768634901,
+	"fx_fire"
+},
+{
+	"fx_fire_burning_tree_med_loop_end_slow",
+	483719319,
+	"fx_fire"
+},
+{
+	"fx_fire_geralt_critical_burning_loop_start",
+	3719140034,
+	"fx_fire"
+},
+{
+	"fx_fire_geralt_critical_burning_loop_stop",
+	1979204154,
+	"fx_fire"
+},
+{
+	"fx_fire_geralt_fire_hit",
+	3042336023,
+	"fx_fire"
+},
+{
+	"fx_fire_sizzle_small",
+	483626020,
+	"fx_fire"
+},
+{
+	"fx_monster_nest_fire_big_loop_start",
+	614031745,
+	"fx_fire"
+},
+{
+	"fx_monster_nest_fire_big_loop_stop",
+	1395615291,
+	"fx_fire"
+},
+{
+	"fx_monster_nest_fire_small_start",
+	2712431045,
+	"fx_fire"
+},
+{
+	"fx_monster_nest_fire_small_stop",
+	3327332967,
+	"fx_fire"
+},
+{
+	"qu_sk_502_bowl_vfx_loop_start",
+	383948016,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_bowl_vfx_loop_stop",
+	3641897564,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_conjunction_vfx_complete_end",
+	1423131630,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_conjunction_vfx_part_1_loop_start",
+	536672662,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_conjunction_vfx_part_1_loop_stop",
+	2520990614,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_conjunction_vfx_part_2_loop_start",
+	2506388415,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_conjunction_vfx_start",
+	1334888019,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_conjunction_vfx_stop",
+	2047762193,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_drop_sword",
+	3558138808,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_earthquake",
+	2153013054,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_explosion_ship",
+	2826898779,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_sphere_vfx_loop",
+	2433186356,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_sphere_vfx_loop_stop",
+	2740134771,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_wood_creak_long",
+	1581377444,
+	"qu_skellige_502"
+},
+{
+	"qu_sk_502_wood_creak_short",
+	1696691436,
+	"qu_skellige_502"
+},
+{
+	"monster_rotfiend_eat",
+	398621764,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_explode",
+	2183155777,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_focus_100m_start",
+	1306604514,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_focus_100m_stop",
+	2222336474,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_mv_bodyfall",
+	175267669,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_mv_digin",
+	2993904363,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_mv_digout",
+	3750306790,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_mv_flesh",
+	3183038216,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_mv_footstep",
+	3455107196,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_swoosh",
+	3699119655,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_uw_dive_long",
+	2408309992,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_uw_dive_short",
+	704613800,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_uw_hit",
+	4210775880,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_uw_movement_heavy",
+	1601679242,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_attack",
+	1402339310,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_attack_RND",
+	3085009615,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_breathin",
+	1564135493,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_breathout",
+	497354828,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_cough",
+	1409345800,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_die",
+	1615650896,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_dmg",
+	1548540302,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_dmg_RND",
+	4067879471,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_growl",
+	2653600477,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_growl_RND",
+	619701668,
+	"monster_rotfiend"
+},
+{
+	"monster_rotfiend_vo_scream",
+	3915379337,
+	"monster_rotfiend"
+},
+{
+	"set_monster_rotfiend_armour_type_flesh",
+	2075669609,
+	"monster_rotfiend"
+},
+{
+	"mus_loc_wyzima_castle",
+	2108466964,
+	"music_wyzima_castle"
+},
+{
+	"mus_loc_wyzima_castle_cs_to_gmpl",
+	2897459942,
+	"music_wyzima_castle"
+},
+{
+	"mus_q002_geralt_makeover",
+	1259198851,
+	"music_wyzima_castle"
+},
+{
+	"mus_q002_geralt_talkes_to_emperor",
+	863752430,
+	"music_wyzima_castle"
+},
+{
+	"mus_q002_yen_in_palace",
+	298426996,
+	"music_wyzima_castle"
+},
+{
+	"mus_q110_geralt_talkes_to_emperor",
+	4098935414,
+	"music_wyzima_castle"
+},
+{
+	"mus_q505_ciri_is_dead",
+	2251902966,
+	"music_wyzima_castle"
+},
+{
+	"mus_wyzima_dialog_01",
+	3910805419,
+	"music_wyzima_castle"
+},
+{
+	"mus_wyzima_dialog_02",
+	3910805416,
+	"music_wyzima_castle"
+},
+{
+	"mus_wyzima_dialog_03",
+	3910805417,
+	"music_wyzima_castle"
+},
+{
+	"mus_wyzima_dialog_04",
+	3910805422,
+	"music_wyzima_castle"
+},
+{
+	"play_music_wyzima_castle",
+	4204531214,
+	"music_wyzima_castle"
+},
+{
+	"cs302_radovid",
+	1874067544,
+	"cs302_radovid"
+},
+{
+	"fx_bolt_bump_vfx",
+	2856553299,
+	"fx_other"
+},
+{
+	"fx_gas_toxic_loop",
+	3559568374,
+	"fx_other"
+},
+{
+	"fx_gas_toxic_loop_stop",
+	1026571877,
+	"fx_other"
+},
+{
+	"fx_levitating_rock_loop_start",
+	1272266061,
+	"fx_other"
+},
+{
+	"fx_levitating_rock_loop_stop",
+	2753244175,
+	"fx_other"
+},
+{
+	"fx_levitating_wood_loop_start",
+	1727573489,
+	"fx_other"
+},
+{
+	"fx_levitating_wood_loop_stop",
+	2931058539,
+	"fx_other"
+},
+{
+	"fx_other_lightning_hit",
+	387392861,
+	"fx_other"
+},
+{
+	"fx_other_lightning_pre_2s",
+	3288190821,
+	"fx_other"
+},
+{
+	"fx_rune_activate_aard",
+	1570522549,
+	"fx_other"
+},
+{
+	"fx_rune_activate_axii",
+	1322654124,
+	"fx_other"
+},
+{
+	"fx_rune_activate_igni",
+	2966875714,
+	"fx_other"
+},
+{
+	"fx_rune_activate_quen",
+	1859607630,
+	"fx_other"
+},
+{
+	"fx_rune_activate_yrden",
+	3778010365,
+	"fx_other"
+},
+{
+	"fx_spike_trap",
+	1543467514,
+	"fx_other"
+},
+{
+	"monster_caretaker_fx_drain_energy",
+	117747317,
+	"fx_other"
+},
+{
+	"monster_caretaker_fx_drain_energy_player",
+	3689542759,
+	"fx_other"
+},
+{
+	"dialog_work_m_snore_end",
+	2957878681,
+	"work_voiceovers"
+},
+{
+	"dialog_work_m_snore_fast",
+	3399815900,
+	"work_voiceovers"
+},
+{
+	"dialog_work_m_snore_long",
+	1245794664,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_falling_scream_AdultFemale",
+	2028013625,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_falling_scream_AdultMale",
+	2772559570,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_reaction_AdultFemale",
+	4143344763,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_reaction_AdultMale",
+	3941271304,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_reaction_ChildFemale",
+	1027944717,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_reaction_ChildMale",
+	3407085014,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_scream_AdultFemale",
+	3873477945,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_scream_AdultMale",
+	1402039250,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_scream_ChildFemale",
+	3382865887,
+	"work_voiceovers"
+},
+{
+	"grunt_vo_test_scream_ChildMale",
+	1055375964,
+	"work_voiceovers"
+},
+{
+	"work_m_cheering",
+	1084706124,
+	"work_voiceovers"
+},
+{
+	"work_m_cheering_RND",
+	1796529185,
+	"work_voiceovers"
+},
+{
+	"work_m_cough",
+	2094281821,
+	"work_voiceovers"
+},
+{
+	"work_m_cough_RND",
+	2232907556,
+	"work_voiceovers"
+},
+{
+	"work_m_crying",
+	215242249,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_1",
+	2672562141,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_1_rnd",
+	135367332,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_2",
+	2672562142,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_3",
+	2672562143,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_4",
+	2672562136,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_5",
+	2672562137,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_hiccup",
+	2356591056,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_hiccup_rnd",
+	2209935213,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_puke_choke_1",
+	1681041148,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_puke_choke_2",
+	1681041151,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_puke_end",
+	2338273071,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_stagger",
+	1552646881,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_stand",
+	1837111204,
+	"work_voiceovers"
+},
+{
+	"work_m_drunk_walk",
+	2959058383,
+	"work_voiceovers"
+},
+{
+	"work_m_grunt",
+	1386172197,
+	"work_voiceovers"
+},
+{
+	"work_m_grunt_RND",
+	3315858316,
+	"work_voiceovers"
+},
+{
+	"work_m_mumble",
+	2365016531,
+	"work_voiceovers"
+},
+{
+	"work_m_pain",
+	1206791637,
+	"work_voiceovers"
+},
+{
+	"work_m_sigh",
+	3723385188,
+	"work_voiceovers"
+},
+{
+	"work_m_smoking_cough",
+	4007588238,
+	"work_voiceovers"
+},
+{
+	"work_m_sneeze",
+	1504835755,
+	"work_voiceovers"
+},
+{
+	"work_m_sneeze_RND",
+	500360310,
+	"work_voiceovers"
+},
+{
+	"work_m_sniff",
+	4217998931,
+	"work_voiceovers"
+},
+{
+	"work_m_sniff_short",
+	369540236,
+	"work_voiceovers"
+},
+{
+	"work_m_snore_end",
+	3245991984,
+	"work_voiceovers"
+},
+{
+	"work_m_snore_fast",
+	1434784767,
+	"work_voiceovers"
+},
+{
+	"work_m_snore_long",
+	2687671023,
+	"work_voiceovers"
+},
+{
+	"work_m_spit",
+	4292293943,
+	"work_voiceovers"
+},
+{
+	"work_m_toasting",
+	644980826,
+	"work_voiceovers"
+},
+{
+	"work_m_writing_mumble",
+	3904346932,
+	"work_voiceovers"
+},
+{
+	"work_m_yawn",
+	1610339736,
+	"work_voiceovers"
+},
+{
+	"work_m_yawn_RND",
+	393066581,
+	"work_voiceovers"
+},
+{
+	"work_man_a_drunk_calm",
+	174280010,
+	"work_voiceovers"
+},
+{
+	"work_man_a_drunk_calm_ALWAYS",
+	4121006342,
+	"work_voiceovers"
+},
+{
+	"work_man_a_drunk_laugh",
+	2079932690,
+	"work_voiceovers"
+},
+{
+	"work_man_a_drunk_laugh_ALWAYS",
+	2781283854,
+	"work_voiceovers"
+},
+{
+	"work_man_a_drunk_loud",
+	1774231095,
+	"work_voiceovers"
+},
+{
+	"work_man_a_drunk_loud_ALWAYS",
+	3519213849,
+	"work_voiceovers"
+},
+{
+	"work_man_sniff",
+	1574121882,
+	"work_voiceovers"
+},
+{
+	"work_man_sniff_RND",
+	472718963,
+	"work_voiceovers"
+},
+{
+	"work_w_agony",
+	34932725,
+	"work_voiceovers"
+},
+{
+	"work_w_agony_RND",
+	3298358236,
+	"work_voiceovers"
+},
+{
+	"work_w_cheering",
+	2441852962,
+	"work_voiceovers"
+},
+{
+	"work_w_cheering_RND",
+	637323739,
+	"work_voiceovers"
+},
+{
+	"work_w_cough",
+	4238601979,
+	"work_voiceovers"
+},
+{
+	"work_w_cough_RND",
+	2905162566,
+	"work_voiceovers"
+},
+{
+	"work_w_crying",
+	1108094591,
+	"work_voiceovers"
+},
+{
+	"work_w_drunk_hiccup",
+	3091251446,
+	"work_voiceovers"
+},
+{
+	"work_w_drunk_hiccup_RND",
+	3307939479,
+	"work_voiceovers"
+},
+{
+	"work_w_drunk_vo",
+	1916752223,
+	"work_voiceovers"
+},
+{
+	"work_w_drunk_vo_RND",
+	4135436482,
+	"work_voiceovers"
+},
+{
+	"work_w_laughing",
+	2671244054,
+	"work_voiceovers"
+},
+{
+	"work_w_laughing_end",
+	1056453468,
+	"work_voiceovers"
+},
+{
+	"work_w_snore_end",
+	354319138,
+	"work_voiceovers"
+},
+{
+	"work_w_snore_fast",
+	3381236473,
+	"work_voiceovers"
+},
+{
+	"work_w_snore_long",
+	982882677,
+	"work_voiceovers"
+},
+{
+	"work_w_yawn",
+	517675414,
+	"work_voiceovers"
+},
+{
+	"work_whistling",
+	1848446272,
+	"work_voiceovers"
+},
+{
+	"work_whistling_RND",
+	2489382173,
+	"work_voiceovers"
+},
+{
+	"cs501_ram_them_p2",
+	1895305474,
+	"cs501_ram_them_p2"
+},
+{
+	"magic_vfx_power_places_cooldown_aard_start",
+	3689805158,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_cooldown_aard_stop",
+	1696864678,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_cooldown_axii_start",
+	1527582591,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_cooldown_axii_stop",
+	144377029,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_cooldown_igni_start",
+	3193131137,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_cooldown_igni_stop",
+	1849629499,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_cooldown_quen_start",
+	1113634297,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_cooldown_quen_stop",
+	2779990611,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_cooldown_yrden_start",
+	1605385718,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_cooldown_yrden_stop",
+	457422454,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_default_start",
+	78074203,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_default_stop",
+	1820496697,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_aard_start",
+	2323118218,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_aard_stop",
+	59717346,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_axii_start",
+	2318994299,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_axii_stop",
+	2778570457,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_igni_start",
+	4042610381,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_igni_stop",
+	793812111,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_quen_start",
+	2848850621,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_quen_stop",
+	3522497087,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_yrden_start",
+	2101602322,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_ready_yrden_stop",
+	2885739466,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_success_aard",
+	3380193027,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_success_axii",
+	2925770494,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_success_igni",
+	1147383380,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_success_quen",
+	3595561660,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_success_yrden",
+	2967111619,
+	"magic_power_places"
+},
+{
+	"magic_vfx_power_places_use",
+	3640025436,
+	"magic_power_places"
+},
+{
+	"qu_item_bell_ring",
+	2875690010,
+	"qu_item_bell"
+},
+{
+	"cs202_geralt_n_ragnar_kill_giant",
+	1922690807,
+	"cs202_geralt_n_ragnar_kill_giant"
+},
+{
+	"fx_meteorite_explo_close",
+	1991941444,
+	"qu_item_meteor"
+},
+{
+	"fx_meteorite_explo_water",
+	370975789,
+	"qu_item_meteor"
+},
+{
+	"magic_triss_q403_meteorite_ground_fire_loop",
+	2856230566,
+	"qu_item_meteor"
+},
+{
+	"magic_triss_q403_meteorite_ground_fire_loop_end",
+	3398604108,
+	"qu_item_meteor"
+},
+{
+	"magic_triss_q403_meteorite_marker_loop",
+	2486350822,
+	"qu_item_meteor"
+},
+{
+	"magic_triss_q403_meteorite_marker_loop_end",
+	10117516,
+	"qu_item_meteor"
+},
+{
+	"magic_triss_q403_meteorite_smoke_and_fire_loop",
+	3305836448,
+	"qu_item_meteor"
+},
+{
+	"magic_triss_q403_meteorite_smoke_and_fire_loop_end",
+	1117389030,
+	"qu_item_meteor"
+},
+{
+	"amb_qu_cave_of_visions_1",
+	4185825570,
+	"amb_qu_cave_of_visions"
+},
+{
+	"amb_qu_cave_of_visions_1_for_spiral",
+	3909853330,
+	"amb_qu_cave_of_visions"
+},
+{
+	"cs201_storm_without_crew",
+	1960498943,
+	"cs201_storm_without_crew"
+},
+{
+	"cs104_keira_bath_sfx",
+	981183133,
+	"cs104_keira_bath"
+},
+{
+	"amb_sk_g_EM_animal_bird_bald_eagle_80m",
+	1145395457,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_black_woodpecker_call_70m",
+	3123716978,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_black_woodpecker_drumming_1_close_80m",
+	652074463,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_great_tit_1_80m",
+	1227957284,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_great_tit_2_close_RND",
+	4229485343,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_call_1_70m",
+	1786447156,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_drumming_1_80m",
+	5854320,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_drumming_2_80m",
+	2494435543,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_drumming_3_80m",
+	3459337878,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_hits_80m",
+	3885943301,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_larks",
+	3815465574,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_pacific_wren_80m",
+	1805750461,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_raven_close_1_120m",
+	2658957957,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_raven_close_2_120m",
+	2562370988,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_vulture_70m",
+	3275928853,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_willow_warbler_1_70m",
+	2615764334,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_winter_1_80m",
+	373604816,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_winter_2_80m",
+	3307431863,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_winter_wren_80m",
+	3232526113,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_woodpecker_drm_1_med_80m",
+	3508967283,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_bird_woodpecker_drm_2_thin_80m",
+	1283886131,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_crows_1_RND",
+	2115993010,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_night_fox_scream_closer_1_80m",
+	1409816162,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_night_fox_scream_far_1_80m",
+	1768006407,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_night_fox_scream_far_2_80m",
+	34824032,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_night_owl_2_barred_RND",
+	4216245449,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_night_owl_3_barred_RND",
+	3561304562,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_EM_animal_night_owl_4_tawny_RND",
+	1007571900,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_em_spooky",
+	2644886965,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_em_wolf_howls",
+	291178066,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_em_wolf_howls_quest",
+	1012422457,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_FOREST_10_medium_normal",
+	2560790778,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_FOREST_11_medium_normal",
+	2937862547,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_water_stream_medium1_mono",
+	3884268204,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_waterfall_small1_mono",
+	3308259756,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_G_WIND_and_RAIN_START",
+	2142441391,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_G_WIND_and_RAIN_STOP",
+	3759456949,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_wind_forest_medium",
+	515747001,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_G_WIND_GRASS_1",
+	1827553092,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_wind_rnd_blows_low1",
+	3184488700,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_wind_rnd_blows_mid1",
+	1409127608,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_wind_rnd_blows_mid2",
+	1409127611,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_wind_rnd_through_branches_mid",
+	2895719580,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_g_wind_rnd_through_leaves_mid",
+	2588183868,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_canyon_high",
+	74263812,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_canyon_small",
+	795021549,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_giant_ship_canyon",
+	1224121048,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_giant_ship_canyon_entrance",
+	2749202769,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_global_land",
+	1421379240,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_global_land_old",
+	1482959602,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_harpy_nest_canyon",
+	3056237471,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_lake",
+	4178915076,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_side_canyon",
+	267539939,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_wind_canyon_tight",
+	3619628447,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_wind_land_medium",
+	2773223369,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_wind_land_strong",
+	2580351721,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_wind_siren_cave_open",
+	1692482418,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_ice_giant_wind_siren_cave_open_nowater",
+	3791144805,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_03_water_small_bay",
+	1120585412,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_04_water_small_bay_border",
+	624185324,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_06_wind_forest1",
+	3925327752,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_08_open_field",
+	2006780984,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_09_canyon",
+	2223576174,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_11_lighthouse_path",
+	3457376331,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_13_high_path",
+	3350634717,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_13_wind_lift",
+	1792137749,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_14_wind_tunnel",
+	1671454575,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_14_wind_tunnel2",
+	1148599183,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_15_wind_high_bridge",
+	3135823528,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_16_wind_interior",
+	1440921179,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_17_wind_stables",
+	1411495014,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_city",
+	1766638663,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_city_water_under_bridge",
+	3664723740,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_crowd_castle_feast_1_35m",
+	1182652320,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_crowd_castle_feast_1_for_dialog",
+	799207987,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_crowd_castle_feast_1_for_dialog_stop",
+	490293566,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_forest_leszy_lair",
+	1834130634,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_inn_crowd_med",
+	4022974922,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_inn_crowd_outside",
+	3029252893,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_inn_empty",
+	3315072573,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_path_to_castle_interior",
+	1687879539,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_village_dogs_0_all",
+	1657340489,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_village_dogs_1_RND",
+	700713617,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_village_dogs_2_RND",
+	3099628450,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_kaer_trodle_village_dogs_3_RND",
+	277270111,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_rnd_animals_falcon_1",
+	1368210197,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_rnd_rock_fall",
+	2107186681,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_rnd_sirens_calling",
+	1376234463,
+	"amb_sk_kaer_trodle"
+},
+{
+	"amb_sk_rnd_whispers",
+	98569669,
+	"amb_sk_kaer_trodle"
+},
+{
+	"cs401_sex_with_yennefer_part1",
+	1983834312,
+	"cs401_sex_with_yennefer_part1"
+},
+{
+	"cs401_sex_with_yennefer_part3",
+	1983834314,
+	"cs401_sex_with_yennefer_part3"
+},
+{
+	"cs401_sex_with_yennefer_part5",
+	1983834316,
+	"cs401_sex_with_yennefer_part5"
+},
+{
+	"cs208_becca_wins",
+	1988681354,
+	"cs208_becca_wins"
+},
+{
+	"harpy_focus_clue_100m_start",
+	3865733782,
+	"monster_harpy"
+},
+{
+	"harpy_focus_clue_100m_stop",
+	2827660950,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_attack_foot_swoosh",
+	2854062910,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_attack_hand_swoosh",
+	2539106339,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_bodyfall",
+	1910897594,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_foley",
+	1917142558,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_footsteps",
+	688344446,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_land",
+	303358574,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_wander_scratch_long",
+	2881233654,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_wander_scratch_short",
+	1297232602,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_wing_attack",
+	2911756991,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_wing_glide",
+	3684155190,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_wing_hard",
+	2991007076,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_wing_land",
+	4236860228,
+	"monster_harpy"
+},
+{
+	"monster_harpy_mv_wing_light",
+	1899967045,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vfx_virus_loop_start",
+	4011696073,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vfx_virus_loop_stop",
+	260691299,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_attack",
+	1213571405,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_block",
+	2898253968,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_death",
+	3970815121,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_idle",
+	3295657567,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_idle_rnd",
+	310902210,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_pain",
+	3417508041,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_pain_ALWAYS",
+	2628033347,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_snarl",
+	2503586369,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_snarl_ALWAYS",
+	1572268027,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_snarl_RND",
+	841093568,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_taunt_01",
+	2450198331,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_taunt_02",
+	2450198328,
+	"monster_harpy"
+},
+{
+	"monster_harpy_vo_taunt_03",
+	2450198329,
+	"monster_harpy"
+},
+{
+	"set_monster_harpy_armour_type_generic",
+	3652166085,
+	"monster_harpy"
+},
+{
+	"cs602_sex_with_shani_drunk",
+	1992470640,
+	"cs602_sex_with_shani_drunk"
+},
+{
+	"eredin_sword_swoosh_heavy",
+	978468442,
+	"magic_eredin"
+},
+{
+	"eredin_sword_swoosh_idle",
+	2899037635,
+	"magic_eredin"
+},
+{
+	"magic_eredin_appear_disappear",
+	2460103308,
+	"magic_eredin"
+},
+{
+	"magic_eredin_frost_projectile",
+	573886893,
+	"magic_eredin"
+},
+{
+	"magic_eredin_geralt_fight_fadein",
+	3913096487,
+	"magic_eredin"
+},
+{
+	"magic_eredin_geralt_fight_fadeout",
+	1798932634,
+	"magic_eredin"
+},
+{
+	"magic_eredin_icespike_tell_explosion",
+	2513377682,
+	"magic_eredin"
+},
+{
+	"magic_eredin_icespike_tell_loop_start",
+	280602474,
+	"magic_eredin"
+},
+{
+	"magic_eredin_icespike_tell_loop_stop",
+	2064917570,
+	"magic_eredin"
+},
+{
+	"magic_eredin_icespike_tell_sparks",
+	233709039,
+	"magic_eredin"
+},
+{
+	"magic_eredin_meteorite_explo",
+	1040511168,
+	"magic_eredin"
+},
+{
+	"magic_eredin_meteorite_explo_water",
+	1139770808,
+	"magic_eredin"
+},
+{
+	"magic_eredin_meteorite_marker_loop_start",
+	2573662492,
+	"magic_eredin"
+},
+{
+	"magic_eredin_meteorite_marker_loop_stop",
+	2969078768,
+	"magic_eredin"
+},
+{
+	"cs401_sex_with_yennefer_jp",
+	2009968626,
+	"cs401_sex_with_yennefer_jp"
+},
+{
+	"cs001_little_ciri_intro",
+	2018108434,
+	"cs001_little_ciri_intro"
+},
+{
+	"cs403_triss_spell_p1",
+	2053474269,
+	"cs403_triss_spell_p1"
+},
+{
+	"cs403_triss_spell_p2",
+	2053474270,
+	"cs403_triss_spell_p2"
+},
+{
+	"cs403_finale_p2",
+	2058481201,
+	"cs403_finale_p2"
+},
+{
+	"cs403_finale_p1",
+	2058481202,
+	"cs403_finale_p1"
+},
+{
+	"cs210_entering_skellige",
+	2067342016,
+	"cs210_entering_skellige"
+},
+{
+	"monster_cave_troll_attack_foot_smash",
+	1238937936,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_attack_hand_smash",
+	2262194343,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_attack_whoosh_heavy",
+	3083866811,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_attack_whoosh_medium",
+	2935057323,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_back_hit",
+	2816905601,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_block",
+	3753757221,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_blow_fire",
+	3575137177,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_blow_short",
+	883307581,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_focus_100m_start",
+	2254790278,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_focus_100m_stop",
+	940619078,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_grab_stuff",
+	789204175,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_head_scratching",
+	4141308549,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_mv_body_crack",
+	2861330241,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_mv_body_fall",
+	4100406854,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_mv_body_heavy",
+	4245084354,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_mv_body_light",
+	3976874359,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_mv_foley_ADD",
+	978553967,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_mv_footstep",
+	554765104,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_mv_footstep_shuffle",
+	712925586,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_mv_hand_touch_ground",
+	163475433,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_poke_fire",
+	2126319476,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_aggro_medium",
+	1124745954,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_aggro_short",
+	2067723335,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_attack_long",
+	1655084999,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_attack_short",
+	445997721,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_attack_special",
+	962053046,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_block",
+	353163253,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_breath_out_heavy",
+	4174727033,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_breath_out_heavy_RND",
+	3248545560,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_damage_heavy",
+	248857981,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_damage_light",
+	859615476,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_death",
+	1185448264,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_death_long",
+	334168833,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_death_medium",
+	3784398642,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_idle",
+	71874292,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_idle_ALWAYS",
+	1754627112,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_snarl_heavy",
+	4266132228,
+	"monster_cave_troll"
+},
+{
+	"monster_cave_troll_vo_snarl_light",
+	1279944065,
+	"monster_cave_troll"
+},
+{
+	"monster_ice_troll_focus_100m_start",
+	873906152,
+	"monster_cave_troll"
+},
+{
+	"monster_ice_troll_focus_100m_stop",
+	2914747060,
+	"monster_cave_troll"
+},
+{
+	"monster_ice_troll_mv_body_crack",
+	611940979,
+	"monster_cave_troll"
+},
+{
+	"monster_ice_troll_mv_body_heavy",
+	214230504,
+	"monster_cave_troll"
+},
+{
+	"monster_ice_troll_mv_body_light",
+	2956922029,
+	"monster_cave_troll"
+},
+{
+	"monster_ice_troll_mv_foley_ADD",
+	3344258125,
+	"monster_cave_troll"
+},
+{
+	"monster_troll_dialog_rock_impact",
+	2297560641,
+	"monster_cave_troll"
+},
+{
+	"monster_troll_dialog_throw_rock_swoosh",
+	1320367739,
+	"monster_cave_troll"
+},
+{
+	"set_monster_troll_armour_type_monster_ice",
+	3927816521,
+	"monster_cave_troll"
+},
+{
+	"set_monster_troll_armour_type_monster_stone",
+	2905647419,
+	"monster_cave_troll"
+},
+{
+	"monster_him_cmb_swoosh",
+	3171217493,
+	"monster_him"
+},
+{
+	"monster_him_footstep",
+	481264783,
+	"monster_him"
+},
+{
+	"monster_him_mv_movement",
+	1013125992,
+	"monster_him"
+},
+{
+	"monster_him_mv_movement_ADD",
+	3169005660,
+	"monster_him"
+},
+{
+	"monster_him_mv_movement_ADD_ALWAYS",
+	2329418448,
+	"monster_him"
+},
+{
+	"monster_him_mv_movement_ALWAYS",
+	936621996,
+	"monster_him"
+},
+{
+	"monster_him_vfx_disappear",
+	1123889525,
+	"monster_him"
+},
+{
+	"monster_him_vfx_smoke_dust",
+	962689796,
+	"monster_him"
+},
+{
+	"monster_him_vfx_transformation_block_loop_start",
+	2716370317,
+	"monster_him"
+},
+{
+	"monster_him_vfx_transformation_block_loop_stop",
+	4128979023,
+	"monster_him"
+},
+{
+	"monster_him_vo_attack",
+	1157039939,
+	"monster_him"
+},
+{
+	"monster_him_vo_attack_ALWAYS",
+	1753531285,
+	"monster_him"
+},
+{
+	"monster_him_vo_burning",
+	3627291516,
+	"monster_him"
+},
+{
+	"monster_him_vo_death",
+	1845050115,
+	"monster_him"
+},
+{
+	"monster_him_vo_growl",
+	1722171986,
+	"monster_him"
+},
+{
+	"monster_him_vo_growl_ALWAYS",
+	908691278,
+	"monster_him"
+},
+{
+	"monster_him_vo_pain",
+	951908755,
+	"monster_him"
+},
+{
+	"monster_him_vo_pain_ALWAYS",
+	3944633221,
+	"monster_him"
+},
+{
+	"monster_him_vo_taunt",
+	961790189,
+	"monster_him"
+},
+{
+	"qu_sk_203_him_hissing",
+	1561142811,
+	"monster_him"
+},
+{
+	"set_monster_him_armour_type_monster_ghost",
+	2143869182,
+	"monster_him"
+},
+{
+	"set_monster_him_invisible",
+	3329473671,
+	"monster_him"
+},
+{
+	"set_monster_him_visible",
+	4172106008,
+	"monster_him"
+},
+{
+	"cs206_riding_out_with_hjalmar",
+	2094126695,
+	"cs206_riding_out_with_hjalmar"
+},
+{
+	"cs203_give_baby_udalryk_sfx",
+	233189056,
+	"cs203_give_baby_udalryk"
+},
+{
+	"cs201_geralt_sails_sfx",
+	719935233,
+	"cs201_geralt_sails"
+},
+{
+	"cs202_enter_the_giant",
+	2138614832,
+	"cs202_enter_the_giant"
+},
+{
+	"qu_sk_210_chatting_womens",
+	1125079513,
+	"qu_skellige_210"
+},
+{
+	"qu_sk_210_lab_barrier_loop_start",
+	3041785220,
+	"qu_skellige_210"
+},
+{
+	"qu_sk_210_lab_barrier_loop_stop",
+	197634872,
+	"qu_skellige_210"
+},
+{
+	"qu_sk_210_open_door_phillpa",
+	460086035,
+	"qu_skellige_210"
+},
+{
+	"qu_sk_210_repair_stairs_magic_loop_start",
+	2723783555,
+	"qu_skellige_210"
+},
+{
+	"qu_sk_210_repair_stairs_magic_loop_stop",
+	794291201,
+	"qu_skellige_210"
+},
+{
+	"qu_sk_210_secret_door_open_loop",
+	3768044042,
+	"qu_skellige_210"
+},
+{
+	"qu_sk_210_secret_door_open_loop_stop",
+	3956500537,
+	"qu_skellige_210"
+},
+{
+	"qu_sk_210_siren_singing",
+	2891728888,
+	"qu_skellige_210"
+},
+{
+	"qu_sk_210_siren_singing_alt",
+	1798991652,
+	"qu_skellige_210"
+},
+{
+	"amb_qu_blizzard_ext_2d",
+	1333277742,
+	"amb_qu_blizzard"
+},
+{
+	"amb_qu_blizzard_ext_3d",
+	1350055353,
+	"amb_qu_blizzard"
+},
+{
+	"amb_qu_blizzard_ext_em_10m",
+	2271361019,
+	"amb_qu_blizzard"
+},
+{
+	"amb_qu_blizzard_ext_em_25m",
+	2623543907,
+	"amb_qu_blizzard"
+},
+{
+	"amb_qu_blizzard_in_3d",
+	952059461,
+	"amb_qu_blizzard"
+},
+{
+	"amb_qu_blizzard_in_3d_quiet",
+	3906431656,
+	"amb_qu_blizzard"
+},
+{
+	"monster_alghoul_agressive_snarl",
+	4065964261,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_appear",
+	1098152850,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_attack",
+	4016221809,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_attack_ALWAYS",
+	3701678731,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_attack_swoosh",
+	3612023445,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_bodyfall",
+	3040859086,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_breath",
+	1351966039,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_breath_RND",
+	3825402170,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_burn",
+	2158508774,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_calm_growl",
+	3093079222,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_calm_growl_RND",
+	3140403543,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_death",
+	1324582357,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_eat",
+	1951587445,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_focus_100m_start",
+	3494991133,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_focus_100m_stop",
+	2129301791,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_foley",
+	3331262210,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_footsteps",
+	3880499106,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_ground_scratch",
+	2021053131,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_morph_loop_start",
+	3515957035,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_morph_loop_stop",
+	3064630089,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_pain",
+	2468854997,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_pain_RND",
+	1696456060,
+	"monster_alghoul"
+},
+{
+	"monster_alghoul_short_taunt",
+	681325224,
+	"monster_alghoul"
+},
+{
+	"set_monster_alghoul_armour_type_generic",
+	4041658087,
+	"monster_alghoul"
+},
+{
+	"cs301_dreamer_nightmare",
+	2166245896,
+	"cs301_dreamer_nightmare"
+},
+{
+	"qu_sk_208_coronation_applause_1",
+	2894344550,
+	"qu_skellige_208"
+},
+{
+	"qu_sk_208_coronation_applause_2",
+	2894344549,
+	"qu_skellige_208"
+},
+{
+	"qu_sk_205_attack_hunt_horn_long",
+	136535886,
+	"qu_skellige_205"
+},
+{
+	"qu_sk_205_attack_hunt_horn_short",
+	1743363666,
+	"qu_skellige_205"
+},
+{
+	"qu_sk_205_dying_garden",
+	4001971068,
+	"qu_skellige_205"
+},
+{
+	"qu_sk_205_found_the_body",
+	1304229066,
+	"qu_skellige_205"
+},
+{
+	"qu_sk_205_jug_put_down",
+	385927738,
+	"qu_skellige_205"
+},
+{
+	"qu_sk_205_raise__from_dead",
+	3287999246,
+	"qu_skellige_205"
+},
+{
+	"qu_sk_205_ritual_amb_yen",
+	2209167472,
+	"qu_skellige_205"
+},
+{
+	"qu_sk_205_sizzle_water_bath",
+	544747876,
+	"qu_skellige_205"
+},
+{
+	"qu_sk_206_alcohol_burning",
+	2246063610,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_amb_after_massacre",
+	468825345,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_bear_waking_up_roar",
+	4197736811,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_becca_sniff_soft",
+	2347003134,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_bodyfall_down",
+	1286775146,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_chanting_mans_loop",
+	481378289,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_chanting_mans_loop_stop",
+	1393144852,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_chanting_mans_short",
+	3500157087,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_cheering_small_crowd",
+	1084864255,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_crowd_scream_reaction",
+	1165257273,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_crowd_scream_reaction_stop",
+	517110732,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_fire_brust",
+	715630361,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_footstep_glass",
+	624703211,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_gallop_fadeout",
+	643611794,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_glass_breaking",
+	3308163428,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_key_opening_box",
+	667046190,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_moving_brick",
+	1696329812,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_open_box",
+	3876457430,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_open_secret_hatch",
+	1796184184,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_pick_paper",
+	924096108,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_remove_bear_skin",
+	3839383479,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_throw_bear_head",
+	385024210,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_torch_impact",
+	1093008087,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_torch_whoosh1",
+	1982236132,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_torch_whoosh2",
+	1982236135,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_206_transform",
+	271977316,
+	"qu_skellige_206"
+},
+{
+	"qu_sk_201_crow1",
+	1685511005,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_crow2",
+	1685511006,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_crow3",
+	1685511007,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_crow4",
+	1685511000,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_dress_rip",
+	2425476214,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_gas_loop",
+	3218082085,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_gas_loop_stop",
+	441277288,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_hallucination_vfx_loop",
+	520735698,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_hallucination_vfx_loop_end",
+	871826440,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_horn_call",
+	1779795077,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_horn_on_race_start",
+	4950159,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_mead_placed_mechanism",
+	1069549474,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_morkvarg_death",
+	528351613,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_open_secret_passage",
+	1377529261,
+	"qu_skellige_201"
+},
+{
+	"qu_sk_201_trap_in_door",
+	838590109,
+	"qu_skellige_201"
+},
+{
+	"q203_01a_lightning",
+	1199721523,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_",
+	3320203071,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_baby_cry_loop",
+	3819692403,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_baby_cry_loop_stop",
+	1856749438,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_ciri_body_dissolve_vfx",
+	1684809066,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_eirik_scream",
+	1624058987,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_ghost_vision_loop",
+	3492044912,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_ghost_vision_loop_end",
+	2176014870,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_him_quest_scary",
+	2325751453,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_oven_knock",
+	1425629992,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_puting_to_oven",
+	4053375851,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_screaming_man_long",
+	2815839542,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_screaming_man_short",
+	1404070170,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_uroboros_mask_off",
+	4078444521,
+	"qu_skellige_203"
+},
+{
+	"qu_sk_203_uroboros_mask_on",
+	1847662493,
+	"qu_skellige_203"
+},
+{
+	"qu_202_cauldron_hit_long",
+	3505548050,
+	"qu_skellige_202"
+},
+{
+	"qu_202_cauldron_hit_short",
+	1778037486,
+	"qu_skellige_202"
+},
+{
+	"qu_202_folan_boils",
+	2529327709,
+	"qu_skellige_202"
+},
+{
+	"qu_202_geralt_add_snow_footsteps",
+	558094964,
+	"qu_skellige_202"
+},
+{
+	"qu_202_syrens_calling_loop_start",
+	2192449074,
+	"qu_skellige_202"
+},
+{
+	"qu_202_syrens_calling_loop_stop",
+	1579090538,
+	"qu_skellige_202"
+},
+{
+	"qu_sk_202_06d_open_cave_rocks",
+	2306446972,
+	"qu_skellige_202"
+},
+{
+	"qu_sk_202_cauldron_hit_long",
+	3950263413,
+	"qu_skellige_202"
+},
+{
+	"qu_sk_202_cauldron_hit_short",
+	4153303251,
+	"qu_skellige_202"
+},
+{
+	"qu_sk_202_hornwal_horn",
+	2541073647,
+	"qu_skellige_202"
+},
+{
+	"grunt_vo_agony",
+	3604533624,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_agony_end",
+	2269873918,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_attack_long",
+	3644397417,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_attack_long_ALWAYS",
+	561525283,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_attack_medium",
+	1039281658,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_attack_medium_ALWAYS",
+	519880790,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_attack_short",
+	4055069695,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_attack_short_ALWAYS",
+	3430882369,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_attack_short_RND",
+	3242351522,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_block",
+	1993327423,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_burn_dmg",
+	3180714690,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_burn_dmg_end",
+	1860819992,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_burn_recovery",
+	1522559591,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_death",
+	209757778,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_death_last_breath",
+	568971658,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_death_stop",
+	2458096881,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_dodge",
+	1035580193,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_grunt",
+	1456643074,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_impact_heavy",
+	1625123410,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_impact_heavy_ALWAYS",
+	2761801550,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_impact_light",
+	1777262823,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_impact_light_ALWAYS",
+	1105490537,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_impact_light_RND",
+	127149386,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_shock",
+	3985992122,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_throat_cut",
+	1902649411,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_throat_gurgling",
+	1658875032,
+	"grunt_vo_imlerith"
+},
+{
+	"grunt_vo_throat_gurgling_sparse",
+	1433536311,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_attack_long_ALWAYS",
+	3623814830,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_attack_medium_ALWAYS",
+	3791880103,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_attack_short_ALWAYS",
+	1868473450,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_burn_dmg_RND",
+	3479660250,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_death_RND",
+	909264800,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_start",
+	3275716446,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_stop",
+	1756125182,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_m_burn_dmg_end",
+	2077504813,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_m_impact_heavy",
+	4109997507,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_m_impact_light",
+	1900386010,
+	"grunt_vo_imlerith"
+},
+{
+	"scene_grunt_vo_m_throat_cut",
+	3188734954,
+	"grunt_vo_imlerith"
+},
+{
+	"amb_qu_battle_1_100m",
+	1980426946,
+	"amb_qu_battle"
+},
+{
+	"amb_qu_battle_underwater_1",
+	224773203,
+	"amb_qu_battle"
+},
+{
+	"cs301_dandelion_zoltan_intro",
+	2217945484,
+	"cs301_dandelion_zoltan_intro"
+},
+{
+	"monster_uma_bell_heavy",
+	3119143697,
+	"monster_uma"
+},
+{
+	"monster_uma_bell_light",
+	2172039264,
+	"monster_uma"
+},
+{
+	"monster_uma_clothes_intense",
+	2079137481,
+	"monster_uma"
+},
+{
+	"monster_uma_clothes_light",
+	2613127399,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_bell_heavy",
+	144833318,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_bell_light",
+	1307965939,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_clothes_intense",
+	3513492272,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_clothes_light",
+	1937715898,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_footsteps",
+	3429625346,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_between_torture",
+	2444229905,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_breath",
+	2679634413,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_breath_agony",
+	133071716,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_breath_agony_bow",
+	3316930573,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_calm_mumble",
+	2215743507,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_calm_mumble_always",
+	631497477,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_excited_pain",
+	2718002150,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_fear",
+	1426997325,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_happy",
+	687566075,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_pain_extreme",
+	3899051306,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_pain_medium",
+	107737767,
+	"monster_uma"
+},
+{
+	"monster_uma_dialog_vo_pain_short",
+	1323280440,
+	"monster_uma"
+},
+{
+	"monster_uma_footsteps",
+	3693465671,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_between_torture",
+	3071590954,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_breath",
+	2638426760,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_breath_agony",
+	3175416485,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_calm_mumble",
+	2154109288,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_excited_pain",
+	3946222275,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_fear",
+	456988952,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_happy",
+	1747588176,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_pain_extreme",
+	4247680947,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_pain_medium",
+	2110340224,
+	"monster_uma"
+},
+{
+	"monster_uma_vo_pain_short",
+	2622701693,
+	"monster_uma"
+},
+{
+	"cs103_introduction_of_uma",
+	2223043136,
+	"cs103_introduction_of_uma"
+},
+{
+	"cs501_naglfar_freezes",
+	2245182508,
+	"cs501_naglfar_freezes"
+},
+{
+	"magic_triss_cast",
+	2422402452,
+	"magic_triss"
+},
+{
+	"magic_triss_cast_disspelling_start",
+	1077921222,
+	"magic_triss"
+},
+{
+	"magic_triss_cast_disspelling_stop",
+	530049670,
+	"magic_triss"
+},
+{
+	"magic_triss_fx_push",
+	4110268866,
+	"magic_triss"
+},
+{
+	"magic_triss_hand_fx_end",
+	4177230821,
+	"magic_triss"
+},
+{
+	"magic_triss_hand_fx_loop_start",
+	1582034205,
+	"magic_triss"
+},
+{
+	"magic_triss_hand_fx_loop_stop",
+	2785319199,
+	"magic_triss"
+},
+{
+	"magic_triss_hand_fx_start",
+	163149422,
+	"magic_triss"
+},
+{
+	"magic_triss_q303_kill",
+	2318395045,
+	"magic_triss"
+},
+{
+	"magic_triss_q303_power",
+	424697312,
+	"magic_triss"
+},
+{
+	"magic_triss_quen_force_discharge_loop_start",
+	828802901,
+	"magic_triss"
+},
+{
+	"magic_triss_quen_force_discharge_loop_stop",
+	1544856631,
+	"magic_triss"
+},
+{
+	"magic_triss_summoned_light_start",
+	4011554503,
+	"magic_triss"
+},
+{
+	"magic_triss_summoned_light_stop",
+	2201780333,
+	"magic_triss"
+},
+{
+	"magic_triss_teleport",
+	511939412,
+	"magic_triss"
+},
+{
+	"magic_triss_teleport_q502",
+	1779168311,
+	"magic_triss"
+},
+{
+	"cs202_trollcave_holster_sword",
+	2265211788,
+	"cs202_trollcave_holster_sword"
+},
+{
+	"mh_nv_101_cockatrice_shreeking_long",
+	1018447461,
+	"mh_nml_101"
+},
+{
+	"mh_nv_101_cockatrice_shreeking_short",
+	1902582851,
+	"mh_nml_101"
+},
+{
+	"magic_illusion_start",
+	656251561,
+	"magic_illusion"
+},
+{
+	"magic_illusion_stop",
+	2646303171,
+	"magic_illusion"
+},
+{
+	"cs305_ciri_disappear",
+	2295116079,
+	"cs305_ciri_disappear"
+},
+{
+	"cs203_him_shows",
+	2305112556,
+	"cs203_him_shows"
+},
+{
+	"mq_sk_2039_hit_cauldrons",
+	2177322087,
+	"mq_sk_2039"
+},
+{
+	"monster_gargoyle_attack_swoosh",
+	4057203959,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_bodyfall",
+	2412678696,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_chest_hit",
+	3337742220,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_focus_100m_start",
+	564312371,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_focus_100m_stop",
+	922817393,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_foley_heavy",
+	2167539852,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_foley_light",
+	1945234137,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_footsteps",
+	3368287736,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_kneel",
+	891670782,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_stomp",
+	14393414,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vfx_special_attack_ADD",
+	667434196,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vfx_vomit_add_fx_start",
+	1488608467,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vfx_vomit_add_fx_stop",
+	1211530897,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_attack_long",
+	1199759378,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_attack_long_ALWAYS",
+	1977215758,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_attack_short",
+	258138606,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_attack_short_ALWAYS",
+	1159862218,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_attack_vomit",
+	1735731497,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_death",
+	1360378689,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_idle",
+	540570639,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_idle_ALWAYS",
+	2755443377,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_laugh",
+	4097025512,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_laugh_ALWAYS",
+	175725356,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_laugh_RND",
+	2415420005,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_pain",
+	3252115993,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_pain_ALWAYS",
+	1547565299,
+	"monster_gargoyle"
+},
+{
+	"monster_gargoyle_vo_taunt",
+	2858925287,
+	"monster_gargoyle"
+},
+{
+	"set_monster_gargoyle_armour_type",
+	46388013,
+	"monster_gargoyle"
+},
+{
+	"set_monster_gargoyle_armour_type_monster_stone",
+	1327853968,
+	"monster_gargoyle"
+},
+{
+	"cs604_unmasking_p1",
+	2315633065,
+	"cs604_unmasking_p1"
+},
+{
+	"cs604_unmasking_p2",
+	2315633066,
+	"cs604_unmasking_p2"
+},
+{
+	"monster_wildhunt_minion_agressive_snarl",
+	31419083,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_attack",
+	659079863,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_attack_RND",
+	3923510618,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_attack_swoosh",
+	4189342231,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_bodyfall",
+	2937224968,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_breath",
+	453001861,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_breath_RND",
+	297569196,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_calm_growl",
+	1020237620,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_calm_growl_RND",
+	2565327241,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_death",
+	4024518583,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_eat",
+	2636607311,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_focus_100m_start",
+	1667641875,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_focus_100m_stop",
+	1678240209,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_foley",
+	1140518876,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_footsteps",
+	3138156376,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_ground_scratch",
+	2600201101,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_ice_armor_loop_start",
+	2297870276,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_ice_armor_loop_stop",
+	3614178168,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_ice_spike_attack_hands",
+	2066588341,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_ice_spike_back",
+	233658111,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_ice_spike_out",
+	4022795974,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_marker_fx",
+	1234106602,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_morph_fx_loop_start",
+	1087506960,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_morph_fx_loop_stop",
+	215929340,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_pain",
+	2774316911,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_pain_RND",
+	1149995986,
+	"monster_wildhunt_minion"
+},
+{
+	"monster_wildhunt_minion_short_taunt",
+	1242164174,
+	"monster_wildhunt_minion"
+},
+{
+	"set_monster_wildhunt_minion_armour_type_monster_wildhunt_minion",
+	3155045649,
+	"monster_wildhunt_minion"
+},
+{
+	"cs202_harpies_destroy_bridge",
+	2330522977,
+	"cs202_harpies_destroy_bridge"
+},
+{
+	"amb_dyn_bridge_bell_EXT_EM",
+	325225852,
+	"amb_dyn_temple_bell"
+},
+{
+	"amb_dyn_temple_bell_EXT_EM",
+	3684099956,
+	"amb_dyn_temple_bell"
+},
+{
+	"amb_dyn_tower_bell_EXT_12",
+	114430363,
+	"amb_dyn_temple_bell"
+},
+{
+	"amb_dyn_tower_bell_EXT_8",
+	2916980058,
+	"amb_dyn_temple_bell"
+},
+{
+	"cs111_witch_transform_p2",
+	2340237472,
+	"cs111_witch_transform_p2"
+},
+{
+	"cs_sq301_geralt_triss_kiss_choice_loop",
+	2357220026,
+	"cs_sq301_geralt_triss_kiss_choice_loop"
+},
+{
+	"cs105_sweets",
+	2389720003,
+	"cs105_sweets"
+},
+{
+	"mq_nv_3015_cage_open",
+	2115328996,
+	"mq_nv_3015"
+},
+{
+	"cs603_vault_closes",
+	2395237799,
+	"cs603_vault_closes"
+},
+{
+	"amb_dyn_necromancy_drone_EXT_dialog_start",
+	3640576222,
+	"amb_dyn_necromancy_drone"
+},
+{
+	"amb_dyn_necromancy_drone_EXT_dialog_stop",
+	2401808510,
+	"amb_dyn_necromancy_drone"
+},
+{
+	"bomb_cluster_explo",
+	236753601,
+	"bombs"
+},
+{
+	"bomb_dancing_star_explo",
+	1974177036,
+	"bombs"
+},
+{
+	"bomb_dancing_star_fire_loop",
+	1236510667,
+	"bombs"
+},
+{
+	"bomb_dancing_star_fire_loop_stop",
+	2839119942,
+	"bombs"
+},
+{
+	"bomb_dancing_star_sparks_sizzle",
+	1487763774,
+	"bombs"
+},
+{
+	"bomb_devils_puffball_explo",
+	1894541485,
+	"bombs"
+},
+{
+	"bomb_devils_puffball_ground_loop",
+	66144685,
+	"bombs"
+},
+{
+	"bomb_devils_puffball_ground_loop_stop",
+	3106789088,
+	"bombs"
+},
+{
+	"bomb_dimeritium_activation_loop",
+	328072479,
+	"bombs"
+},
+{
+	"bomb_dimeritium_activation_loop_end",
+	2609523585,
+	"bombs"
+},
+{
+	"bomb_dimeritium_ground_loop",
+	3385165188,
+	"bombs"
+},
+{
+	"bomb_dimeritium_ground_loop_end",
+	174352474,
+	"bombs"
+},
+{
+	"bomb_dimeritum_explo",
+	1004106857,
+	"bombs"
+},
+{
+	"bomb_dragons_dream_explo",
+	3060558215,
+	"bombs"
+},
+{
+	"bomb_freeze_to_death_explo",
+	1472788647,
+	"bombs"
+},
+{
+	"bomb_freeze_to_death_ground_loop",
+	513784895,
+	"bombs"
+},
+{
+	"bomb_freeze_to_death_ground_loop_stop",
+	4103217546,
+	"bombs"
+},
+{
+	"bomb_fungi_explo",
+	4120060708,
+	"bombs"
+},
+{
+	"bomb_glue_explo",
+	1305984872,
+	"bombs"
+},
+{
+	"bomb_grapeshot_explo",
+	3974881050,
+	"bombs"
+},
+{
+	"bomb_grapeshot_fragmentation",
+	4250161651,
+	"bombs"
+},
+{
+	"bomb_salt_explo",
+	4065404027,
+	"bombs"
+},
+{
+	"bomb_samum_explo",
+	3510306108,
+	"bombs"
+},
+{
+	"bomb_shrapnel_explo",
+	3879751288,
+	"bombs"
+},
+{
+	"bomb_silver_dust_explo",
+	1358636969,
+	"bombs"
+},
+{
+	"bomb_virus_explo",
+	1509238256,
+	"bombs"
+},
+{
+	"bomb_white_frost_explo",
+	2408863999,
+	"bombs"
+},
+{
+	"bomb_white_frost_ground_loop",
+	1302513863,
+	"bombs"
+},
+{
+	"bomb_white_frost_ground_loop_stop",
+	4085188034,
+	"bombs"
+},
+{
+	"mq_sk_2050_fart_long",
+	2279562421,
+	"mq_sk_2050"
+},
+{
+	"mq_sk_2050_fart_reverb",
+	1328079363,
+	"mq_sk_2050"
+},
+{
+	"mq_sk_2050_fart_short",
+	1991123219,
+	"mq_sk_2050"
+},
+{
+	"mq_sk_2050_Human_fart",
+	329136490,
+	"mq_sk_2050"
+},
+{
+	"mq_nv_3026_Crowd_cheering",
+	1406860784,
+	"mq_nv_3026"
+},
+{
+	"cs603_horst_dies",
+	2416557055,
+	"cs603_horst_dies"
+},
+{
+	"cs201_teleport_back",
+	2421027238,
+	"cs201_teleport_back"
+},
+{
+	"mq_nv_3035_city_bell_loop",
+	2619841187,
+	"mq_nv_3035"
+},
+{
+	"mq_nv_3035_city_bell_loop2",
+	1968729771,
+	"mq_nv_3035"
+},
+{
+	"mq_nv_3035_city_bell_loop2_stop",
+	290518758,
+	"mq_nv_3035"
+},
+{
+	"mq_nv_3035_city_bell_loop_stop",
+	1145109838,
+	"mq_nv_3035"
+},
+{
+	"mq_nv_3035_sword_fight_loop_EM",
+	2604419763,
+	"mq_nv_3035"
+},
+{
+	"mq_nv_3035_unlock_door",
+	100718686,
+	"mq_nv_3035"
+},
+{
+	"mq_nv_3037_close_sacrophagus",
+	1981648336,
+	"mq_nv_3037"
+},
+{
+	"mq_nv_3037_open_sacrophagus",
+	4042890926,
+	"mq_nv_3037"
+},
+{
+	"cs106_anabelle_kisses_graham",
+	2440058029,
+	"cs106_anabelle_kisses_graham"
+},
+{
+	"cs501_naglfar_arrives",
+	2445505960,
+	"cs501_naglfar_arrives"
+},
+{
+	"amb_nml_g_BG_field_insects_intense_1_40m",
+	927703801,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_field_insects_intense_1_quiet_80m",
+	1319871592,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_field_insects_intense_2_40m",
+	1843174454,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_field_insects_intense_2_quiet_80m",
+	2030793963,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_field_insects_intense_3_40m",
+	2272968359,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_keiras_birds",
+	2828445744,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_keiras_secret_place",
+	3215242384,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_night_crickets_1_40m",
+	3011252565,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_night_crickets_1_40m_low",
+	4072920214,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_night_crickets_1_40m_quiet",
+	3483193272,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_night_crickets_2_25m_quiet",
+	1870363118,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_night_crickets_2_40m",
+	1042017826,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_night_crickets_2_40m_low",
+	2147295929,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_night_crickets_6_40m",
+	365942862,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_BG_night_crickets_6_40m_quiet",
+	4069209135,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_country_day_01",
+	3387324909,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_courtyard_empty_01",
+	1303256219,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_black_woodpecker_call_80m",
+	4020885508,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_black_woodpecker_call_drm_80m",
+	531714934,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_black_woodpecker_drm_close_80m",
+	995518526,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_blackbird_1_120m",
+	3312420483,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_blackbird_1_80m",
+	494692216,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_blackcap_1_120m",
+	4012379154,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_blue_tit_1_70m",
+	2583132081,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_chaffinch_1_80m",
+	1757837074,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_chaffinch_2_120m",
+	2439892444,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_cuckoo_1_140m",
+	3590489045,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_cuckoo_2_full_140m",
+	3245748318,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_dove_1",
+	472603640,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_dove_2",
+	472603643,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_eurasian_wren_1_80m",
+	3691908825,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_house_sparrow_1_70m",
+	3762405850,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_keiras_woodpecker_0_40m",
+	2427677192,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_night_bird_1_120m",
+	2971342939,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_night_bird_2_120m",
+	4055186574,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_night_bird_3_120m",
+	1629658081,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_night_nightingale_close_1_120m",
+	3952399479,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_night_nightingale_close_2_120m",
+	1235457994,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_night_owl_1_80m",
+	3300024221,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_night_owl_2_boreal_80m",
+	41527436,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_night_owl_3_tawny_80m",
+	3650054881,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_night_spooky_raven_120m",
+	48545040,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_oriole_f_1_120m",
+	2189781252,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_oriole_m_1_120m",
+	582680641,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_raven_close_1_120m",
+	1604431674,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_raven_close_2_120m",
+	1431507239,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_raven_far_1_120m",
+	3833664371,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_reed_warbler_1_80m",
+	1234109416,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_reed_warbler_2_80m",
+	4147148111,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_rooster_crow_close_80m",
+	2716479627,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_rooster_crow_far_80m",
+	1164899868,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_seagull_1",
+	1279830349,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_seagull_2",
+	1279830350,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_seagull_3",
+	1279830351,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_skylark_1_80m",
+	1716388791,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_willow_warbler_1_70m",
+	3641877581,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_willow_warbler_2_forest_70m",
+	464139200,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_bird_wood_warbler_1_80m",
+	1698302175,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_birdop_bald_eagle_1_120m",
+	1980247696,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_birdop_common_buzzard_1_120m",
+	752674270,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_birdop_hawk_1_120m",
+	101624263,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_birdop_saker_falcon_1_120m",
+	120138188,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_deer_bark_far_01",
+	3491170467,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_deer_bark_far_02",
+	3491170464,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_deer_bark_far_03",
+	3491170465,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_deer_roar_01",
+	2712251163,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_dog_med_1_barking_far",
+	1598192628,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_dog_med_1_barking_med",
+	1935171893,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_dog_med_1_barking_near",
+	1810403539,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_dog_med_1_barking_near_rare",
+	2751206182,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_dog_med_2_barking_far",
+	4292071255,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_f1_mix_bird_1_140m",
+	3577574895,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_f1_mix_bird_2_140m",
+	1642155030,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_f1_mix_bird_3_140m",
+	2910476709,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_f1_mix_bird_4_140m",
+	1898896676,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_f3_mix_bird_1_140m",
+	386187365,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_f3_mix_bird_2_dove_140m",
+	2223459827,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_f3_mix_bird_3_140m",
+	1053285295,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_f4_mix_bird_1_140m",
+	2093365818,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_f4_mix_bird_2_140m",
+	42417555,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_frog_far_00",
+	3581467463,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_frog_far_02",
+	3581467461,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_frog_far_05_swamp",
+	2499349899,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_bee_close_01",
+	1702487918,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_bumblebee_close_01",
+	3228224737,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_bumblebee_close_02",
+	3228224738,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_cricket_close_01a",
+	2313904242,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_cricket_close_01b",
+	2313904241,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_cricket_close_02_down",
+	993489421,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_cricket_close_02_up",
+	1949117946,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_flies_1_RND",
+	840252059,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_grasshopper_close_01",
+	3909608782,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_grasshopper_close_02",
+	3909608781,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_grasshopper_close_03",
+	3909608780,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_grasshopper_close_04",
+	3909608779,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_mosquito_1_RND",
+	3823297923,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_insect_mosquito_2_RND",
+	807643656,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_night_fox_scream_closer_1_120m",
+	2980858584,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_night_fox_scream_far_1_120m",
+	1717109245,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_night_fox_scream_far_2_120m",
+	1826893124,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_animal_wolf_howl_far_01",
+	296833787,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_spooky_monsters_01",
+	2073812026,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_swamp_bubbles_2_mud_RND",
+	4268005914,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_swamp_bubbles_2_mud_RND_intense",
+	415778113,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_tree_creaks_big_1",
+	2899248172,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_wind_whistling_1",
+	1327032065,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_wind_whistling_1_DIALOG",
+	258602364,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_wind_whistling_1_DIALOG_end",
+	1433155378,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_work__blacksmith_tools_handling",
+	2713292642,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_work_blacksmith_hits",
+	4059173420,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_EM_work_man_snoring_1",
+	2649798082,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_01_medium_dense_1",
+	3258337919,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_01_medium_normal_1",
+	3802452639,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_01_medium_thin_1",
+	3310761775,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_02_i_medium_dense_1",
+	3283423766,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_02_i_medium_normal_1",
+	1327376288,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_02_i_medium_thin_1",
+	1330994000,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_03_medium_dense_1",
+	2119966781,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_03_medium_normal_1",
+	2434884941,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_03_medium_thin_1",
+	3326882317,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_04_medium_dense_1",
+	1326686840,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_04_medium_normal_1",
+	3185621818,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_04_medium_thin_1",
+	1337456058,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_05_medium_dense_1",
+	1929998163,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_05_medium_normal_1",
+	2028277627,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_05_medium_thin_1",
+	4237283691,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_07_medium_dense_1",
+	370741185,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_07_medium_normal_1",
+	1658648505,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_FOREST_07_medium_thin_1",
+	621441273,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_rain",
+	2326426722,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_swamp_01_glade",
+	3758898840,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_swamp_01_trees",
+	3175662404,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_village_live_1",
+	3885869041,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_village_live_2",
+	3885869042,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_water_canal_medium",
+	4340973,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_water_sewers_canal",
+	1304619729,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_water_sewers_canal_up",
+	2884447235,
+	"amb_nml_global"
+},
+{
+	"amb_nml_G_WIND_and_RAIN_START",
+	653853892,
+	"amb_nml_global"
+},
+{
+	"amb_nml_G_WIND_and_RAIN_STOP",
+	189045368,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_forest_01_medium_dense",
+	2811958446,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_forest_01_medium_dense_add",
+	815288014,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_forest_01_medium_normal",
+	112890484,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_forest_01_medium_thin",
+	2516076244,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_forest_01_small_bushes_dense",
+	1440708145,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_forest_01_small_bushes_thin",
+	3960522289,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_grass_high_01",
+	2875129506,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_grass_reed_01_dense",
+	980720714,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_grass_reed_01_thin",
+	2543467160,
+	"amb_nml_global"
+},
+{
+	"amb_nml_g_wind_open",
+	1672065549,
+	"amb_nml_global"
+},
+{
+	"amb_pause_all",
+	75307180,
+	"amb_nml_global"
+},
+{
+	"amb_resume_all",
+	679718387,
+	"amb_nml_global"
+},
+{
+	"cs403_finale_sword",
+	2456218678,
+	"cs403_finale_sword"
+},
+{
+	"monster_fugas_attack_swoosh",
+	3517307369,
+	"monster_fugas"
+},
+{
+	"monster_fugas_bodyfall",
+	284424674,
+	"monster_fugas"
+},
+{
+	"monster_fugas_bodyfall_custom",
+	2203049272,
+	"monster_fugas"
+},
+{
+	"monster_fugas_chest_hit",
+	4032517514,
+	"monster_fugas"
+},
+{
+	"monster_fugas_chest_hit_custom",
+	3626731648,
+	"monster_fugas"
+},
+{
+	"monster_fugas_fire_start",
+	841256768,
+	"monster_fugas"
+},
+{
+	"monster_fugas_fire_stop",
+	333216492,
+	"monster_fugas"
+},
+{
+	"monster_fugas_focus_100m_start",
+	3137175881,
+	"monster_fugas"
+},
+{
+	"monster_fugas_focus_100m_stop",
+	3791478243,
+	"monster_fugas"
+},
+{
+	"monster_fugas_foley_heavy",
+	61679214,
+	"monster_fugas"
+},
+{
+	"monster_fugas_foley_heavy_custom",
+	1272021908,
+	"monster_fugas"
+},
+{
+	"monster_fugas_foley_light",
+	2873349579,
+	"monster_fugas"
+},
+{
+	"monster_fugas_footsteps",
+	4099690582,
+	"monster_fugas"
+},
+{
+	"monster_fugas_footsteps_custom",
+	837651516,
+	"monster_fugas"
+},
+{
+	"monster_fugas_kneel",
+	1075588504,
+	"monster_fugas"
+},
+{
+	"monster_fugas_kneel_custom",
+	2720292618,
+	"monster_fugas"
+},
+{
+	"monster_fugas_projectile_explo",
+	4075991991,
+	"monster_fugas"
+},
+{
+	"monster_fugas_stomp",
+	3727074400,
+	"monster_fugas"
+},
+{
+	"monster_fugas_stomp_custom",
+	1088545490,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_attack_long",
+	1905867068,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_attack_long_ALWAYS",
+	2580661360,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_attack_short",
+	1661409092,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_attack_short_ALWAYS",
+	2598942552,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_attack_short_custom",
+	1629231158,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_death",
+	1060734283,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_idle",
+	2263039317,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_idle_ALWAYS",
+	1592723887,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_idle_custom",
+	1983526185,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_laugh",
+	1528000758,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_laugh_ALWAYS",
+	2845538994,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_laugh_RND",
+	2927154839,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_pain",
+	2508768027,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_pain_ALWAYS",
+	4195923565,
+	"monster_fugas"
+},
+{
+	"monster_fugas_vo_taunt",
+	3697196469,
+	"monster_fugas"
+},
+{
+	"set_monster_fugas_armour_type_generic",
+	3103840279,
+	"monster_fugas"
+},
+{
+	"q605_blood",
+	2103910972,
+	"qu_ep1_605"
+},
+{
+	"q605_bottle_down",
+	1551336939,
+	"qu_ep1_605"
+},
+{
+	"q605_ceiling_creaks_1",
+	2008090395,
+	"qu_ep1_605"
+},
+{
+	"q605_ceiling_creaks_2",
+	2008090392,
+	"qu_ep1_605"
+},
+{
+	"q605_ceiling_creaks_3",
+	2008090393,
+	"qu_ep1_605"
+},
+{
+	"q605_ceiling_creaks_rnd",
+	4056713078,
+	"qu_ep1_605"
+},
+{
+	"q605_geralt_mark",
+	4007739193,
+	"qu_ep1_605"
+},
+{
+	"q605_letter_down",
+	584540571,
+	"qu_ep1_605"
+},
+{
+	"q605_letter_give",
+	2421892544,
+	"qu_ep1_605"
+},
+{
+	"q605_mirror_appears",
+	3209168346,
+	"qu_ep1_605"
+},
+{
+	"q605_mirror_clothes",
+	2584584920,
+	"qu_ep1_605"
+},
+{
+	"q605_mirror_dissapear",
+	2342217076,
+	"qu_ep1_605"
+},
+{
+	"q605_mirror_jump",
+	3107883604,
+	"qu_ep1_605"
+},
+{
+	"q605_mirror_step_01",
+	2713208916,
+	"qu_ep1_605"
+},
+{
+	"q605_mirror_step_02",
+	2713208919,
+	"qu_ep1_605"
+},
+{
+	"q605_mirror_step_03",
+	2713208918,
+	"qu_ep1_605"
+},
+{
+	"q605_olgierd_feelings",
+	145912076,
+	"qu_ep1_605"
+},
+{
+	"q605_sabre_cut_flesh",
+	3711751799,
+	"qu_ep1_605"
+},
+{
+	"q605_sabre_unsheath",
+	354844442,
+	"qu_ep1_605"
+},
+{
+	"q605_sabre_whoosh_p1",
+	2331643192,
+	"qu_ep1_605"
+},
+{
+	"q605_sabre_whoosh_p2",
+	2331643195,
+	"qu_ep1_605"
+},
+{
+	"q605_soup_splash",
+	1115886001,
+	"qu_ep1_605"
+},
+{
+	"q605_spoon",
+	4020147003,
+	"qu_ep1_605"
+},
+{
+	"q605_whistle",
+	260745298,
+	"qu_ep1_605"
+},
+{
+	"qu_605_floor_collapse",
+	1438218992,
+	"qu_ep1_605"
+},
+{
+	"qu_605_mirror_shatter",
+	871816919,
+	"qu_ep1_605"
+},
+{
+	"qu_605_time_freeze_bkg",
+	2870151510,
+	"qu_ep1_605"
+},
+{
+	"qu_605_time_freeze_handclap",
+	268256131,
+	"qu_ep1_605"
+},
+{
+	"qu_605_time_param_freeze",
+	2858444949,
+	"qu_ep1_605"
+},
+{
+	"qu_605_time_param_restart",
+	1990108821,
+	"qu_ep1_605"
+},
+{
+	"qu_605_time_restart_bkg",
+	3829259018,
+	"qu_ep1_605"
+},
+{
+	"q604_black_spider_digout",
+	3105920619,
+	"qu_ep1_604"
+},
+{
+	"q604_caretaker_digging",
+	2695129321,
+	"qu_ep1_604"
+},
+{
+	"q604_chandelier_chain_break",
+	907232512,
+	"qu_ep1_604"
+},
+{
+	"q604_chandelier_fall",
+	605435318,
+	"qu_ep1_604"
+},
+{
+	"q604_chandelier_prefall",
+	2025213175,
+	"qu_ep1_604"
+},
+{
+	"q604_dagger_unsheath",
+	837917422,
+	"qu_ep1_604"
+},
+{
+	"q604_door_check",
+	3260016582,
+	"qu_ep1_604"
+},
+{
+	"q604_enter_painting",
+	121316082,
+	"qu_ep1_604"
+},
+{
+	"q604_fire_start",
+	4050223486,
+	"qu_ep1_604"
+},
+{
+	"q604_fistfight",
+	2823008333,
+	"qu_ep1_604"
+},
+{
+	"q604_geralt_dig",
+	230028145,
+	"qu_ep1_604"
+},
+{
+	"q604_geralt_dig_end",
+	2035232691,
+	"qu_ep1_604"
+},
+{
+	"q604_geralt_enters_painting",
+	2309555705,
+	"qu_ep1_604"
+},
+{
+	"q604_ghouls_appear",
+	3148558771,
+	"qu_ep1_604"
+},
+{
+	"q604_house_breaths_loop_40m",
+	4116540106,
+	"qu_ep1_604"
+},
+{
+	"q604_house_noises_loud_loop_40m",
+	500063645,
+	"qu_ep1_604"
+},
+{
+	"q604_house_noises_loud_quest",
+	4126467991,
+	"qu_ep1_604"
+},
+{
+	"q604_house_noises_medium_loop_40m",
+	3621267738,
+	"qu_ep1_604"
+},
+{
+	"q604_house_screams_loop_40m",
+	1773572423,
+	"qu_ep1_604"
+},
+{
+	"q604_iris_appears",
+	177333525,
+	"qu_ep1_604"
+},
+{
+	"q604_iris_creates_painting",
+	193343591,
+	"qu_ep1_604"
+},
+{
+	"q604_iris_enters_painting",
+	4171306251,
+	"qu_ep1_604"
+},
+{
+	"q604_painting_creature",
+	1158582445,
+	"qu_ep1_604"
+},
+{
+	"q604_painting_cut",
+	2951267938,
+	"qu_ep1_604"
+},
+{
+	"q604_painting_fall",
+	641172169,
+	"qu_ep1_604"
+},
+{
+	"q604_paper_burn_whoosh",
+	421016070,
+	"qu_ep1_604"
+},
+{
+	"q604_paper_crumple",
+	463039732,
+	"qu_ep1_604"
+},
+{
+	"q604_paper_grab",
+	2728994560,
+	"qu_ep1_604"
+},
+{
+	"q604_summon_evil",
+	999251503,
+	"qu_ep1_604"
+},
+{
+	"q604_washing_close",
+	2830912991,
+	"qu_ep1_604"
+},
+{
+	"q604_washing_distant",
+	2715632288,
+	"qu_ep1_604"
+},
+{
+	"q601_bottle",
+	908737704,
+	"qu_ep1_601"
+},
+{
+	"q601_bowl_throw",
+	49798605,
+	"qu_ep1_601"
+},
+{
+	"q601_couch_hit",
+	625639236,
+	"qu_ep1_601"
+},
+{
+	"q601_dagger_impact",
+	4110493027,
+	"qu_ep1_601"
+},
+{
+	"q601_dagger_throw",
+	1688982487,
+	"qu_ep1_601"
+},
+{
+	"q601_dat_azz_reaction",
+	2564386751,
+	"qu_ep1_601"
+},
+{
+	"q601_drowner_run",
+	1944072549,
+	"qu_ep1_601"
+},
+{
+	"q601_fistbump",
+	3410848554,
+	"qu_ep1_601"
+},
+{
+	"q601_geralt_run",
+	1989762253,
+	"qu_ep1_601"
+},
+{
+	"q601_hammer",
+	1709161218,
+	"qu_ep1_601"
+},
+{
+	"q601_mark_burn",
+	3995494569,
+	"qu_ep1_601"
+},
+{
+	"q601_mirror_teleport",
+	2112436349,
+	"qu_ep1_601"
+},
+{
+	"q601_mirror_whistle",
+	2304490162,
+	"qu_ep1_601"
+},
+{
+	"q601_olgierd_sabre_draw",
+	63821141,
+	"qu_ep1_601"
+},
+{
+	"q601_reanimation_close",
+	3274123354,
+	"qu_ep1_601"
+},
+{
+	"q601_reanimation_middle",
+	2902794669,
+	"qu_ep1_601"
+},
+{
+	"q601_reanimation_start",
+	1853033134,
+	"qu_ep1_601"
+},
+{
+	"q601_smack_dat_ass",
+	2055852759,
+	"qu_ep1_601"
+},
+{
+	"q601_statue_fall",
+	19343216,
+	"qu_ep1_601"
+},
+{
+	"q601_torch_throw_p1",
+	199026103,
+	"qu_ep1_601"
+},
+{
+	"q601_torch_throw_p2",
+	199026100,
+	"qu_ep1_601"
+},
+{
+	"q603_apple_bite",
+	1366231959,
+	"qu_ep1_603"
+},
+{
+	"q603_apple_blow_up",
+	1011031343,
+	"qu_ep1_603"
+},
+{
+	"q603_apple_eating",
+	1607436615,
+	"qu_ep1_603"
+},
+{
+	"q603_apple_throw_away",
+	753443848,
+	"qu_ep1_603"
+},
+{
+	"q603_auction_hammer",
+	967378046,
+	"qu_ep1_603"
+},
+{
+	"q603_boar_attack",
+	830390473,
+	"qu_ep1_603"
+},
+{
+	"q603_box_drop",
+	1758811803,
+	"qu_ep1_603"
+},
+{
+	"q603_circus_crowd_aghast",
+	3567532804,
+	"qu_ep1_603"
+},
+{
+	"q603_circus_crowd_applause",
+	406140769,
+	"qu_ep1_603"
+},
+{
+	"q603_circus_crowd_welcoming",
+	997348201,
+	"qu_ep1_603"
+},
+{
+	"q603_coin_purse_drop",
+	1735890595,
+	"qu_ep1_603"
+},
+{
+	"q603_crow_flyaway",
+	2372239459,
+	"qu_ep1_603"
+},
+{
+	"q603_crow_land",
+	3670632989,
+	"qu_ep1_603"
+},
+{
+	"q603_door_bash",
+	1779132075,
+	"qu_ep1_603"
+},
+{
+	"q603_door_break",
+	1884009558,
+	"qu_ep1_603"
+},
+{
+	"q603_dwarf_explosion",
+	3470313022,
+	"qu_ep1_603"
+},
+{
+	"q603_dwarf_explosion_alt",
+	260161142,
+	"qu_ep1_603"
+},
+{
+	"q603_explosion",
+	1789959491,
+	"qu_ep1_603"
+},
+{
+	"q603_fistfight_end",
+	250132460,
+	"qu_ep1_603"
+},
+{
+	"q603_muffled_explosion",
+	2569694915,
+	"qu_ep1_603"
+},
+{
+	"q603_wood_sword_grab_01",
+	1730314310,
+	"qu_ep1_603"
+},
+{
+	"q603_wood_sword_grab_02",
+	1730314309,
+	"qu_ep1_603"
+},
+{
+	"q603_wood_sword_grab_03",
+	1730314308,
+	"qu_ep1_603"
+},
+{
+	"q603_wood_sword_sheathe",
+	3117365030,
+	"qu_ep1_603"
+},
+{
+	"q602_apple_bite_01",
+	438827346,
+	"qu_ep1_602"
+},
+{
+	"q602_apple_bite_02",
+	438827345,
+	"qu_ep1_602"
+},
+{
+	"q602_apple_bite_03",
+	438827344,
+	"qu_ep1_602"
+},
+{
+	"q602_book_grab",
+	2594838079,
+	"qu_ep1_602"
+},
+{
+	"q602_bottle",
+	1839958865,
+	"qu_ep1_602"
+},
+{
+	"q602_brothers_pain",
+	2540707527,
+	"qu_ep1_602"
+},
+{
+	"q602_brothers_run",
+	4245243166,
+	"qu_ep1_602"
+},
+{
+	"q602_censer_give",
+	2731620191,
+	"qu_ep1_602"
+},
+{
+	"q602_censer_move",
+	1351989187,
+	"qu_ep1_602"
+},
+{
+	"q602_censer_pickup",
+	913266464,
+	"qu_ep1_602"
+},
+{
+	"q602_drink_mead",
+	2712306805,
+	"qu_ep1_602"
+},
+{
+	"q602_fire_eater_crowd_amazed",
+	2276745456,
+	"qu_ep1_602"
+},
+{
+	"q602_fire_eater_crowd_applause",
+	2150380245,
+	"qu_ep1_602"
+},
+{
+	"q602_fire_eater_crowd_boy_jumping",
+	2451689715,
+	"qu_ep1_602"
+},
+{
+	"q602_fire_eater_crowd_boy_laughing",
+	3381213060,
+	"qu_ep1_602"
+},
+{
+	"q602_fire_eater_crowd_girl_laughing_1",
+	1782700964,
+	"qu_ep1_602"
+},
+{
+	"q602_fire_eater_crowd_girl_laughing_2",
+	1782700967,
+	"qu_ep1_602"
+},
+{
+	"q602_fire_eater_crowd_girl_laughing_3",
+	1782700966,
+	"qu_ep1_602"
+},
+{
+	"q602_fire_eater_crowd_kids_laughing",
+	2458519619,
+	"qu_ep1_602"
+},
+{
+	"q602_fire_start",
+	1533636464,
+	"qu_ep1_602"
+},
+{
+	"q602_flask_drink",
+	813003001,
+	"qu_ep1_602"
+},
+{
+	"q602_focus_dog_barking_start",
+	4198333274,
+	"qu_ep1_602"
+},
+{
+	"q602_focus_dog_barking_stop",
+	1811532274,
+	"qu_ep1_602"
+},
+{
+	"q602_kiss_long",
+	844090936,
+	"qu_ep1_602"
+},
+{
+	"q602_kiss_wedding",
+	4001006402,
+	"qu_ep1_602"
+},
+{
+	"q602_letter_give",
+	2748820767,
+	"qu_ep1_602"
+},
+{
+	"q602_letter_hide",
+	3177573284,
+	"qu_ep1_602"
+},
+{
+	"q602_mud_fall",
+	2885342571,
+	"qu_ep1_602"
+},
+{
+	"q602_olgierd_shot",
+	1045020110,
+	"qu_ep1_602"
+},
+{
+	"q602_pig_run_01",
+	1747432709,
+	"qu_ep1_602"
+},
+{
+	"q602_pig_run_02",
+	1747432710,
+	"qu_ep1_602"
+},
+{
+	"q602_plank_snap",
+	2219407666,
+	"qu_ep1_602"
+},
+{
+	"q602_shani_dress",
+	3216970778,
+	"qu_ep1_602"
+},
+{
+	"q602_shani_drink",
+	3135054325,
+	"qu_ep1_602"
+},
+{
+	"q602_shani_kiss",
+	2171746163,
+	"qu_ep1_602"
+},
+{
+	"q602_shoe_take_off",
+	2049692628,
+	"qu_ep1_602"
+},
+{
+	"q602_shoe_throw",
+	2090124881,
+	"qu_ep1_602"
+},
+{
+	"q602_shoe_water_splash",
+	3866923470,
+	"qu_ep1_602"
+},
+{
+	"q602_spit_blood",
+	964376038,
+	"qu_ep1_602"
+},
+{
+	"q602_tree_fall",
+	3146627895,
+	"qu_ep1_602"
+},
+{
+	"q602_undress_p1",
+	850458533,
+	"qu_ep1_602"
+},
+{
+	"q602_undress_p2",
+	850458534,
+	"qu_ep1_602"
+},
+{
+	"q602_witold_death",
+	3579225749,
+	"qu_ep1_602"
+},
+{
+	"q602_witold_dissapear",
+	3806501691,
+	"qu_ep1_602"
+},
+{
+	"amb_qu_ghost_woman_crying_loop",
+	1896558243,
+	"amb_qu_ghost_woman_crying"
+},
+{
+	"amb_qu_ghost_woman_crying_loop_end",
+	1764023781,
+	"amb_qu_ghost_woman_crying"
+},
+{
+	"monster_lessun_attack_crows_appear",
+	2308885308,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_crows_flyby",
+	3633012457,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_root_a_end_S",
+	3341543396,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_root_a_rumble_loop",
+	1142076973,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_root_a_rumble_loop_end",
+	4153930863,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_root_a_S",
+	3214892094,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_roots_hit",
+	2202724677,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_roots_in",
+	2754098747,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_roots_in_strong",
+	3123585823,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_roots_out",
+	2403217494,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_roots_spawn",
+	734948431,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_swish_medium",
+	4170163100,
+	"monster_lessun"
+},
+{
+	"monster_lessun_attack_whoosh_medium",
+	837143040,
+	"monster_lessun"
+},
+{
+	"monster_lessun_body_move_ADD_custom",
+	2099740059,
+	"monster_lessun"
+},
+{
+	"monster_lessun_cmb_parry",
+	2887760498,
+	"monster_lessun"
+},
+{
+	"monster_lessun_critical_burning_loop_start",
+	3955303914,
+	"monster_lessun"
+},
+{
+	"monster_lessun_critical_burning_loop_stop",
+	2889333698,
+	"monster_lessun"
+},
+{
+	"monster_lessun_crow_call_double_custom",
+	948444669,
+	"monster_lessun"
+},
+{
+	"monster_lessun_crow_call_single_custom",
+	2621782272,
+	"monster_lessun"
+},
+{
+	"monster_lessun_focus_calm",
+	2980406799,
+	"monster_lessun"
+},
+{
+	"monster_lessun_focus_calm_stop",
+	3280352314,
+	"monster_lessun"
+},
+{
+	"monster_lessun_footstep_walk_base_custom",
+	744876059,
+	"monster_lessun"
+},
+{
+	"monster_lessun_idle_growl_ADD",
+	1449853373,
+	"monster_lessun"
+},
+{
+	"monster_lessun_idle_growl_ADD_RND",
+	2501795652,
+	"monster_lessun"
+},
+{
+	"monster_lessun_leshy_break",
+	2934156562,
+	"monster_lessun"
+},
+{
+	"monster_lessun_mv_body_move_ADD",
+	2975457905,
+	"monster_lessun"
+},
+{
+	"monster_lessun_mv_body_move_light",
+	974663484,
+	"monster_lessun"
+},
+{
+	"monster_lessun_mv_bodyfall",
+	3843497220,
+	"monster_lessun"
+},
+{
+	"monster_lessun_mv_footstep",
+	2230188621,
+	"monster_lessun"
+},
+{
+	"monster_lessun_mv_spawn",
+	879587036,
+	"monster_lessun"
+},
+{
+	"monster_lessun_mv_spawn_XTRA",
+	4245910188,
+	"monster_lessun"
+},
+{
+	"monster_lessun_mv_teleport_out",
+	3931765011,
+	"monster_lessun"
+},
+{
+	"monster_lessun_mv_teleport_vanish",
+	1737052296,
+	"monster_lessun"
+},
+{
+	"monster_lessun_mv_wood_stress",
+	3917054067,
+	"monster_lessun"
+},
+{
+	"monster_lessun_taunt_scream_custom",
+	2616205449,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vfx_transformation_block_loop_start",
+	2308907737,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vfx_transformation_block_loop_stop",
+	2096880819,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_attack_root_in",
+	2377282244,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_attack_root_out",
+	3940271171,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_attack_short",
+	3586112736,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_burning_scream",
+	2593531260,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_burning_scream_end",
+	3005966130,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_burning_scream_light",
+	3400146905,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_death",
+	1116962703,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_pain_heavy",
+	3287602887,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_pain_light",
+	190650982,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_spawn",
+	3850319992,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_summon_crows",
+	3072113459,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_summon_crows_end",
+	874761173,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_summon_wolves",
+	1872078933,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_summon_wolves_fail",
+	630299292,
+	"monster_lessun"
+},
+{
+	"monster_lessun_vo_taunt_scream",
+	3761100327,
+	"monster_lessun"
+},
+{
+	"set_monster_lessun_armour_type_monster_wood",
+	94943200,
+	"monster_lessun"
+},
+{
+	"cs111_welcome_imlerith_p1",
+	2496236900,
+	"cs111_welcome_imlerith_p1"
+},
+{
+	"cs111_welcome_imlerith_p2",
+	2496236903,
+	"cs111_welcome_imlerith_p2"
+},
+{
+	"cs110_accept_payment",
+	2526215293,
+	"cs110_accept_payment"
+},
+{
+	"amb_qu_EXT_EM_crowd_angry_medium_30m",
+	3408156306,
+	"amb_qu_crowd_angry"
+},
+{
+	"fx_amb_sq209_thunder_close_2d",
+	887467851,
+	"fx_enviro"
+},
+{
+	"fx_amb_thunder_close",
+	236992332,
+	"fx_enviro"
+},
+{
+	"fx_critical_frozen_loop_start",
+	3408019482,
+	"fx_enviro"
+},
+{
+	"fx_critical_frozen_loop_stop",
+	501364658,
+	"fx_enviro"
+},
+{
+	"fx_underwater_off",
+	3630078323,
+	"fx_enviro"
+},
+{
+	"fx_underwater_on",
+	3283895231,
+	"fx_enviro"
+},
+{
+	"cs205_good_night_cirilla_p2",
+	2578219313,
+	"cs205_good_night_cirilla_p2"
+},
+{
+	"cs205_good_night_cirilla_p1",
+	2578219314,
+	"cs205_good_night_cirilla_p1"
+},
+{
+	"amb_qu_rats_IN_40m",
+	1580445767,
+	"amb_qu_rats"
+},
+{
+	"cs304_departure_louise",
+	2620275839,
+	"cs304_departure_louise"
+},
+{
+	"amb_qu_INT_crowd_auction",
+	752982590,
+	"amb_qu_crowd_auction"
+},
+{
+	"magic_yen_anti_wh_bubble_start_q403",
+	641992603,
+	"magic_yennefer"
+},
+{
+	"magic_yen_anti_wh_bubble_stop_q403",
+	486636543,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_breathing_underwater_spell",
+	499609451,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_cast",
+	1622035663,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_cast_end",
+	3293811409,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_cast_wood_levitation_start",
+	1313768200,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_cast_wood_levitation_stop",
+	436640852,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_djinn_trap_start",
+	113458232,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_djinn_trap_stop",
+	2022294084,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_gravity_cast_loop_start",
+	2544859146,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_gravity_cast_loop_stop",
+	4094126434,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_hand_fx_barrier_loop_start",
+	747101310,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_hand_fx_barrier_loop_stop",
+	986508190,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_hand_loop",
+	3554983974,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_hand_loop_end",
+	853102284,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_healing_loop_start",
+	2495582584,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_healing_loop_stop",
+	3688108420,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_lightning",
+	2913321844,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_mind_control_loop_start",
+	4067733744,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_mind_control_loop_stop",
+	2851726940,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_necromancy_loop_start",
+	2892677993,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_necromancy_loop_stop",
+	2569257091,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_push",
+	4155507978,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_q310_spell_01",
+	1911990896,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_q310_spell_02",
+	1911990899,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_q310_spell_03",
+	1911990898,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_q310_spell_04",
+	1911990901,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_q310_spell_bubble",
+	4212419091,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_q310_spell_bubble_end",
+	2059306997,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_teleport",
+	368040963,
+	"magic_yennefer"
+},
+{
+	"magic_yennefer_teleport_glow",
+	2480786389,
+	"magic_yennefer"
+},
+{
+	"cs103_poroniec_transform",
+	2646035274,
+	"cs103_poroniec_transform"
+},
+{
+	"cs3035_radovid_dies",
+	2649488884,
+	"cs3035_radovid_dies"
+},
+{
+	"amb_dyn_rodents",
+	2651438867,
+	"amb_dyn_rodents"
+},
+{
+	"amb_dyn_rodents_mouse_far",
+	2579534717,
+	"amb_dyn_rodents"
+},
+{
+	"amb_dyn_rodents_rat_far",
+	2504966361,
+	"amb_dyn_rodents"
+},
+{
+	"cs202_giant_lake_walk",
+	2660116253,
+	"cs202_giant_lake_walk"
+},
+{
+	"cs210_geralt_refuses_skjall",
+	2670059624,
+	"cs210_geralt_refuses_skjall"
+},
+{
+	"th_nv_1003_hatch_opens_loop",
+	18732703,
+	"th_nv_1003"
+},
+{
+	"th_nv_1003_hatch_opens_loop_stop",
+	1287463466,
+	"th_nv_1003"
+},
+{
+	"th_nv_1003_push_rock",
+	1169014022,
+	"th_nv_1003"
+},
+{
+	"th_nv_1003_statue_rotates",
+	2682742871,
+	"th_nv_1003"
+},
+{
+	"cs402_teleport_to_km",
+	2678212712,
+	"cs402_teleport_to_km"
+},
+{
+	"monster_bies_attack_1_post_custom",
+	708550287,
+	"monster_bies"
+},
+{
+	"monster_bies_attack_2_pre_custom",
+	1710962911,
+	"monster_bies"
+},
+{
+	"monster_bies_confusion_impact",
+	938103079,
+	"monster_bies"
+},
+{
+	"monster_bies_confusion_sustain_start",
+	2120573721,
+	"monster_bies"
+},
+{
+	"monster_bies_confusion_sustain_stop",
+	2402816243,
+	"monster_bies"
+},
+{
+	"monster_bies_confusion_warmup_start",
+	621838020,
+	"monster_bies"
+},
+{
+	"monster_bies_confusion_warmup_stop",
+	2011396216,
+	"monster_bies"
+},
+{
+	"monster_bies_focus_100m_start",
+	3008113918,
+	"monster_bies"
+},
+{
+	"monster_bies_focus_100m_stop",
+	2265688350,
+	"monster_bies"
+},
+{
+	"monster_bies_hand_scrape_ground_custom",
+	3387179944,
+	"monster_bies"
+},
+{
+	"monster_bies_idle_grunt_out_custom",
+	4056731740,
+	"monster_bies"
+},
+{
+	"monster_bies_mv_bodyfall",
+	2591971481,
+	"monster_bies"
+},
+{
+	"monster_bies_mv_hand_scrape_ground",
+	2903296490,
+	"monster_bies"
+},
+{
+	"monster_bies_mv_step_hoof_base_heavy",
+	3497513013,
+	"monster_bies"
+},
+{
+	"monster_bies_mv_step_hoof_base_light",
+	3124618332,
+	"monster_bies"
+},
+{
+	"monster_bies_mv_step_palm_base_heavy",
+	2629507377,
+	"monster_bies"
+},
+{
+	"monster_bies_mv_step_palm_base_light",
+	1724082560,
+	"monster_bies"
+},
+{
+	"monster_bies_snore",
+	532423883,
+	"monster_bies"
+},
+{
+	"monster_bies_step_hoof_base_heavy_custom",
+	21784657,
+	"monster_bies"
+},
+{
+	"monster_bies_taunt_scream_long_custom",
+	3520570719,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_attack_1_hit",
+	618477156,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_attack_1_post",
+	2981228239,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_attack_1_pre",
+	270090060,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_attack_2_bite",
+	2163110426,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_attack_2_post",
+	3840580778,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_attack_2_pre",
+	2483035391,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_breath_fast_in",
+	1885128561,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_breath_fast_out",
+	1208472848,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_breath_slow_in",
+	436496174,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_breath_slow_out",
+	771590449,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_breath_slow_out_RND",
+	191258032,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_death_long",
+	244937145,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_dodge",
+	970991807,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_eating_carcass_chew",
+	2997629033,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_eating_carcass_rip",
+	1853219641,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_idle_grunt_out",
+	3301449750,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_pain_normal",
+	553718052,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_taunt_scream_long",
+	2711582335,
+	"monster_bies"
+},
+{
+	"monster_bies_vo_taunt_scream_short",
+	3930391697,
+	"monster_bies"
+},
+{
+	"monster_bies_whoosh_heavy",
+	3884042448,
+	"monster_bies"
+},
+{
+	"monster_bies_whoosh_horns",
+	2296960259,
+	"monster_bies"
+},
+{
+	"monster_bies_whoosh_medium",
+	1907865922,
+	"monster_bies"
+},
+{
+	"set_monster_bies_armour_type_generic",
+	2700302856,
+	"monster_bies"
+},
+{
+	"monster_tree_heart_heart_death",
+	1254655479,
+	"monster_tree_heart"
+},
+{
+	"monster_tree_heart_heartbeat_1",
+	3219808064,
+	"monster_tree_heart"
+},
+{
+	"monster_tree_heart_heartbeat_2",
+	3219808067,
+	"monster_tree_heart"
+},
+{
+	"monster_tree_heart_roots_movement",
+	2963602045,
+	"monster_tree_heart"
+},
+{
+	"monster_tree_heart_roots_sword_impact",
+	1817726130,
+	"monster_tree_heart"
+},
+{
+	"monster_tree_heart_slime",
+	4226246956,
+	"monster_tree_heart"
+},
+{
+	"monster_tree_heart_slime_bg_loop_start",
+	1610629882,
+	"monster_tree_heart"
+},
+{
+	"monster_tree_heart_slime_bg_loop_stop",
+	610140178,
+	"monster_tree_heart"
+},
+{
+	"cs001_griffin_sfx",
+	1093147084,
+	"cs001_griffin"
+},
+{
+	"cs305_blanka_on_stage",
+	2699823304,
+	"cs305_blanka_on_stage"
+},
+{
+	"cs_sex_after_01",
+	3253851465,
+	"cs_sex"
+},
+{
+	"cs_sex_after_02",
+	3253851466,
+	"cs_sex"
+},
+{
+	"cs_sex_after_03",
+	3253851467,
+	"cs_sex"
+},
+{
+	"cs_sex_after_04",
+	3253851468,
+	"cs_sex"
+},
+{
+	"cs_sex_after_05",
+	3253851469,
+	"cs_sex"
+},
+{
+	"cs_sex_before_01",
+	2070329038,
+	"cs_sex"
+},
+{
+	"cs_sex_before_02",
+	2070329037,
+	"cs_sex"
+},
+{
+	"cs_sex_before_03",
+	2070329036,
+	"cs_sex"
+},
+{
+	"cs_sex_before_04",
+	2070329035,
+	"cs_sex"
+},
+{
+	"cs_sex_before_05",
+	2070329034,
+	"cs_sex"
+},
+{
+	"cs_sex_do_01",
+	338126332,
+	"cs_sex"
+},
+{
+	"cs_sex_do_02",
+	338126335,
+	"cs_sex"
+},
+{
+	"cs_sex_do_03",
+	338126334,
+	"cs_sex"
+},
+{
+	"cs_sex_do_04",
+	338126329,
+	"cs_sex"
+},
+{
+	"cs_sex_do_05",
+	338126328,
+	"cs_sex"
+},
+{
+	"cs_sex_do_final_01",
+	3367508187,
+	"cs_sex"
+},
+{
+	"cs_sex_do_final_01_jp",
+	3384528640,
+	"cs_sex"
+},
+{
+	"qu_nml_111_coin_drop_to_water",
+	1225668599,
+	"qu_nml_111"
+},
+{
+	"qu_nml_111_party_loop",
+	2001726721,
+	"qu_nml_111"
+},
+{
+	"qu_nml_111_party_loop_stop",
+	2146746180,
+	"qu_nml_111"
+},
+{
+	"monster_black_spider_cmb_attack",
+	1024685083,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_attack_ALWAYS",
+	3685761389,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_attack_poison_cloud",
+	389037548,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_attack_poison_cloud_explo",
+	1058082743,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_attack_spike",
+	1160331532,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_attack_swoosh",
+	3024847123,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_attack_tail",
+	2941323428,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_attack_tongue",
+	3501797118,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_attack_venom",
+	3497663509,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_block",
+	2561455674,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_block_ADD",
+	2399039522,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_block_ALWAYS",
+	4286170774,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_block_RND",
+	2535673299,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_calm",
+	3212709390,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_calm_ALWAYS",
+	2870339370,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_death_long",
+	4161729260,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_death_short",
+	1962870516,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_pain",
+	2355314651,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_pain_RND",
+	2173311974,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_preattack_growl",
+	2192521356,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_taunt_long",
+	1350511962,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_cmb_taunt_short",
+	276518870,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_despawn",
+	3349422844,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_exp_digging",
+	3504958883,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_exp_eating",
+	3124798192,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_focus_clue_100m_start",
+	100283582,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_focus_clue_100m_stop",
+	396077022,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_focus_clue_50m_start",
+	1130171262,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_focus_clue_50m_stop",
+	1381785758,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_idle",
+	2220975216,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_mv_bodyfall",
+	10962893,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_mv_foley_01",
+	3190297015,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_mv_foley_02",
+	3190297012,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_mv_footsteps",
+	3702440943,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_mv_ground_hit",
+	702328985,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_mv_jaw",
+	569456160,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_mv_stomp",
+	4088632445,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_screech",
+	667248209,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_vfx_spit",
+	3561479327,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_vfx_venom_hit",
+	2146199094,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_vfx_venom_loop_start",
+	3061318088,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_vfx_venom_loop_stop",
+	1605307412,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_vfx_web_loop_start",
+	4066247567,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_vfx_web_loop_stop",
+	435097877,
+	"monster_black_spider"
+},
+{
+	"monster_black_spider_vo_burn",
+	3787861301,
+	"monster_black_spider"
+},
+{
+	"set_monster_black_spider_armour_type_monster_shell",
+	1468232698,
+	"monster_black_spider"
+},
+{
+	"monster_noonwraith_focus_100m_start",
+	3676270994,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_focus_100m_stop",
+	443753546,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_appear",
+	1212277364,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_background",
+	22752295,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_background_custom",
+	1367343623,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_background_RND",
+	3065135242,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_death",
+	2210870471,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_drain_energy_loop",
+	3744593631,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_drain_energy_loop_end",
+	1568384321,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_split_loop_start",
+	440130207,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_split_loop_stop",
+	3566728549,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_fx_visible_switch",
+	1290551422,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_mv_attack_swoosh",
+	1806720572,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_mv_clothes",
+	1047184370,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_vo_attack",
+	1403121310,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_vo_death",
+	2612554052,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_vo_death_doppelganger",
+	3139188971,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_vo_pain",
+	1677848038,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_vo_scream",
+	4069820025,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_vo_scream_custom",
+	2163706269,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_vo_whisper",
+	580791544,
+	"monster_noonwraith"
+},
+{
+	"monster_noonwraith_vo_whisper_custom",
+	3916286250,
+	"monster_noonwraith"
+},
+{
+	"monster_pesta_fx_appear",
+	741645582,
+	"monster_noonwraith"
+},
+{
+	"monster_pesta_fx_flies_start",
+	1856573573,
+	"monster_noonwraith"
+},
+{
+	"monster_pesta_fx_flies_stop",
+	716789031,
+	"monster_noonwraith"
+},
+{
+	"set_monster_noonwraith_armour_type_monster_ghost",
+	1177563209,
+	"monster_noonwraith"
+},
+{
+	"set_monster_noonwraith_invisible",
+	2037762164,
+	"monster_noonwraith"
+},
+{
+	"set_monster_noonwraith_visible",
+	3442486279,
+	"monster_noonwraith"
+},
+{
+	"qu_nml_109",
+	2725005730,
+	"qu_nml_109"
+},
+{
+	"qu_nml_108_appear_ghost",
+	1029586373,
+	"qu_nml_108"
+},
+{
+	"qu_nml_108_bies_grunts_in_cave",
+	2447695319,
+	"qu_nml_108"
+},
+{
+	"qu_nml_108_burning_old_body_loop_start",
+	3287526600,
+	"qu_nml_108"
+},
+{
+	"qu_nml_108_burning_old_body_loop_Stop",
+	2533070100,
+	"qu_nml_108"
+},
+{
+	"qu_nml_108_disappear_ghost",
+	1657052697,
+	"qu_nml_108"
+},
+{
+	"qu_nml_108_distance_wraith",
+	3182878647,
+	"qu_nml_108"
+},
+{
+	"qu_nml_108_whispers_in_cave_amb",
+	1989674368,
+	"qu_nml_108"
+},
+{
+	"__qu103_nml_birthling",
+	1259532003,
+	"qu_nml_103"
+},
+{
+	"__qu103_nml_summon_birthling",
+	3052486399,
+	"qu_nml_103"
+},
+{
+	"q103_nml_summon_out_birthling",
+	453694093,
+	"qu_nml_103"
+},
+{
+	"qu_103_goat_meh_loop",
+	2853871446,
+	"qu_nml_103"
+},
+{
+	"qu_103_goat_meh_loop_stop",
+	52689285,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103__examining_painting",
+	2657590837,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_alarm_bell",
+	2431038866,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_baron_fx_quest_q103_start",
+	51292792,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_baron_fx_quest_q103_stop",
+	3831248004,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_bear_roar",
+	4200043440,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_birthling_summon_loop",
+	1691806465,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_birthling_summon_loop_stop",
+	2419734852,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_cat_hissing_fix01",
+	3549691840,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_cat_hissing_fix02",
+	3549691843,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_cat_hissing_fix03",
+	3549691842,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_cat_hissing_fix04",
+	3549691845,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_cat_hissing_fix05",
+	3549691844,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_cat_hissing_fix06",
+	3549691847,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_cat_hissing_fix07",
+	3549691846,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_cat_hissing_fix08",
+	3549691849,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_climbing",
+	3273955282,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_dea_ghost_add_voice",
+	3147453180,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_dea_ghost_loop_start",
+	2525515837,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_dea_ghost_loop_stop",
+	1566045887,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_door_jammed_quest",
+	1929219507,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_fake_footstep1",
+	4028843230,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_fake_footstep2",
+	4028843229,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_horse_running",
+	1313951806,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_jump_from_the_tree",
+	3657913305,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_leaves_hit",
+	2516596577,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_lightning",
+	4220774247,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_miscreant_bite",
+	1166526356,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_miscreant_warning",
+	3981858334,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_open_wardrobe",
+	793826922,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_unsheathe_sword",
+	2477271284,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_whistling_baron",
+	1668246979,
+	"qu_nml_103"
+},
+{
+	"qu_nml_103_wolf_howling",
+	1975792264,
+	"qu_nml_103"
+},
+{
+	"q102___05_baron_in_his_chambers_barron_wine1",
+	3524768461,
+	"qu_nml_102"
+},
+{
+	"q102___05_baron_in_his_chambers_barron_wine2",
+	3524768462,
+	"qu_nml_102"
+},
+{
+	"q102___05_baron_in_his_chambers_open_wine",
+	3651189180,
+	"qu_nml_102"
+},
+{
+	"q102___05_baron_in_his_chambers_put_bottel_back",
+	915548458,
+	"qu_nml_102"
+},
+{
+	"q102___05_baron_in_his_chambers_take_bottle",
+	4291653988,
+	"qu_nml_102"
+},
+{
+	"qu_nml_102",
+	2725005737,
+	"qu_nml_102"
+},
+{
+	"qu_nml_101_bell_hit",
+	2362526344,
+	"qu_nml_101"
+},
+{
+	"qu_nml_101_chair_move",
+	3383261960,
+	"qu_nml_101"
+},
+{
+	"qu_nml_101_door_open",
+	2756917836,
+	"qu_nml_101"
+},
+{
+	"qu_nml_101_door_switch_reset",
+	2504297176,
+	"qu_nml_101"
+},
+{
+	"qu_nml_101_door_switch_set",
+	2240709129,
+	"qu_nml_101"
+},
+{
+	"qu_nml_101_open_cupboard",
+	3324851180,
+	"qu_nml_101"
+},
+{
+	"qu_nml_101_raiders_stop",
+	66170806,
+	"qu_nml_101"
+},
+{
+	"qu_nml_101_remove_carpet",
+	200633881,
+	"qu_nml_101"
+},
+{
+	"qu_nml_101_replacer_crow_swarm_loop_start",
+	2499453938,
+	"qu_nml_101"
+},
+{
+	"qu_nml_101_replacer_crow_swarm_loop_stop",
+	953724970,
+	"qu_nml_101"
+},
+{
+	"qu_nml_107_anna_scream_heavy",
+	51466651,
+	"qu_nml_107"
+},
+{
+	"qu_nml_107_anna_scream_light",
+	2279775810,
+	"qu_nml_107"
+},
+{
+	"qu_nml_107_bies_taunt_close",
+	3955597204,
+	"qu_nml_107"
+},
+{
+	"qu_nml_107_bies_taunt_far",
+	1654673059,
+	"qu_nml_107"
+},
+{
+	"qu_nml_107_bodyfall_down",
+	4046644987,
+	"qu_nml_107"
+},
+{
+	"qu_nml_107_burn_doll",
+	2155534200,
+	"qu_nml_107"
+},
+{
+	"qu_nml_107_door_close",
+	1214767686,
+	"qu_nml_107"
+},
+{
+	"qu_nml_107_door_open",
+	639117842,
+	"qu_nml_107"
+},
+{
+	"qu_106_rat_very_short",
+	2387090147,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_creak_painting",
+	3473931635,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_door_knocking_hard_loop",
+	862904246,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_door_knocking_hard_loop_end",
+	2243578556,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_falling_stuff",
+	1508373270,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_ghost_ectoplasma_loop_start",
+	1263165307,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_ghost_ectoplasma_loop_stop",
+	1433107161,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_ghost_woman_crying_loop",
+	1723755530,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_ghost_woman_crying_loop_end",
+	3604241024,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_magic_oillamp_loop",
+	1908190243,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_magic_oillamp_loop_end",
+	3033576293,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_man_screams_and_dies",
+	354288825,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_people_screaming",
+	1696367825,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_people_whispering_loop",
+	3710788495,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_people_whispering_loop_end",
+	1506234257,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_put_lamp",
+	2680899668,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_rat_long",
+	1033080878,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_rat_short",
+	1736974770,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_rats_running_loop",
+	2541053181,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_rats_running_loop_end",
+	2978215135,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_screaming_man",
+	3865928388,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_spooky_painting",
+	1727496490,
+	"qu_nml_106"
+},
+{
+	"qu_nml_106_take_lamp",
+	1182421162,
+	"qu_nml_106"
+},
+{
+	"qu_nml_105_Anna_befor_touch",
+	1921225558,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_Anna_end",
+	3597634249,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_Anna_is_touching_tapestry",
+	3200474535,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_Anna_ritual",
+	1296685667,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_bies_taunt_long",
+	904807560,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_boy_1_hay_appear",
+	442535410,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_boy_1_hay_walk_out",
+	261674527,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_boy_focus_clue_start",
+	3378216513,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_boy_focus_clue_stop",
+	456622587,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_Child_hide",
+	3140454368,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_geralt_sheats_dagger",
+	252143338,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_geralt_unsheats_dagger",
+	668043965,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_horse_galop_fade_in",
+	348261797,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_horse_galop_loop",
+	2448417709,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_horse_galop_loop_stop",
+	4107478240,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_johnny_voice_bottle",
+	873497513,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_knife_game_end",
+	2314644563,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_knife_game_hits",
+	519791962,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_ship_glass",
+	3666173166,
+	"qu_nml_105"
+},
+{
+	"qu_nml_105_wolf_howling_far",
+	1475069420,
+	"qu_nml_105"
+},
+{
+	"qu_nml_104_column_ring_01",
+	1129077521,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_column_ring_02",
+	1129077522,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_column_ring_03",
+	1129077523,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_column_ring_04",
+	1129077524,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_column_ring_05",
+	1129077525,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_column_ring_06",
+	1129077526,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_column_ring_07",
+	1129077527,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_column_ring_08",
+	1129077528,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_evil_geralt_vfx_loop_start",
+	1656619499,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_evil_geralt_vfx_loop_stop",
+	526198537,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_ghost_ectoplasma_loop",
+	101405712,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_ghost_ectoplasma_loop_stop",
+	1887025119,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_ice_barrier_disappear",
+	1423042525,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_mage_blows_up_entrance",
+	2433835243,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_mage_ice_cast_appear",
+	4126478090,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_scream_women",
+	3005255638,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_secret_stone_door_moving",
+	2666307120,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_skull_activate",
+	2642335999,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_troll_grunt_1",
+	2959446560,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_troll_grunt_2",
+	2959446563,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_troll_grunt_3",
+	2959446562,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_troll_grunt_4",
+	2959446565,
+	"qu_nml_104"
+},
+{
+	"qu_nml_104_troll_walk",
+	1254644041,
+	"qu_nml_104"
+},
+{
+	"cs309_sex_with_triss_p1",
+	2736234217,
+	"cs309_sex_with_triss_p1"
+},
+{
+	"cs309_sex_with_triss_p2",
+	2736234218,
+	"cs309_sex_with_triss_p2"
+},
+{
+	"cmb_arrow_bounce",
+	3678519954,
+	"combat"
+},
+{
+	"cmb_arrow_impact_body",
+	849013683,
+	"combat"
+},
+{
+	"cmb_arrow_impact_dirt",
+	364545244,
+	"combat"
+},
+{
+	"cmb_arrow_impact_metal",
+	3849514872,
+	"combat"
+},
+{
+	"cmb_arrow_impact_stone",
+	2921305906,
+	"combat"
+},
+{
+	"cmb_arrow_impact_water",
+	3899424316,
+	"combat"
+},
+{
+	"cmb_arrow_impact_wood",
+	3249950292,
+	"combat"
+},
+{
+	"cmb_arrow_swoosh",
+	2716694959,
+	"combat"
+},
+{
+	"cmb_deflect_arrow",
+	1115092563,
+	"combat"
+},
+{
+	"cmb_explosive_bolt_explosion",
+	4088649085,
+	"combat"
+},
+{
+	"cmb_fistfight_parry",
+	147112267,
+	"combat"
+},
+{
+	"cmb_fistfight_short_parry",
+	1078826068,
+	"combat"
+},
+{
+	"cmb_fistfight_swoosh_01",
+	2125398452,
+	"combat"
+},
+{
+	"cmb_fistfight_swoosh_02",
+	2125398455,
+	"combat"
+},
+{
+	"cmb_fistfight_swoosh_03",
+	2125398454,
+	"combat"
+},
+{
+	"cmb_fistfight_swoosh_04",
+	2125398449,
+	"combat"
+},
+{
+	"cmb_petard_throw_swoosh",
+	2791722275,
+	"combat"
+},
+{
+	"cmb_play_block_heavy",
+	2201069660,
+	"combat"
+},
+{
+	"cmb_play_block_light",
+	2865147273,
+	"combat"
+},
+{
+	"cmb_play_deadly_hit",
+	315086620,
+	"combat"
+},
+{
+	"cmb_play_dismemberment_frozen",
+	402541134,
+	"combat"
+},
+{
+	"cmb_play_dismemberment_gore",
+	2804596961,
+	"combat"
+},
+{
+	"cmb_play_ger_stab_in",
+	904687710,
+	"combat"
+},
+{
+	"cmb_play_ger_stab_out",
+	742640897,
+	"combat"
+},
+{
+	"cmb_play_hit_heavy",
+	1296961796,
+	"combat"
+},
+{
+	"cmb_play_hit_light",
+	2605740929,
+	"combat"
+},
+{
+	"cmb_play_hit_sign",
+	3106033640,
+	"combat"
+},
+{
+	"cmb_play_monster_silver_sword_ADD",
+	81062741,
+	"combat"
+},
+{
+	"cmb_play_parry",
+	1534138965,
+	"combat"
+},
+{
+	"cmb_play_parry_heavy",
+	2102584485,
+	"combat"
+},
+{
+	"cmb_play_shield_impact",
+	2936100383,
+	"combat"
+},
+{
+	"cmb_play_stab_in",
+	2657542925,
+	"combat"
+},
+{
+	"cmb_play_stab_out",
+	1845919636,
+	"combat"
+},
+{
+	"cmb_sword_collision_fx_stone",
+	4054321921,
+	"combat"
+},
+{
+	"cmb_sword_collision_fx_wood",
+	3329781693,
+	"combat"
+},
+{
+	"cmb_test_bodyblow",
+	2165744251,
+	"combat"
+},
+{
+	"cmb_test_death",
+	1479994031,
+	"combat"
+},
+{
+	"cmb_test_heavy",
+	4016988080,
+	"combat"
+},
+{
+	"cmb_test_parry",
+	3843783367,
+	"combat"
+},
+{
+	"cmb_test_whoosh",
+	3602493457,
+	"combat"
+},
+{
+	"cmb_waterhag_mud_splat",
+	3347768297,
+	"combat"
+},
+{
+	"cmb_weapon_sheathe_fast",
+	2814343334,
+	"combat"
+},
+{
+	"cmb_weapon_sheathe_medium",
+	245934297,
+	"combat"
+},
+{
+	"cmb_weapon_sheathe_slow",
+	3969963291,
+	"combat"
+},
+{
+	"cmb_weapon_swoosh_heavy_fast",
+	1520407519,
+	"combat"
+},
+{
+	"cmb_weapon_swoosh_heavy_slow",
+	357107894,
+	"combat"
+},
+{
+	"cmb_weapon_swoosh_light_fast",
+	3734862116,
+	"combat"
+},
+{
+	"cmb_weapon_swoosh_light_slow",
+	737415333,
+	"combat"
+},
+{
+	"cmb_weapon_unsheathe_fast",
+	3731227371,
+	"combat"
+},
+{
+	"cmb_weapon_unsheathe_medium",
+	3311649432,
+	"combat"
+},
+{
+	"cmb_weapon_unsheathe_slow",
+	134746554,
+	"combat"
+},
+{
+	"cmb_whoosh_fast_heavy_DISABLED",
+	1360185198,
+	"combat"
+},
+{
+	"cmb_whoosh_fast_idle",
+	4122131156,
+	"combat"
+},
+{
+	"cmb_whoosh_fast_light_DISABLED",
+	294186305,
+	"combat"
+},
+{
+	"cmb_whoosh_medium_heavy_DISABLED",
+	4007568943,
+	"combat"
+},
+{
+	"cmb_whoosh_medium_idle",
+	1314226801,
+	"combat"
+},
+{
+	"cmb_whoosh_medium_light_DISABLED",
+	2180102232,
+	"combat"
+},
+{
+	"cmb_whoosh_slow_heavy_DISABLED",
+	2355687681,
+	"combat"
+},
+{
+	"cmb_whoosh_slow_idle",
+	713348931,
+	"combat"
+},
+{
+	"cmb_whoosh_slow_light_DISABLED",
+	4007709498,
+	"combat"
+},
+{
+	"cmb_wildhunt_boss_weapon_swoosh",
+	1564890302,
+	"combat"
+},
+{
+	"scene_cmb_face_slap",
+	349146889,
+	"combat"
+},
+{
+	"scene_cmb_fist_hit",
+	2977267691,
+	"combat"
+},
+{
+	"scene_cmb_fistfight_short_parry",
+	1155187157,
+	"combat"
+},
+{
+	"scene_cmb_fistfight_swoosh_01",
+	1851867369,
+	"combat"
+},
+{
+	"scene_cmb_fistfight_swoosh_03",
+	1851867371,
+	"combat"
+},
+{
+	"scene_cmb_fistfight_swoosh_04",
+	1851867372,
+	"combat"
+},
+{
+	"scene_cmb_generic_body_hit",
+	1666856275,
+	"combat"
+},
+{
+	"scene_cmb_generic_body_hit_with_whoosh",
+	3602771259,
+	"combat"
+},
+{
+	"scene_cmb_sword_medium_stab_in",
+	2450800207,
+	"combat"
+},
+{
+	"scene_cmb_sword_medium_stab_out",
+	1306698178,
+	"combat"
+},
+{
+	"scene_cmb_sword_unsheat_fast_2D",
+	3277739743,
+	"combat"
+},
+{
+	"scene_cmb_sword_unsheat_medium_2D",
+	3454838394,
+	"combat"
+},
+{
+	"scene_weapon_sword_unsheat_fast",
+	3620015312,
+	"combat"
+},
+{
+	"set_opponent_weapon_type_sword_wooden",
+	3824271594,
+	"combat"
+},
+{
+	"set_weapon_type_sword_wooden",
+	422683288,
+	"combat"
+},
+{
+	"shield_metal_impact",
+	4281485643,
+	"combat"
+},
+{
+	"shield_wood_impact",
+	1478872527,
+	"combat"
+},
+{
+	"weapon_bow_draw",
+	1148475173,
+	"combat"
+},
+{
+	"weapon_bow_hide",
+	295260403,
+	"combat"
+},
+{
+	"weapon_bow_insert_arrow",
+	1035816902,
+	"combat"
+},
+{
+	"weapon_bow_pull_string",
+	1892802886,
+	"combat"
+},
+{
+	"weapon_bow_shot",
+	816286155,
+	"combat"
+},
+{
+	"weapon_bow_unsheat_arrow",
+	659586977,
+	"combat"
+},
+{
+	"weapon_crossbow_reload_stage1",
+	3416336116,
+	"combat"
+},
+{
+	"weapon_crossbow_reload_stage2",
+	3416336119,
+	"combat"
+},
+{
+	"weapon_crossbow_reload_stage3",
+	3416336118,
+	"combat"
+},
+{
+	"weapon_crossbow_reload_stage4",
+	3416336113,
+	"combat"
+},
+{
+	"weapon_crossbow_reload_stage5",
+	3416336112,
+	"combat"
+},
+{
+	"weapon_crossbow_reload_stage6",
+	3416336115,
+	"combat"
+},
+{
+	"weapon_crossbow_shot",
+	3467163299,
+	"combat"
+},
+{
+	"weapon_gabriel_reload",
+	3631289794,
+	"combat"
+},
+{
+	"weapon_gabriel_shot",
+	4240062933,
+	"combat"
+},
+{
+	"weapon_geralt_crossbow_hide",
+	3366534741,
+	"combat"
+},
+{
+	"weapon_geralt_crossbow_reload",
+	1243166866,
+	"combat"
+},
+{
+	"wood_shield_foley",
+	2855272694,
+	"combat"
+},
+{
+	"animals_seagull_call_01",
+	1077591035,
+	"animals_seagull"
+},
+{
+	"animals_seagull_call_idle_01",
+	1999545006,
+	"animals_seagull"
+},
+{
+	"animals_seagull_die_01",
+	2875734811,
+	"animals_seagull"
+},
+{
+	"global_time_freeze_param_restart",
+	2436664968,
+	"vo_definitions"
+},
+{
+	"mute_music",
+	2741649490,
+	"vo_definitions"
+},
+{
+	"mute_sounds",
+	3524007241,
+	"vo_definitions"
+},
+{
+	"set_armour_type_movement_wh_armour",
+	3516584178,
+	"vo_definitions"
+},
+{
+	"set_armour_type_wh_armour",
+	2529353864,
+	"vo_definitions"
+},
+{
+	"set_entity_gender_female",
+	2626936984,
+	"vo_definitions"
+},
+{
+	"set_entity_gender_male",
+	391906855,
+	"vo_definitions"
+},
+{
+	"set_entity_name_ciri",
+	2223622433,
+	"vo_definitions"
+},
+{
+	"set_entity_name_geralt",
+	4208497665,
+	"vo_definitions"
+},
+{
+	"set_entity_name_ghost_man",
+	1262920134,
+	"vo_definitions"
+},
+{
+	"set_entity_name_ghost_woman",
+	1761699176,
+	"vo_definitions"
+},
+{
+	"set_entity_name_hjalmar",
+	2936969049,
+	"vo_definitions"
+},
+{
+	"set_entity_name_horse_tamed",
+	752788409,
+	"vo_definitions"
+},
+{
+	"set_entity_name_horse_wild",
+	710805984,
+	"vo_definitions"
+},
+{
+	"set_entity_name_imlerith",
+	1756078766,
+	"vo_definitions"
+},
+{
+	"set_entity_name_sentry",
+	162079755,
+	"vo_definitions"
+},
+{
+	"set_entity_name_shade",
+	4265507557,
+	"vo_definitions"
+},
+{
+	"set_entity_name_wild_hunt",
+	912918066,
+	"vo_definitions"
+},
+{
+	"set_entity_name_wild_hunt_ghost",
+	1389184146,
+	"vo_definitions"
+},
+{
+	"set_entity_sound_set_voice_1",
+	215238033,
+	"vo_definitions"
+},
+{
+	"set_entity_sound_set_voice_2",
+	215238034,
+	"vo_definitions"
+},
+{
+	"set_entity_sound_set_voice_3",
+	215238035,
+	"vo_definitions"
+},
+{
+	"set_entity_sound_set_voice_4",
+	215238036,
+	"vo_definitions"
+},
+{
+	"set_entity_sound_set_voice_5",
+	215238037,
+	"vo_definitions"
+},
+{
+	"set_entity_sound_set_voice_6",
+	215238038,
+	"vo_definitions"
+},
+{
+	"system_alt_tab",
+	2501864830,
+	"vo_definitions"
+},
+{
+	"system_blackscreen_end",
+	3870429208,
+	"vo_definitions"
+},
+{
+	"system_blackscreen_start",
+	3557183939,
+	"vo_definitions"
+},
+{
+	"system_pause",
+	3200923577,
+	"vo_definitions"
+},
+{
+	"system_resume",
+	397622648,
+	"vo_definitions"
+},
+{
+	"system_resume_music_only",
+	2242199129,
+	"vo_definitions"
+},
+{
+	"system_suspend",
+	3123389883,
+	"vo_definitions"
+},
+{
+	"unmute_music",
+	1441918971,
+	"vo_definitions"
+},
+{
+	"unmute_sounds",
+	1238485898,
+	"vo_definitions"
+},
+{
+	"vo_2d",
+	1717959685,
+	"vo_definitions"
+},
+{
+	"vo_2d_sq202_ducking",
+	4230854192,
+	"vo_definitions"
+},
+{
+	"vo_3d_att_end",
+	1768973256,
+	"vo_definitions"
+},
+{
+	"vo_3d_att_start",
+	3938768627,
+	"vo_definitions"
+},
+{
+	"vo_3d_long",
+	1381181951,
+	"vo_definitions"
+},
+{
+	"vo_3d_quest_long",
+	709205798,
+	"vo_definitions"
+},
+{
+	"vo_test",
+	553383131,
+	"vo_definitions"
+},
+{
+	"cs602_sex_with_shani_choice",
+	2804435171,
+	"cs602_sex_with_shani_choice"
+},
+{
+	"animals_chicken_calm",
+	3752091742,
+	"animals_chicken"
+},
+{
+	"animals_chicken_cluck_long",
+	2531468938,
+	"animals_chicken"
+},
+{
+	"animals_chicken_cluck_short",
+	3372038406,
+	"animals_chicken"
+},
+{
+	"animals_chicken_death",
+	2137640667,
+	"animals_chicken"
+},
+{
+	"animals_chicken_loud",
+	3311181851,
+	"animals_chicken"
+},
+{
+	"animals_chickens_clucking",
+	3485202418,
+	"animals_chicken"
+},
+{
+	"animals_rooster_calm_RND",
+	3318740460,
+	"animals_chicken"
+},
+{
+	"animals_rooster_morning_call",
+	3005690983,
+	"animals_chicken"
+},
+{
+	"animals_crab_footsteps",
+	2576906233,
+	"animals_crabs"
+},
+{
+	"animals_crab_shell",
+	427237714,
+	"animals_crabs"
+},
+{
+	"animals_crabs_attacking",
+	1407825929,
+	"animals_crabs"
+},
+{
+	"animals_crabs_attacking_end",
+	3775555563,
+	"animals_crabs"
+},
+{
+	"animals_crabs_burning",
+	532831560,
+	"animals_crabs"
+},
+{
+	"animals_crabs_burning_end",
+	1126169262,
+	"animals_crabs"
+},
+{
+	"animals_crabs_dying",
+	916850782,
+	"animals_crabs"
+},
+{
+	"animals_crabs_dying_end",
+	2129079716,
+	"animals_crabs"
+},
+{
+	"animals_crabs_moving",
+	2599600661,
+	"animals_crabs"
+},
+{
+	"animals_crabs_moving_end",
+	3140522583,
+	"animals_crabs"
+},
+{
+	"cs103_baron_leaves",
+	2830513025,
+	"cs103_baron_leaves"
+},
+{
+	"amb_dyn_EXT_harbour_ship_bell_60m",
+	165326070,
+	"amb_dyn_harbour"
+},
+{
+	"amb_dyn_EXT_harbour_ship_creak_20m",
+	198464971,
+	"amb_dyn_harbour"
+},
+{
+	"amb_dyn_EXT_harbour_ship_shouts_60m",
+	1015753775,
+	"amb_dyn_harbour"
+},
+{
+	"amb_qu_IN_EXT_crowd_tavern_medium_10m",
+	2168844472,
+	"amb_qu_crowd_tavern"
+},
+{
+	"cs311_geels_dreams",
+	2929366382,
+	"cs311_geels_dreams"
+},
+{
+	"mus_credits_secondary",
+	2430979234,
+	"music_main_menu_credits"
+},
+{
+	"mus_credits_secondary_ep1",
+	3761742127,
+	"music_main_menu_credits"
+},
+{
+	"mus_credits_usm",
+	2295745189,
+	"music_main_menu_credits"
+},
+{
+	"mus_credits_usm_ep1",
+	554621836,
+	"music_main_menu_credits"
+},
+{
+	"mus_intro_usm",
+	956175225,
+	"music_main_menu_credits"
+},
+{
+	"mus_main_menu_theme",
+	3793034086,
+	"music_main_menu_credits"
+},
+{
+	"mus_main_menu_theme_ep1",
+	2619057443,
+	"music_main_menu_credits"
+},
+{
+	"mus_main_menu_theme_fire_only",
+	912796874,
+	"music_main_menu_credits"
+},
+{
+	"play_music_main_menu",
+	3968446557,
+	"music_main_menu_credits"
+},
+{
+	"monster_waterhag_bodyfall",
+	2140932081,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_breath_fast",
+	26946793,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_breath_fast_custom",
+	1889438829,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_breath_slow",
+	381396340,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_breath_slow_custom",
+	559382278,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_breath_slow_q503",
+	2744831638,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_emerge",
+	4243148429,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_focus_100m_start",
+	2491979118,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_focus_100m_stop",
+	2049259598,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_footsteps",
+	1811649603,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_fs_dirt_custom",
+	2090708525,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_ground",
+	290244511,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_mud_grab",
+	3884955825,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_shuffle",
+	3017340953,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_slime",
+	923747702,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_swoosh",
+	1796354571,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_attack_long",
+	3510480319,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_attack_short",
+	76575697,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_attack_short_custom",
+	1661089909,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_burn",
+	4117723609,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_burn_STOP",
+	707541932,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_death_long",
+	19696361,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_gurgle_long",
+	2958097583,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_gurgle_short",
+	3673249665,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_gurgle_short_custom",
+	2846418885,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_gurgle_short_q503",
+	2259592617,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_mumble_high",
+	3264542291,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_mumble_high_RND",
+	2281621438,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_mumble_low",
+	2794831639,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_mumble_low_RND",
+	1899194106,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_mumble_low_RND_walk",
+	254190042,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_pain",
+	3857630730,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_taunt",
+	2129049818,
+	"monster_waterhag"
+},
+{
+	"monster_waterhag_vo_taunt_custom",
+	1612428784,
+	"monster_waterhag"
+},
+{
+	"set_monster_waterhag_armour_type_flesh",
+	2083210797,
+	"monster_waterhag"
+},
+{
+	"cs111_imlerith_dies",
+	2976649285,
+	"cs111_imlerith_dies"
+},
+{
+	"cs202_geralt_steps_on_ice",
+	2979746653,
+	"cs202_geralt_steps_on_ice"
+},
+{
+	"d_global_door_wooden_qu503_witch_hut",
+	3649571760,
+	"global_doors"
+},
+{
+	"d_global_doors_gate_wooden_1_open_2d_1s",
+	1171396773,
+	"global_doors"
+},
+{
+	"d_global_doors_in_sq310_close",
+	2229553989,
+	"global_doors"
+},
+{
+	"d_global_doors_in_sq310_open",
+	3337399247,
+	"global_doors"
+},
+{
+	"global_doors_gate_wooden_1_close",
+	63672340,
+	"global_doors"
+},
+{
+	"global_doors_gate_wooden_1_closed_fully",
+	2420621045,
+	"global_doors"
+},
+{
+	"global_doors_gate_wooden_1_closing_squeak",
+	2661702526,
+	"global_doors"
+},
+{
+	"global_doors_gate_wooden_1_closing_squeak_stop",
+	1869748381,
+	"global_doors"
+},
+{
+	"global_doors_gate_wooden_1_open",
+	497910960,
+	"global_doors"
+},
+{
+	"global_doors_gate_wooden_1_opened_fully",
+	3478807770,
+	"global_doors"
+},
+{
+	"global_doors_gate_wooden_1_opening_stop",
+	2411824455,
+	"global_doors"
+},
+{
+	"global_doors_metal_1_closed_fully",
+	324434880,
+	"global_doors"
+},
+{
+	"global_doors_metal_1_closing_squeak",
+	1821911575,
+	"global_doors"
+},
+{
+	"global_doors_metal_1_closing_squeak_stop",
+	3725976242,
+	"global_doors"
+},
+{
+	"global_doors_metal_1_open",
+	2210058049,
+	"global_doors"
+},
+{
+	"global_doors_metal_1_opened_fully",
+	1761900939,
+	"global_doors"
+},
+{
+	"global_doors_metal_2_closed_fully",
+	1366251813,
+	"global_doors"
+},
+{
+	"global_doors_metal_2_open",
+	1181926400,
+	"global_doors"
+},
+{
+	"global_doors_metal_2_opened_fully",
+	100105034,
+	"global_doors"
+},
+{
+	"global_doors_metal_2_squeak",
+	127438310,
+	"global_doors"
+},
+{
+	"global_doors_metal_2_squeak_stop",
+	3784151029,
+	"global_doors"
+},
+{
+	"global_doors_portcullis_wooded_loop_start",
+	3081870553,
+	"global_doors"
+},
+{
+	"global_doors_portcullis_wooded_loop_stop",
+	2727590579,
+	"global_doors"
+},
+{
+	"global_doors_stone_1_slide_far_start",
+	1880369045,
+	"global_doors"
+},
+{
+	"global_doors_stone_1_slide_far_stop_hard",
+	2470644597,
+	"global_doors"
+},
+{
+	"global_doors_stone_1_slide_start",
+	682697723,
+	"global_doors"
+},
+{
+	"global_doors_stone_1_slide_stop_hard",
+	119925179,
+	"global_doors"
+},
+{
+	"global_doors_stone_1_slide_stop_soft",
+	1834873396,
+	"global_doors"
+},
+{
+	"global_doors_stone_2_slide_open_short",
+	2913140783,
+	"global_doors"
+},
+{
+	"global_doors_stone_2_slide_start",
+	2769672444,
+	"global_doors"
+},
+{
+	"global_doors_stone_2_slide_stop_hard",
+	783201516,
+	"global_doors"
+},
+{
+	"global_doors_stone_2_slide_stop_soft",
+	1247083183,
+	"global_doors"
+},
+{
+	"global_doors_stone_3_slide_open_short",
+	2706746328,
+	"global_doors"
+},
+{
+	"global_doors_stone_3_slide_start",
+	1544601049,
+	"global_doors"
+},
+{
+	"global_doors_stone_3_slide_stop_hard",
+	1037302985,
+	"global_doors"
+},
+{
+	"global_doors_stone_3_slide_stop_soft",
+	336801714,
+	"global_doors"
+},
+{
+	"global_doors_stone_4_slide_start",
+	4098993626,
+	"global_doors"
+},
+{
+	"global_doors_stone_4_slide_stop_hard",
+	2123824330,
+	"global_doors"
+},
+{
+	"global_doors_stone_switch",
+	2717618159,
+	"global_doors"
+},
+{
+	"global_doors_wooden_0_close",
+	804834543,
+	"global_doors"
+},
+{
+	"global_doors_wooden_0_closed_fully",
+	148461864,
+	"global_doors"
+},
+{
+	"global_doors_wooden_0_open",
+	811919529,
+	"global_doors"
+},
+{
+	"global_doors_wooden_0_opened_fully",
+	3885276307,
+	"global_doors"
+},
+{
+	"global_doors_wooden_0_squeak",
+	3457292611,
+	"global_doors"
+},
+{
+	"global_doors_wooden_0_squeak_stop",
+	485755310,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_close",
+	2840058382,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_closed_fully",
+	1550586099,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_closing_squeak_loop_start",
+	922925400,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_closing_squeak_loop_stop",
+	77979108,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_open",
+	2674466762,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_opened_fully",
+	1415434652,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_opening_squeak_loop_start",
+	3927725997,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_opening_squeak_loop_stop",
+	3048917743,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_slam_shut",
+	2553045470,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_squeak_start",
+	1671166325,
+	"global_doors"
+},
+{
+	"global_doors_wooden_1_squeak_stop",
+	3106936791,
+	"global_doors"
+},
+{
+	"global_doors_wooden_2_close",
+	2920242189,
+	"global_doors"
+},
+{
+	"global_doors_wooden_2_closed_fully",
+	358100226,
+	"global_doors"
+},
+{
+	"global_doors_wooden_2_open",
+	3030798279,
+	"global_doors"
+},
+{
+	"global_doors_wooden_2_opened_fully",
+	105215753,
+	"global_doors"
+},
+{
+	"global_doors_wooden_2_squeak",
+	146017465,
+	"global_doors"
+},
+{
+	"global_doors_wooden_2_squeak_stop",
+	2145174348,
+	"global_doors"
+},
+{
+	"global_doors_wooden_3_close",
+	2922516156,
+	"global_doors"
+},
+{
+	"global_doors_wooden_3_closed_fully",
+	3312301901,
+	"global_doors"
+},
+{
+	"global_doors_wooden_3_open",
+	3005090856,
+	"global_doors"
+},
+{
+	"global_doors_wooden_3_opened_fully",
+	1461473554,
+	"global_doors"
+},
+{
+	"global_doors_wooden_3_squeak",
+	4138391454,
+	"global_doors"
+},
+{
+	"global_doors_wooden_3_squeak_stop",
+	234699901,
+	"global_doors"
+},
+{
+	"global_doors_wooden_creepy_1_close",
+	1623740243,
+	"global_doors"
+},
+{
+	"global_doors_wooden_creepy_1_closed_fully",
+	3599124580,
+	"global_doors"
+},
+{
+	"global_doors_wooden_creepy_1_open",
+	1072238309,
+	"global_doors"
+},
+{
+	"global_doors_wooden_creepy_1_opened_fully",
+	1501194279,
+	"global_doors"
+},
+{
+	"global_doors_wooden_creepy_1_squeak",
+	668033511,
+	"global_doors"
+},
+{
+	"global_doors_wooden_creepy_1_squeak_stop",
+	937200290,
+	"global_doors"
+},
+{
+	"global_doors_wooden_qu106_creepy_closing",
+	3472960886,
+	"global_doors"
+},
+{
+	"global_doors_wooden_qu106_creepy_opening",
+	3928913787,
+	"global_doors"
+},
+{
+	"global_doors_wooden_qu301_creepy_opening",
+	1610736,
+	"global_doors"
+},
+{
+	"global_doors_wooden_qu301_creepy_shutting",
+	3477157162,
+	"global_doors"
+},
+{
+	"global_doors_wooden_trap_1_closed_fully",
+	647187451,
+	"global_doors"
+},
+{
+	"global_doors_wooden_trap_1_opened_fully",
+	2622583588,
+	"global_doors"
+},
+{
+	"global_doors_wooden_trap_1_squeak",
+	1974374736,
+	"global_doors"
+},
+{
+	"global_doors_wooden_trap_1_squeak_stop",
+	743529503,
+	"global_doors"
+},
+{
+	"global_doors_wooden_unlock",
+	3193634934,
+	"global_doors"
+},
+{
+	"cs105_cutting_ear_sfx",
+	544743785,
+	"cs105_cutting_ear"
+},
+{
+	"cs201_becca_introduced",
+	2993235761,
+	"cs201_becca_introduced"
+},
+{
+	"grunt_vo_agony",
+	3604533624,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_agony_end",
+	2269873918,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_attack_long",
+	3644397417,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_attack_long_ALWAYS",
+	561525283,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_attack_medium",
+	1039281658,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_attack_medium_ALWAYS",
+	519880790,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_attack_short",
+	4055069695,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_attack_short_ALWAYS",
+	3430882369,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_attack_short_RND",
+	3242351522,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_block",
+	1993327423,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_burn_dmg",
+	3180714690,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_burn_dmg_end",
+	1860819992,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_burn_recovery",
+	1522559591,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_death",
+	209757778,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_death_last_breath",
+	568971658,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_death_stop",
+	2458096881,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_dodge",
+	1035580193,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_grunt",
+	1456643074,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_impact_heavy",
+	1625123410,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_impact_heavy_ALWAYS",
+	2761801550,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_impact_light",
+	1777262823,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_impact_light_ALWAYS",
+	1105490537,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_impact_light_RND",
+	127149386,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_shock",
+	3985992122,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_throat_cut",
+	1902649411,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_throat_gurgling",
+	1658875032,
+	"grunt_vo_hjalmar"
+},
+{
+	"grunt_vo_throat_gurgling_sparse",
+	1433536311,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_attack_long_ALWAYS",
+	3623814830,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_attack_medium_ALWAYS",
+	3791880103,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_attack_short_ALWAYS",
+	1868473450,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_burn_dmg_RND",
+	3479660250,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_death_RND",
+	909264800,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_start",
+	3275716446,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_stop",
+	1756125182,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_m_burn_dmg_end",
+	2077504813,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_m_impact_heavy",
+	4109997507,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_m_impact_light",
+	1900386010,
+	"grunt_vo_hjalmar"
+},
+{
+	"scene_grunt_vo_m_throat_cut",
+	3188734954,
+	"grunt_vo_hjalmar"
+},
+{
+	"cs501_crach_dies",
+	3006093997,
+	"cs501_crach_dies"
+},
+{
+	"sign_igni_charge_begin",
+	205313075,
+	"sign_igni"
+},
+{
+	"sign_igni_charge_concentrate",
+	3827195972,
+	"sign_igni"
+},
+{
+	"sign_igni_charge_loop_play",
+	738680239,
+	"sign_igni"
+},
+{
+	"sign_igni_charge_loop_stop",
+	3497887661,
+	"sign_igni"
+},
+{
+	"sign_igni_no_stamina",
+	3091852690,
+	"sign_igni"
+},
+{
+	"cs602_sex_with_shani_intro",
+	3035169484,
+	"cs602_sex_with_shani_intro"
+},
+{
+	"sq_nml_104_breath",
+	3305118242,
+	"sq_nml_104"
+},
+{
+	"sq_nml_104_margaret_dies",
+	1300889789,
+	"sq_nml_104"
+},
+{
+	"sq_nml_104_niellen_dies",
+	3063570785,
+	"sq_nml_104"
+},
+{
+	"sq_nml_104_women_scream",
+	1396347510,
+	"sq_nml_104"
+},
+{
+	"sq_nml_107_pig_conversation",
+	3724247231,
+	"sq_nml_107"
+},
+{
+	"sq_nml_107_pig_scream_and__cloud",
+	2918249864,
+	"sq_nml_107"
+},
+{
+	"sq_nml_107_pigs_uncurse_transform_vfx",
+	3999923622,
+	"sq_nml_107"
+},
+{
+	"sq_nml_101_spell_clothes",
+	1352296050,
+	"sq_nml_101"
+},
+{
+	"sq_nml_101_turning_mice_into_stallions",
+	1688402138,
+	"sq_nml_101"
+},
+{
+	"sq_nml_102_02_05_geralt_meets_letho_trap_kill_mane",
+	3991276855,
+	"sq_nml_102"
+},
+{
+	"sq_nml_102_02_06_letho_shows_assassins_horse_arraving",
+	1998268773,
+	"sq_nml_102"
+},
+{
+	"sq_nml_102_angry_mans",
+	1819866899,
+	"sq_nml_102"
+},
+{
+	"sq_nml_102_drop_wood",
+	3633959203,
+	"sq_nml_102"
+},
+{
+	"sq_nml_102_letho_fire_brust",
+	215665812,
+	"sq_nml_102"
+},
+{
+	"sq_nml_102_wood_ladder",
+	3767028852,
+	"sq_nml_102"
+},
+{
+	"sq_nml_108",
+	3045422285,
+	"sq_nml_108"
+},
+{
+	"cs_give_take_default",
+	3047707059,
+	"cs_give_take_default"
+},
+{
+	"amb_qu_INT_crowd_inhouse_party",
+	3392991151,
+	"amb_qu_crowd_inhouse_party"
+},
+{
+	"amb_qu_INT_crowd_inhouse_party_int_0",
+	262492568,
+	"amb_qu_crowd_inhouse_party"
+},
+{
+	"amb_qu_INT_crowd_inhouse_party_int_1",
+	262492569,
+	"amb_qu_crowd_inhouse_party"
+},
+{
+	"amb_qu_INT_crowd_inhouse_party_int_2",
+	262492570,
+	"amb_qu_crowd_inhouse_party"
+},
+{
+	"amb_qu_INT_crowd_inhouse_party_int_3",
+	262492571,
+	"amb_qu_crowd_inhouse_party"
+},
+{
+	"amb_dyn_warcamp",
+	3065823327,
+	"amb_dyn_warcamp"
+},
+{
+	"cs305_arrival_dandelion_and_priscilla",
+	3068188610,
+	"cs305_arrival_dandelion_and_priscilla"
+},
+{
+	"animals_whale_blow_hole",
+	671837674,
+	"animals_whale"
+},
+{
+	"animals_whale_call_close",
+	3560650816,
+	"animals_whale"
+},
+{
+	"animals_whale_call_far",
+	2648690287,
+	"animals_whale"
+},
+{
+	"animals_whale_tail_splash",
+	3118325691,
+	"animals_whale"
+},
+{
+	"amb_qu_haunted_EM_CUSTOM_evil_laugh_1",
+	3748307354,
+	"amb_qu_haunted"
+},
+{
+	"amb_qu_haunted_EM_CUSTOM_footsteps_1",
+	1939218767,
+	"amb_qu_haunted"
+},
+{
+	"amb_qu_haunted_EM_CUSTOM_monster_hiss_1",
+	356819428,
+	"amb_qu_haunted"
+},
+{
+	"cs403_canaris",
+	3097724152,
+	"cs403_canaris"
+},
+{
+	"cs103_poroniec_attack_choice",
+	3132185948,
+	"cs103_poroniec_attack_choice"
+},
+{
+	"mq_km_4006_stone_door_moving",
+	2443202325,
+	"mq_km_4006"
+},
+{
+	"monster_bear_bite",
+	1910270723,
+	"monster_bear"
+},
+{
+	"monster_bear_focus_100m_start",
+	3455113821,
+	"monster_bear"
+},
+{
+	"monster_bear_focus_100m_stop",
+	314765663,
+	"monster_bear"
+},
+{
+	"monster_bear_mv_bodyfall",
+	1905816484,
+	"monster_bear"
+},
+{
+	"monster_bear_mv_footstep",
+	3223291629,
+	"monster_bear"
+},
+{
+	"monster_bear_mv_footsteps_custom",
+	1928022038,
+	"monster_bear"
+},
+{
+	"monster_bear_mv_paw",
+	1174783785,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_calm_groan",
+	940846390,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_calm_groan_custom",
+	869620828,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_calm_groan_rnd",
+	3606467031,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_eat",
+	252439957,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_eat_short",
+	1872096950,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_getup",
+	1054635664,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_ground_custom",
+	4261770238,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_laydown",
+	920867913,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_lick",
+	1602674270,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_sleep",
+	1772759978,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_stomp",
+	4136461892,
+	"monster_bear"
+},
+{
+	"monster_bear_sfx_stomp_dirt_custom",
+	2475780574,
+	"monster_bear"
+},
+{
+	"monster_bear_swoosh",
+	2490850544,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_attack_long",
+	4151729824,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_attack_long_custom",
+	2497844754,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_attack_quick",
+	1802914659,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_attack_short",
+	1725473600,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_attack_short_custom",
+	928104946,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_breath",
+	1253219341,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_confusion",
+	2599773945,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_death",
+	2459552815,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_grunt_short",
+	146139268,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_grunt_short_custom",
+	2861770614,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_grunt_short_rnd",
+	1725850201,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_pain",
+	3100271399,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_taunt_01",
+	4182042765,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_taunt_02",
+	4182042766,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_taunt_03",
+	4182042767,
+	"monster_bear"
+},
+{
+	"monster_bear_vo_taunt_custom",
+	1352318341,
+	"monster_bear"
+},
+{
+	"set_monster_bear_armour_type_flesh",
+	1813992056,
+	"monster_bear"
+},
+{
+	"magic_boss_teleport_fx_end",
+	2019054815,
+	"magic_teleport"
+},
+{
+	"magic_boss_teleport_fx_start",
+	1039454204,
+	"magic_teleport"
+},
+{
+	"magic_q104_rift_start",
+	2784175242,
+	"magic_teleport"
+},
+{
+	"magic_q104_rift_stop",
+	785570530,
+	"magic_teleport"
+},
+{
+	"magic_teleport_activate",
+	3993775616,
+	"magic_teleport"
+},
+{
+	"magic_teleport_cold_rift_fx_end",
+	2777138624,
+	"magic_teleport"
+},
+{
+	"magic_teleport_cold_rift_fx_start",
+	469427611,
+	"magic_teleport"
+},
+{
+	"magic_teleport_explo",
+	4245233555,
+	"magic_teleport"
+},
+{
+	"magic_teleport_fx_end",
+	2582751379,
+	"magic_teleport"
+},
+{
+	"magic_teleport_fx_start",
+	585754920,
+	"magic_teleport"
+},
+{
+	"magic_teleport_spiral_fx_end",
+	2396966451,
+	"magic_teleport"
+},
+{
+	"magic_teleport_spiral_fx_start",
+	3840054216,
+	"magic_teleport"
+},
+{
+	"magic_teleport_step_into_portal",
+	2240781031,
+	"magic_teleport"
+},
+{
+	"mus_cs402_ciri_welcome",
+	661815936,
+	"music_misty_island"
+},
+{
+	"mus_cs402_entering_mist_island",
+	1235712544,
+	"music_misty_island"
+},
+{
+	"mus_cs402_teleport_to_KM",
+	2866971676,
+	"music_misty_island"
+},
+{
+	"mus_loc_isle_of_mists",
+	842703164,
+	"music_misty_island"
+},
+{
+	"mus_loc_isle_of_mists_cs_to_gmpl",
+	141812158,
+	"music_misty_island"
+},
+{
+	"mus_q402_catching_up",
+	1210045932,
+	"music_misty_island"
+},
+{
+	"play_music_misty_island",
+	2196146690,
+	"music_misty_island"
+},
+{
+	"monster_golem_ice_cmb_block_ADD",
+	708231841,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_cmb_taunt_hands",
+	488124705,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_death_break_ADD",
+	2754473275,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_focus_sfx_start",
+	3228101852,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_focus_sfx_stop",
+	1321456560,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_mv_foley_heavy",
+	1905324986,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_mv_foley_light",
+	3168199871,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_mv_recover",
+	1687992635,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_swoosh_ADD",
+	2349332214,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_vfx_death",
+	3575570538,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_vfx_trail_loop_start",
+	3724228296,
+	"monster_golem_ice"
+},
+{
+	"monster_golem_ice_vfx_trail_loop_stop",
+	1916019476,
+	"monster_golem_ice"
+},
+{
+	"set_monster_golem_ice_armour_type_monster_ice",
+	2764381580,
+	"monster_golem_ice"
+},
+{
+	"cs_leaving_horse",
+	3205473580,
+	"cs_leaving_horse"
+},
+{
+	"magic_ghost_appear",
+	2075146966,
+	"magic_ghost"
+},
+{
+	"magic_ghost_demon_animal_appear",
+	311439723,
+	"magic_ghost"
+},
+{
+	"magic_ghost_disappear",
+	1119377672,
+	"magic_ghost"
+},
+{
+	"magic_ghost_loop",
+	2946154375,
+	"magic_ghost"
+},
+{
+	"magic_ghost_loop_stop",
+	3628755330,
+	"magic_ghost"
+},
+{
+	"magic_ghost_possession",
+	2326763427,
+	"magic_ghost"
+},
+{
+	"magic_ghost_possession_dialog",
+	2846836006,
+	"magic_ghost"
+},
+{
+	"cs103_ciri_saves_baron",
+	3212174687,
+	"cs103_ciri_saves_baron"
+},
+{
+	"monster_boar_cmb_kick_whoosh",
+	1136922349,
+	"monster_boar"
+},
+{
+	"monster_boar_fx_saliva",
+	2966587930,
+	"monster_boar"
+},
+{
+	"monster_boar_mv_bodyfall",
+	3301645862,
+	"monster_boar"
+},
+{
+	"monster_boar_mv_step_double",
+	2965386429,
+	"monster_boar"
+},
+{
+	"monster_boar_mv_step_double_hard",
+	3086132631,
+	"monster_boar"
+},
+{
+	"monster_boar_mv_step_single",
+	3110457366,
+	"monster_boar"
+},
+{
+	"monster_boar_mv_step_single_hard",
+	3167180406,
+	"monster_boar"
+},
+{
+	"monster_boar_mv_step_slide_short",
+	2190343686,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_attack_fast_hard",
+	2581230182,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_attack_fast_light",
+	2504236683,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_breath_calm_2",
+	91329100,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_breath_fast",
+	3234708540,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_breath_fast_2",
+	932075907,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_breath_heavy_cycle",
+	3719832496,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_breath_heavy_in",
+	2515615515,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_breath_heavy_out",
+	246987702,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_death_long",
+	1523771962,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_death_short",
+	1310088502,
+	"monster_boar"
+},
+{
+	"monster_boar_vo_pain",
+	3974263317,
+	"monster_boar"
+},
+{
+	"mus_em_bard_group_ext",
+	161388279,
+	"music_em_bard_groups"
+},
+{
+	"mus_em_bard_group_ext_end",
+	2614364569,
+	"music_em_bard_groups"
+},
+{
+	"mus_em_bard_group_int",
+	4290550701,
+	"music_em_bard_groups"
+},
+{
+	"mus_em_bard_group_int_end",
+	2941956591,
+	"music_em_bard_groups"
+},
+{
+	"cs002_nilfgaardian_patrol_intro_nilfgaard",
+	1118294021,
+	"music_prologue"
+},
+{
+	"cs002_nilfgaardian_patrol_yen_loop",
+	2762482211,
+	"music_prologue"
+},
+{
+	"cs002_tavern_massacre",
+	3948600968,
+	"music_prologue"
+},
+{
+	"cs002_tavern_robbery_pt1",
+	3854851872,
+	"music_prologue"
+},
+{
+	"cs002_tavern_robbery_pt2",
+	3854851875,
+	"music_prologue"
+},
+{
+	"cs002_wild_hunt_chase",
+	1774226461,
+	"music_prologue"
+},
+{
+	"mus_credits_secondary_prologue",
+	1072296162,
+	"music_prologue"
+},
+{
+	"mus_credits_usm_prologue",
+	145364527,
+	"music_prologue"
+},
+{
+	"mus_cs001_griffin",
+	3539206364,
+	"music_prologue"
+},
+{
+	"mus_cs001_tavern_intro",
+	189599442,
+	"music_prologue"
+},
+{
+	"mus_cs001_wake_up",
+	3460628225,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_battlefield",
+	2646857648,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_battlefield_cs_to_gmpl",
+	4136290266,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_cemetery",
+	3765927150,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_cemetery_cs_to_gmpl",
+	2351309272,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_nilfgaard_camp",
+	34994378,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_nilfgaard_camp_cs_to_gmpl",
+	1834903788,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_silent",
+	1739529773,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_silent_cs_to_gmpl",
+	4273272605,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_tavern",
+	2625928892,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_tavern_cs_to_gmpl",
+	3645920830,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_tavern_winter",
+	2211659064,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_tavern_winter_cs_to_gmpl",
+	1532332178,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_village",
+	144966830,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_village_cs_to_gmpl",
+	3512759960,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_village_q505",
+	3777729250,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_village_q505_cs_to_gmpl",
+	2009604340,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_village_winter",
+	1657720662,
+	"music_prologue"
+},
+{
+	"mus_loc_prologue_village_winter_cs_to_gmpl",
+	4222007408,
+	"music_prologue"
+},
+{
+	"mus_prlg_dialog_01",
+	2637888767,
+	"music_prologue"
+},
+{
+	"mus_prlg_dialog_02",
+	2637888764,
+	"music_prologue"
+},
+{
+	"mus_prlg_dialog_03",
+	2637888765,
+	"music_prologue"
+},
+{
+	"mus_prlg_dialog_04",
+	2637888762,
+	"music_prologue"
+},
+{
+	"mus_prlg_final_boards",
+	543106451,
+	"music_prologue"
+},
+{
+	"mus_prlg_final_boards_alt",
+	2966363291,
+	"music_prologue"
+},
+{
+	"mus_q001_griffin_chase",
+	973689384,
+	"music_prologue"
+},
+{
+	"mus_q001_griffin_combat",
+	1807521982,
+	"music_prologue"
+},
+{
+	"mus_q001_tavern_conversation",
+	1576230006,
+	"music_prologue"
+},
+{
+	"mus_q504_silent",
+	2910822637,
+	"music_prologue"
+},
+{
+	"mus_q505_final_dlg_alt_loop",
+	1885931698,
+	"music_prologue"
+},
+{
+	"mus_q505_final_dlg_alt_loop_end",
+	1113758504,
+	"music_prologue"
+},
+{
+	"mus_q505_silent",
+	1437277154,
+	"music_prologue"
+},
+{
+	"play_music_prologue",
+	495878273,
+	"music_prologue"
+},
+{
+	"q002_tavern_combat",
+	2421459372,
+	"music_prologue"
+},
+{
+	"q504_ciri_goes_home",
+	2576418608,
+	"music_prologue"
+},
+{
+	"q505_final_dlg",
+	2470662005,
+	"music_prologue"
+},
+{
+	"q505_silent",
+	2858046006,
+	"music_prologue"
+},
+{
+	"cs605_merchant_loses",
+	3243066846,
+	"cs605_merchant_loses"
+},
+{
+	"amb_dyn_crowd_tavern_whispers",
+	3258133388,
+	"amb_dyn_crowd_tavern_whispers"
+},
+{
+	"grunt_vo_agony",
+	3604533624,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_agony_end",
+	2269873918,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_attack_long",
+	3644397417,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_attack_long_ALWAYS",
+	561525283,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_attack_medium",
+	1039281658,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_attack_medium_ALWAYS",
+	519880790,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_attack_short",
+	4055069695,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_attack_short_ALWAYS",
+	3430882369,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_attack_short_RND",
+	3242351522,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_block",
+	1993327423,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_burn_dmg",
+	3180714690,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_burn_dmg_end",
+	1860819992,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_burn_recovery",
+	1522559591,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_death",
+	209757778,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_death_last_breath",
+	568971658,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_death_stop",
+	2458096881,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_dodge",
+	1035580193,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_breath_normal",
+	2458216946,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_breath_surfacing",
+	2150037897,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_breath_surfacing_RND",
+	69191784,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_breath_to_underwater",
+	3856141624,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_breath_to_underwater_RND",
+	1861775413,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_choke_part_1",
+	1683971206,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_choke_part_2",
+	1683971205,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_choke_start",
+	199562679,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_choke_start_RND",
+	3567945818,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_cough_mildly_loop",
+	3409822721,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_cough_mildly_start",
+	20512733,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_cough_mildly_start_RND",
+	400390820,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_drowning",
+	786575184,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_drowning_underwater",
+	1652983888,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_drowning_underwater_loop_start",
+	840715384,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_drowning_underwater_loop_stop",
+	3097840260,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_impact_heavy",
+	21731192,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_impact_light",
+	2876849117,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_impact_light_loop",
+	2836483954,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_impact_light_loop_end",
+	2782717672,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_on_fire",
+	622960472,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_geralt_on_fire_RND",
+	447977493,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_grunt",
+	1456643074,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_impact_heavy",
+	1625123410,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_impact_heavy_ALWAYS",
+	2761801550,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_impact_light",
+	1777262823,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_impact_light_ALWAYS",
+	1105490537,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_impact_light_RND",
+	127149386,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_shock",
+	3985992122,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_throat_cut",
+	1902649411,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_throat_gurgling",
+	1658875032,
+	"grunt_vo_geralt"
+},
+{
+	"grunt_vo_throat_gurgling_sparse",
+	1433536311,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_attack_long_ALWAYS",
+	3623814830,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_attack_medium_ALWAYS",
+	3791880103,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_attack_short_ALWAYS",
+	1868473450,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_burn_dmg_RND",
+	3479660250,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_death_RND",
+	909264800,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_start",
+	3275716446,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_stop",
+	1756125182,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_m_burn_dmg_end",
+	2077504813,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_m_impact_heavy",
+	4109997507,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_m_impact_light",
+	1900386010,
+	"grunt_vo_geralt"
+},
+{
+	"scene_grunt_vo_m_throat_cut",
+	3188734954,
+	"grunt_vo_geralt"
+},
+{
+	"monster_nekker_attack_custom",
+	1293205127,
+	"monster_nekker"
+},
+{
+	"monster_nekker_breath_custom",
+	4133665865,
+	"monster_nekker"
+},
+{
+	"monster_nekker_cmb_swoosh_high",
+	2113827754,
+	"monster_nekker"
+},
+{
+	"monster_nekker_cmb_swoosh_low",
+	3053274700,
+	"monster_nekker"
+},
+{
+	"monster_nekker_dig_out_custom",
+	2392188570,
+	"monster_nekker"
+},
+{
+	"monster_nekker_focus_sfx_start",
+	525235040,
+	"monster_nekker"
+},
+{
+	"monster_nekker_focus_sfx_stop",
+	155251596,
+	"monster_nekker"
+},
+{
+	"monster_nekker_mv_bodyfall",
+	1298162266,
+	"monster_nekker"
+},
+{
+	"monster_nekker_mv_digin",
+	99878058,
+	"monster_nekker"
+},
+{
+	"monster_nekker_mv_digout",
+	606012549,
+	"monster_nekker"
+},
+{
+	"monster_nekker_mv_foley_flesh",
+	2591615057,
+	"monster_nekker"
+},
+{
+	"monster_nekker_mv_foley_flesh_RND",
+	887197584,
+	"monster_nekker"
+},
+{
+	"monster_nekker_mv_footstep",
+	1258828415,
+	"monster_nekker"
+},
+{
+	"monster_nekker_otr_cage",
+	3500178923,
+	"monster_nekker"
+},
+{
+	"monster_nekker_otr_scrape",
+	1934549451,
+	"monster_nekker"
+},
+{
+	"monster_nekker_otr_scratch_head",
+	740581060,
+	"monster_nekker"
+},
+{
+	"monster_nekker_scream_custom",
+	2666054750,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_attack",
+	846189421,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_attack_RND",
+	3437736116,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_breath",
+	1992313619,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_breath_RND",
+	3348983422,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_burning",
+	3290375054,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_burning_RND",
+	1336136751,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_death",
+	1724117041,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_mumble",
+	3592890695,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_mumble_RND",
+	3429598314,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_pain",
+	618339305,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_pain_RND",
+	2077663368,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_scream",
+	1403294446,
+	"monster_nekker"
+},
+{
+	"monster_nekker_vo_scream_RND",
+	2466661839,
+	"monster_nekker"
+},
+{
+	"set_monster_nekker_armour_type_flesh",
+	743147190,
+	"monster_nekker"
+},
+{
+	"cs303_dijkstra_opening_vault",
+	3264024714,
+	"cs303_dijkstra_opening_vault"
+},
+{
+	"amb_dyn_dark_liquid_boiling_15m",
+	2845594308,
+	"amb_dyn_dark_liquid"
+},
+{
+	"amb_dyn_dark_liquid_dripping_15m",
+	3852533979,
+	"amb_dyn_dark_liquid"
+},
+{
+	"global_switch_heavy",
+	200084943,
+	"global_switches"
+},
+{
+	"global_switch_light",
+	2042698462,
+	"global_switches"
+},
+{
+	"qu_202_bandit_laughs",
+	3020986084,
+	"qu_skellige_vs"
+},
+{
+	"qu_202_horse_foley_01_right",
+	235224733,
+	"qu_skellige_vs"
+},
+{
+	"qu_202_horse_foley_02",
+	353041369,
+	"qu_skellige_vs"
+},
+{
+	"qu_202_horse_runs_away",
+	3704739514,
+	"qu_skellige_vs"
+},
+{
+	"qu_202_merchants_daughter_screams_and_dies_short",
+	1549906139,
+	"qu_skellige_vs"
+},
+{
+	"qu_202_merchants_daughter_screams_and_dies_short_end",
+	1031297213,
+	"qu_skellige_vs"
+},
+{
+	"qu_202_woman_screams_and_is_killed",
+	1907786325,
+	"qu_skellige_vs"
+},
+{
+	"qu_202_woman_screams_temp",
+	2610764887,
+	"qu_skellige_vs"
+},
+{
+	"qu_e3_demo_woman_crying",
+	1989181914,
+	"qu_skellige_vs"
+},
+{
+	"qu_fma_sirens_victim_death_01",
+	1333739277,
+	"qu_skellige_vs"
+},
+{
+	"qu_fma_sirens_victim_death_01_stop",
+	2325079296,
+	"qu_skellige_vs"
+},
+{
+	"qu_sk_drakkar_singing",
+	1196473671,
+	"qu_skellige_vs"
+},
+{
+	"qu_sk_drakkar_singing_end",
+	4251941449,
+	"qu_skellige_vs"
+},
+{
+	"cs203_baby_in_oven_choice_sfx",
+	2870523230,
+	"cs203_baby_in_oven_choice"
+},
+{
+	"cs403_gameplay_zoltan_fights",
+	3319967434,
+	"cs403_gameplay_zoltan_fights"
+},
+{
+	"cs403_signal",
+	3323255537,
+	"cs403_signal"
+},
+{
+	"cs602_sex_with_shani_sober",
+	3337528399,
+	"cs602_sex_with_shani_sober"
+},
+{
+	"monster_toad_cmb_melee_fast",
+	3229867163,
+	"monster_toad"
+},
+{
+	"monster_toad_cmb_tongue_forward",
+	1517926500,
+	"monster_toad"
+},
+{
+	"monster_toad_cmb_tongue_front",
+	130402194,
+	"monster_toad"
+},
+{
+	"monster_toad_cmb_tongue_side",
+	1055833548,
+	"monster_toad"
+},
+{
+	"monster_toad_fx_mucus_hit",
+	55191935,
+	"monster_toad"
+},
+{
+	"monster_toad_fx_mucus_spit",
+	203758346,
+	"monster_toad"
+},
+{
+	"monster_toad_fx_mucus_travel_stop",
+	2860542835,
+	"monster_toad"
+},
+{
+	"monster_toad_fx_screen_slime",
+	3431566861,
+	"monster_toad"
+},
+{
+	"monster_toad_fx_stomp",
+	1754376847,
+	"monster_toad"
+},
+{
+	"monster_toad_fx_vomit",
+	343580353,
+	"monster_toad"
+},
+{
+	"monster_toad_mv_bodyfall",
+	3403584150,
+	"monster_toad"
+},
+{
+	"monster_toad_mv_footsteps",
+	370270970,
+	"monster_toad"
+},
+{
+	"monster_toad_mv_jump",
+	1784721109,
+	"monster_toad"
+},
+{
+	"monster_toad_mv_land",
+	4108681050,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_attack_long",
+	2917896966,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_attack_long_2",
+	1589361893,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_attack_short",
+	1832235306,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_attack_short_ALWAYS",
+	2035777830,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_idle_12",
+	913079907,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_melee",
+	1779578687,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_pain",
+	944576517,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_pain_heavy",
+	2803828789,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_resonance_soft",
+	673145778,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_resonance_soft_end",
+	4192445992,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_taunt_long",
+	2281299124,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_taunt_long_high",
+	1026748755,
+	"monster_toad"
+},
+{
+	"monster_toad_vo_taunt_long_higher",
+	3096232022,
+	"monster_toad"
+},
+{
+	"cs101_tavern_kidnapping_sfx",
+	3001458424,
+	"cs101_tavern_kidnapping"
+},
+{
+	"magic_filippa_barrier_shield_end",
+	482023930,
+	"magic_filippa"
+},
+{
+	"magic_filippa_barrier_shield_start",
+	1840575721,
+	"magic_filippa"
+},
+{
+	"magic_filippa_cast_levitation_loop_start",
+	1692067408,
+	"magic_filippa"
+},
+{
+	"magic_filippa_cast_levitation_loop_stop",
+	3785023036,
+	"magic_filippa"
+},
+{
+	"magic_filippa_cast_q210_start",
+	3757377534,
+	"magic_filippa"
+},
+{
+	"magic_filippa_cast_q210_stop",
+	3748938270,
+	"magic_filippa"
+},
+{
+	"magic_filippa_explode_q210",
+	4180667811,
+	"magic_filippa"
+},
+{
+	"magic_filippa_fx_loop_q210_start",
+	1929096978,
+	"magic_filippa"
+},
+{
+	"magic_filippa_fx_loop_q210_stop",
+	2267177162,
+	"magic_filippa"
+},
+{
+	"magic_filippa_hand_fx_end",
+	928668551,
+	"magic_filippa"
+},
+{
+	"magic_filippa_hand_fx_start",
+	1477523828,
+	"magic_filippa"
+},
+{
+	"magic_filippa_transform",
+	4071894989,
+	"magic_filippa"
+},
+{
+	"magic_filippa_transform_q210",
+	4258970286,
+	"magic_filippa"
+},
+{
+	"monster_dao_focus_sfx_start",
+	2931556048,
+	"monster_golem_dao"
+},
+{
+	"monster_dao_focus_sfx_stop",
+	3580277692,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_cmb_block_ADD",
+	860930820,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_cmb_swoosh_ground_hit_heavy",
+	2603753992,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_cmb_swoosh_heavy",
+	3285301636,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_cmb_swoosh_light",
+	299113473,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_cmb_swoosh_medium",
+	3304148550,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_cmb_taunt_hands",
+	2918031296,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_dialog_cmb_taunt_hands",
+	370470733,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_dialog_mv_fs_dirt",
+	2641685736,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_dialog_vo_attack",
+	1305810429,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_dialog_vo_taunt_long",
+	1599022552,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_dialog_vo_taunt_short",
+	2287420312,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_mv_bodyfall",
+	2695958851,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_mv_foley_heavy",
+	3206545041,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_mv_foley_light",
+	2259440608,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_mv_footsteps",
+	3535802633,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_mv_footsteps_shuffle",
+	1537508871,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_mv_land",
+	245069435,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_mv_recover",
+	2270120080,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_attack",
+	2486860252,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_attack_RND",
+	2272571441,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_block",
+	1904202467,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_death_long",
+	869328931,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_death_short",
+	4064877533,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_idle",
+	1255888414,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_idle_rnd",
+	1703878847,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_pain",
+	4090124776,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_pain_RND",
+	2403751525,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_stunned",
+	1449277497,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_stunned_rnd",
+	4200158936,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_taunt_long",
+	1136353965,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_vo_taunt_short",
+	292719403,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_xtra_death_ADD",
+	832507748,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_xtra_line_attack",
+	1804861495,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_xtra_rocks",
+	2521889712,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_xtra_stones_back",
+	1584927370,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_xtra_stones_back_long",
+	1562790559,
+	"monster_golem_dao"
+},
+{
+	"monster_golem_dao_xtra_wave_attack",
+	1223659952,
+	"monster_golem_dao"
+},
+{
+	"set_monster_golem_dao_armour_type_monster_stone",
+	2144182679,
+	"monster_golem_dao"
+},
+{
+	"cs210_ship_leaves",
+	3373610992,
+	"cs210_ship_leaves"
+},
+{
+	"cs103_witcher_poroniec_pre_sfx",
+	3069791838,
+	"cs103_witcher_poroniec_pre"
+},
+{
+	"cs_sq301_geralt_triss_kiss_choice_no_kiss",
+	3402695586,
+	"cs_sq301_geralt_triss_kiss_choice_no_kiss"
+},
+{
+	"cs502_tower_shutdown",
+	3405843313,
+	"cs502_tower_shutdown"
+},
+{
+	"cs403_finale_explosion",
+	3412778948,
+	"cs403_finale_explosion"
+},
+{
+	"cs605_geralt_loses",
+	3429219401,
+	"cs605_geralt_loses"
+},
+{
+	"cs205_ciri_landing",
+	3430241886,
+	"cs205_ciri_landing"
+},
+{
+	"amb_qu_INT_toad_chamber",
+	51868770,
+	"amb_qu_toad_chamber"
+},
+{
+	"monster_fogling_appear_disappear_vfx",
+	1253212375,
+	"monster_fogling"
+},
+{
+	"monster_fogling_appear_disappear_vfx_custom",
+	859290583,
+	"monster_fogling"
+},
+{
+	"monster_fogling_bodyfall",
+	1009475332,
+	"monster_fogling"
+},
+{
+	"monster_fogling_breath_fast",
+	1032455598,
+	"monster_fogling"
+},
+{
+	"monster_fogling_breath_fast_RND",
+	1458181007,
+	"monster_fogling"
+},
+{
+	"monster_fogling_breath_slow",
+	800501475,
+	"monster_fogling"
+},
+{
+	"monster_fogling_breath_slow_custom",
+	388031171,
+	"monster_fogling"
+},
+{
+	"monster_fogling_breath_slow_invisible_custom",
+	251427619,
+	"monster_fogling"
+},
+{
+	"monster_fogling_breath_slow_RND",
+	994673486,
+	"monster_fogling"
+},
+{
+	"monster_fogling_doppelganger_attack",
+	1907695538,
+	"monster_fogling"
+},
+{
+	"monster_fogling_doppelganger_breath",
+	4021579780,
+	"monster_fogling"
+},
+{
+	"monster_fogling_doppelganger_death",
+	4046362008,
+	"monster_fogling"
+},
+{
+	"monster_fogling_doppelganger_pain",
+	3946352738,
+	"monster_fogling"
+},
+{
+	"monster_fogling_doppelganger_swoosh",
+	3962400371,
+	"monster_fogling"
+},
+{
+	"monster_fogling_focus_100m_start",
+	3130599271,
+	"monster_fogling"
+},
+{
+	"monster_fogling_focus_100m_stop",
+	1974454925,
+	"monster_fogling"
+},
+{
+	"monster_fogling_footsteps",
+	2760174916,
+	"monster_fogling"
+},
+{
+	"monster_fogling_ground",
+	177014062,
+	"monster_fogling"
+},
+{
+	"monster_fogling_shuffle",
+	1609354310,
+	"monster_fogling"
+},
+{
+	"monster_fogling_slime",
+	1596587365,
+	"monster_fogling"
+},
+{
+	"monster_fogling_swoosh",
+	1271031222,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_attack_long",
+	3333340582,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_attack_long_custom",
+	1586096044,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_attack_short",
+	4012081994,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_burn",
+	609054550,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_death_long",
+	59837802,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_gurgle_long",
+	2371663626,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_gurgle_long_custom",
+	2802852096,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_gurgle_long_RND",
+	1637396579,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_gurgle_short",
+	1247523462,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_gurgle_short_RND",
+	3244537319,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_pain",
+	3019011557,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_taunt",
+	2691796259,
+	"monster_fogling"
+},
+{
+	"monster_fogling_vo_taunt_custom",
+	874116867,
+	"monster_fogling"
+},
+{
+	"set_fogling_invisible",
+	2390187866,
+	"monster_fogling"
+},
+{
+	"set_fogling_visible",
+	749548233,
+	"monster_fogling"
+},
+{
+	"set_monster_fogling_armour_type_generic",
+	3985595689,
+	"monster_fogling"
+},
+{
+	"cs601_decapitation",
+	3470659690,
+	"cs601_decapitation"
+},
+{
+	"cs105_shows_dagger_sfx",
+	3441913567,
+	"cs105_shows_dagger"
+},
+{
+	"qu_km_110_door_slammed",
+	2591076934,
+	"qu_km_110"
+},
+{
+	"qu_km_110_geralt_sleep_breath",
+	2881923948,
+	"qu_km_110"
+},
+{
+	"cs202_geralt_wakes_giant",
+	3488362111,
+	"cs202_geralt_wakes_giant"
+},
+{
+	"qu_item_censer_loop_start",
+	1883073738,
+	"qu_item_censer"
+},
+{
+	"qu_item_censer_loop_stop",
+	3722136610,
+	"qu_item_censer"
+},
+{
+	"mus_cs001_geralt_and_yen",
+	1643586183,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs001_little_ciri_intro",
+	1656204750,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs001_nightmare_p1",
+	1520821064,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs001_nightmare_p2",
+	1520821067,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs110_geralt_and_ciri_drink",
+	2782033782,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs401_uma_changes_into_avallach",
+	3788764910,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs401_uma_intro",
+	3370990213,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_canaris",
+	188368244,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_finale_explosion_p1",
+	3506465942,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_finale_explosion_p2",
+	3506465941,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_finale_p1",
+	976091038,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_finale_p2",
+	976091037,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_finale_sword",
+	776188178,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_finale_unfreeze",
+	2409115803,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_triss_spell_p2",
+	898739258,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_wild_hunt_approaches_p1",
+	1449527108,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_wild_hunt_approaches_p2",
+	1449527111,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_wild_hunt_approaches_p3",
+	1449527110,
+	"music_kaer_morhen"
+},
+{
+	"mus_cs403_wild_hunt_approaches_p4",
+	1449527105,
+	"music_kaer_morhen"
+},
+{
+	"mus_km_dialog_01",
+	1845335238,
+	"music_kaer_morhen"
+},
+{
+	"mus_km_dialog_02",
+	1845335237,
+	"music_kaer_morhen"
+},
+{
+	"mus_km_dialog_03",
+	1845335236,
+	"music_kaer_morhen"
+},
+{
+	"mus_km_dialog_04",
+	1845335235,
+	"music_kaer_morhen"
+},
+{
+	"mus_km_horse_race",
+	2601830529,
+	"music_kaer_morhen"
+},
+{
+	"mus_loc_kaermorhen_caves",
+	510728773,
+	"music_kaer_morhen"
+},
+{
+	"mus_loc_kaermorhen_caves_cs_to_gmpl",
+	2708442917,
+	"music_kaer_morhen"
+},
+{
+	"mus_loc_kaermorhen_global",
+	3656877456,
+	"music_kaer_morhen"
+},
+{
+	"mus_loc_kaermorhen_global_cs_to_gmpl",
+	537960698,
+	"music_kaer_morhen"
+},
+{
+	"mus_loc_kaermorhen_silent",
+	3813337590,
+	"music_kaer_morhen"
+},
+{
+	"mus_q001_silent",
+	3580106805,
+	"music_kaer_morhen"
+},
+{
+	"mus_q001_training",
+	1528285580,
+	"music_kaer_morhen"
+},
+{
+	"mus_q110_snow_fight",
+	421647225,
+	"music_kaer_morhen"
+},
+{
+	"mus_q401_05_12_cave_entrance",
+	1682686178,
+	"music_kaer_morhen"
+},
+{
+	"mus_q401_avallach_interrogation",
+	965044824,
+	"music_kaer_morhen"
+},
+{
+	"mus_q401_drinking_game",
+	800577361,
+	"music_kaer_morhen"
+},
+{
+	"mus_q401_foglets_combat",
+	3396150035,
+	"music_kaer_morhen"
+},
+{
+	"mus_q401_lets_attack_hunt",
+	3270070509,
+	"music_kaer_morhen"
+},
+{
+	"mus_q401_silent",
+	3699512161,
+	"music_kaer_morhen"
+},
+{
+	"mus_q401_trial_of_the_grasses",
+	3091093957,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_battle_calm",
+	3674340128,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_battle_tense",
+	3997480398,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_ciri_before_hunt_attack",
+	4283302084,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_ciri_replacer_calm",
+	3099141582,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_ciri_replacer_tense",
+	2871936356,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_council_p1",
+	1470213137,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_council_p2",
+	1470213138,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_invisible",
+	2245253637,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_silent",
+	3571668367,
+	"music_kaer_morhen"
+},
+{
+	"mus_q403_vesemir_burial",
+	2089771367,
+	"music_kaer_morhen"
+},
+{
+	"mus_tw3_cs401_sex_with_yennefer",
+	928482470,
+	"music_kaer_morhen"
+},
+{
+	"play_music_kaer_morhen",
+	2851843929,
+	"music_kaer_morhen"
+},
+{
+	"cs202_geralt_wakes_giant_2",
+	3523558148,
+	"cs202_geralt_wakes_giant_2"
+},
+{
+	"qu_prl_e3_avalanche",
+	2407000037,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_bear_taunt",
+	268672285,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_bies_walk",
+	1321343683,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_forest_birds_fly_off",
+	309323036,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_ghouls_runaway",
+	2689433096,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_griffin_scream",
+	231682841,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_woman_cry",
+	2712372113,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_woman_cry_ghostly1",
+	3720751229,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_woman_cry_ghostly2",
+	3720751230,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_woman_cry_scream_start",
+	3136613914,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_woman_cry_scream_stop",
+	1353290162,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_woman_scream",
+	649728060,
+	"qu_prl_e3"
+},
+{
+	"qu_prl_e3_wooden_door_opening",
+	3975650586,
+	"qu_prl_e3"
+},
+{
+	"cs402_ciri_welcome",
+	3532991100,
+	"cs402_ciri_welcome"
+},
+{
+	"cs210_cutting_hand",
+	3538912835,
+	"cs210_cutting_hand"
+},
+{
+	"qu_nv_503_little_wolf_cry_loop",
+	2613476051,
+	"qu_nv_503"
+},
+{
+	"qu_nv_503_little_wolf_cry_loop_stop",
+	3546444190,
+	"qu_nv_503"
+},
+{
+	"qu_nv_503_werewolf_distant_howl",
+	2021967138,
+	"qu_nv_503"
+},
+{
+	"qu_nv_503_wolf_in_agony",
+	947320347,
+	"qu_nv_503"
+},
+{
+	"qu_nv_501_barrel_uw_drowning_loop_start",
+	3540958322,
+	"qu_nv_501"
+},
+{
+	"qu_nv_501_barrel_uw_drowning_loop_stop",
+	2475001258,
+	"qu_nv_501"
+},
+{
+	"qu_nv_501_barrel_uw_explosion",
+	3902754905,
+	"qu_nv_501"
+},
+{
+	"qu_nv_501_ice_geyser",
+	4029137471,
+	"qu_nv_501"
+},
+{
+	"qu_nv_501_levitating_stones",
+	597570526,
+	"qu_nv_501"
+},
+{
+	"qu_nv_501_underwater_portal",
+	3173242990,
+	"qu_nv_501"
+},
+{
+	"qu_nv_505_sword_put_to_table",
+	415667216,
+	"qu_nv_505"
+},
+{
+	"qu_nv_505_sword_sheat_quick",
+	3391767497,
+	"qu_nv_505"
+},
+{
+	"qu_nv_505_sword_unsheat_long",
+	2987760735,
+	"qu_nv_505"
+},
+{
+	"monster_iris_fx_appear",
+	117391282,
+	"monster_iris"
+},
+{
+	"monster_iris_fx_background",
+	1555264541,
+	"monster_iris"
+},
+{
+	"monster_iris_fx_background_RND",
+	985045732,
+	"monster_iris"
+},
+{
+	"monster_iris_fx_death",
+	2613756021,
+	"monster_iris"
+},
+{
+	"monster_iris_fx_drain_energy_loop",
+	155532737,
+	"monster_iris"
+},
+{
+	"monster_iris_fx_drain_energy_loop_end",
+	3657903907,
+	"monster_iris"
+},
+{
+	"monster_iris_fx_split_loop_start",
+	3160891221,
+	"monster_iris"
+},
+{
+	"monster_iris_fx_split_loop_stop",
+	1593273399,
+	"monster_iris"
+},
+{
+	"monster_iris_fx_visible_switch",
+	1570294244,
+	"monster_iris"
+},
+{
+	"monster_iris_mv_attack_swoosh",
+	3779325138,
+	"monster_iris"
+},
+{
+	"monster_iris_mv_clothes",
+	3811570244,
+	"monster_iris"
+},
+{
+	"monster_iris_vo_attack",
+	1378805748,
+	"monster_iris"
+},
+{
+	"monster_iris_vo_death",
+	3738160790,
+	"monster_iris"
+},
+{
+	"monster_iris_vo_death_long",
+	157132955,
+	"monster_iris"
+},
+{
+	"monster_iris_vo_pain",
+	3876504528,
+	"monster_iris"
+},
+{
+	"monster_iris_vo_scream",
+	1041154811,
+	"monster_iris"
+},
+{
+	"monster_iris_vo_scream_panting",
+	515353243,
+	"monster_iris"
+},
+{
+	"monster_iris_vo_whisper",
+	3765190094,
+	"monster_iris"
+},
+{
+	"cs501_naglfar_freezes_p2",
+	3574420049,
+	"cs501_naglfar_freezes_p2"
+},
+{
+	"grunt_vo_agony",
+	3604533624,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_agony_end",
+	2269873918,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_attack_long",
+	3644397417,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_attack_long_ALWAYS",
+	561525283,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_attack_medium",
+	1039281658,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_attack_medium_ALWAYS",
+	519880790,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_attack_short",
+	4055069695,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_attack_short_ALWAYS",
+	3430882369,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_attack_short_RND",
+	3242351522,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_block",
+	1993327423,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_burn_dmg",
+	3180714690,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_burn_dmg_end",
+	1860819992,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_burn_recovery",
+	1522559591,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_death",
+	209757778,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_death_last_breath",
+	568971658,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_death_stop",
+	2458096881,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_dodge",
+	1035580193,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_grunt",
+	1456643074,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_impact_heavy",
+	1625123410,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_impact_heavy_ALWAYS",
+	2761801550,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_impact_light",
+	1777262823,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_impact_light_ALWAYS",
+	1105490537,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_impact_light_RND",
+	127149386,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_shock",
+	3985992122,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_throat_cut",
+	1902649411,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_throat_gurgling",
+	1658875032,
+	"grunt_vo_sentry_female"
+},
+{
+	"grunt_vo_throat_gurgling_sparse",
+	1433536311,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_attack_long_ALWAYS",
+	3623814830,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_attack_medium_ALWAYS",
+	3791880103,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_attack_short_ALWAYS",
+	1868473450,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_burn_dmg_RND",
+	3479660250,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_death_RND",
+	909264800,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_start",
+	3275716446,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_stop",
+	1756125182,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_m_burn_dmg_end",
+	2077504813,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_m_impact_heavy",
+	4109997507,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_m_impact_light",
+	1900386010,
+	"grunt_vo_sentry_female"
+},
+{
+	"scene_grunt_vo_m_throat_cut",
+	3188734954,
+	"grunt_vo_sentry_female"
+},
+{
+	"qu_202_bandit_laughs",
+	3020986084,
+	"qu_skellige_e3"
+},
+{
+	"qu_202_horse_foley_01_right",
+	235224733,
+	"qu_skellige_e3"
+},
+{
+	"qu_202_horse_foley_02",
+	353041369,
+	"qu_skellige_e3"
+},
+{
+	"qu_202_horse_runs_away",
+	3704739514,
+	"qu_skellige_e3"
+},
+{
+	"qu_202_merchants_daughter_screams_and_dies_short",
+	1549906139,
+	"qu_skellige_e3"
+},
+{
+	"qu_202_merchants_daughter_screams_and_dies_short_end",
+	1031297213,
+	"qu_skellige_e3"
+},
+{
+	"qu_202_woman_screams_and_is_killed",
+	1907786325,
+	"qu_skellige_e3"
+},
+{
+	"qu_202_woman_screams_temp",
+	2610764887,
+	"qu_skellige_e3"
+},
+{
+	"qu_e3_demo_woman_crying",
+	1989181914,
+	"qu_skellige_e3"
+},
+{
+	"qu_fma_sirens_victim_death_01",
+	1333739277,
+	"qu_skellige_e3"
+},
+{
+	"qu_fma_sirens_victim_death_01_stop",
+	2325079296,
+	"qu_skellige_e3"
+},
+{
+	"qu_sk_drakkar_singing",
+	1196473671,
+	"qu_skellige_e3"
+},
+{
+	"qu_sk_drakkar_singing_end",
+	4251941449,
+	"qu_skellige_e3"
+},
+{
+	"amb_dyn_ext_waterfall_3_big_45m",
+	533529470,
+	"amb_dyn_waterfalls"
+},
+{
+	"amb_dyn_ext_waterfall_3_medium_30m",
+	3008840979,
+	"amb_dyn_waterfalls"
+},
+{
+	"amb_dyn_ext_waterfall_3_medium_80m",
+	3175190144,
+	"amb_dyn_waterfalls"
+},
+{
+	"animals_deer_breath",
+	3508317152,
+	"animals_deer"
+},
+{
+	"animals_deer_die",
+	676759824,
+	"animals_deer"
+},
+{
+	"animals_deer_hit",
+	541847541,
+	"animals_deer"
+},
+{
+	"animals_deer_sniff",
+	3863679654,
+	"animals_deer"
+},
+{
+	"cs605_merchant_skull",
+	3636981143,
+	"cs605_merchant_skull"
+},
+{
+	"cs001_geralt_and_yen_sfx",
+	880491719,
+	"cs001_geralt_and_yen"
+},
+{
+	"cs602_sex_with_shani_boat",
+	3695102552,
+	"cs602_sex_with_shani_boat"
+},
+{
+	"animals_hare_death",
+	2488975062,
+	"animals_hare"
+},
+{
+	"amb_dyn_spooky_forest_1",
+	1256036355,
+	"amb_dyn_spooky_forest"
+},
+{
+	"amb_pause_all",
+	75307180,
+	"amb_sk_global"
+},
+{
+	"amb_resume_all",
+	679718387,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_EM_animal_bird_raven_close_1_120m",
+	2658957957,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_EM_animal_bird_raven_close_2_120m",
+	2562370988,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_em_spooky",
+	2644886965,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_em_wolf_howls",
+	291178066,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_em_wolf_howls_quest",
+	1012422457,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_FOREST_10_medium_normal",
+	2560790778,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_FOREST_11_medium_normal",
+	2937862547,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_water_stream_medium1_mono",
+	3884268204,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_waterfall_small1_mono",
+	3308259756,
+	"amb_sk_global"
+},
+{
+	"amb_sk_G_WIND_and_RAIN_START",
+	2142441391,
+	"amb_sk_global"
+},
+{
+	"amb_sk_G_WIND_and_RAIN_STOP",
+	3759456949,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_wind_forest_medium",
+	515747001,
+	"amb_sk_global"
+},
+{
+	"amb_sk_G_WIND_GRASS_1",
+	1827553092,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_wind_rnd_blows_low1",
+	3184488700,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_wind_rnd_blows_mid1",
+	1409127608,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_wind_rnd_blows_mid2",
+	1409127611,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_wind_rnd_through_branches_mid",
+	2895719580,
+	"amb_sk_global"
+},
+{
+	"amb_sk_g_wind_rnd_through_leaves_mid",
+	2588183868,
+	"amb_sk_global"
+},
+{
+	"amb_nml_nv_EXT_market_square_big_01",
+	1737314560,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_EXT_market_square_big_02",
+	1737314563,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_EXT_market_square_big_02_day",
+	1281049312,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_EXT_night_crickets_2_loop",
+	3568907428,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_EXT_streets_0_generic",
+	1563297952,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_EXT_streets_1_birds",
+	207869994,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_EXT_streets_3_tight",
+	2781369484,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_EXT_streets_4_calm_birds",
+	718103897,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_EXT_woman_pleasure_1",
+	2246791569,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_global_wind",
+	1789560637,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_nml_nv_INT_night_crickets_2_loop_EM",
+	1897960339,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_pause_all",
+	75307180,
+	"amb_nml_area_novigrad"
+},
+{
+	"amb_resume_all",
+	679718387,
+	"amb_nml_area_novigrad"
+},
+{
+	"magic_olgierd_ethereal_bone_mv",
+	2656083345,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_ethereal_bone_mv_head",
+	1727392418,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_ethereal_bone_mv_soft",
+	2837172924,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_ethereal_death",
+	2677427551,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_ethereal_shout",
+	3234114518,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_ethereal_wake",
+	1696067743,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_ethereal_wake_end",
+	3533690625,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_fx_stun_start",
+	3435688098,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_fx_stun_stop",
+	1505574810,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_hand_fx",
+	1349822626,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_sabre_whoosh_fast",
+	2642468969,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_sabre_whoosh_faster",
+	1050666776,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_sand_throw",
+	1717441337,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_special_attack",
+	1305749418,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_tele",
+	4155074750,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_vo_knockdown_1",
+	2863370242,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_vo_knockdown_1_short",
+	2163916665,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_vo_knockdown_2",
+	2863370241,
+	"magic_olgierd"
+},
+{
+	"magic_olgierd_vo_knockdown_2_stop",
+	1576462404,
+	"magic_olgierd"
+},
+{
+	"cs403_finale_unfreeze",
+	3749336559,
+	"cs403_finale_unfreeze"
+},
+{
+	"amb_iom_g_branches_rattle",
+	3785597553,
+	"amb_iom"
+},
+{
+	"amb_iom_g_EM_harpies_80m",
+	321322011,
+	"amb_iom"
+},
+{
+	"amb_iom_g_island_elements_80m",
+	925830653,
+	"amb_iom"
+},
+{
+	"amb_iom_g_water_ocean",
+	4135636074,
+	"amb_iom"
+},
+{
+	"amb_iom_g_water_ocean_shore",
+	4059544768,
+	"amb_iom"
+},
+{
+	"amb_iom_g_wind_global_land",
+	2655823988,
+	"amb_iom"
+},
+{
+	"amb_iom_g_wind_rain_open",
+	1326350702,
+	"amb_iom"
+},
+{
+	"amb_iom_g_wind_rain_open_25m",
+	488797371,
+	"amb_iom"
+},
+{
+	"magic_ciri_appear",
+	3617959806,
+	"magic_ciri"
+},
+{
+	"magic_ciri_disappear",
+	3974526672,
+	"magic_ciri"
+},
+{
+	"magic_ciri_fury_start",
+	952261408,
+	"magic_ciri"
+},
+{
+	"magic_ciri_fury_stop_long",
+	2906005365,
+	"magic_ciri"
+},
+{
+	"magic_ciri_fury_stop_short",
+	4224104915,
+	"magic_ciri"
+},
+{
+	"magic_ciri_teleport_glow",
+	3873780940,
+	"magic_ciri"
+},
+{
+	"amb_dyn_EXT_crowd_city_military_1_25m",
+	489743348,
+	"amb_dyn_crowd_city_ext_military"
+},
+{
+	"cs310_triss_yennefer_payback",
+	3762507336,
+	"cs310_triss_yennefer_payback"
+},
+{
+	"dialog_fx_blood_short",
+	2649682204,
+	"fx_blood"
+},
+{
+	"fx_blood_outflow_medium_loop",
+	1461596240,
+	"fx_blood"
+},
+{
+	"fx_blood_outflow_medium_loop_end",
+	1796660790,
+	"fx_blood"
+},
+{
+	"fx_blood_outflow_medium_short",
+	793824412,
+	"fx_blood"
+},
+{
+	"fx_blood_outflow_small_loop",
+	1037323392,
+	"fx_blood"
+},
+{
+	"fx_blood_outflow_small_loop_end",
+	2020265862,
+	"fx_blood"
+},
+{
+	"fx_blood_outflow_small_short",
+	265478188,
+	"fx_blood"
+},
+{
+	"cs201_sex_with_yennefer_jp",
+	3791899816,
+	"cs201_sex_with_yennefer_jp"
+},
+{
+	"monster_witch_1_attack_swoosh",
+	1050129054,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_bodyfall",
+	177774503,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_emerge",
+	3644416239,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_expl_eating",
+	283331384,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_foley",
+	2650338797,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_footsteps",
+	660199101,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_fx_death_disappear",
+	3907289111,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_fx_drain_energy_loop_start",
+	3674343864,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_fx_drain_energy_loop_stop",
+	1663446724,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_fx_spawn_disappear",
+	3640080364,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_grab_mud",
+	62291365,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_attack_short",
+	411303659,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_burning",
+	715120145,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_confusion",
+	3072560592,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_death",
+	3625564502,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_death_burning",
+	1059039910,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_death_short",
+	489990357,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_hypno",
+	3109805370,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_idle_1",
+	2325500998,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_idle_1_RND",
+	2937242535,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_idle_2",
+	2325500997,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_idle_2_RND",
+	3801429100,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_pain",
+	2013829264,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_sneakattack",
+	657256636,
+	"monster_witch_1"
+},
+{
+	"monster_witch_1_vo_taunt",
+	3774807804,
+	"monster_witch_1"
+},
+{
+	"set_monster_witch_1_armour_type_flesh",
+	2893030797,
+	"monster_witch_1"
+},
+{
+	"monster_witch_2_appear_disappear",
+	716888976,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_attack_swoosh",
+	2848289833,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_bodyfall",
+	4212194082,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_bottle_gulp",
+	2780032712,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_bottle_open",
+	692237548,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_bottle_smash",
+	4248696544,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_foley_heavy",
+	13711022,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_foley_light",
+	2442603787,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_footsteps",
+	1089430678,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_fx_death_disappear",
+	2255387078,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_fx_drain_energy_loop_start",
+	1552250745,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_fx_drain_energy_loop_stop",
+	2807722707,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_fx_spawn_disappear",
+	1516613593,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_kneel",
+	3663932632,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_stomp",
+	2444908448,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_throw_swoosh",
+	1607170851,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_aggro",
+	906467579,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_aggro_RND",
+	1000181062,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_attack_double_synced",
+	3745700790,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_attack_single_synced",
+	2103954203,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_bile_synced",
+	3719745114,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_death",
+	3821818763,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_drink_synced",
+	1802465076,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_hurt_submerge",
+	1847266913,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_idle_long",
+	2087137978,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_idle_long_RND",
+	19468883,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_idle_short",
+	2860809910,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_idle_short_RND",
+	377109335,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_pain",
+	4132893019,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_raise",
+	1435247229,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_raise_loop_synced",
+	1537280383,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_scream_synced",
+	1467348481,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_stomp",
+	2883299098,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_taunt_2_synced",
+	211003663,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_taunt_3_synced",
+	93299424,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_taunt_5_synced",
+	1817142782,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_taunt_6_synced",
+	3658598859,
+	"monster_witch_2"
+},
+{
+	"monster_witch_2_vo_throw_synced",
+	994823506,
+	"monster_witch_2"
+},
+{
+	"set_monster_witch_2_armour_type_flesh",
+	450383878,
+	"monster_witch_2"
+},
+{
+	"monster_witch_3_attack_swoosh",
+	198530988,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_bodyfall",
+	3787354261,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_emerge",
+	1312912961,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_expl_eating",
+	1118344546,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_foley",
+	3260593931,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_footsteps",
+	1998766727,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_fx_death_disappear",
+	1850706941,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_fx_drain_energy_loop_start",
+	3075332778,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_fx_drain_energy_loop_stop",
+	4253972610,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_fx_spawn_disappear",
+	1995820110,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_grab_mud",
+	2079284143,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_attack_short",
+	3832405973,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_burning",
+	1075056243,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_confusion",
+	3194747762,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_death",
+	1622255308,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_death_burning",
+	118502012,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_death_short",
+	3206818387,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_hypno",
+	3606289072,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_idle_1",
+	1505932476,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_idle_1_RND",
+	186328401,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_idle_2",
+	1505932479,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_idle_2_RND",
+	2119209058,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_pain",
+	408808366,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_sneakattack",
+	2325200294,
+	"monster_witch_3"
+},
+{
+	"monster_witch_3_vo_taunt",
+	3466562542,
+	"monster_witch_3"
+},
+{
+	"set_monster_witch_3_armour_type_flesh",
+	3934120591,
+	"monster_witch_3"
+},
+{
+	"cs310_bringing_down_philippa",
+	3795772991,
+	"cs310_bringing_down_philippa"
+},
+{
+	"magic_man_fx_blast",
+	104809087,
+	"magic_man_mage"
+},
+{
+	"magic_man_fx_lightning",
+	430704883,
+	"magic_man_mage"
+},
+{
+	"magic_man_prepare",
+	3700478171,
+	"magic_man_mage"
+},
+{
+	"magic_man_push",
+	4099956158,
+	"magic_man_mage"
+},
+{
+	"magic_man_quicksand_loop_start",
+	3253284831,
+	"magic_man_mage"
+},
+{
+	"magic_man_quicksand_loop_stop",
+	3389867429,
+	"magic_man_mage"
+},
+{
+	"magic_man_sand_gust",
+	3026714030,
+	"magic_man_mage"
+},
+{
+	"magic_man_sand_trap_explode",
+	833869724,
+	"magic_man_mage"
+},
+{
+	"magic_man_staff_hit",
+	3152130566,
+	"magic_man_mage"
+},
+{
+	"magic_man_teleport_in",
+	3343652899,
+	"magic_man_mage"
+},
+{
+	"magic_man_teleport_out",
+	4173011870,
+	"magic_man_mage"
+},
+{
+	"magic_man_tornado_eye_loop_start",
+	395630261,
+	"magic_man_mage"
+},
+{
+	"magic_man_tornado_eye_loop_stop",
+	2898614807,
+	"magic_man_mage"
+},
+{
+	"magic_man_tornado_loop_start",
+	1827857335,
+	"magic_man_mage"
+},
+{
+	"magic_man_tornado_loop_stop",
+	3009661213,
+	"magic_man_mage"
+},
+{
+	"grunt_vo_agony",
+	3604533624,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_agony_end",
+	2269873918,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_attack_long",
+	3644397417,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_attack_long_ALWAYS",
+	561525283,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_attack_medium",
+	1039281658,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_attack_medium_ALWAYS",
+	519880790,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_attack_short",
+	4055069695,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_attack_short_ALWAYS",
+	3430882369,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_attack_short_RND",
+	3242351522,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_block",
+	1993327423,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_burn_dmg",
+	3180714690,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_burn_dmg_end",
+	1860819992,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_burn_recovery",
+	1522559591,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_death",
+	209757778,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_death_last_breath",
+	568971658,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_death_stop",
+	2458096881,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_dodge",
+	1035580193,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_grunt",
+	1456643074,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_impact_heavy",
+	1625123410,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_impact_heavy_ALWAYS",
+	2761801550,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_impact_light",
+	1777262823,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_impact_light_ALWAYS",
+	1105490537,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_impact_light_RND",
+	127149386,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_shock",
+	3985992122,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_throat_cut",
+	1902649411,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_throat_gurgling",
+	1658875032,
+	"grunt_vo_shade"
+},
+{
+	"grunt_vo_throat_gurgling_sparse",
+	1433536311,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_attack_long_ALWAYS",
+	3623814830,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_attack_medium_ALWAYS",
+	3791880103,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_attack_short_ALWAYS",
+	1868473450,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_burn_dmg_RND",
+	3479660250,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_death_RND",
+	909264800,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_start",
+	3275716446,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_m_burn_damage_loop_stop",
+	1756125182,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_m_burn_dmg_end",
+	2077504813,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_m_impact_heavy",
+	4109997507,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_m_impact_light",
+	1900386010,
+	"grunt_vo_shade"
+},
+{
+	"scene_grunt_vo_m_throat_cut",
+	3188734954,
+	"grunt_vo_shade"
+},
+{
+	"amb_sk_g_EM_animal_bird_bald_eagle_80m",
+	1145395457,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_black_woodpecker_call_70m",
+	3123716978,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_black_woodpecker_drumming_1_close_80m",
+	652074463,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_great_tit_1_80m",
+	1227957284,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_great_tit_2_close_RND",
+	4229485343,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_call_1_70m",
+	1786447156,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_drumming_1_80m",
+	5854320,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_drumming_2_80m",
+	2494435543,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_drumming_3_80m",
+	3459337878,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_grt_sptd_woodpecker_hits_80m",
+	3885943301,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_larks",
+	3815465574,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_pacific_wren_80m",
+	1805750461,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_raven_close_1_120m",
+	2658957957,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_raven_close_2_120m",
+	2562370988,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_vulture_70m",
+	3275928853,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_willow_warbler_1_70m",
+	2615764334,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_winter_1_80m",
+	373604816,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_winter_2_80m",
+	3307431863,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_winter_wren_80m",
+	3232526113,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_woodpecker_drm_1_med_80m",
+	3508967283,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_bird_woodpecker_drm_2_thin_80m",
+	1283886131,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_crows_1_RND",
+	2115993010,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_night_fox_scream_closer_1_80m",
+	1409816162,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_night_fox_scream_far_1_80m",
+	1768006407,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_night_fox_scream_far_2_80m",
+	34824032,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_night_owl_2_barred_RND",
+	4216245449,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_night_owl_3_barred_RND",
+	3561304562,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_EM_animal_night_owl_4_tawny_RND",
+	1007571900,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_em_spooky",
+	2644886965,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_em_wolf_howls",
+	291178066,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_em_wolf_howls_quest",
+	1012422457,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_FOREST_10_medium_normal",
+	2560790778,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_FOREST_11_medium_normal",
+	2937862547,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_water_stream_medium1_mono",
+	3884268204,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_waterfall_small1_mono",
+	3308259756,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_G_WIND_and_RAIN_START",
+	2142441391,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_G_WIND_and_RAIN_STOP",
+	3759456949,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_wind_forest_medium",
+	515747001,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_G_WIND_GRASS_1",
+	1827553092,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_wind_rnd_blows_low1",
+	3184488700,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_wind_rnd_blows_mid1",
+	1409127608,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_wind_rnd_blows_mid2",
+	1409127611,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_wind_rnd_through_branches_mid",
+	2895719580,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_g_wind_rnd_through_leaves_mid",
+	2588183868,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_canyon_high",
+	74263812,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_canyon_small",
+	795021549,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_giant_ship_canyon",
+	1224121048,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_giant_ship_canyon_entrance",
+	2749202769,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_global_land",
+	1421379240,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_global_land_old",
+	1482959602,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_harpy_nest_canyon",
+	3056237471,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_lake",
+	4178915076,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_side_canyon",
+	267539939,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_wind_canyon_tight",
+	3619628447,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_wind_land_medium",
+	2773223369,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_wind_land_strong",
+	2580351721,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_wind_siren_cave_open",
+	1692482418,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_ice_giant_wind_siren_cave_open_nowater",
+	3791144805,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_03_water_small_bay",
+	1120585412,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_04_water_small_bay_border",
+	624185324,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_06_wind_forest1",
+	3925327752,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_08_open_field",
+	2006780984,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_09_canyon",
+	2223576174,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_11_lighthouse_path",
+	3457376331,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_13_high_path",
+	3350634717,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_13_wind_lift",
+	1792137749,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_14_wind_tunnel",
+	1671454575,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_14_wind_tunnel2",
+	1148599183,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_15_wind_high_bridge",
+	3135823528,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_16_wind_interior",
+	1440921179,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_17_wind_stables",
+	1411495014,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_city",
+	1766638663,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_city_water_under_bridge",
+	3664723740,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_crowd_castle_feast_1_35m",
+	1182652320,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_crowd_castle_feast_1_for_dialog",
+	799207987,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_crowd_castle_feast_1_for_dialog_stop",
+	490293566,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_forest_leszy_lair",
+	1834130634,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_inn_crowd_med",
+	4022974922,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_inn_crowd_outside",
+	3029252893,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_inn_empty",
+	3315072573,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_path_to_castle_interior",
+	1687879539,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_village_dogs_0_all",
+	1657340489,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_village_dogs_1_RND",
+	700713617,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_village_dogs_2_RND",
+	3099628450,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_kaer_trodle_village_dogs_3_RND",
+	277270111,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_rnd_animals_falcon_1",
+	1368210197,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_rnd_rock_fall",
+	2107186681,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_rnd_sirens_calling",
+	1376234463,
+	"amb_sk_ice_giant"
+},
+{
+	"amb_sk_rnd_whispers",
+	98569669,
+	"amb_sk_ice_giant"
+},
+{
+	"qu_item_fire_eater_torch_loop",
+	3501877264,
+	"qu_item_fire_eater_torch"
+},
+{
+	"qu_item_fire_eater_torch_loop_end",
+	2043049462,
+	"qu_item_fire_eater_torch"
+},
+{
+	"qu_item_fire_eater_torch_whoosh_long",
+	2832717089,
+	"qu_item_fire_eater_torch"
+},
+{
+	"qu_item_fire_eater_torch_whoosh_short",
+	3450148951,
+	"qu_item_fire_eater_torch"
+},
+{
+	"cs002_geralt_washing_up_sfx",
+	2670129985,
+	"cs002_geralt_washing_up"
+},
+{
+	"cs110_refuse_payment",
+	3844434341,
+	"cs110_refuse_payment"
+},
+{
+	"cs301_package_transfer_sfx",
+	3828729284,
+	"cs301_package_transfer"
+},
+{
+	"amb_qu_INT_boat_big",
+	1033060644,
+	"amb_qu_boat"
+},
+{
+	"cs001_little_ciri_footsteps",
+	685003865,
+	"cs001_little_ciri_intro_loop"
+},
+{
+	"cs001_little_ciri_taunts",
+	3668720387,
+	"cs001_little_ciri_intro_loop"
+},
+{
+	"cs503_geralts_departure",
+	3881412817,
+	"cs503_geralts_departure"
+},
+{
+	"qu_nml_401_vacuum_detector_tool_loop_start",
+	3004788703,
+	"qu_item_potestaquisitor"
+},
+{
+	"qu_nml_401_vacuum_detector_tool_loop_stop",
+	2739144101,
+	"qu_item_potestaquisitor"
+},
+{
+	"qu_sk_202_hornval_horn",
+	3128460988,
+	"qu_item_hornval_horn"
+},
+{
+	"cs103_poroniec_choice",
+	3943662583,
+	"cs103_poroniec_choice"
+},
+{
+	"cs002_tavern_massacre_sfx",
+	1902286740,
+	"cs002_tavern_massacre"
+},
+{
+	"cs203_baby_in_oven_sfx",
+	296157696,
+	"cs203_baby_in_oven"
+},
+{
+	"cs202_harpies_attack_boat",
+	3977404688,
+	"cs202_harpies_attack_boat"
+},
+{
+	"amb_qu_nv_bathouse",
+	3566042733,
+	"amb_qu_baths"
+},
+{
+	"qu_item_blowing_horn",
+	241255834,
+	"qu_item_horn"
+},
+{
+	"cmb_focus_start",
+	3811897105,
+	"focus_exploration"
+},
+{
+	"cmb_focus_stop",
+	1831848203,
+	"focus_exploration"
+},
+{
+	"expl_focus_start",
+	200298346,
+	"focus_exploration"
+},
+{
+	"expl_focus_stop",
+	2043403330,
+	"focus_exploration"
+},
+{
+	"expl_focus_stop_sfx",
+	2192074978,
+	"focus_exploration"
+},
+{
+	"cs603_breaking_in",
+	3997374386,
+	"cs603_breaking_in"
+},
+{
+	"cs309_sex_with_triss_p1_jp",
+	4006972498,
+	"cs309_sex_with_triss_p1_jp"
+},
+{
+	"cs303_triss_kills_menge",
+	4015465810,
+	"cs303_triss_kills_menge"
+},
+{
+	"amb_qu_creepy_fog_custom_element",
+	78054265,
+	"amb_qu_creepy_fog"
+},
+{
+	"mq1058_girl_running",
+	3684963328,
+	"dlc_mq1058"
+},
+{
+	"mq1058_girl_running_alt",
+	1029302092,
+	"dlc_mq1058"
+},
+{
+	"mq1058_give_bear",
+	3250350270,
+	"dlc_mq1058"
+},
+{
+	"mq1058_give_medalion",
+	822271105,
+	"dlc_mq1058"
+},
+{
+	"mq1058_hide_bear",
+	1787744775,
+	"dlc_mq1058"
+},
+{
+	"mq1058_hide_medalion",
+	1608631996,
+	"dlc_mq1058"
+},
+{
+	"mq1058_petard_blow",
+	1606602647,
+	"dlc_mq1058"
+},
+{
+	"mq1058_witcher_sense",
+	3667692321,
+	"dlc_mq1058"
+},
+{
+	"amb_qu_laboratory_EM_water_bubbling_1_quiet",
+	3440362338,
+	"amb_qu_laboratory"
+},
+{
+	"amb_pause_all",
+	75307180,
+	"amb_wz_castle"
+},
+{
+	"amb_resume_all",
+	679718387,
+	"amb_wz_castle"
+},
+{
+	"amb_wz_garden_bird_EM",
+	1885718296,
+	"amb_wz_castle"
+},
+{
+	"amb_wz_in_basement_pressure",
+	3507352999,
+	"amb_wz_castle"
+},
+{
+	"amb_wz_in_roomtone_medium",
+	2343521369,
+	"amb_wz_castle"
+},
+{
+	"amb_wz_tree_deciduous_medium_EM",
+	1075375849,
+	"amb_wz_castle"
+},
+{
+	"amb_wz_tree_leafy_small",
+	940344076,
+	"amb_wz_castle"
+},
+{
+	"amb_wz_water_fountain_small_EM",
+	1649721801,
+	"amb_wz_castle"
+},
+{
+	"amb_wz_wind_castle_garden",
+	1691550191,
+	"amb_wz_castle"
+},
+{
+	"amb_wz_wind_castle_interior_big",
+	817426551,
+	"amb_wz_castle"
+},
+{
+	"amb_wz_windchimes_EM",
+	2068792210,
+	"amb_wz_castle"
+},
+{
+	"cs002_vesemir_bandits",
+	4066772087,
+	"cs002_vesemir_bandits"
+},
+{
+	"amb_qu_meteorite_storm_250m",
+	3417781892,
+	"amb_qu_meteorite_rain"
+},
+{
+	"cs002_griffin_combat_sfx",
+	2155615190,
+	"cs002_griffin_combat"
+},
+{
+	"cs303_menge_paper",
+	4131912467,
+	"cs303_menge_paper"
+},
+{
+	"mus_loc_spiral",
+	1910086011,
+	"music_spiral"
+},
+{
+	"mus_loc_spiral_castle",
+	3119073978,
+	"music_spiral"
+},
+{
+	"mus_loc_spiral_castle_cs_to_gmpl",
+	2127614396,
+	"music_spiral"
+},
+{
+	"mus_loc_spiral_cs_to_gmpl",
+	3586829675,
+	"music_spiral"
+},
+{
+	"play_music_spiral",
+	1914948605,
+	"music_spiral"
+},
+{
+	"cs603_breaking_in_dwarf",
+	4133822475,
+	"cs603_breaking_in_dwarf"
+},
+{
+	"cs310_stealing_horses",
+	4135074948,
+	"cs310_stealing_horses"
+},
+{
+	"cs305_meet_blanka_sfx",
+	3812773993,
+	"cs305_meet_blanka"
+},
+{
+	"cs_generic_teleport",
+	4158670201,
+	"cs_generic_teleport"
+},
+{
+	"cs403_vesemir_burial",
+	4174989378,
+	"cs403_vesemir_burial"
+},
+{
+	"caves",
+	749373321,
+	"music_nomansgrad"
+},
+{
+	"caves_cs_to_gmpl",
+	2552320401,
+	"music_nomansgrad"
+},
+{
+	"mus_credits_secondary_nml",
+	3441540234,
+	"music_nomansgrad"
+},
+{
+	"mus_credits_usm_nml",
+	69497865,
+	"music_nomansgrad"
+},
+{
+	"mus_cs101_wild_hunt_burns_village",
+	4043406166,
+	"music_nomansgrad"
+},
+{
+	"mus_cs101_wild_hunt_burns_village_p2",
+	966083431,
+	"music_nomansgrad"
+},
+{
+	"mus_cs103_baron_digs_grave",
+	2305642728,
+	"music_nomansgrad"
+},
+{
+	"mus_cs103_baron_taken",
+	1860732310,
+	"music_nomansgrad"
+},
+{
+	"mus_cs103_basilisk",
+	3446810806,
+	"music_nomansgrad"
+},
+{
+	"mus_cs103_ciri_runs",
+	76835926,
+	"music_nomansgrad"
+},
+{
+	"mus_cs103_ciri_runs_short",
+	843170773,
+	"music_nomansgrad"
+},
+{
+	"mus_cs103_guslar_prophecy",
+	2489510715,
+	"music_nomansgrad"
+},
+{
+	"mus_cs103_introduction_of_uma",
+	87614972,
+	"music_nomansgrad"
+},
+{
+	"mus_cs103_poroniec_attack_choice",
+	147796160,
+	"music_nomansgrad"
+},
+{
+	"mus_cs103_poroniec_transforms",
+	4265523241,
+	"music_nomansgrad"
+},
+{
+	"mus_cs105_ciri_escapes_swamps",
+	3435006818,
+	"music_nomansgrad"
+},
+{
+	"mus_cs105_ciri_meet_witch_sisters",
+	1260272653,
+	"music_nomansgrad"
+},
+{
+	"mus_cs105_geralt_meet_witch_sisters",
+	4162737213,
+	"music_nomansgrad"
+},
+{
+	"mus_cs106_anabelle_kisses_graham",
+	1018502329,
+	"music_nomansgrad"
+},
+{
+	"mus_cs107_witch_gravehag",
+	2171240667,
+	"music_nomansgrad"
+},
+{
+	"mus_cs107_witch_normal",
+	3451015095,
+	"music_nomansgrad"
+},
+{
+	"mus_cs107_witch_village_burns",
+	930553317,
+	"music_nomansgrad"
+},
+{
+	"mus_cs111_imlerith_dies",
+	16833657,
+	"music_nomansgrad"
+},
+{
+	"mus_cs111_one_witch_escapes",
+	297588214,
+	"music_nomansgrad"
+},
+{
+	"mus_cs111_welcome_imlerith_pt1",
+	2787779390,
+	"music_nomansgrad"
+},
+{
+	"mus_cs111_witch_transform",
+	2469400843,
+	"music_nomansgrad"
+},
+{
+	"mus_cs301_dreamer_nightmare",
+	3711583060,
+	"music_nomansgrad"
+},
+{
+	"mus_cs301_novigrad_opening",
+	283530529,
+	"music_nomansgrad"
+},
+{
+	"mus_cs302_castration",
+	2848615083,
+	"music_nomansgrad"
+},
+{
+	"mus_cs3035_radovid_dies",
+	3965211856,
+	"music_nomansgrad"
+},
+{
+	"mus_cs303_triss_kills_menge",
+	3586499486,
+	"music_nomansgrad"
+},
+{
+	"mus_cs305_ciri_dissappears",
+	1372212627,
+	"music_nomansgrad"
+},
+{
+	"mus_cs305_convoy_in_ambush_p1",
+	2091705161,
+	"music_nomansgrad"
+},
+{
+	"mus_cs309_sex_with_triss_p1",
+	953933181,
+	"music_nomansgrad"
+},
+{
+	"mus_cs309_triss_leaves",
+	2921921234,
+	"music_nomansgrad"
+},
+{
+	"mus_cs310_triss_yennefer_payback",
+	1138852644,
+	"music_nomansgrad"
+},
+{
+	"mus_cs311_geels_dreams",
+	4203130482,
+	"music_nomansgrad"
+},
+{
+	"mus_cs401_interception_pt2",
+	3697588052,
+	"music_nomansgrad"
+},
+{
+	"mus_cs503_geralts_departure",
+	610361253,
+	"music_nomansgrad"
+},
+{
+	"mus_cs601_decapitation",
+	1955409958,
+	"music_nomansgrad"
+},
+{
+	"mus_cs601_frog_intro",
+	1809724756,
+	"music_nomansgrad"
+},
+{
+	"mus_cs601_immortal_A",
+	2371521410,
+	"music_nomansgrad"
+},
+{
+	"mus_cs601_immortal_B",
+	2371521409,
+	"music_nomansgrad"
+},
+{
+	"mus_cs601_killing_the_frog",
+	2078866408,
+	"music_nomansgrad"
+},
+{
+	"mus_cs601_storm_p2",
+	2759533517,
+	"music_nomansgrad"
+},
+{
+	"mus_cs602_dance",
+	262193837,
+	"music_nomansgrad"
+},
+{
+	"mus_cs602_dance_intro",
+	130447102,
+	"music_nomansgrad"
+},
+{
+	"mus_cs603_breaking_in",
+	1455197838,
+	"music_nomansgrad"
+},
+{
+	"mus_cs603_ewald_dies",
+	3856641746,
+	"music_nomansgrad"
+},
+{
+	"mus_cs603_horst_dies",
+	721608963,
+	"music_nomansgrad"
+},
+{
+	"mus_cs603_horst_dies_quinto",
+	502108850,
+	"music_nomansgrad"
+},
+{
+	"mus_cs603_vault_closes",
+	3806328595,
+	"music_nomansgrad"
+},
+{
+	"mus_cs604_unmasking_p1",
+	470442797,
+	"music_nomansgrad"
+},
+{
+	"mus_cs604_unmasking_p2",
+	470442798,
+	"music_nomansgrad"
+},
+{
+	"mus_cs605_geralt_loses",
+	1014158413,
+	"music_nomansgrad"
+},
+{
+	"mus_cs605_merchant_lose",
+	3672111851,
+	"music_nomansgrad"
+},
+{
+	"mus_cs605_merchant_skull",
+	3696642811,
+	"music_nomansgrad"
+},
+{
+	"mus_cs605_olgierd_dies_choice",
+	4264001723,
+	"music_nomansgrad"
+},
+{
+	"mus_cs605_olgierd_dies_pt2",
+	284825476,
+	"music_nomansgrad"
+},
+{
+	"mus_cs605_olgierd_lives_choice_dialogue",
+	2452867204,
+	"music_nomansgrad"
+},
+{
+	"mus_cs_sq301_geralt_triss_kiss",
+	2099930725,
+	"music_nomansgrad"
+},
+{
+	"mus_cs_sq301_love_theme",
+	57983749,
+	"music_nomansgrad"
+},
+{
+	"mus_ep1_poi_horror",
+	2423836109,
+	"music_nomansgrad"
+},
+{
+	"mus_ep1_poi_military",
+	3445763100,
+	"music_nomansgrad"
+},
+{
+	"mus_griffin_chase",
+	213481337,
+	"music_nomansgrad"
+},
+{
+	"mus_griffin_chase_end",
+	1566835899,
+	"music_nomansgrad"
+},
+{
+	"mus_griffin_combat",
+	413663429,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_dawn_estate",
+	2149268529,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_dawn_estate_cs_to_gmpl",
+	1320573961,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_auction_house_q603",
+	1068961759,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_auction_house_q603_cs_to_gmpl",
+	2914872839,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_barons_castle",
+	109228542,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_barons_castle_cs_to_gmpl",
+	1059013576,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_elven_ruins",
+	3183478366,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_elven_ruins_cs_to_gmpl",
+	3730467432,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_ep1_leshy_forest",
+	3190782208,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_ep1_lovers_spot",
+	2321356513,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_everect_crypt_q602",
+	1565047339,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_everect_crypt_q602_cs_to_gmpl",
+	4002602875,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_final_shani_house_q605",
+	1099172152,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_final_shani_house_q605_cs_to_gmpl",
+	3229207698,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_final_tavern_q605",
+	1196984624,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_final_tavern_q605_cs_to_gmpl",
+	1073141850,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_ghost_forest",
+	1501485703,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_ghost_forest_cs_to_gmpl",
+	532068351,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_ghost_forest_tree_cave",
+	4287567558,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_ghost_forest_tree_cave_cs_to_gmpl",
+	483119488,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mansion_paint_q604",
+	186266220,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mansion_paint_q604_cs_to_gmpl",
+	2015811214,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mansion_paint_winter_q604",
+	3340710020,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mansion_paint_winter_q604_cs_to_gmpl",
+	3563590518,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mansion_q604",
+	3683510123,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mansion_q604_cs_to_gmpl",
+	1110039483,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mice_island",
+	2958253094,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mice_island_cs_to_gmpl",
+	2013608480,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mice_island_popiel_tower",
+	329072134,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_mice_island_popiel_tower_cs_to_gmpl",
+	1555092928,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_occultist_house_q605",
+	2967975162,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_occultist_house_q605_cs_to_gmpl",
+	2567965180,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_olgierd_house_q601",
+	3400049420,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_olgierd_house_q601_cs_to_gmpl",
+	3770380654,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_swamps",
+	886533763,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_swamps_cs_to_gmpl",
+	2064712739,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_swamps_witches_village",
+	3662984958,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_swamps_witches_village_cs_to_gmpl",
+	3810368200,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_village_burned_q101",
+	1136836757,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_village_burned_q101_cs_to_gmpl",
+	3430768021,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_wedding_q602",
+	1200021732,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_wedding_q602_cs_to_gmpl",
+	507062934,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_01",
+	4175262652,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_01_cs_to_gmpl",
+	3076586814,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_01_nilfgaard_warcamp",
+	2228511953,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_01_nilfgaard_warcamp_cs_to_gmpl",
+	151297001,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_02",
+	4175262655,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_02_cs_to_gmpl",
+	3321429927,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_03",
+	4175262654,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_03_cs_to_gmpl",
+	1040224648,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_04",
+	4175262649,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_nml_zone_04_cs_to_gmpl",
+	2843088353,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_brothels_harbor",
+	1903161067,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_brothels_harbor_cs_to_gmpl",
+	1362386491,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_crime_scenes_q308",
+	476181970,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_crime_scenes_q308_cs_to_gmpl",
+	3084315716,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_dandelions_brothel",
+	1387020833,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_dandelions_brothel_cs_to_gmpl",
+	176353369,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_fight_club",
+	1252851296,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_golden_sturgeon_dreamers_house_q301",
+	1068292171,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_golden_sturgeon_dreamers_house_q301_cs_to_gmpl",
+	3693396187,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_haunted_house_q301",
+	1541154441,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_haunted_house_q301_cs_to_gmpl",
+	620070545,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_inquisitors_house",
+	1999772200,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_inquisitors_house_cs_to_gmpl",
+	2338578722,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_king_of_beggars",
+	2998437238,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_king_of_beggars_cs_to_gmpl",
+	2828912976,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_nilfgaard_embassy",
+	2673522470,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_nilfgaard_embassy_cs_to_gmpl",
+	2660893472,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_poor_district",
+	2637748006,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_poor_district_cs_to_gmpl",
+	1310286624,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_radovid_ship",
+	3953060111,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_radovid_ship_cs_to_gmpl",
+	192754455,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_rich_district",
+	3677784380,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_rich_district_cs_to_gmpl",
+	2384452030,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_sewers",
+	509567188,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_suburbs",
+	2791729073,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_suburbs_cs_to_gmpl",
+	2397039241,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_taverns",
+	2817197406,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_taverns_cs_to_gmpl",
+	320978792,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_temple_island",
+	2201587458,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_novi_temple_island_cs_to_gmpl",
+	3587611092,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_oxenfurt",
+	2848562689,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_oxenfurt_cs_to_gmpl",
+	4060109689,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_oxenfurt_sewers",
+	321640229,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_oxenfurt_sewers_cs_to_gmpl",
+	1156408773,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_roche_camp",
+	3014259119,
+	"music_nomansgrad"
+},
+{
+	"mus_loc_roche_camp_cs_to_gmpl",
+	461368567,
+	"music_nomansgrad"
+},
+{
+	"mus_minigames_nml_horse_race",
+	17411277,
+	"music_nomansgrad"
+},
+{
+	"mus_monster_hunt_nml_combat",
+	768339742,
+	"music_nomansgrad"
+},
+{
+	"mus_monster_hunt_nml_tracking",
+	4007647961,
+	"music_nomansgrad"
+},
+{
+	"mus_mq3035_djikstra_combat",
+	601141592,
+	"music_nomansgrad"
+},
+{
+	"mus_mq3035_djikstra_roche",
+	2121508829,
+	"music_nomansgrad"
+},
+{
+	"mus_mq3035_radovid_combat",
+	3450992617,
+	"music_nomansgrad"
+},
+{
+	"mus_mq3035_warehouse_conspiracy",
+	1779645580,
+	"music_nomansgrad"
+},
+{
+	"mus_mq6002_cannibals_confrontation",
+	1556143534,
+	"music_nomansgrad"
+},
+{
+	"mus_nml_dialog_01",
+	1547876089,
+	"music_nomansgrad"
+},
+{
+	"mus_nml_dialog_02",
+	1547876090,
+	"music_nomansgrad"
+},
+{
+	"mus_nml_dialog_03",
+	1547876091,
+	"music_nomansgrad"
+},
+{
+	"mus_nml_dialog_04",
+	1547876092,
+	"music_nomansgrad"
+},
+{
+	"mus_nml_final_boards",
+	817778713,
+	"music_nomansgrad"
+},
+{
+	"mus_q101_04b_talk_with_survivor",
+	1472763174,
+	"music_nomansgrad"
+},
+{
+	"mus_q101_tavern_dialogue_two_swords",
+	2374530956,
+	"music_nomansgrad"
+},
+{
+	"mus_q102_baron_in_his_chambers",
+	813578975,
+	"music_nomansgrad"
+},
+{
+	"mus_q102_villagers_flee",
+	2042188464,
+	"music_nomansgrad"
+},
+{
+	"mus_q102_villagers_flee_stop",
+	800405951,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_02e_werewolf",
+	707094734,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_baron_crying",
+	1693050584,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_baron_mad",
+	1688276638,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_blood_ritual",
+	3886006937,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_ciri_saves_baron_pt1_calm",
+	1272247280,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_ciri_saves_baron_pt2_main",
+	2670832531,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_confrontation_with_baron",
+	269749801,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_guslar_after_ritual",
+	116241718,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_horse_race",
+	2325305350,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_poroniec",
+	301743178,
+	"music_nomansgrad"
+},
+{
+	"mus_q103_talk_with_daghter",
+	2834803256,
+	"music_nomansgrad"
+},
+{
+	"mus_q104_01c2_see_wild_hunt",
+	426226877,
+	"music_nomansgrad"
+},
+{
+	"mus_q104_avallach_message",
+	3239298936,
+	"music_nomansgrad"
+},
+{
+	"mus_q104_blizzard_calm",
+	948097254,
+	"music_nomansgrad"
+},
+{
+	"mus_q104_blizzard_calm_drums_only",
+	3541747317,
+	"music_nomansgrad"
+},
+{
+	"mus_q104_blizzard_tense",
+	1531936572,
+	"music_nomansgrad"
+},
+{
+	"mus_q104_boss_in_last_room",
+	2191770114,
+	"music_nomansgrad"
+},
+{
+	"mus_q104_hello_keira_lodge_theme",
+	208910463,
+	"music_nomansgrad"
+},
+{
+	"mus_q105_gobelin",
+	3856438389,
+	"music_nomansgrad"
+},
+{
+	"mus_q105_tree_bossfight",
+	4253475079,
+	"music_nomansgrad"
+},
+{
+	"mus_q106_anabelle_talks_to_graham",
+	3973932271,
+	"music_nomansgrad"
+},
+{
+	"mus_q106_island_investigation",
+	3319345216,
+	"music_nomansgrad"
+},
+{
+	"mus_q107_final_dlg_baron",
+	2507030654,
+	"music_nomansgrad"
+},
+{
+	"mus_q107_ritual",
+	2871463686,
+	"music_nomansgrad"
+},
+{
+	"mus_q108_keira_about_her_plans",
+	2451172495,
+	"music_nomansgrad"
+},
+{
+	"mus_q111_7_final_dlg",
+	97696888,
+	"music_nomansgrad"
+},
+{
+	"mus_q111_combat_with_crones",
+	3547807778,
+	"music_nomansgrad"
+},
+{
+	"mus_q111_combat_with_imlerith",
+	3717369258,
+	"music_nomansgrad"
+},
+{
+	"mus_q111_conversation_with_imlerith",
+	4235061619,
+	"music_nomansgrad"
+},
+{
+	"mus_q111_dialog_with_crones",
+	3283559826,
+	"music_nomansgrad"
+},
+{
+	"mus_q111_fugas_combat",
+	1436795741,
+	"music_nomansgrad"
+},
+{
+	"mus_q111_fugas_intro",
+	2079945289,
+	"music_nomansgrad"
+},
+{
+	"mus_q111_witches_music",
+	3405834557,
+	"music_nomansgrad"
+},
+{
+	"mus_q301_09c_talk_with_smuggler",
+	3797664888,
+	"music_nomansgrad"
+},
+{
+	"mus_q301_11e_rathouse_triss_problem",
+	1007023670,
+	"music_nomansgrad"
+},
+{
+	"mus_q301_dreamer_dreams_p1",
+	1463212382,
+	"music_nomansgrad"
+},
+{
+	"mus_q301_dreamer_dreams_p2",
+	1463212381,
+	"music_nomansgrad"
+},
+{
+	"mus_q301_love_theme",
+	4258132229,
+	"music_nomansgrad"
+},
+{
+	"mus_q301_menge_shows_up",
+	2040522706,
+	"music_nomansgrad"
+},
+{
+	"mus_q301_thief",
+	4044705605,
+	"music_nomansgrad"
+},
+{
+	"mus_q301_witch_hunters",
+	709786108,
+	"music_nomansgrad"
+},
+{
+	"mus_q302_radovid_dlg",
+	1550659333,
+	"music_nomansgrad"
+},
+{
+	"mus_q302_whoreson_shows_up",
+	3828239432,
+	"music_nomansgrad"
+},
+{
+	"mus_q303_witch_hunters",
+	409822434,
+	"music_nomansgrad"
+},
+{
+	"mus_q304_silent",
+	615349271,
+	"music_nomansgrad"
+},
+{
+	"mus_q304_tavern_brawl",
+	1117700055,
+	"music_nomansgrad"
+},
+{
+	"mus_q304_zoltan_dlg",
+	1138789862,
+	"music_nomansgrad"
+},
+{
+	"mus_q305_ciri_replacer",
+	3772917321,
+	"music_nomansgrad"
+},
+{
+	"mus_q305_dandelion_reunion",
+	3351179206,
+	"music_nomansgrad"
+},
+{
+	"mus_q305_dudu_found",
+	662417678,
+	"music_nomansgrad"
+},
+{
+	"mus_q305_dudu_transforms_into_ciri",
+	2185611894,
+	"music_nomansgrad"
+},
+{
+	"mus_q305_silent",
+	2506179196,
+	"music_nomansgrad"
+},
+{
+	"mus_q305_the_play_second_act",
+	669636805,
+	"music_nomansgrad"
+},
+{
+	"mus_q308_autopsy",
+	590717147,
+	"music_nomansgrad"
+},
+{
+	"mus_q308_killer_pursuit",
+	1961062714,
+	"music_nomansgrad"
+},
+{
+	"mus_q308_love_theme",
+	1076427870,
+	"music_nomansgrad"
+},
+{
+	"mus_q308_priest_accused",
+	1069111684,
+	"music_nomansgrad"
+},
+{
+	"mus_q308_vampire_combat",
+	1288521489,
+	"music_nomansgrad"
+},
+{
+	"mus_q308_vampire_confrontation",
+	311908715,
+	"music_nomansgrad"
+},
+{
+	"mus_q308_vg_examines_priscilla",
+	2445646014,
+	"music_nomansgrad"
+},
+{
+	"mus_q309_08a_goodbye",
+	2674170576,
+	"music_nomansgrad"
+},
+{
+	"mus_q309_08a_goodbye_pt2",
+	3856510219,
+	"music_nomansgrad"
+},
+{
+	"mus_q309_08a_goodbye_pt3",
+	3856510218,
+	"music_nomansgrad"
+},
+{
+	"mus_q309_drama_music",
+	1463776512,
+	"music_nomansgrad"
+},
+{
+	"mus_q309_love_theme",
+	3158204237,
+	"music_nomansgrad"
+},
+{
+	"mus_q309_mages_escape",
+	1761861398,
+	"music_nomansgrad"
+},
+{
+	"mus_q309_silent",
+	372539976,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_ciri_talks_to_the_lodge",
+	59128014,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_djikstra_wont_let_filippa_go",
+	2527548213,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_horse_race",
+	2094101564,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_intro",
+	2115215333,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_love_theme",
+	566883031,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_party_nonhumans_p1",
+	651944601,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_party_nonhumans_p2",
+	651944602,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_philippa_combat",
+	3931345791,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_triss_keira_dead",
+	4219562186,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_yen_sheala_dead",
+	237001785,
+	"music_nomansgrad"
+},
+{
+	"mus_q310_yennefer_pursuit",
+	1270426732,
+	"music_nomansgrad"
+},
+{
+	"mus_q311_geels_at_dandelions",
+	3755178666,
+	"music_nomansgrad"
+},
+{
+	"mus_q503_confrontation_crone",
+	1981328813,
+	"music_nomansgrad"
+},
+{
+	"mus_q503_crone_combat",
+	2999859127,
+	"music_nomansgrad"
+},
+{
+	"mus_q503_silent",
+	2544792396,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_04_meeting_shani",
+	749059578,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_bad_news",
+	3708723029,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_combat_with_offir_soldiers",
+	471840298,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_frog_combat",
+	1867723293,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_immortal_dialog",
+	15952190,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_immortal_intro",
+	3367568220,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_mr_mirror_01",
+	2860321921,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_mr_mirror_02_calm",
+	2908450760,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_mr_mirror_02_tense",
+	226258806,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_olgierd_combat",
+	2054122247,
+	"music_nomansgrad"
+},
+{
+	"mus_q601_silent",
+	642501151,
+	"music_nomansgrad"
+},
+{
+	"mus_q602_17_wedding_finale_man_of_glass_dialog",
+	1682023331,
+	"music_nomansgrad"
+},
+{
+	"mus_q602_love_theme",
+	3903687599,
+	"music_nomansgrad"
+},
+{
+	"mus_q602_shani_dialog_dance",
+	1218300033,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_05_mystery_man_returns",
+	4026268516,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_06_heist_plan_part1",
+	2685950093,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_06_heist_plan_part2",
+	2685950094,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_13_ground_floor_reached",
+	2680269376,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_auction_house_combat",
+	990623567,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_auction_music",
+	3735494825,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_bad_news_ahead",
+	246569301,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_bad_news_ahead_strings",
+	780584618,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_combat",
+	2028593370,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_fist_fight",
+	1477936459,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_race_loop",
+	952075338,
+	"music_nomansgrad"
+},
+{
+	"mus_q603_silent",
+	1058828337,
+	"music_nomansgrad"
+},
+{
+	"mus_q604_05_caretaker",
+	2106962847,
+	"music_nomansgrad"
+},
+{
+	"mus_q604_10_study",
+	3398511226,
+	"music_nomansgrad"
+},
+{
+	"mus_q604_14_master_bedroom",
+	515279528,
+	"music_nomansgrad"
+},
+{
+	"mus_q604_bury_iris_remains",
+	527506493,
+	"music_nomansgrad"
+},
+{
+	"mus_q604_caretaker_combat",
+	1588063036,
+	"music_nomansgrad"
+},
+{
+	"mus_q604_dialog_with_thief",
+	4260185799,
+	"music_nomansgrad"
+},
+{
+	"mus_q604_ethereals_combat",
+	3624129811,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_01_mirror_in_oxenfurt",
+	566443785,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_04_temple_meeting_iris",
+	2077059672,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_credits_secondary",
+	156237601,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_credits_usm",
+	1024298018,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_dialog_with_olgierd",
+	49350166,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_dialog_with_shani",
+	2549575467,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_confrontation_stage01_BR",
+	1489037166,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_confrontation_stage01_DE",
+	1455481747,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_confrontation_stage01_EN",
+	1472259559,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_confrontation_stage01_FR",
+	1421926562,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_confrontation_stage01_JP",
+	1623258052,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_confrontation_stage01_PL",
+	1254150526,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_confrontation_stage01_RU",
+	1220595097,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_confrontation_stage02",
+	2115953756,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_occultist_house",
+	22606022,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_final_standoff",
+	289699232,
+	"music_nomansgrad"
+},
+{
+	"mus_q605_silent",
+	1331500259,
+	"music_nomansgrad"
+},
+{
+	"mus_sex_cs_after",
+	4077102383,
+	"music_nomansgrad"
+},
+{
+	"mus_sex_cs_do",
+	245511640,
+	"music_nomansgrad"
+},
+{
+	"mus_sex_cs_pre",
+	3598239406,
+	"music_nomansgrad"
+},
+{
+	"mus_sq101_love_theme",
+	3635188624,
+	"music_nomansgrad"
+},
+{
+	"mus_sq101_race",
+	4114205589,
+	"music_nomansgrad"
+},
+{
+	"mus_sq302_novi_lodge_theme",
+	317103365,
+	"music_nomansgrad"
+},
+{
+	"mus_sq303_dandelion_about_priscilla",
+	2882773176,
+	"music_nomansgrad"
+},
+{
+	"mus_sq315_lets_kill_radovid",
+	2767599278,
+	"music_nomansgrad"
+},
+{
+	"mus_tw3_q302_04a_assassins",
+	689073505,
+	"music_nomansgrad"
+},
+{
+	"mus_tw3_q302_04a_mafia_meeting",
+	4111347055,
+	"music_nomansgrad"
+},
+{
+	"mus_w2_theme",
+	1867908336,
+	"music_nomansgrad"
+},
+{
+	"play_music_nomansgrad",
+	187803492,
+	"music_nomansgrad"
+},
+{
+	"q302_fight_club_calm",
+	3874733803,
+	"music_nomansgrad"
+},
+{
+	"q302_fight_club_tense",
+	2419322059,
+	"music_nomansgrad"
+},
+{
+	"q304_05a_luiza_and_voorhis",
+	3424158239,
+	"music_nomansgrad"
+},
+{
+	"q304_horse_race",
+	3519994017,
+	"music_nomansgrad"
+},
+{
+	"silent",
+	3160623154,
+	"music_nomansgrad"
+},
+{
+	"silent_nml",
+	4035691514,
+	"music_nomansgrad"
+},
+{
+	"silent_nml_triggers",
+	3845683038,
+	"music_nomansgrad"
+},
+{
+	"silent_triggers",
+	2824748166,
+	"music_nomansgrad"
+},
+{
+	"cs603_horst_dies_quinto",
+	4195604046,
+	"cs603_horst_dies_quinto"
+},
+{
+	"qu_item_olgierd_sabre_pre_attack_fx",
+	3432765480,
+	"qu_item_olgierd_sabre"
+},
+{
+	"cs601_killing_the_frog",
+	4203262228,
+	"cs601_killing_the_frog"
+},
+{
+	"cs301_pickpocketing",
+	4216948241,
+	"cs301_pickpocketing"
+},
+{
+	"cs210_skjall_funeral_p1",
+	4221213000,
+	"cs210_skjall_funeral_p1"
+},
+{
+	"cs210_skjall_funeral_p3",
+	4221213002,
+	"cs210_skjall_funeral_p3"
+},
+{
+	"cs210_skjall_funeral_p2",
+	4221213003,
+	"cs210_skjall_funeral_p2"
+},
+{
+	"cs601_frog_intro",
+	4226929776,
+	"cs601_frog_intro"
+},
+{
+	"mq_prl_0001_dog_barks",
+	3143942045,
+	"mq_prl_0001"
+},
+{
+	"mq_prl_0001_dog_barks_double",
+	3779038903,
+	"mq_prl_0001"
+},
+{
+	"mq_prl_0001_dog_whip",
+	1204653326,
+	"mq_prl_0001"
+},
+{
+	"cs201_storm",
+	4236961648,
+	"cs201_storm"
+},
+{
+	"cs201_storm_wakeup_beach_sfx",
+	1052321900,
+	"cs201_storm_wakeup_beach"
+},
+{
+	"qu_item_demonic_saddle_fx_in",
+	858210338,
+	"qu_item_demonic_saddle"
+},
+{
+	"qu_item_demonic_saddle_fx_loop_start",
+	539351688,
+	"qu_item_demonic_saddle"
+},
+{
+	"qu_item_demonic_saddle_fx_loop_stop",
+	749115092,
+	"qu_item_demonic_saddle"
+},
+{
+	"qu_item_demonic_saddle_fx_out",
+	3016067549,
+	"qu_item_demonic_saddle"
+},
+{
+	"cs103_ciri_caught_sfx",
+	39623276,
+	"cs103_ciri_caught"
+},
+{
+	"cs301_iorweth_intro_sfx",
+	1856316719,
+	"cs301_iorweth_intro"
+},
+{
+	"cs103_basilisk",
+	4256773962,
+	"cs103_basilisk"
+},
+{
+	"sign_yrden_cast_loop",
+	3904856762,
+	"sign_yrden"
+},
+{
+	"sign_yrden_cast_loop_END",
+	1152948880,
+	"sign_yrden"
+},
+{
+	"sign_yrden_paralysis_hit",
+	679290484,
+	"sign_yrden"
+},
+{
+	"sign_yrden_paralysis_loop",
+	3774718755,
+	"sign_yrden"
+},
+{
+	"sign_yrden_paralysis_loop_END",
+	2297043557,
+	"sign_yrden"
+},
+{
+	"sign_yrden_ready",
+	45245229,
+	"sign_yrden"
+},
+{
+	"sign_yrden_shock_activate",
+	3011331358,
+	"sign_yrden"
+},
+{
+	"sign_yrden_shock_disappear",
+	3127532760,
+	"sign_yrden"
+},
+{
+	"sign_yrden_shock_loop",
+	268497559,
+	"sign_yrden"
+},
+{
+	"sign_yrden_shock_loop_END",
+	2938316409,
+	"sign_yrden"
+},
+{
+	"sign_yrden_slowdown_loop",
+	668149868,
+	"sign_yrden"
+},
+{
+	"sign_yrden_slowdown_loop_END",
+	1990686210,
+	"sign_yrden"
+},
+{
+	"sign_yrden_warmup",
+	3054495488,
+	"sign_yrden"
+},
+{
+	"animals_goose_call_medium_1",
+	2944252875,
+	"animals_goose"
+},
+{
+	"animals_goose_call_short_1",
+	1974740512,
+	"animals_goose"
+},
+{
+	"animals_goose_death",
+	2657651887,
+	"animals_goose"
+},
+{
+	"animals_goose_footsteps",
+	1544771456,
+	"animals_goose"
+},
+{
+	"animals_goose_idle_long",
+	1598070614,
+	"animals_goose"
+},
+{
+	"animals_goose_idle_short",
+	1189215674,
+	"animals_goose"
+},
+{
+	"animals_goose_idle_short_RND",
+	2403700051,
+	"animals_goose"
+},
+{
+	"animals_goose_loud",
+	303221423,
+	"animals_goose"
+},
+{
+	"animals_goose_wings",
+	2266446937,
+	"animals_goose"
+},
+{
+	"cs110_after_snow_fight",
+	4260940745,
+	"cs110_after_snow_fight"
+},
+{
+	"cs604_exit_the_painting",
+	4262556869,
+	"cs604_exit_the_painting"
+},
+{
+	"cs402_mist_island",
+	4269321875,
+	"cs402_mist_island"
+},
+{
+	"cs105_geralt_meets_witch_sisters_sfx",
+	1039430208,
+	"cs105_geralt_meets_witch_sisters"
+},
+{
+	"sign_aard_blast",
+	1679270262,
+	"sign_aard"
+},
+{
+	"sign_aard_warmup",
+	3240704664,
+	"sign_aard"
+},
+{
+	"sign_aard_water_layer",
+	2423574911,
+	"sign_aard"
+},
+{
+	"cs110_after_snowfight_p2",
+	4282247893,
+	"cs110_after_snowfight_p2"
+},
+{
+	"cs110_after_snowfight_p1",
+	4282247894,
+	"cs110_after_snowfight_p1"
+},
+{
+	"cs111_one_witch_escapes",
+	4284371186,
+	"cs111_one_witch_escapes"
+},
+{
+	"animals_crow_call",
+	3281155361,
+	"animals_crow"
+},
+{
+	"animals_crow_call_idle",
+	2788775514,
+	"animals_crow"
+},
+{
+	"animals_crow_die",
+	3436370977,
+	"animals_crow"
+},
+{
+	"animals_crow_swarm",
+	1180557911,
+	"animals_crow"
+},
+{
+	"animals_crow_swarm_attack_hit_loop",
+	2624150417,
+	"animals_crow"
+},
+{
+	"animals_crow_swarm_attack_hit_loop_end",
+	1093952403,
+	"animals_crow"
+},
+{
+	"animals_crow_swarm_end",
+	1832102457,
+	"animals_crow"
+},
+{
+	"animals_crow_swarm_leseh_attack",
+	3300375928,
+	"animals_crow"
+},
+{
+	"animals_crow_swarm_leseh_attack_end",
+	3207410430,
+	"animals_crow"
+},
+{
+	"animals_crow_swarm_leseh_clue",
+	3588104903,
+	"animals_crow"
+},
+{
+	"animals_crow_swarm_leseh_clue_end",
+	2999826377,
+	"animals_crow"
+},
+{
+	"sign_axii_base_loop",
+	3667097525,
+	"sign_axii"
+},
+{
+	"sign_axii_base_loop_end",
+	2274412087,
+	"sign_axii"
+},
+{
+	"sign_axii_no_stamina",
+	1168565072,
+	"sign_axii"
+},
+{
+	"sign_axii_pre_start",
+	4082649495,
+	"sign_axii"
+},
+{
+	"sign_axii_ready",
+	1887288128,
+	"sign_axii"
+},
+{
+	"sign_axii_release",
+	1761985918,
+	"sign_axii"
+},
+{
+	"sign_axii_target_confusion_loop",
+	3730192354,
+	"sign_axii"
+},
+{
+	"sign_axii_target_confusion_loop_end",
+	863862776,
+	"sign_axii"
+},
+{
+	"sign_axii_target_guard_loop",
+	1086666351,
+	"sign_axii"
+},
+{
+	"sign_axii_target_guard_loop_end",
+	596881329,
+	"sign_axii"
+},
+{
+	"sign_axii_target_tag_loop",
+	2013637914,
+	"sign_axii"
+},
+{
+	"sign_axii_target_tag_loop_end",
+	2647665200,
+	"sign_axii"
+},
+}};
+
+#endif //WWTOOLS_UTIL_EVENT_NAME_TO_ID_HPP

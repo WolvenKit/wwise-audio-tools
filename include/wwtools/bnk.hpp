@@ -58,6 +58,8 @@ std::string get_event_id_info(const std::string &indata,
  */
 std::string get_wem_id_at_index(const std::string &indata, const int &index);
 
+std::string get_event_name_from_id(const std::uint32_t &event_id);
+
 /**
  * @brief get a string with the action type from the enum
  * @param action_type an action type to be converted to string
