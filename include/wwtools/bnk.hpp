@@ -58,6 +58,11 @@ std::string get_event_id_info(const std::string &indata,
  */
 std::string get_wem_id_at_index(const std::string &indata, const int &index);
 
+/**
+ * @brief get a string with the action type from the enum
+ * @param action_type an action type to be converted to string
+ * @return the string name of the action type
+ */
 std::string get_event_action_type(bnk_t::action_type_t action_type);
 } // namespace wwtools::bnk
 
