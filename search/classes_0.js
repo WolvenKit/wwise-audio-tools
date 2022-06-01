@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['eventsfx_17',['EventSFX',['../structEventSFX.html',1,'']]]
+  ['event_18',['Event',['../structEvent.html',1,'']]],
+  ['eventsfx_19',['EventSFX',['../structEventSFX.html',1,'']]]
 ];
