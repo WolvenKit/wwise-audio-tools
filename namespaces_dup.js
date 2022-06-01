@@ -8,6 +8,15 @@ var namespaces_dup =
         [ "get_info", "namespacewwtools_1_1bnk.html#ab2ef85216c7c71210d5214fde14f01e2", null ],
         [ "get_wem_id_at_index", "namespacewwtools_1_1bnk.html#a609fc4a4935f587a26cbb1360e7b6f44", null ]
       ] ],
+      [ "util", null, [
+        [ "write", "namespacewwtools_1_1util_1_1write.html", [
+          [ "big_endian", "namespacewwtools_1_1util_1_1write.html#a7eae58451d6db30ccedf11b5c079a0f0", null ],
+          [ "big_endian", "namespacewwtools_1_1util_1_1write.html#a4cbd2d12ebc78a1443802136634c8b0e", null ],
+          [ "little_endian", "namespacewwtools_1_1util_1_1write.html#a6e8f78274a1e629e810acda550c241a9", null ],
+          [ "little_endian", "namespacewwtools_1_1util_1_1write.html#ac67e731d473880fb4f84ed23a2484e22", null ],
+          [ "raw_data", "namespacewwtools_1_1util_1_1write.html#ae84e370511cf2742288a2b8cbc40c2ef", null ]
+        ] ]
+      ] ],
       [ "w3sc", "namespacewwtools_1_1w3sc.html", [
         [ "create", "namespacewwtools_1_1w3sc.html#aca60b0da158b9b945cd57ed3c25f07a1", null ],
         [ "get_info", "namespacewwtools_1_1w3sc.html#a6bcfb87689b59fdab78b4e244f821e0d", null ],

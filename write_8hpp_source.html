@@ -94,38 +94,42 @@ $(document).ready(function(){initNavTree('write_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>wwtools::util::write {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> big_endian(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, std::ostream &amp;os) {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordtype">char</span> arr_data[<span class="keyword">sizeof</span>(T)];</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  std::memcpy(arr_data, data, <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <span class="keyword">sizeof</span>(T) - 1; i &gt;= 0; i--)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    os.put(arr_data[i]);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> big_endian(<span class="keyword">const</span> T &amp;data, std::ostream &amp;os) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  big_endian&lt;T&gt;(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;data), os);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> little_endian(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, std::ostream &amp;os) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">char</span> arr_data[<span class="keyword">sizeof</span>(T)];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  std::memcpy(arr_data, data, <span class="keyword">sizeof</span>(T));</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">sizeof</span>(T); i++)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    os.put(arr_data[i]);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> little_endian(<span class="keyword">const</span> T &amp;data, std::ostream &amp;os) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  little_endian&lt;T&gt;(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;data), os);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> raw_data(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, <span class="keywordtype">size_t</span> size, std::ostream &amp;os) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  os.write(data, size);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;} <span class="comment">// namespace wwtools::util::write</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacewwtools_1_1util_1_1write.html">wwtools::util::write</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacewwtools_1_1util_1_1write.html#a7eae58451d6db30ccedf11b5c079a0f0">   20</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacewwtools_1_1util_1_1write.html#a7eae58451d6db30ccedf11b5c079a0f0">big_endian</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, std::ostream &amp;os) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">char</span> arr_data[<span class="keyword">sizeof</span>(T)];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  std::memcpy(arr_data, data, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <span class="keyword">sizeof</span>(T) - 1; i &gt;= 0; i--)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    os.put(arr_data[i]);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespacewwtools_1_1util_1_1write.html#a4cbd2d12ebc78a1443802136634c8b0e">   34</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacewwtools_1_1util_1_1write.html#a7eae58451d6db30ccedf11b5c079a0f0">big_endian</a>(<span class="keyword">const</span> T &amp;data, std::ostream &amp;os) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  big_endian&lt;T&gt;(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;data), os);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// WWTOOLS_UTIL_WRITE_HPP</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespacewwtools_1_1util_1_1write.html#a6e8f78274a1e629e810acda550c241a9">   46</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacewwtools_1_1util_1_1write.html#a6e8f78274a1e629e810acda550c241a9">little_endian</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, std::ostream &amp;os) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">char</span> arr_data[<span class="keyword">sizeof</span>(T)];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  std::memcpy(arr_data, data, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">sizeof</span>(T); i++)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    os.put(arr_data[i]);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespacewwtools_1_1util_1_1write.html#ac67e731d473880fb4f84ed23a2484e22">   61</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacewwtools_1_1util_1_1write.html#a6e8f78274a1e629e810acda550c241a9">little_endian</a>(<span class="keyword">const</span> T &amp;data, std::ostream &amp;os) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  little_endian&lt;T&gt;(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;data), os);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="namespacewwtools_1_1util_1_1write.html#ae84e370511cf2742288a2b8cbc40c2ef">   72</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacewwtools_1_1util_1_1write.html#ae84e370511cf2742288a2b8cbc40c2ef">raw_data</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, <span class="keywordtype">size_t</span> size, std::ostream &amp;os) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  os.write(data, size);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;} <span class="comment">// namespace wwtools::util::write</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// WWTOOLS_UTIL_WRITE_HPP</span></div>
+<div class="ttc" id="anamespacewwtools_1_1util_1_1write_html"><div class="ttname"><a href="namespacewwtools_1_1util_1_1write.html">wwtools::util::write</a></div><div class="ttdoc">helper functions for writing data</div></div>
+<div class="ttc" id="anamespacewwtools_1_1util_1_1write_html_a6e8f78274a1e629e810acda550c241a9"><div class="ttname"><a href="namespacewwtools_1_1util_1_1write.html#a6e8f78274a1e629e810acda550c241a9">wwtools::util::write::little_endian</a></div><div class="ttdeci">void little_endian(const char *data, std::ostream &amp;os)</div><div class="ttdoc">write data to a stream</div><div class="ttdef"><b>Definition:</b> write.hpp:46</div></div>
+<div class="ttc" id="anamespacewwtools_1_1util_1_1write_html_a7eae58451d6db30ccedf11b5c079a0f0"><div class="ttname"><a href="namespacewwtools_1_1util_1_1write.html#a7eae58451d6db30ccedf11b5c079a0f0">wwtools::util::write::big_endian</a></div><div class="ttdeci">void big_endian(const char *data, std::ostream &amp;os)</div><div class="ttdoc">write data in reverse</div><div class="ttdef"><b>Definition:</b> write.hpp:20</div></div>
+<div class="ttc" id="anamespacewwtools_1_1util_1_1write_html_ae84e370511cf2742288a2b8cbc40c2ef"><div class="ttname"><a href="namespacewwtools_1_1util_1_1write.html#ae84e370511cf2742288a2b8cbc40c2ef">wwtools::util::write::raw_data</a></div><div class="ttdeci">void raw_data(const char *data, size_t size, std::ostream &amp;os)</div><div class="ttdoc">wrapper around os::write</div><div class="ttdef"><b>Definition:</b> write.hpp:72</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

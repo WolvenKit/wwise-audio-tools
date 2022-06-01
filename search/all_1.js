@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['eventsfx_1',['EventSFX',['../structEventSFX.html',1,'']]],
-  ['extract_2',['extract',['../namespacewwtools_1_1bnk.html#adb80afb43747683c49dddba4261212ac',1,'wwtools::bnk']]]
+  ['create_2',['create',['../namespacewwtools_1_1w3sc.html#aca60b0da158b9b945cd57ed3c25f07a1',1,'wwtools::w3sc']]]
 ];
