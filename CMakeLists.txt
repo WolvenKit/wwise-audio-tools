@@ -30,9 +30,9 @@ set(SOURCE
     src/wwtools/w3sc.cpp
     src/wwtools/bnk.cpp
     src/kaitai/kaitaistream.cpp
-    src/kaitai/bnk.cpp
-    src/kaitai/w3sc.cpp
-    src/kaitai/wem.cpp
+    src/kaitai/structs/bnk.cpp
+    src/kaitai/structs/w3sc.cpp
+    src/kaitai/structs/wem.cpp
   )
 
 add_subdirectory(libogg EXCLUDE_FROM_ALL)
