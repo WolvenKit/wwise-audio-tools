@@ -71,7 +71,7 @@ endif()
 # https://cmake.org/cmake/help/latest/command/install.html#installing-targets
 install(TARGETS wwtools-bin)
 
-option(DOWNLOAD_CATCH2 "Download Catch2 framework if it won't be found locally" ON)
+option(DOWNLOAD_CATCH2 "Download Catch2 framework if it won't be found locally" OFF)
 
 find_package(Catch2 3)
 
