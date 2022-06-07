@@ -1,3 +1,4 @@
+#include <cstring>
 #include <string>
 
 #include "revorb/revorb.hpp"
