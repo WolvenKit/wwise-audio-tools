@@ -199,7 +199,7 @@ std::string get_event_id_info(const std::string &indata,
       data_ss << "Found " << num_events << " event(s)\n";
       data_ss << event_to_event_sfxs.size() << " of them point to files in this BNK\n\n";
       for (const auto &[event_id, event_sfxs] : event_to_event_sfxs) {
-        data_ss << event_id << " (" << (get_event_name_from_id(event_id).empty() ? "can't find name" : get_event_name_from_id(event_id)) << ")\n";
+        data_ss << event_id /*<< " (" << (get_event_name_from_id(event_id).empty() ? "can't find name" : get_event_name_from_id(event_id))*/ << ")\n";
         for (const auto &event_sfx : event_sfxs) {
           data_ss << '\t'
                   << wwtools::bnk::get_event_action_type(event_sfx.action_type)
