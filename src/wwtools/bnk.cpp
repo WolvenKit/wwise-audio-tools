@@ -6,8 +6,6 @@
 #include "kaitai/structs/bnk.h"
 #include "wwtools/bnk.hpp"
 
-#include "wwtools/util/event_name_to_id.hpp"
-
 // not in namespace, only used to keep
 // trace of events and corresponding
 // SFX for get_event_id_info
@@ -262,6 +260,7 @@ std::string get_event_action_type(bnk_t::action_type_t action_type) {
   return ret;
 }
 
+/*
 std::string get_event_name_from_id(const std::uint32_t &event_id) {
     std::string ret;
     for (const auto &event : events) {
@@ -270,4 +269,5 @@ std::string get_event_name_from_id(const std::uint32_t &event_id) {
     }
     return ret; // is empty if not found
 }
+*/
 } // namespace wwtools::bnk
