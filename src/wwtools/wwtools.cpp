@@ -8,7 +8,7 @@
 namespace wwtools {
 extern "C" const char *wem_to_ogg(const char *in_data) {
     std::string ret_s = wem_to_ogg(std::string(in_data));
-    char ret[ret_s.length() + 1];
+    char *ret = new char[ret_s.length() + 1];
     return strncpy(ret, ret_s.c_str(), ret_s.size() + 1);
 }
 

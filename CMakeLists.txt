@@ -41,11 +41,11 @@ set(SOURCE
 
 # add compilation support for large objects
 # https://stackoverflow.com/questions/69903253/cmake-bigobj-no-such-file-or-directory
-if (MSVC)
-  add_compile_options(/bigobj)
-else ()
-  add_compile_options(-Wa,-mbig-obj)
-endif ()
+# if (MSVC)
+#   add_compile_options(/bigobj)
+# else ()
+#   add_compile_options(-Wa,-mbig-obj)
+# endif ()
 
 add_subdirectory(libogg EXCLUDE_FROM_ALL)
 add_subdirectory(libvorbis EXCLUDE_FROM_ALL)
