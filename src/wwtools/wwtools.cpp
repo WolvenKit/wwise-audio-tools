@@ -7,10 +7,13 @@
 #include "wwtools/wwtools.hpp"
 
 namespace wwtools {
-extern "C" const char *wem_to_ogg(const char *in_data, const size_t &size) {
-    std::string ret_s = wem_to_ogg(std::string(in_data, 0, size));
-    char *ret = new char[ret_s.length()];
-    return strncpy(ret, ret_s.c_str(), ret_s.size());
+extern "C" size_t wem_to_ogg(const uint8_t *in_data, size_t in_size,
+                             uint8_t **out_data) {
+  std::string ret_s =
+      wem_to_ogg(std::string(reinterpret_cast<const char *>(in_data), in_size));
+  *out_data = new uint8_t[ret_s.length()];
+  memcpy(*out_data, ret_s.c_str(), ret_s.size());
+  return ret_s.size();
 }
 
 std::string wem_to_ogg(const std::string &in_data) {

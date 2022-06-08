@@ -26,7 +26,7 @@ namespace wwtools {
  * @return OGG file data
  */
 std::string wem_to_ogg(const std::string &in_data);
-extern "C" const char *wem_to_ogg(const char *in_data, const size_t &size);
+extern "C" size_t wem_to_ogg(const uint8_t *in_data, size_t in_size, uint8_t **out_data);
 } // namespace wwtools
 
 #endif // WWTOOLS_WWTOOLS_HPP
