@@ -6,8 +6,6 @@
 #include "kaitai/structs/bnk.h"
 #include "wwtools/bnk.hpp"
 
-#include "wwtools/util/event_name_to_id.hpp"
-
 // not in namespace, only used to keep
 // trace of events and corresponding
 // SFX for get_event_id_info
@@ -201,7 +199,7 @@ std::string get_event_id_info(const std::string &indata,
       data_ss << "Found " << num_events << " event(s)\n";
       data_ss << event_to_event_sfxs.size() << " of them point to files in this BNK\n\n";
       for (const auto &[event_id, event_sfxs] : event_to_event_sfxs) {
-        data_ss << event_id << " (" << (get_event_name_from_id(event_id).empty() ? "can't find name" : get_event_name_from_id(event_id)) << ")\n";
+        data_ss << event_id /*<< " (" << (get_event_name_from_id(event_id).empty() ? "can't find name" : get_event_name_from_id(event_id))*/ << ")\n";
         for (const auto &event_sfx : event_sfxs) {
           data_ss << '\t'
                   << wwtools::bnk::get_event_action_type(event_sfx.action_type)
@@ -262,6 +260,7 @@ std::string get_event_action_type(bnk_t::action_type_t action_type) {
   return ret;
 }
 
+/*
 std::string get_event_name_from_id(const std::uint32_t &event_id) {
     std::string ret;
     for (const auto &event : events) {
@@ -270,4 +269,5 @@ std::string get_event_name_from_id(const std::uint32_t &event_id) {
     }
     return ret; // is empty if not found
 }
+*/
 } // namespace wwtools::bnk

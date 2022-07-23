@@ -19,6 +19,10 @@ include_directories(
 
 add_definitions(-DKS_STR_ENCODING_NONE)
 
+if(MSVC)
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+endif()
+
 set(SOURCE
     src/ww2ogg/codebook.cpp
     src/ww2ogg/crc.c
@@ -34,6 +38,14 @@ set(SOURCE
     src/kaitai/structs/w3sc.cpp
     src/kaitai/structs/wem.cpp
   )
+
+# add compilation support for large objects
+# https://stackoverflow.com/questions/69903253/cmake-bigobj-no-such-file-or-directory
+# if (MSVC)
+#   add_compile_options(/bigobj)
+# else ()
+#   add_compile_options(-Wa,-mbig-obj)
+# endif ()
 
 add_subdirectory(libogg EXCLUDE_FROM_ALL)
 add_subdirectory(libvorbis EXCLUDE_FROM_ALL)
