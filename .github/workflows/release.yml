@@ -49,9 +49,9 @@ jobs:
           name: Windows Release
           # For some reason the dynamic lib is in the bin directory
           path: |
-            build/bin/Debug/wwtools.exe
-            build/bin/Debug/wwtools.dll 
-            build/lib/Debug/wwtools.lib
+            build/bin/Release/wwtools.exe
+            build/bin/Release/wwtools.dll 
+            build/lib/Release/wwtools.lib
 
   release:
     runs-on: ubuntu-latest
