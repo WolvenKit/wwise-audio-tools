@@ -5,7 +5,7 @@ This repository is for a static and dynamic library as well as a simple command 
 Both `ww2ogg` and `revorb` are relatively old and annoying to use repetitively so this project is aimed to keep supporting them and making them easy to use and integrate.
 
 ## Building
-This is meant to be build with CMake, which generates both a static and dynamic library, as well as a simple POC command line tool.  
+This is meant to be built with CMake, which generates both a static and dynamic library, as well as a simple POC command line tool.  
 
 Example build workflow:
 ```
