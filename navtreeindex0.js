@@ -1,5 +1,7 @@
 var NAVTREEINDEX0 =
 {
+"":[0,0,0],
+"":[0,0,0,1],
 "annotated.html":[1,0],
 "bnk_8hpp.html":[2,0,0,0,1],
 "bnk_8hpp.html#a17f13b7f291cc67f898bafe4e6a03204":[2,0,0,0,1,2],
@@ -53,9 +55,7 @@ var NAVTREEINDEX0 =
 "w3sc_8hpp_source.html":[2,0,0,0,2],
 "write_8hpp_source.html":[2,0,0,0,0,1],
 "wwtools_8hpp.html":[2,0,0,0,3],
-"wwtools_8hpp.html#af6b2182866027e78f7a5d3a9912eca0a":[0,0,0,3],
 "wwtools_8hpp.html#af6b2182866027e78f7a5d3a9912eca0a":[2,0,0,0,3,0],
-"wwtools_8hpp_source.html":[2,0,0,0,3],
-"":[0,0,0],
-"":[0,0,0,1]
+"wwtools_8hpp.html#af6b2182866027e78f7a5d3a9912eca0a":[0,0,0,3],
+"wwtools_8hpp_source.html":[2,0,0,0,3]
 };
