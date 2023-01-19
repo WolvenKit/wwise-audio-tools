@@ -96,12 +96,18 @@ int main(int argc, char *argv[]) {
     for (const auto &file : fs::directory_iterator(fs::current_path())) {
       if (file.path().extension() == ".wem") {
         wemExists = true;
-        std::cout << "Coverting " << file.path() << "..." << std::endl;
+        std::cout << "Converting " << file.path() << "..." << std::endl;
+
+        std::ifstream filein(file.path().string(), std::ios::binary);
+        std::stringstream indata;
+        indata << filein.rdbuf();
+
         // TODO: Add function for changing extension
         std::string outpath = file.path().string().substr(
                                   0, file.path().string().find_last_of(".")) +
                               ".ogg";
-        auto success = convert(file.path().string(), outpath);
+
+        auto success = convert(indata.str(), outpath);
         if (!success) {
           std::cerr << "Failed to convert " << file.path() << std::endl;
           return 1;
