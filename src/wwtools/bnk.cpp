@@ -1,6 +1,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <cstdint>
 
 #include "kaitai/kaitaistream.h"
 #include "kaitai/structs/bnk.h"
