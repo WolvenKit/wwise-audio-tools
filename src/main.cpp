@@ -1,5 +1,6 @@
 #include <cstring>
 #include <filesystem>
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <utility>
@@ -24,7 +25,7 @@ bool convert(const std::string &indata, const std::string &outpath) {
     return false;
   }
 
-  std::ofstream fout(outpath);
+  std::ofstream fout(outpath, std::ios::binary);
   fout << outdata;
   return true;
 }
@@ -211,7 +212,7 @@ int main(int argc, char *argv[]) {
                       << outpath.string() + file_extension << "..."
                       << std::endl;
             if (noconvert) {
-              std::ofstream of(outpath.string() + file_extension);
+              std::ofstream of(outpath.string() + file_extension, std::ios::binary);
               of << wem;
               of.close();
               idx++;
@@ -291,7 +292,7 @@ int main(int argc, char *argv[]) {
                 fs::path outpath = outdir / filename;
                 std::string file_extension = noconvert ? ".wem" : ".ogg";
                 if (noconvert) {
-                  std::ofstream of(outpath.string() + file_extension);
+                  std::ofstream of(outpath.string() + file_extension, std::ios::binary);
                   of << wem;
                   of.close();
                   idx++;
@@ -317,7 +318,7 @@ int main(int argc, char *argv[]) {
                           << file_count << "] " << rang::fg::reset
                           << "Extracting " << file->name() << "..."
                           << rang::fg::reset << std::endl;
-                std::ofstream fout(file->name());
+                std::ofstream fout(file->name(), std::ios::binary);
                 fout << file->data();
                 continue;
               }
