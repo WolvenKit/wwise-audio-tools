@@ -1,0 +1,7 @@
+﻿---
+BasedOnStyle: Microsoft
+BinPackArguments: 'false'
+BinPackParameters: 'false'
+ColumnLimit: '80'
+PenaltyIndentedWhitespace: 1
+...
