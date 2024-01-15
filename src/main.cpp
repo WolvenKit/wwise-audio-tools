@@ -22,7 +22,7 @@
 #include "wwtools/wwtools.hpp"
 
 namespace fs = std::filesystem;
-using std::cout, std::cerr, std::endl, std::string;
+using std::cout, std::cerr, std::endl, std::string, std::string_view;
 
 enum class OPERATIONS
 {
@@ -32,7 +32,7 @@ enum class OPERATIONS
     CACHE
 };
 
-static OPERATIONS ops_to_operation(const std::string &ops)
+static OPERATIONS ops_to_operation(string_view ops)
 {
     if (strcmp_insensitive(ops, "wem") == 0)
     {
@@ -52,7 +52,7 @@ static OPERATIONS ops_to_operation(const std::string &ops)
     return OPERATIONS::UNKNOWN;
 }
 
-static std::string operation_to_ops(const OPERATIONS &operation)
+static string operation_to_ops(const OPERATIONS &operation)
 {
     switch (operation)
     {
@@ -126,7 +126,7 @@ cxxopts::Options setup_options()
     return options;
 }
 
-static bool is_allowed_op(const string &ops)
+static bool is_allowed_op(string_view ops)
 {
     return ops_to_operation(ops) != OPERATIONS::UNKNOWN;
 }
@@ -182,7 +182,7 @@ std::string do_info(const std::stringstream &ifs, const Action &action)
 /**
  * Converts a wem file to ogg
  */
-std::string do_wem_to_ogg(const std::stringstream &ifs, const fs::path &ofp)
+std::string do_wem_to_ogg(const std::stringstream &ifs)
 {
     string outdata = wwtools::wem_to_ogg(ifs.str());
     if (outdata.empty())
@@ -193,29 +193,28 @@ std::string do_wem_to_ogg(const std::stringstream &ifs, const fs::path &ofp)
     return outdata;
 }
 
-std::string do_bnk_event_id_info(const std::stringstream &ifs,
-                                 const std::string eid)
+string do_bnk_event_id_info(const std::stringstream &ifs, const string &eid)
 {
     auto result = wwtools::bnk::get_event_id_info(ifs.str(), eid);
 
     return result;
 }
 
-std::string do_bnk_event_list(const std::stringstream &ifs)
+string do_bnk_event_list(const std::stringstream &ifs)
 {
     auto result = wwtools::bnk::get_info(ifs.str());
 
     return result;
 }
 
-void write_output_file(const fs::path &ofp, const std::string &odata)
+void write_output_file(const fs::path &ofp, string_view odata)
 {
     std::ofstream fout(ofp, std::ios::binary);
 
     fout << odata;
 }
 
-void write_cout(const std::string &odata)
+void write_cout(string_view odata)
 {
     cout << odata << endl;
 }
@@ -274,44 +273,37 @@ fs::path get_ofp_from_op(const fs::path &ifp,
 
 void process_file(const fs::path &ifp, const fs::path &op, const Action &action)
 {
-    try
+    auto istream = get_input_file(ifp, action);
+    auto ofp = get_ofp_from_op(ifp, op, action);
+
+    if (action.task == TASKS::INFO)
     {
-        auto istream = get_input_file(ifp, action);
-        auto ofp = get_ofp_from_op(ifp, op, action);
-
-        if (action.task == TASKS::INFO)
-        {
-            auto odata = do_info(istream, action);
-            write_cout(odata);
-            return;
-        }
-
-        if (action.operation == OPERATIONS::WEM)
-        {
-            auto odata = do_wem_to_ogg(istream, ofp);
-            write_output_file(ofp, odata);
-            return;
-        }
-
-        if (action.operation == OPERATIONS::BNK)
-        {
-            if (action.task == TASKS::BNK_EVENT && action.args.length() > 0)
-            {
-                auto odata = do_bnk_event_id_info(istream, action.args);
-                write_cout(odata);
-            }
-
-            auto odata = do_bnk_event_list(istream);
-            write_cout(odata);
-            return;
-        }
-
-        // TODO: cache
+        auto odata = do_info(istream, action);
+        write_cout(odata);
+        return;
     }
-    catch (const std::exception &e)
+
+    if (action.operation == OPERATIONS::WEM)
     {
-        throw;
+        auto odata = do_wem_to_ogg(istream);
+        write_output_file(ofp, odata);
+        return;
     }
+
+    if (action.operation == OPERATIONS::BNK)
+    {
+        if (action.task == TASKS::BNK_EVENT && action.args.length() > 0)
+        {
+            auto odata = do_bnk_event_id_info(istream, action.args);
+            write_cout(odata);
+        }
+
+        auto odata = do_bnk_event_list(istream);
+        write_cout(odata);
+        return;
+    }
+
+    // TODO: cache
 }
 
 int main(int argc, char *argv[])
@@ -325,7 +317,7 @@ int main(int argc, char *argv[])
         exit(0);
     }
 
-    auto ops = result["ops"].as<std::string>();
+    auto ops = result["ops"].as<string>();
 
     if (!is_allowed_op(ops))
     {
@@ -334,13 +326,13 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    std::string task_args;
+    string task_args;
     TASKS whichtask = TASKS::UNKNOWN;
 
     if (result.count("event"))
     {
         whichtask = TASKS::BNK_EVENT;
-        task_args = result["event"].as<std::string>();
+        task_args = result["event"].as<string>();
     }
 
     if (result.count("info"))
@@ -357,8 +349,8 @@ int main(int argc, char *argv[])
         task_args  // args
     };
 
-    auto ipath = result["ipath"].as<std::string>();
-    auto opath = result["opath"].as<std::string>();
+    auto ipath = result["ipath"].as<string>();
+    auto opath = result["opath"].as<string>();
 
     try
     {
