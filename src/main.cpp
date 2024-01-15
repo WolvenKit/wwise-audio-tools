@@ -2,6 +2,7 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <numeric>
 #include <string>
 #include <utility>
 #include <vector>
@@ -12,6 +13,7 @@
 #include "kaitai/structs/w3sc.h"
 #include "revorb/revorb.hpp"
 #include "util/rang.hpp"
+#include "utils.cpp"
 #include "ww2ogg/ww2ogg.h"
 #include "ww2ogg/wwriff.h"
 #include "wwtools/bnk.hpp"
@@ -20,111 +22,306 @@
 #include "wwtools/wwtools.hpp"
 
 namespace fs = std::filesystem;
+using std::cout, std::cerr, std::endl, std::string;
 
-std::string normalize_path(const std::string &x)
+enum class OPERATIONS
 {
-    fs::path path(x);
-    auto canonical = fs::weakly_canonical(path);
-    return canonical.make_preferred().string();
+    UNKNOWN,
+    WEM,
+    BNK,
+    CACHE
+};
+
+static OPERATIONS ops_to_operation(const std::string &ops)
+{
+    if (strcmp_insensitive(ops, "wem") == 0)
+    {
+        return OPERATIONS::WEM;
+    }
+
+    if (strcmp_insensitive(ops, "bnk") == 0)
+    {
+        return OPERATIONS::BNK;
+    }
+
+    if (strcmp_insensitive(ops, "cache") == 0)
+    {
+        return OPERATIONS::CACHE;
+    }
+
+    return OPERATIONS::UNKNOWN;
 }
 
-bool is_filepath(std::string x)
+static std::string operation_to_ops(const OPERATIONS &operation)
 {
-    auto npath = fs::path(normalize_path(x));
+    switch (operation)
+    {
+    case OPERATIONS::WEM:
+        return "WEM";
+    case OPERATIONS::BNK:
+        return "BNK";
+    case OPERATIONS::CACHE:
+        return "CACHE";
+    }
 
-    return !npath.extension().empty();
+    return "UNKNOWN";
 }
 
-bool is_directorypath(std::string x)
+enum class TASKS
 {
-    auto npath = fs::path(normalize_path(x));
+    UNKNOWN,
+    INFO,
+    BNK_EVENT,
+    BNK_EXTRACT
+};
 
-    return npath.extension().empty();
-}
-
-void setup_options(cxxopts::Options &options)
+struct Action
 {
-    options.add_options()("ops", "Operation Positional", cxxopts::value<std::string>())("info", "", cxxopts::value<bool>()->default_value("false"))("ipath", "Input Path Positional", cxxopts::value<std::string>()->default_value(fs::current_path().string()))("opath", "Output Path Positional", cxxopts::value<std::string>()->default_value(""))("h,help", "Print usage");
+    OPERATIONS operation;
+    TASKS task;
+    std::string args;
+};
 
-    options.positional_help("<wem|bnk|cache> [input file/directory] [output file/directory]");
+cxxopts::Options setup_options()
+{
+    cxxopts::Options options("wwtools",
+                             "a simple command line tool used to "
+                             "convert Wwise WEM files to OGG files");
 
-    options.add_options("bnk")("event", "", cxxopts::value<bool>()->default_value("false"))("extract", "", cxxopts::value<bool>()->default_value("false"))("no-convert", "", cxxopts::value<bool>()->default_value("false"));
+    // clang-format just doesn't want to work with chain operators
+    // and this pattern is apparently very unique
+    // clang-format off
+    options.add_options()
+        ("ops", "wem|bnk|cache", cxxopts::value<string>())
+        // ("task", "(wem:event|extract)(bnk:read|write)", cxxopts::value<string>()->implicit_value(""))
+        ("info", "", cxxopts::value<bool>()->default_value("false"))
+        ("ipath", "Input Path Positional", 
+            cxxopts::value<string>()->default_value(fs::current_path().string())
+        )
+        ("opath", "Output Path Positional", 
+            cxxopts::value<string>()->default_value("")
+        )
+        ("h,help", "Print usage")
+    ;
 
-    options.add_options("cache")("read", "", cxxopts::value<bool>()->default_value("false"))("write", "", cxxopts::value<bool>()->default_value("false"))("no-convert-wem", "", cxxopts::value<bool>()->default_value("false"))("no-convert-bnk", "", cxxopts::value<bool>()->default_value("false"));
+    options.positional_help(
+        "<operation> [task=value] [input file/directory] [output file/directory]");
+
+    options.add_options("bnk")
+        ("event", "(task|task=event-id)", cxxopts::value<string>()->implicit_value(""))
+        ("extract", "(task|task=event-id)", cxxopts::value<string>()->implicit_value(""))
+        ("no-convert", "", cxxopts::value<bool>()->default_value("false"))
+    ;
+
+    options.add_options("cache")
+        ("read", "(task)", cxxopts::value<bool>()->default_value("false"))
+        ("write", "(task)", cxxopts::value<bool>()->default_value("false"))
+        ("no-convert-wem", "", cxxopts::value<bool>()->default_value("false"))
+        ("no-convert-bnk", "", cxxopts::value<bool>()->default_value("false"))
+    ;
+    // clang-format on
 
     options.parse_positional({"ops", "ipath", "opath"});
+
+    return options;
 }
 
-bool is_allowed_op(std::string &ops)
+static bool is_allowed_op(const string &ops)
 {
-    std::unordered_set<std::string> allowed_ops = {
-        "wem", "bnk", "cache"};
-
-    return allowed_ops.find(ops) != allowed_ops.end();
+    return ops_to_operation(ops) != OPERATIONS::UNKNOWN;
 }
 
-bool convert_wem_to_ogg(const std::string &indata, const std::string &outpath)
+std::stringstream get_input_file(const fs::path &ifp, const Action &action)
+{
+    if (action.operation == OPERATIONS::WEM &&
+        strcmp_insensitive(ifp.extension().string(), ".wem") != 0)
+    {
+        throw std::invalid_argument(
+            "malformed ipath " + ifp.string() + " for operation " +
+            operation_to_ops(action.operation));
+    }
+
+    if (action.operation == OPERATIONS::BNK &&
+        strcmp_insensitive(ifp.extension().string(), ".bnk") != 0)
+    {
+        throw std::invalid_argument(
+            "malformed ipath " + ifp.string() + " for operation " +
+            operation_to_ops(action.operation));
+    }
+
+    // TODO: find cache variant
+
+    std::ifstream bnk_in(ifp, std::ios::binary);
+    std::stringstream bnk_data;
+    bnk_data << bnk_in.rdbuf();
+
+    return bnk_data;
+}
+
+std::string do_info(const std::stringstream &ifs, const Action &action)
 {
 
-    std::string outdata = wwtools::wem_to_ogg(indata);
+    if (action.operation == OPERATIONS::WEM && action.task == TASKS::INFO)
+    {
+        return ww2ogg::wem_info(ifs.str());
+    }
+
+    if (action.operation == OPERATIONS::BNK && action.task == TASKS::INFO)
+    {
+        return wwtools::bnk::get_info(ifs.str());
+    }
+
+    if (action.operation == OPERATIONS::CACHE && action.task == TASKS::INFO)
+    {
+        return wwtools::w3sc::get_info(ifs.str());
+    }
+
+    return "";
+}
+
+/**
+ * Converts a wem file to ogg
+ */
+std::string do_wem_to_ogg(const std::stringstream &ifs, const fs::path &ofp)
+{
+    string outdata = wwtools::wem_to_ogg(ifs.str());
     if (outdata.empty())
     {
-        return false;
+        return "";
     }
 
-    std::ofstream fout(outpath, std::ios::binary);
-    fout << outdata;
-
-    return true;
+    return outdata;
 }
 
-std::tuple<std::string, std::string> ensure_in_out_filepaths(std::string ipath, std::string opath)
+std::string do_bnk_event_id_info(const std::stringstream &ifs,
+                                 const std::string eid)
 {
-    if (!is_filepath(ipath))
+    auto result = wwtools::bnk::get_event_id_info(ifs.str(), eid);
+
+    return result;
+}
+
+std::string do_bnk_event_list(const std::stringstream &ifs)
+{
+    auto result = wwtools::bnk::get_info(ifs.str());
+
+    return result;
+}
+
+void write_output_file(const fs::path &ofp, const std::string &odata)
+{
+    std::ofstream fout(ofp, std::ios::binary);
+
+    fout << odata;
+}
+
+void write_cout(const std::string &odata)
+{
+    cout << odata << endl;
+}
+
+/**
+ * Ensures Output File from potential Folder
+ */
+fs::path get_ofp_from_op(const fs::path &ifp,
+                         const fs::path &op,
+                         const Action &action)
+{
+    if (is_filepath(op.string()))
     {
-        throw std::invalid_argument("ipath needs to be a filepath");
+        return op;
     }
 
-    if (opath.empty())
+    if (!is_directorypath(op.string()))
     {
-        auto outpath = fs::path(ipath).replace_extension("ogg").string();
-
-        // .\fu.wem, .\fu.ogg
-        return std::make_tuple(ipath, outpath);
+        throw std::invalid_argument(
+            "malformed opath " + op.string() + " for operation " +
+            operation_to_ops(action.operation));
     }
 
-    if (is_filepath(opath))
+    if (action.operation == OPERATIONS::WEM)
     {
-        // .\fu.wem .\b\ar.ogg
-        return std::make_tuple(ipath, opath);
-    }
-
-    if (is_directorypath(opath))
-    {
-        if (!fs::is_directory(opath))
+        if (action.task == TASKS::INFO)
         {
-            throw std::invalid_argument("opath not an existing directory");
+            return "";
         }
 
-        auto outpath = (fs::path(opath) / fs::path(ipath).replace_extension("ogg").filename()).string();
-
-        // .\fu.wem .\b\fu.ogg
-        return std::make_tuple(ipath, outpath);
+        auto target_filename =
+            fs::path(ifp).replace_extension(fs::path("ogg")).filename();
+        return (ifp.parent_path() / target_filename);
     }
 
-    throw std::invalid_argument("opath malformed");
+    if (action.operation == OPERATIONS::BNK)
+    {
+        if (action.task == TASKS::INFO)
+        {
+            return "";
+        }
+
+        // list events
+        if (action.task == TASKS::BNK_EVENT && action.args.length() == 0)
+        {
+            return "";
+        }
+    }
+
+    // TODO: OPERATIONS::CACHE leads to n files output
+    // this should probably handled somewhere else
+
+    throw std::logic_error(
+        "not implemented operation " + operation_to_ops(action.operation));
+}
+
+void process_file(const fs::path &ifp, const fs::path &op, const Action &action)
+{
+    try
+    {
+        auto istream = get_input_file(ifp, action);
+        auto ofp = get_ofp_from_op(ifp, op, action);
+
+        if (action.task == TASKS::INFO)
+        {
+            auto odata = do_info(istream, action);
+            write_cout(odata);
+            return;
+        }
+
+        if (action.operation == OPERATIONS::WEM)
+        {
+            auto odata = do_wem_to_ogg(istream, ofp);
+            write_output_file(ofp, odata);
+            return;
+        }
+
+        if (action.operation == OPERATIONS::BNK)
+        {
+            if (action.task == TASKS::BNK_EVENT && action.args.length() > 0)
+            {
+                auto odata = do_bnk_event_id_info(istream, action.args);
+                write_cout(odata);
+            }
+
+            auto odata = do_bnk_event_list(istream);
+            write_cout(odata);
+            return;
+        }
+
+        // TODO: cache
+    }
+    catch (const std::exception &e)
+    {
+        throw;
+    }
 }
 
 int main(int argc, char *argv[])
 {
-    cxxopts::Options options("wwtools", "a simple command line tool used to convert Wwise WEM files to OGG files");
-
-    setup_options(options);
+    cxxopts::Options options = setup_options();
     auto result = options.parse(argc, argv);
 
     if (result.count("help"))
     {
-        std::cout << options.help() << std::endl;
+        cout << options.help() << endl;
         exit(0);
     }
 
@@ -132,375 +329,61 @@ int main(int argc, char *argv[])
 
     if (!is_allowed_op(ops))
     {
-        std::cout << ops << " is not a supported operation. Try wem, bnk, or cache." << std::endl;
+        cout << ops << " is not a supported operation. Try wem, bnk, or cache."
+             << endl;
         return 1;
     }
+
+    std::string task_args;
+    TASKS whichtask = TASKS::UNKNOWN;
+
+    if (result.count("event"))
+    {
+        whichtask = TASKS::BNK_EVENT;
+        task_args = result["event"].as<std::string>();
+    }
+
+    if (result.count("info"))
+    {
+        whichtask = TASKS::INFO;
+        task_args = "";
+    }
+
+    auto operation = ops_to_operation(ops);
+
+    Action action = {
+        operation, // OPERATIONS
+        whichtask, // TASKS
+        task_args  // args
+    };
 
     auto ipath = result["ipath"].as<std::string>();
     auto opath = result["opath"].as<std::string>();
 
-    //  Combinations:
-    // - No In or Out
-    //   _defaults to all matching files in current directory_
-    // - File to File
-    // - File to Directory
-    // - Directory to Directory
-    //   _same as first_
-
-    auto inputIsFile = is_filepath(ipath);
-    auto inputIsDirectory = is_directorypath(ipath);
-
-    auto success = FALSE;
-
-#pragma region WEM
-    if (strcasecmp(ops.c_str(), "wem") == 0)
+    try
     {
-        std::map<std::string, std::string> queuedFiles;
-
-        if (inputIsFile)
-        {
-            auto ct = ensure_in_out_filepaths(ipath, opath);
-
-            queuedFiles[std::get<0>(ct)] = std::get<1>(ct);
-        }
-        else if (inputIsDirectory)
+        if (is_directorypath(ipath))
         {
             for (const auto &file : fs::directory_iterator(ipath))
             {
-
-                if (strcasecmp(file.path().extension().string().c_str(), ".wem") == 0)
-                {
-                    auto ct = ensure_in_out_filepaths(file.path().string(), opath);
-
-                    queuedFiles[std::get<0>(ct)] = std::get<1>(ct);
-                }
+                process_file(file.path(), fs::path(opath), action);
             }
-        }
-        else
-        {
-            // input is garbage
+
+            return EXIT_SUCCESS;
         }
 
-        // for (const auto &ct : queuedFiles) {
-        std::map<std::string, std::string>::iterator qfi = queuedFiles.begin();
-
-        while (qfi != queuedFiles.end())
+        if (is_filepath(ipath))
         {
-            try
-            {
-                std::ifstream filein(qfi->first, std::ios::binary);
-                std::stringstream indata;
-                indata << filein.rdbuf();
+            process_file(fs::path(ipath), fs::path(opath), action);
 
-                success = convert_wem_to_ogg(indata.str(), qfi->second);
-
-                if (!success)
-                {
-                    std::cerr << "Failed to convert " << qfi->first << std::endl;
-                }
-                else
-                {
-                    std::cout << "Converted " << qfi->first << " to " << qfi->second << std::endl;
-                }
-
-                ++qfi;
-            }
-            catch (std::invalid_argument &e)
-            {
-                std::cerr << e.what() << std::endl;
-
-                return EXIT_FAILURE;
-            }
+            return EXIT_SUCCESS;
         }
     }
-#pragma endregion WEM
+    catch (const std::exception &e)
+    {
+        cerr << e.what() << endl;
+        return EXIT_FAILURE;
+    }
 
-#pragma region BNK
-
-#pragma endregion BNK
-
-#pragma region CACHE
-#pragma endregion CACHE
-    // for (const auto &file : fs::directory_iterator(fs::path(result["ipath"].as<std::string>()))) {
-    //     std::cout << file.path() << std::endl;
-    // }
-
-    return EXIT_SUCCESS;
-
-    //   // TODO: Add more descriptive comments regarding as much as possible
-    //   std::pair<std::vector<std::string>, bool> flags_raw = get_flags(argc, argv);
-    //   if (flags_raw.second) { // If there's an error...
-    //     return 1;
-    //   }
-    //   std::vector<std::string> flags = flags_raw.first;
-    //   if (has_flag(flags, "help")) {
-    //     print_help();
-    //     return 0;
-    //   }
-    //   if (argc < 2) {
-    //     // If there is no input file, convert all WEM files in the current directory
-    //     bool wemExists = false;
-    //     for (const auto &file : fs::directory_iterator(fs::current_path())) {
-    //       if (file.path().extension() == ".wem") {
-    //         wemExists = true;
-    //         std::cout << "Converting " << file.path() << "..." << std::endl;
-
-    //         std::ifstream filein(file.path().string(), std::ios::binary);
-    //         std::stringstream indata;
-    //         indata << filein.rdbuf();
-
-    //         // TODO: Add function for changing extension
-    //         std::string outpath = file.path().string().substr(
-    //                                   0, file.path().string().find_last_of(".")) +
-    //                               ".ogg";
-
-    //         auto success = convert(indata.str(), outpath);
-    //         if (!success) {
-    //           std::cerr << "Failed to convert " << file.path() << std::endl;
-    //           return 1;
-    //         }
-    //       }
-    //     }
-    //     if (!wemExists) {
-    //       print_help("No WEM files found in the current directory!", argv[0]);
-    //     }
-    //   } else {
-    //     if (argc < 3) {
-    //       print_help("Missing arguments!", argv[0]);
-    //       return 1;
-    //     } else {
-    // #pragma region WEM
-    //       if (strcmp(argv[1], "wem") == 0) {
-    //         auto path = std::string(argv[2]);
-
-    //         std::ifstream filein(path, std::ios::binary);
-    //         std::stringstream indata;
-    //         indata << filein.rdbuf();
-    //         if (has_flag(flags, "info")) {
-    //           std::cout << ww2ogg::wem_info(indata.str());
-    //           return 0;
-    //         }
-    //         std::string outpath = path.substr(0, path.find_last_of(".")) + ".ogg";
-
-    //         std::cout << "Extracting " << outpath << "..." << std::endl;
-    //         auto success = convert(indata.str(), outpath);
-    //         if (!success) {
-    //           std::cerr << "Failed to convert " << path << std::endl;
-    //           return 1;
-    //         }
-    // #pragma endregion WEM
-    // #pragma region BNK
-    //       } else if (strcmp(argv[1], "bnk") == 0) {
-    //         auto path = std::string(argv[3]);
-
-    //         std::ifstream filein(path, std::ios::binary);
-    //         std::stringstream indata;
-    //         indata << filein.rdbuf();
-
-    //         if (has_flag(flags, "info")) {
-    //           std::cout << wwtools::bnk::get_info(indata.str());
-    //           return EXIT_SUCCESS;
-    //         }
-
-    //         if (argc < 4) {
-    //           print_help("You must specify whether to extract or find an event as "
-    //                      "well as the input!",
-    //                      argv[0]);
-    //           return EXIT_FAILURE;
-    //         }
-
-    //         if (strcmp(argv[2], "event") != 0 && strcmp(argv[2], "extract") != 0) {
-    //           print_help("Incorrect value for read or write!", argv[0]);
-    //           return EXIT_FAILURE;
-    //         }
-
-    //         auto bnk_path = std::string(argv[3]);
-
-    //         if (strcmp(argv[2], "event") == 0) {
-    //           if (argc < 4) {
-    //             print_help("Not enough arguments for finding an event!");
-    //             return EXIT_FAILURE;
-    //           }
-
-    //           std::string in_event_id;
-    //           if (argc >= 5)
-    //             in_event_id = argv[4];
-
-    //           std::ifstream bnk_in(bnk_path, std::ios::binary);
-    //           std::stringstream indata;
-    //           indata << bnk_in.rdbuf();
-
-    //           std::cout << wwtools::bnk::get_event_id_info(indata.str(),
-    //                                                        in_event_id);
-    //         } else if (strcmp(argv[2], "extract") == 0) {
-    //           std::vector<std::string> wems;
-    //           // populate WEMs vector with data
-    //           wwtools::bnk::extract(indata.str(), wems);
-    //           kaitai::kstream ks(indata.str());
-    //           bnk_t bnk(&ks);
-    //           // create directory with name of bnk file, no extension
-    //           fs::create_directory(path.substr(0, path.find_last_of(".")));
-    //           int idx = 0;
-    //           for (auto wem : wems) {
-    //             fs::path outdir(path.substr(0, path.find_last_of(".")));
-    //             std::ifstream bnk_in(bnk_path, std::ios::binary);
-    //             std::stringstream indata;
-    //             indata << bnk_in.rdbuf();
-    //             bool noconvert = has_flag(flags, "no-convert");
-    //             // TODO: maybe make a function to return an array of IDs at index
-    //             // instead of parsing the file every loop
-    //             fs::path filename(
-    //                 wwtools::bnk::get_wem_id_at_index(indata.str(), idx));
-    //             fs::path outpath = outdir / filename;
-    //             std::string file_extension = noconvert ? ".wem" : ".ogg";
-    //             std::cout << rang::fg::cyan << "[" << idx + 1 << "/" << wems.size()
-    //                       << "] " << rang::fg::reset << "Extracting "
-    //                       << outpath.string() + file_extension << "..."
-    //                       << std::endl;
-    //             if (noconvert) {
-    //               std::ofstream of(outpath.string() + file_extension, std::ios::binary);
-    //               of << wem;
-    //               of.close();
-    //               idx++;
-    //               continue;
-    //             }
-    //             auto success = convert(wem, outpath.string() + file_extension);
-    //             if (!success) {
-    //               std::cout << "Failed to convert "
-    //                         << outpath.string() + file_extension << std::endl;
-    //               // Don't return error because others may succeed
-    //             }
-    //             idx++;
-    //           }
-    //         }
-    // #pragma endregion BNK
-    // #pragma region CACHE
-    //       } else if (strcmp(argv[1], "cache") == 0) {
-    //         if (argc < 4) {
-    //           print_help(
-    //               "You must specify whether to read or write as well as the input!",
-    //               argv[0]);
-    //           return EXIT_FAILURE;
-    //         }
-
-    //         if (strcmp(argv[2], "read") != 0 && strcmp(argv[2], "write") != 0) {
-    //           print_help("Incorrect value for read or write!", argv[0]);
-    //           return EXIT_FAILURE;
-    //         }
-
-    //         auto path = std::string(argv[3]);
-
-    //         if (strcmp(argv[2], "read") == 0) {
-    //           std::ifstream filein(path, std::ios::binary);
-    //           std::stringstream indata;
-    //           indata << filein.rdbuf();
-    //           if (has_flag(flags, "info")) {
-    //             std::cout << wwtools::w3sc::get_info(indata.str());
-    //             return 0;
-    //           }
-
-    //           kaitai::kstream ks(indata.str());
-
-    //           w3sc_t cache(&ks);
-
-    //           int file_index = 0;
-    //           int file_count = cache.file_infos()->size();
-    //           for (auto file : *cache.file_infos()) {
-    //             file_index++;
-    //             if (file->name().substr(file->name().find_last_of(".")) == ".bnk") {
-    //               std::cout << rang::fg::cyan << "[" << file_index << "/"
-    //                         << file_count << "] " << rang::fg::reset
-    //                         << "Extracting " << file->name() << "..." << std::endl;
-    //               // Currently unable to read music files
-    //               if (file->name().find("music_") != std::string::npos ||
-    //                   file->name().find("vo_") != std::string::npos ||
-    //                   file->name().find("qu_") != std::string::npos ||
-    //                   file->name().find("mutations_") != std::string::npos) {
-    //                 continue;
-    //               }
-
-    //               kaitai::kstream bnk_ks(file->data());
-    //               bnk_t bnk(&bnk_ks);
-    //               std::vector<std::string> wems;
-    //               // Populate WEMs vector with data
-    //               wwtools::bnk::extract(file->data(), wems);
-    //               // Create directory with name of bnk file, no extension
-    //               fs::create_directory(
-    //                   file->name().substr(0, file->name().find_last_of(".")));
-    //               int idx = 0;
-    //               for (auto wem : wems) {
-    //                 fs::path outdir(
-    //                     file->name().substr(0, file->name().find_last_of(".")));
-    //                 std::stringstream ss;
-    //                 // ss << bnk.data_index()->data()->indices()->at(idx)->id();
-    //                 bool noconvert = has_flag(flags, "no-convert-bnk");
-    //                 fs::path filename(ss.str());
-    //                 fs::path outpath = outdir / filename;
-    //                 std::string file_extension = noconvert ? ".wem" : ".ogg";
-    //                 if (noconvert) {
-    //                   std::ofstream of(outpath.string() + file_extension, std::ios::binary);
-    //                   of << wem;
-    //                   of.close();
-    //                   idx++;
-    //                   continue;
-    //                 }
-    //                 auto success = convert(wem, outpath.string() + file_extension);
-    //                 if (!success) {
-    //                   std::cout
-    //                       << rang::fg::yellow << "Failed to convert "
-    //                       << outpath.string() + file_extension
-    //                       << " (Likely a metadata-only file. This WEM will likely "
-    //                          "be found in the cache itself and not the soundbank.)"
-    //                       << rang::fg::reset << std::endl;
-    //                   // Don't return error because the rest may succeed
-    //                 }
-    //                 idx++;
-    //               }
-    //             } else if (file->name().substr(file->name().find_last_of(".")) ==
-    //                        ".wem") {
-    //               bool noconvert = has_flag(flags, "no-convert-wem");
-    //               if (noconvert) {
-    //                 std::cout << rang::fg::cyan << "[" << file_index << "/"
-    //                           << file_count << "] " << rang::fg::reset
-    //                           << "Extracting " << file->name() << "..."
-    //                           << rang::fg::reset << std::endl;
-    //                 std::ofstream fout(file->name(), std::ios::binary);
-    //                 fout << file->data();
-    //                 continue;
-    //               }
-    //               std::string outpath =
-    //                   file->name().substr(0, file->name().find_last_of(".")) +
-    //                   ".ogg";
-    //               std::cout << rang::fg::cyan << "[" << file_index << "/"
-    //                         << file_count << "] " << rang::fg::reset
-    //                         << "Extracting "
-    //                         << file->name().substr(0,
-    //                                                file->name().find_last_of(".")) +
-    //                                ".ogg"
-    //                         << rang::fg::reset << std::endl;
-    //               auto success = convert(file->data(), outpath);
-    //               if (!success) {
-    //                 // TODO: Add more rang usage
-    //                 std::cout << "Failed to convert " << path << std::endl;
-    //               }
-    //             }
-    //           }
-    //         } else { // write cache file
-    //           std::ofstream of("soundspc.cache", std::ios::binary);
-    //           std::vector<std::pair<std::string, std::string>> v;
-    //           for (const auto &file : fs::directory_iterator(path)) {
-    //             std::ifstream ifs(file.path().string(), std::ios::binary);
-    //             std::stringstream ss;
-    //             ss << ifs.rdbuf();
-    //             v.push_back({file.path().filename().string(), ss.str()});
-    //           }
-    //           wwtools::w3sc::create(v, of);
-    //         }
-    // #pragma endregion CACHE
-    //       } else {
-    //         print_help(argv[0]);
-    //         return 1;
-    //       }
-    //     }
-    //   }
+    return EXIT_FAILURE;
 }
