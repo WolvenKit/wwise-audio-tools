@@ -5,11 +5,13 @@
 
 #include "kaitai/kaitaistruct.h"
 #include <stdint.h>
+#include "vlq.h"
 #include <vector>
 
-#if KAITAI_STRUCT_VERSION < 9000L
-#error "Incompatible Kaitai Struct C++/STL API: version 0.9 or later is required"
+#if KAITAI_STRUCT_VERSION < 11000L
+#error "Incompatible Kaitai Struct C++/STL API: version 0.11 or later is required"
 #endif
+class vlq_t;
 
 class bnk_t : public kaitai::kstruct {
 
@@ -294,18 +296,14 @@ public:
     private:
         uint32_t m_version;
         uint32_t m_id;
-        std::string m_blank1;
-        std::string m_blank2;
         std::string m_random;
         uint32_t m_length;
         bnk_t* m__root;
         bnk_t::section_t* m__parent;
 
     public:
-        [[nodiscard]] uint32_t version() const;
+        uint32_t version() const { return m_version; }
         uint32_t id() const { return m_id; }
-        std::string blank1() const { return m_blank1; }
-        std::string blank2() const { return m_blank2; }
         std::string random() const { return m_random; }
         uint32_t length() const { return m_length; }
         bnk_t* _root() const { return m__root; }
@@ -326,13 +324,41 @@ public:
         ~event_t();
 
     private:
-        uint32_t m_event_action_count;
+        bool f_version;
+        uint32_t m_version;
+
+    public:
+        uint32_t version();
+
+    private:
+        bool f_event_action_count_value;
+        int32_t m_event_action_count_value;
+
+    public:
+        int32_t event_action_count_value();
+
+    private:
+        vlq_t* m_event_action_count_new;
+        bool n_event_action_count_new;
+
+    public:
+        bool _is_null_event_action_count_new() { event_action_count_new(); return n_event_action_count_new; };
+
+    private:
+        uint32_t m_event_action_count_old;
+        bool n_event_action_count_old;
+
+    public:
+        bool _is_null_event_action_count_old() { event_action_count_old(); return n_event_action_count_old; };
+
+    private:
         std::vector<uint32_t>* m_event_actions;
         bnk_t* m__root;
         bnk_t::hirc_obj_t* m__parent;
 
     public:
-        uint32_t event_action_count() const { return m_event_action_count; }
+        vlq_t* event_action_count_new() const { return m_event_action_count_new; }
+        uint32_t event_action_count_old() const { return m_event_action_count_old; }
         std::vector<uint32_t>* event_actions() const { return m_event_actions; }
         bnk_t* _root() const { return m__root; }
         bnk_t::hirc_obj_t* _parent() const { return m__parent; }
