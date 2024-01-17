@@ -1,6 +1,6 @@
 // This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
 
-#include "kaitai/structs/w3sc.h"
+#include "w3sc.h"
 #include "kaitai/exceptions.h"
 
 w3sc_t::w3sc_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, w3sc_t* p__root) : kaitai::kstruct(p__io) {
@@ -155,7 +155,7 @@ std::string w3sc_t::file_info_t::name() {
         return m_name;
     std::streampos _pos = m__io->pos();
     m__io->seek((_parent()->names_offset() + name_offset()));
-    m_name = kaitai::kstream::bytes_to_str(m__io->read_bytes_term(0, false, true, true), std::string("UTF-8"));
+    m_name = kaitai::kstream::bytes_to_str(m__io->read_bytes_term(0, false, true, true), "UTF-8");
     m__io->seek(_pos);
     f_name = true;
     return m_name;
@@ -166,9 +166,8 @@ std::vector<w3sc_t::file_info_t*>* w3sc_t::file_infos() {
         return m_file_infos;
     std::streampos _pos = m__io->pos();
     m__io->seek(info_offset());
-    int l_file_infos = files();
     m_file_infos = new std::vector<file_info_t*>();
-    m_file_infos->reserve(l_file_infos);
+    const int l_file_infos = files();
     for (int i = 0; i < l_file_infos; i++) {
         m_file_infos->push_back(new file_info_t(m__io, this, m__root));
     }

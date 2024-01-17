@@ -1,6 +1,6 @@
 // This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
 
-#include "kaitai/structs/wem.h"
+#include "wem.h"
 #include "kaitai/exceptions.h"
 
 wem_t::wem_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, wem_t* p__root) : kaitai::kstruct(p__io) {
@@ -127,7 +127,7 @@ void wem_t::fmt_chunk_t::_read() {
     m_extra_byte_count = m__io->read_u2le();
     m_valid_bits_per_sample = m__io->read_u2le();
     m_channel_mask = m__io->read_u4le();
-    m_guid = kaitai::kstream::bytes_to_str(m__io->read_bytes(42), std::string("utf-8"));
+    m_guid = kaitai::kstream::bytes_to_str(m__io->read_bytes(42), "UTF-8");
 }
 
 wem_t::fmt_chunk_t::~fmt_chunk_t() {
@@ -150,7 +150,7 @@ wem_t::junk_chunk_t::junk_chunk_t(kaitai::kstream* p__io, wem_t::chunk_t* p__par
 }
 
 void wem_t::junk_chunk_t::_read() {
-    m_junk = kaitai::kstream::bytes_to_str(m__io->read_bytes(26), std::string("utf-8"));
+    m_junk = kaitai::kstream::bytes_to_str(m__io->read_bytes(26), "UTF-8");
 }
 
 wem_t::junk_chunk_t::~junk_chunk_t() {
@@ -179,7 +179,7 @@ void wem_t::list_labl_subchunk_t::_read() {
     }
     m_size = m__io->read_u4le();
     m_cue_point_id = m__io->read_u4le();
-    m_data = kaitai::kstream::bytes_to_str(m__io->read_bytes((size() - 4)), std::string("utf-8"));
+    m_data = kaitai::kstream::bytes_to_str(m__io->read_bytes((size() - 4)), "UTF-8");
 }
 
 wem_t::list_labl_subchunk_t::~list_labl_subchunk_t() {
@@ -263,7 +263,7 @@ wem_t::data_chunk_t::data_chunk_t(uint32_t p_size, kaitai::kstream* p__io, wem_t
 }
 
 void wem_t::data_chunk_t::_read() {
-    m_data = kaitai::kstream::bytes_to_str(m__io->read_bytes(size()), std::string("utf-8"));
+    m_data = kaitai::kstream::bytes_to_str(m__io->read_bytes(size()), "UTF-8");
 }
 
 wem_t::data_chunk_t::~data_chunk_t() {
@@ -288,9 +288,8 @@ wem_t::cue_chunk_t::cue_chunk_t(kaitai::kstream* p__io, wem_t::chunk_t* p__paren
 
 void wem_t::cue_chunk_t::_read() {
     m_cue_point_count = m__io->read_u4le();
-    int l_cue_points = cue_point_count();
     m_cue_points = new std::vector<cue_point_subchunk_t*>();
-    m_cue_points->reserve(l_cue_points);
+    const int l_cue_points = cue_point_count();
     for (int i = 0; i < l_cue_points; i++) {
         m_cue_points->push_back(new cue_point_subchunk_t(m__io, this, m__root));
     }
