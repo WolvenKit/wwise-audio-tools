@@ -255,12 +255,22 @@ types:
         type: random_bytes(_parent.length - 4 - 1 - 1 - 4 - 1 - 1 - (1 * parameter_count) - (4 * parameter_count) - 1 - (8 * (type == action_type::set_state ? 1 : 0)) - (8 * (type == action_type::set_switch ? 1 : 0)))
   event:
     seq:
-      - id: event_action_count
+      - id: event_action_count_new
         type: vlq
+        if: version >= 123
+      - id: event_action_count_old
+        type: u4
+        if: version < 123
       - id: event_actions
         type: u4
         repeat: expr
-        repeat-expr: event_action_count.value
+        repeat-expr: event_action_count_value
+    instances:
+      version:
+        value: _root.data[0].section_data.as<bkhd_data>.version
+      event_action_count_value:
+        value: 'version >= 123 ? event_action_count_new.as<vlq>.value : event_action_count_old.as<u4>'
+
   audio_bus:
     seq:
       - id: parent_audio_bus_id
