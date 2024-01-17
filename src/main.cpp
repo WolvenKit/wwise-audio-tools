@@ -7,7 +7,7 @@
 #include <utility>
 #include <vector>
 
-#include "cxxopts/cxxopts.hpp"
+#include "cxxopts.hpp"
 #include "kaitai/kaitaistream.h"
 #include "kaitai/structs/bnk.h"
 #include "kaitai/structs/w3sc.h"
