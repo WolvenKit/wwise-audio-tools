@@ -1,6 +1,6 @@
 // This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
 
-#include "wem.h"
+#include "kaitai/structs/wem.h"
 #include "kaitai/exceptions.h"
 
 wem_t::wem_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, wem_t* p__root) : kaitai::kstruct(p__io) {

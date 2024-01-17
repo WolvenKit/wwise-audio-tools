@@ -1,6 +1,6 @@
 // This is a generated file! Please edit source .ksy file and use kaitai-struct-compiler to rebuild
 
-#include "w3sc.h"
+#include "kaitai/structs/w3sc.h"
 #include "kaitai/exceptions.h"
 
 w3sc_t::w3sc_t(kaitai::kstream* p__io, kaitai::kstruct* p__parent, w3sc_t* p__root) : kaitai::kstruct(p__io) {
