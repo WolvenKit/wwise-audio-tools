@@ -2,8 +2,7 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
-#include <numeric>
-#include <string>
+#include <numeric> #include <string>
 #include <utility>
 #include <vector>
 
