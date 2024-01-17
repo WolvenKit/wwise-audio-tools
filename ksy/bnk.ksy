@@ -2,6 +2,8 @@ meta:
   id: bnk
   file-extension: bnk
   endian: le
+  imports:
+    - vlq # https://formats.kaitai.io/vlq_base128_le/
 
 seq:
   - id: data
@@ -47,12 +49,14 @@ types:
         type: u4
       - id: id
         type: u4
-      - id: blank1
-        contents: [00, 00, 00, 00]
-      - id: blank2
-        contents: [00, 00, 00, 00]
+      #- id: blank1
+      #  contents: [00, 00, 00, 00]
+      #- id: blank2
+      #  contents: [00, 00, 00, 00]
+      #- id: random
+      #  size: length - 16
       - id: random
-        size: length - 16
+        size: length - 8
 # BKHD END
 
 # DIDX BEGIN
@@ -252,11 +256,11 @@ types:
   event:
     seq:
       - id: event_action_count
-        type: u4
+        type: vlq
       - id: event_actions
         type: u4
         repeat: expr
-        repeat-expr: event_action_count
+        repeat-expr: event_action_count.value
   audio_bus:
     seq:
       - id: parent_audio_bus_id
@@ -482,8 +486,10 @@ types:
     seq:
       - id: data
         size: size
+# HIRC END
         
 enums:
+# HIRC ENUM BEGIN
   object_type:
     1: settings
     2: sound_effect_or_voice
@@ -550,4 +556,4 @@ enums:
     3: random_continuous
     4: sequence_step_new_path
     5: random_step_new_path
-# HIRC END
+# HIRC ENUM END
