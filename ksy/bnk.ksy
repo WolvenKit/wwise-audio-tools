@@ -2,6 +2,8 @@ meta:
   id: bnk
   file-extension: bnk
   endian: le
+  imports:
+    - /home/abheekd/dev/wwise-audio-tools/ksy/vlq # https://formats.kaitai.io/vlq_base128_le/
 
 seq:
   - id: data
@@ -47,12 +49,14 @@ types:
         type: u4
       - id: id
         type: u4
-      - id: blank1
-        contents: [00, 00, 00, 00]
-      - id: blank2
-        contents: [00, 00, 00, 00]
+      #- id: blank1
+      #  contents: [00, 00, 00, 00]
+      #- id: blank2
+      #  contents: [00, 00, 00, 00]
+      #- id: random
+      #  size: length - 16
       - id: random
-        size: length - 16
+        size: length - 8
 # BKHD END
 
 # DIDX BEGIN
@@ -199,7 +203,7 @@ types:
       - id: sound_object_type
         type: s1
       - id: sound_structure
-        size: _parent.as<hirc_obj>.length - (4 * 5) - (1 * 1) - (8 * (included_or_streamed == 0 ? 1 : 0))
+        size: '_parent.as<hirc_obj>.length - (4 * 5) - (1 * 1) - (8 * (included_or_streamed == 0 ? 1 : 0))'
         #type: sound_structure
     instances:
       wem_data:
@@ -248,15 +252,25 @@ types:
         type: u4
         if: type == action_type::set_switch
       - id: extra
-        type: random_bytes(_parent.length - 4 - 1 - 1 - 4 - 1 - 1 - (1 * parameter_count) - (4 * parameter_count) - 1 - (8 * (type == action_type::set_state ? 1 : 0)) - (8 * (type == action_type::set_switch ? 1 : 0)))
+        type: 'random_bytes(_parent.length - 4 - 1 - 1 - 4 - 1 - 1 - (1 * parameter_count) - (4 * parameter_count) - 1 - (8 * (type == action_type::set_state ? 1 : 0)) - (8 * (type == action_type::set_switch ? 1 : 0)))'
   event:
     seq:
-      - id: event_action_count
+      - id: event_action_count_new
+        type: vlq
+        if: version >= 123
+      - id: event_action_count_old
         type: u4
+        if: version < 123
       - id: event_actions
         type: u4
         repeat: expr
-        repeat-expr: event_action_count
+        repeat-expr: event_action_count_value
+    instances:
+      version:
+        value: _root.data[0].section_data.as<bkhd_data>.version
+      event_action_count_value:
+        value: 'version >= 123 ? event_action_count_new.as<vlq>.value : event_action_count_old.as<u4>'
+
   audio_bus:
     seq:
       - id: parent_audio_bus_id
@@ -482,15 +496,17 @@ types:
     seq:
       - id: data
         size: size
+# HIRC END
         
 enums:
+# HIRC ENUM BEGIN
   object_type:
     1: settings
     2: sound_effect_or_voice
     3: event_action
     4: event
     5: random_or_sequence_container
-    5: switch_container
+    6: switch_container
     7: actor_mixer
     8: audio_bus
     9: blend_container
@@ -550,4 +566,4 @@ enums:
     3: random_continuous
     4: sequence_step_new_path
     5: random_step_new_path
-# HIRC END
+# HIRC ENUM END
