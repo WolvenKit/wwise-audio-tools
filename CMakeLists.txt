@@ -15,6 +15,7 @@ include_directories(
     libogg/include
     libvorbis/include
     ${CMAKE_CURRENT_BINARY_DIR}/libogg/include
+    cxxopts/include
   )
 
 add_definitions(-DKS_STR_ENCODING_NONE)
@@ -48,6 +49,7 @@ endif()
 
 add_subdirectory(libogg EXCLUDE_FROM_ALL)
 add_subdirectory(libvorbis EXCLUDE_FROM_ALL)
+add_subdirectory(cxxopts EXCLUDE_FROM_ALL)
 
 add_library(wwtools-shared-lib SHARED ${SOURCE})
 add_library(wwtools-static-lib STATIC ${SOURCE})

@@ -75,6 +75,10 @@ std::string get_info(const std::string &indata) {
     }
   }
 
+    if(data_ss.tellp() == 0) {
+        data_ss << "no output";
+    }
+
   return data_ss.str();
 }
 
