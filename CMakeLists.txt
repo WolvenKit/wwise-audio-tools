@@ -46,6 +46,8 @@ else()
   list(APPEND SOURCE src/ww2ogg/packed_codebooks_aoTuV_603.cpp)
 endif()
 
+set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+
 add_subdirectory(libogg EXCLUDE_FROM_ALL)
 add_subdirectory(libvorbis EXCLUDE_FROM_ALL)
 
