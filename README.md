@@ -17,6 +17,13 @@ cmake --build build
 
 This will create the command-line tool in the `bin/` directory and the libraries in `lib/`.
 
+### macOS
+On macOS, the CMake build produces universal binaries containing both Apple Silicon (`arm64`) and Intel (`x86_64`) code, and Release builds strip local symbols from the shared library to reduce its size. A `build.sh` script is included that does a clean Release build in `build/` using all available CPU cores:
+```
+sh build.sh
+```
+You can confirm both architectures are present with `lipo -archs build/bin/wwtools`.
+
 ## Usage
 The command-line tool can be run with `./wwise-audio-converter [NAME].wem` which will generate an easily usable `[NAME].ogg` in the same directory. No need to use `revorb`, no need to have a `packed_codebooks.bin`. The library usage will have further documentation soon.
 

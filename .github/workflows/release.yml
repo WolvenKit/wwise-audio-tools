@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
         with:
           submodules: true
 
@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: cmake --build build
         
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Linux Release
           path: |
@@ -44,7 +44,7 @@ jobs:
       - name: Build
         run: cmake --build build --config Release
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Windows Release
           # For some reason the dynamic lib is in the bin directory
@@ -59,7 +59,7 @@ jobs:
 
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v5
       - name: List stuff
         run: ls -R
       - name: Release

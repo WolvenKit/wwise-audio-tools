@@ -10,6 +10,10 @@ file(REMOVE_RECURSE "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+if(APPLE)
+set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
+endif()
+
 include_directories(
     include
     libogg/include
@@ -62,6 +66,8 @@ set_target_properties(wwtools-bin PROPERTIES OUTPUT_NAME wwtools)
 set_target_properties(wwtools-shared-lib PROPERTIES OUTPUT_NAME wwtools)
 set_target_properties(wwtools-static-lib PROPERTIES OUTPUT_NAME wwtools)
 
+target_compile_definitions(wwtools-shared-lib PRIVATE WWTOOLS_LIBRARY)
+
 # Standard filesystem library needs additional linking options on older compilers
 # https://en.cppreference.com/w/cpp/filesystem#Notes
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
@@ -78,6 +84,12 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
   endif()
 else()
   target_link_libraries(wwtools-bin ogg vorbis)
+endif()
+
+if(APPLE)
+# Do a strip, the files are pretty large on macOS
+# set(CMAKE_INSTALL_DO_STRIP TRUE)
+set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} -Wl,-x")
 endif()
 
 # To install to the default location, destination directive is unnecessary
